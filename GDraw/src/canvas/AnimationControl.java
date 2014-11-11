@@ -18,8 +18,6 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.DefaultHighlighter.DefaultHighlightPainter;
 
-import ControlsEx.TFRestrict;
-
 public abstract class AnimationControl implements ActionListener, TweenListener {
 	protected static canvas c;
 	protected Object returnObj;
@@ -69,14 +67,6 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 
 	public abstract void tweenCompleted(TweenEvent event);
 
-	public abstract void processB1(String key);
-
-	/*public abstract void processB2(String key);
-
-	public abstract void processB3(String key);
-	*/
-	public abstract void processButton(String s, String k);
-
 	public abstract void processMenu(String menuItem);
 
 	public abstract void setList(ArrayList<String> wordList);
@@ -84,10 +74,6 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	public abstract void insertMultiple();
 	
 	public void export(){}
-
-	public abstract void checkInput(TFRestrict t);
-
-	public abstract void setupUI(ArrayList<JButton> buttons);
 
 	public void handleMouse(int x, int y) {
 	};

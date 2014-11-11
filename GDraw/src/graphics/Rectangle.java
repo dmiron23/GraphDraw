@@ -7,27 +7,21 @@ import java.awt.Point;
 
 public class Rectangle extends GraphicsObject {
 
-	public Rectangle(int _x, int _y, int _width, int _height) {
+	public Rectangle(int _x, int _y, int _width, int _height, int _alpha) {
 		x = _x;
 		y = _y;
 		width = _width;
 		height = _height;
-		alpha = 255;
+		alpha = _alpha;
 		outlineAlpha = 50;
 	}
 
 	public void draw(Graphics2D g) {
-		Color c = setColourTransparency(backgroundIdle, alpha);
-		if (hover)
-			c = lighten(c, 40);
-
-		// Gradient fill
-
-		// Rectangle2D r = new Rectangle2D.Double(x,y, width, height);
-
-		GradientPaint grad = new GradientPaint(x, y, darken(c, 20), x, y
-				+ height, c);
-		g.setPaint(grad);
+		g.setPaint(new Color(200,200,200, alpha));
+		g.fillOval(x, y, 4, 4); // Fill
+		g.setColor(setColourTransparency(borderIdle, outlineAlpha)); 
+		
+		g.setPaint(new Color(200,200,200));
 		g.fillRoundRect(x, y, width, height, 15, 15); // Super nice.
 
 		g.setColor(setColourTransparency(borderIdle, outlineAlpha));

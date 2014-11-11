@@ -3,7 +3,6 @@ package canvas.controllers;
 import graphics.ActiveLine;
 import graphics.Circle;
 import graphics.GraphicsObject;
-import graphics.HoverCircle;
 import graphics.LabeledLine;
 import graphics.Layer;
 import graphics.Node;
@@ -13,27 +12,22 @@ import graphics.TweenClass.TweenEvent;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.StringTokenizer;
 
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-
-import ControlsEx.TFRestrict;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
 import canvas.canvas;
 
 public class DijkstraController extends AnimationControl {
-	private int option = 2;//default
+	private int option = 0;//default
 	private int nonOption = 0;//default
 	public static int[][] matrix = new int[200][200];
 	public int[][] a = new int[200][200];
@@ -54,7 +48,6 @@ public class DijkstraController extends AnimationControl {
 	private Layer pingLayer;
 	private static Layer nodeLayer;
 	private Layer highLightLayer;
-	private static Layer hoverLayer;
 	private Layer bgLayer;
 	private Node other;
 	private ArrayList<Node> visitList;
@@ -108,12 +101,9 @@ public class DijkstraController extends AnimationControl {
 		t.start();
 		bgLayer = c.createLayer();
 		bgLayer.mouseEnabled = false;
-		Rectangle r = c.createRect(-40, -40, 920, 580);
+		Rectangle r = c.createRect(0, 0, 773, 459,64);
 		r.backgroundIdle = new Color(160, 160, 200);
-		r.alpha = 64;
 		bgLayer.addChild(r);
-
-		hoverLayer = c.createLayer();
 		lineLayer = c.createLayer();
 		pingLayer = c.createLayer();
 		nodeLayer = c.createLayer();
@@ -132,25 +122,6 @@ public class DijkstraController extends AnimationControl {
 		other = null;
 		visitList = new ArrayList<Node>();
 
-	}
-
-	@Override
-	public void setupUI(ArrayList<JButton> buttons) {
-		buttons.get(0).setText("Clear");
-		buttons.get(0).setToolTipText("Deletes the graph");
-		buttons.get(0).addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				processB1(null);
-				
-			}
-		});
-		buttons.get(1).setText("Import");
-		buttons.get(1).setToolTipText("Imports a graph from a file");
-		buttons.get(2).setText("Export");
-		buttons.get(2).setToolTipText("Exports the drawn graph to a file");
-		
 	}
 
 	private int getActualDistance(Node n, Node n2) {
@@ -324,7 +295,6 @@ public class DijkstraController extends AnimationControl {
 					(ll.startPoint().y + ll.endPoint().y) / 2);
 			Point mouse = new Point(x, y);
 			if (tempPoint.distance(mouse) < 8) {
-				// TODO: tomorrow
 				Object result = JOptionPane.showInputDialog(form,
 						"Enter new weight:", ll.data);
 				if (result != null) {
@@ -394,7 +364,6 @@ public class DijkstraController extends AnimationControl {
 		autList2 = new ArrayList<Integer>();
 		niceList = new ArrayList<ArrayList<Integer>>();
 		matrix = new int[200][200];
-		c.createBitmap("/users/level3/1106736m/Desktop/cats-41a.jpg", 0, 0);
 		startAnimation();
 
 		// used this for converting long lat coordinates to map to our canvas
@@ -433,27 +402,7 @@ public class DijkstraController extends AnimationControl {
 		stateFlag = 1;
 	}
 
-	public void processButton(String action, String key) {
-		/*
-		 * bucketStep = 0; key = key.substring(0,Math.min(10, key.length()));
-		 * //Limit input to 10 chars. currentKey = c.createBoxedText(100, 20,
-		 * 200, 50, key); //Create a key to insert. currentKey.name = key;
-		 * //Store raw value since we manipulate text.
-		 * currentKey.swapDepth(tableFullRect); //Move under error rect.
-		 * 
-		 * if(action.equals("Insert")){ pseudo.setText(insertAlg);
-		 * currentKey.data = "justAdded"; }else if(action.equals("Remove")){
-		 * 
-		 * currentKey.data = "justAddedR"; pseudo.setText(removeAlg);
-		 * 
-		 * }else if(action.equals("Find")){ currentKey.data = "justAddedF";
-		 * pseudo.setText(findAlg); }
-		 * 
-		 * currentKey.tweenTo(currentKey.x, currentKey.y, 0, 255, 40, 0); //Fade
-		 * object in (0 -> 255 alpha). currentKey.tween.addTweenListener(this);
-		 * //Add listener to fire event. }
-		 */
-	}
+	
 
 	public void assignPathfromNode(Node n, Node nn) {
 		n.pathToRoot = new ArrayList<Node>();
@@ -484,7 +433,7 @@ public class DijkstraController extends AnimationControl {
 
 			if (currentNode == null) {
 				done = true;
-				stateFlag = -1; // TODO :Fail flag
+				stateFlag = -1;
 			} else {
 				for (Node n : currentNode.getNeighbours())
 					if (unvisited.contains(n)) {
@@ -661,6 +610,7 @@ public class DijkstraController extends AnimationControl {
 				ll.data = weight;
 				ll.label.text = Integer.toString(weight);
 			} else if (args.get(0).equals("t")) {
+				processClear();
 				count = 0;
 				numNodes = Integer.valueOf(args.get(1));
 			
@@ -892,21 +842,10 @@ public class DijkstraController extends AnimationControl {
 	private static int getRandomY() {
 		return randomGenerator(38, 519);
 	}
-	@Override
-	public void checkInput(TFRestrict t) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public String getTitle() {
 		return "Disjkstra's Shortest Path";
-	}
-
-	@Override
-	public void processB1(String key) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

@@ -16,10 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 import graphics.ActiveLine;
-import graphics.BTBucket;
-import graphics.BTHighlight;
-import graphics.Bitmap;
-import graphics.BoxedText;
+
 import graphics.CenteredLabel;
 import graphics.Circle;
 import graphics.GraphicsObject;
@@ -30,8 +27,6 @@ import graphics.Layer;
 import graphics.Line;
 import graphics.Node;
 import graphics.Rectangle;
-import graphics.SortBox;
-import graphics.VerticalActiveLine;
 
 @SuppressWarnings("serial")
 public class canvas extends JPanel implements MouseMotionListener,
@@ -64,14 +59,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 		return al;
 	}
 
-	public VerticalActiveLine createVerticalActiveLine(int _x, int _y, float thickness) {
-		VerticalActiveLine val = new VerticalActiveLine(_x, _y, thickness);
-		val.parent = this;
-		objects.add(val);
-		return val;
-	}
-	
-
 	public Line createLine(int _x, int _y, int _x2, int _y2, float thickness) {
 		Line l = new Line(_x, _y, _x2, _y2, thickness);
 		l.parent = this;
@@ -102,51 +89,11 @@ public class canvas extends JPanel implements MouseMotionListener,
 		return l;
 	}
 
-	public Rectangle createRect(int _x, int _y, int _width, int _height) {
-		Rectangle r = new Rectangle(_x, _y, _width, _height);
+	public Rectangle createRect(int _x, int _y, int _width, int _height, int _alpha) {
+		Rectangle r = new Rectangle(_x, _y, _width, _height, _alpha);
 		r.parent = this;
 		objects.add(r);
 		return r;
-	}
-
-	public BoxedText createBoxedText(int _x, int _y, int _width, int _height,
-			String _text) {
-		BoxedText bT = new BoxedText(_x, _y, _width, _height, _text);
-		bT.parent = this;
-		bT.getRect().parent = this;
-		bT.getLabel().parent = this;
-		objects.add(bT);
-		return bT;
-	}
-
-	public BTBucket createBTBucket(int _x, int _y, int _width, int _height,
-			String _text) {
-		BTBucket bT = new BTBucket(_x, _y, _width, _height, _text);
-		bT.parent = this;
-		bT.getRect().parent = this;
-		bT.getLabel().parent = this;
-		objects.add(bT);
-		return bT;
-	}
-
-	public BTHighlight createBTHighlight(int _x, int _y, int _width,
-			int _height, String _text) {
-		BTHighlight bT = new BTHighlight(_x, _y, _width, _height, _text);
-		bT.parent = this;
-		bT.getRect().parent = this;
-		bT.getLabel().parent = this;
-		objects.add(bT);
-		return bT;
-	}
-
-	public SortBox createSortBox(int _x, int _y, int _width, int _height,
-			String _text) {
-		SortBox bT = new SortBox(_x, _y, _width, _height, _text);
-		bT.parent = this;
-		bT.getRect().parent = this;
-		bT.getLabel().parent = this;
-		objects.add(bT);
-		return bT;
 	}
 
 	public Node createNode(int _x, int _y) {
@@ -168,14 +115,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 		c.parent = this;
 		objects.add(c);
 		return c;
-	}
-
-	public Bitmap createBitmap(String name, int _x, int _y) {
-		Bitmap b = new Bitmap(name, _x, _y);
-		b.parent = this;
-		objects.add(b);
-		return b;
-
 	}
 
 	public Layer createLayer() {
