@@ -11,12 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
-
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-
 import graphics.ActiveLine;
-
 import graphics.CenteredLabel;
 import graphics.Circle;
 import graphics.GraphicsObject;
@@ -68,7 +64,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 
 	public LabeledLine createLabeledLine(int _x, int _y, int _x2, int _y2, float thickness, String _text, int _fontSize) {
 		LabeledLine l = new LabeledLine(_x, _y, _x2, _y2, thickness, _text, _fontSize);
-
 		l.parent = this;
 		objects.add(l);
 		return l;
@@ -76,7 +71,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 
 	public CenteredLabel createCenteredLabel(int _x, int _y, String _text, int _fontSize) {
 		CenteredLabel l = new CenteredLabel(_x, _y, _text,_fontSize);
-
 		l.parent = this;
 		objects.add(l);
 		return l;
@@ -126,17 +120,15 @@ public class canvas extends JPanel implements MouseMotionListener,
 
 	@Override
 	public void paintComponent(Graphics g) {
-
 		// Routine to draw objects to screen.
 		Graphics2D g2d = (Graphics2D) g; // Cast Graphics to Graphics2D for
-											// convenience.
+										 // convenience.
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON); // Enable antialiasing.
 		g2d.clearRect(0, 0, this.getWidth(), this.getHeight()); // Clear canvas.
 		g2d.setColor(new Color(238, 238, 238));
 		g2d.fillRect(0,0, this.getWidth(), this.getHeight());
 		g.setFont(f);
-
 		for (GraphicsObject go : canvas.objects)
 			drawGraphicsObject(g2d, go);
 	}
@@ -149,7 +141,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	}
 
 	public void removeObject(GraphicsObject go) { // Remove an object from the
-													// canvas.
+				      							  // canvas.
 		objects.remove(go);
 	}
 
@@ -191,17 +183,12 @@ public class canvas extends JPanel implements MouseMotionListener,
 	}
 
 	public Point getLocation(GraphicsObject go) { // Used to provide the
-													// absolute position of a
-													// child.
+												  // absolute position of a
+												  // child.
 		Point p = getLocationOnScreen(); // Get the absolute position of this.
 		p.translate(go.x, go.y); // Offset it by the child position.
 		return p; // Return the position.
 	}
-
-	// Listeners for:
-	// Mouse movement, for whatever interactivity we wish to implement.
-	// Mouse dragging, requirement of interface.
-	// FPS ticker, listed as "actionPerformed", proceeds animation at 60fps.
 
 	@Override
 	public void mouseMoved(MouseEvent e) { // Whenever the mouse is moved...
@@ -209,10 +196,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 		mousePosition.y = e.getLocationOnScreen().y - getLocationOnScreen().y;
 		for (GraphicsObject go : canvas.objects) { // For each GraphicsObject...
 			if(go.mouseEnabled)
-			go.handleMouse(e.getXOnScreen(), e.getYOnScreen()); // Pass the
-																// coordinates
-																// to the
-																// object.
+			go.handleMouse(e.getXOnScreen(), e.getYOnScreen()); 
 		}
 		ac.handleMouseMove(e.getX(), e.getY());
 	}
@@ -220,24 +204,20 @@ public class canvas extends JPanel implements MouseMotionListener,
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		mouseMoved(e);
-	} // Required for MouseMotionListener.
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent arg0) {}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-	}
+	public void mouseEntered(MouseEvent arg0) {}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
+	public void mouseExited(MouseEvent arg0) {}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		for (GraphicsObject go : canvas.objects)
-			// For each GraphicsObject...
 			if(go.mouseEnabled)
 			go.handleLeftMouse(e.getXOnScreen(), e.getYOnScreen(), true);
 		if (e.getButton() == 1) // Left click
@@ -250,10 +230,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		for (GraphicsObject go : canvas.objects)
-			// For each GraphicsObject...
 			if(go.mouseEnabled)
 			go.handleLeftMouse(e.getXOnScreen(), e.getYOnScreen(), false);
-
 	}
-
 }

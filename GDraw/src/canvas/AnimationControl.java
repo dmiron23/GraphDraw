@@ -2,21 +2,13 @@ package canvas;
 
 import graphics.TweenClass.TweenEvent;
 import graphics.TweenClass.TweenListener;
-
-import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.DefaultHighlighter.DefaultHighlightPainter;
 
 public abstract class AnimationControl implements ActionListener, TweenListener {
 	protected static canvas c;
@@ -34,31 +26,9 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 		pseudo = _pseudo;
 	}
 
-	public void actionPerformed(ActionEvent e) { // Timer action, 60 times per
-													// second.
+	public void actionPerformed(ActionEvent e) {
 		tick();
 		c.tick();
-	}
-
-	public void highlightLine(int[] lines) {
-		int counter = 0;
-		pseudo.getHighlighter().removeAllHighlights();
-		int startIndex = 0;
-		for (int line : lines)
-			while (++counter < line)
-				startIndex = pseudo.getText().indexOf("\n", startIndex) + 1;
-
-		DefaultHighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.yellow);
-		try {
-			pseudo.getHighlighter().addHighlight(startIndex,
-			pseudo.getText().indexOf("\n", startIndex), painter);
-		} catch (BadLocationException e) {
-		}
-
-	}
-
-	public void clearHighlight() {
-		pseudo.getHighlighter().removeAllHighlights();
 	}
 
 	public abstract void tick();
@@ -75,11 +45,9 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	
 	public void export(){}
 
-	public void handleMouse(int x, int y) {
-	};
+	public void handleMouse(int x, int y) {}
 
-	public void handleAltMouse(int x, int y) {
-	};
+	public void handleAltMouse(int x, int y) {}
 
 	public void setSpeed(int s) {
 		speed = s;
@@ -102,5 +70,6 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	public abstract void processClear();
 
 	public abstract void setNonAutOption(int i);
+	
 	public abstract void setAutOption(int i);
 }
