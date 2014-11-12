@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.canvas;
-import canvas.controllers.DijkstraController;
+import canvas.controllers.DrawController;
 
 import java.awt.Font;
 
@@ -82,7 +82,7 @@ public class Window {
 		canvasPanel = new canvas();
 		canvasPanel.setBounds(5, 105, 774, 460);
 		frame.getContentPane().add(canvasPanel);
-		ac =  new DijkstraController(canvasPanel,null);
+		ac =  new DrawController(canvasPanel,null);
 		setupAC(ac);
 		ac.startAnimation();
 		
@@ -321,16 +321,12 @@ public class Window {
 		}
 	});
 	
-	
 	btnExport.addActionListener(new java.awt.event.ActionListener() {
 		public void actionPerformed(java.awt.event.ActionEvent evt) {
-			ac.processMenu("Export");;
+			ac.processExport();
 		}
 	});
 	}
-	
-	
-	
 	
 	private void setupAC(AnimationControl _ac) {
 		if (ac != null)

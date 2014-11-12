@@ -67,7 +67,7 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 
 	public abstract void tweenCompleted(TweenEvent event);
 
-	public abstract void processMenu(String menuItem);
+	public abstract void processExport();
 
 	public abstract void setList(ArrayList<String> wordList);
 
