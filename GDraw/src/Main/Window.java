@@ -17,7 +17,6 @@ import javax.swing.JLabel;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.canvas;
-import canvas.controllers.DrawController;
 
 import java.awt.Font;
 
@@ -31,6 +30,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JRadioButton;
+
+import controller.DrawController;
 
 public class Window {
 
@@ -273,7 +274,7 @@ public class Window {
 						ac.setAutOption(3);
 					if (a.equals(rdbtnSymmetricalMultiple1))
 						ac.setAutOption(4);
-					if (a.equals(rdbtnSymmetricalMultiple1))
+					if (a.equals(rdbtnSymmetricalMultiple2))
 						ac.setAutOption(5);
 				}
 			});

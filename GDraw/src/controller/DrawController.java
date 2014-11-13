@@ -1,4 +1,4 @@
-package canvas.controllers;
+package controller;
 
 import graphics.ActiveLine;
 import graphics.GraphicsObject;
@@ -46,8 +46,9 @@ public class DrawController extends AnimationControl {
 	private static int numPairs;
 	private static ArrayList<Integer> autList1 = new ArrayList<Integer>();
 	private static ArrayList<Integer> autList2 = new ArrayList<Integer>();
-	private static ArrayList<ArrayList<Integer>> niceList = new ArrayList<ArrayList<Integer>>();
-	
+	private static ArrayList<ArrayList<Integer>> niceListA = new ArrayList<ArrayList<Integer>>();
+	private static ArrayList<ArrayList<Integer>> niceListB = new ArrayList<ArrayList<Integer>>();
+
 	public DrawController(canvas _c, JTextArea _pseudo) {
 		super(_c, _pseudo);
 	}
@@ -264,7 +265,8 @@ public class DrawController extends AnimationControl {
 		aCount = 0;
 		autList1 = new ArrayList<Integer>();
 		autList2 = new ArrayList<Integer>();
-		niceList = new ArrayList<ArrayList<Integer>>();
+		niceListA = new ArrayList<ArrayList<Integer>>();
+		niceListB = new ArrayList<ArrayList<Integer>>();
 		matrix = new int[200][200];
 		startAnimation();
 	}
@@ -353,7 +355,8 @@ public class DrawController extends AnimationControl {
 				aCount = 0;
 				autList1 = new ArrayList<Integer>();
 				autList2 = new ArrayList<Integer>();
-				niceList = new ArrayList<ArrayList<Integer>>();
+				niceListA = new ArrayList<ArrayList<Integer>>();
+				niceListB = new ArrayList<ArrayList<Integer>>();
 				pairSize = Integer.valueOf(args.get(1));
 				numPairs = Integer.valueOf(args.get(2));
 			} else if (args.get(0).equals("a")) {
@@ -363,18 +366,24 @@ public class DrawController extends AnimationControl {
 				}
 				aCount++;
 			} else if (args.get(0).equals("f")) {
-				// create niceList
-				niceList = new ArrayList<ArrayList<Integer>>();
+				// create niceListA
+				niceListA = new ArrayList<ArrayList<Integer>>();
 				for (int u = 0; u < pairSize; u++)
-					niceList.add(new ArrayList<Integer>());
+					niceListA.add(new ArrayList<Integer>());
 				for (int i = 0; i < pairSize; i++)
 					for (int j = 0; j < numPairs; j++)
 						autList2.add(a[j][i]);
 				for (int x = 0; x < pairSize; x++)
-					for (int y = 0; y < numPairs; y++) 
-						niceList.get(x).add(a[y][x]);
+					for (int y = 0; y < numPairs; y++)
+						niceListA.get(x).add(a[y][x]);
+				// create niceListB
+				niceListB = new ArrayList<ArrayList<Integer>>();
+				for (int i = 0; i < numPairs; i++) {
+					niceListB.add(new ArrayList<Integer>());
+					for (int j = 0; j < pairSize; j++)
+						niceListB.get(i).add(a[i][j]);
+				}
 				draw(option, nonOption);
-				// draws the nodes
 			}
 		}
 	}
@@ -389,9 +398,11 @@ public class DrawController extends AnimationControl {
 			drawOnCircleByAutomorphism(nonOption, true);
 		if (option == 3)// draw on a circle split by the automorphism group (2)
 			drawOnCircleByAutomorphism(nonOption, false);
-		if (option == 4)//draw on multiple circles split by the automorphism group (1)
+		if (option == 4)// draw on multiple circles split by the automorphism
+						// group (1)
 			drawOnMultipleCirclesByAutomorphism(nonOption, true);
-		if (option == 5)//draw on multiple circles split by the automorphism group (2)
+		if (option == 5)// draw on multiple circles split by the automorphism
+						// group (2)
 			drawOnMultipleCirclesByAutomorphism(nonOption, false);
 	}
 
@@ -400,9 +411,11 @@ public class DrawController extends AnimationControl {
 		ArrayList<Integer> usedList = (a) ? autList1 : autList2;
 		ArrayList<Integer> nonAutList = new ArrayList<Integer>();
 		for (int i = 0; i < numNodes; i++) {
-			if (usedList.contains(i+1)){
-				addNode(getMultipleX(i+1, usedList,a),getMultipleY(i+1, usedList,a),i);
-			}else nonAutList.add(i);
+			if (usedList.contains(i + 1)) {
+				addNode(getMultipleX(i + 1, usedList, a),
+						getMultipleY(i + 1, usedList, a), i);
+			} else
+				nonAutList.add(i);
 		}
 		if (nonAutOption == 0)// draw nodes on circle in the middle
 			for (int j = 0; j < numNodes; j++)
@@ -413,7 +426,7 @@ public class DrawController extends AnimationControl {
 		// draw the edges
 		drawEdges();
 	}
-	
+
 	public static ArrayList<Point> getCirclesCentres(int num) {
 		ArrayList<Point> centres = new ArrayList<Point>();
 		double sliceAngle = 2 * Math.PI / num;
@@ -423,40 +436,75 @@ public class DrawController extends AnimationControl {
 		}
 		return centres;
 	}
-	
-	private static int calcCircleIndex(int i) {
-		for (int j = 0; j < pairSize; j++)
-			if (niceList.get(j).contains(i))
+
+	private static int calcCircleIndex(int i, boolean a) {
+		ArrayList<ArrayList<Integer>> used = (a) ? niceListA : niceListB;
+		int size = (a) ? pairSize : numPairs;
+		for (int j = 0; j < size; j++)
+			if (used.get(j).contains(i))
 				return j;
 		return -1;
 	}
 
 	private static int getMultipleX(int i, ArrayList<Integer> usedList,
 			boolean a) {
-		int numCircles = pairSize;
-		int numPerCircle = numPairs;
-		int circleIndex = calcCircleIndex(i);
-		int onCircleIndex = niceList.get(circleIndex).indexOf(i);
-		int circleCentreX = getCircleCentreX(circleIndex,numCircles);
-		return (int) (circleCentreX + 50*Math.cos(onCircleIndex*(2*Math.PI/numPerCircle)));
-	}
-	
-	private static int getMultipleY(int i, ArrayList<Integer> usedList,
-			boolean a) {
-		int numCircles = pairSize;
-		int numPerCircle = numPairs;
-		int circleIndex = calcCircleIndex(i);
-		int onCircleIndex = niceList.get(circleIndex).indexOf(i);
-		int circleCentreY = getCircleCentreY(circleIndex,numCircles);
-		return (int) (circleCentreY + 50*Math.sin(onCircleIndex*(2*Math.PI/numPerCircle)));
+		int numCircles = 0;
+		int numPerCircle = 0;
+		int circleIndex = 0;
+		int onCircleIndex = 0;
+		int circleCentreX = 0;
+		if (a) {
+			
+			numCircles = pairSize;
+			numPerCircle = numPairs;
+			circleIndex = calcCircleIndex(i, a);
+			onCircleIndex = niceListA.get(circleIndex).indexOf(i);
+			circleCentreX = getCircleCentreX(circleIndex, numCircles);
+		} else {
+			numCircles = numPairs;
+			numPerCircle = pairSize;
+			circleIndex = calcCircleIndex(i, a);
+			onCircleIndex = niceListB.get(circleIndex).indexOf(i);
+			circleCentreX = getCircleCentreX(circleIndex, numCircles);
+		}
+
+		return (int) (circleCentreX + 50 * Math.cos(onCircleIndex
+				* (2 * Math.PI / numPerCircle)));
 	}
 
-	private static int getCircleCentreY(int circleIndex, int numCircles) {	
-		return (int) (224 + 150 * Math.sin(circleIndex * (2 * Math.PI / numCircles)));
+	private static int getMultipleY(int i, ArrayList<Integer> usedList,
+			boolean a) {
+		int numCircles = 0;
+		int numPerCircle = 0;
+		int circleIndex = 0;
+		int onCircleIndex = 0;
+		int circleCentreY = 0;
+		if (a) {
+			numCircles = pairSize;
+			numPerCircle = numPairs;
+			circleIndex = calcCircleIndex(i, a);
+			onCircleIndex = niceListA.get(circleIndex).indexOf(i);
+			circleCentreY = getCircleCentreY(circleIndex, numCircles);
+		} else {
+			numCircles = numPairs;
+			numPerCircle = pairSize;
+			circleIndex = calcCircleIndex(i, a);
+			onCircleIndex = niceListB.get(circleIndex).indexOf(i);
+			circleCentreY = getCircleCentreY(circleIndex, numCircles);
+
+		}
+		return (int) (circleCentreY + 50 * Math.sin(onCircleIndex
+				* (2 * Math.PI / numPerCircle)));
+	}
+
+	private static int getCircleCentreY(int circleIndex, int numCircles) {
+		return (int) (224 + 150 * Math.sin(circleIndex
+				* (2 * Math.PI / numCircles)));
 	}
 
 	private static int getCircleCentreX(int circleIndex, int numCircles) {
-		return (int) (386 + 150 * Math.cos(circleIndex * (2 * Math.PI / numCircles)));
+		return (int) (386 + 150 * Math.cos(circleIndex
+				* (2 * Math.PI / numCircles)));
 	}
 
 	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
@@ -558,7 +606,7 @@ public class DrawController extends AnimationControl {
 
 	@Override
 	public String getTitle() {
-		return "Disjkstra's Shortest Path";
+		return "GraphDraw";
 	}
 
 	@Override
