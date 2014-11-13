@@ -2,10 +2,13 @@ package canvas;
 
 import graphics.TweenClass.TweenEvent;
 import graphics.TweenClass.TweenListener;
+
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.Timer;
@@ -72,4 +75,8 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	public abstract void setNonAutOption(int i);
 	
 	public abstract void setAutOption(int i);
+	
+	public abstract void redraw();
+	
+	public abstract void processImport(File file);
 }

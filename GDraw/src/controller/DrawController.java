@@ -8,22 +8,28 @@ import graphics.Node;
 import graphics.Rectangle;
 import graphics.TweenClass.Tween;
 import graphics.TweenClass.TweenEvent;
+
 import java.awt.Color;
 import java.awt.Point;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.StringTokenizer;
+
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
 import canvas.canvas;
 
 public class DrawController extends AnimationControl {
+	private File lastFile;
 	private int option = 0;// default
 	private int nonOption = 0;// default
 	public static int[][] matrix = new int[200][200];
@@ -468,7 +474,7 @@ public class DrawController extends AnimationControl {
 			circleCentreX = getCircleCentreX(circleIndex, numCircles);
 		}
 
-		return (int) (circleCentreX + 50 * Math.cos(onCircleIndex
+		return (int) (circleCentreX + 50 * Math.cos((2 * Math.PI*circleIndex/numCircles) + onCircleIndex
 				* (2 * Math.PI / numPerCircle)));
 	}
 
@@ -493,7 +499,7 @@ public class DrawController extends AnimationControl {
 			circleCentreY = getCircleCentreY(circleIndex, numCircles);
 
 		}
-		return (int) (circleCentreY + 50 * Math.sin(onCircleIndex
+		return (int) (circleCentreY + 50 * Math.sin((2 * Math.PI*circleIndex/numCircles) + onCircleIndex
 				* (2 * Math.PI / numPerCircle)));
 	}
 
@@ -551,9 +557,19 @@ public class DrawController extends AnimationControl {
 
 	private static void drawRandomlyOnCircle(int numNodes) {
 		// draw the nodes
+		ArrayList<Integer> randomArray = new ArrayList<Integer>();
 		for (int i = 0; i < numNodes; i++)
-			addNode(getRandomCircleX(numNodes, i),
-					getRandomCircleY(numNodes, i), -1);
+			randomArray.add(0);
+		for (int i = 0; i < numNodes; i++){
+			//determine random position, make sure no collisions
+			int random = randomGenerator(0, numNodes-1);
+			while (randomArray.get(random) == 1){
+				random = randomGenerator(0, numNodes-1);
+			}
+			randomArray.set(random, 1);
+			addNode(getRandomCircleX(numNodes, random),
+					getRandomCircleY(numNodes, random), -1);
+			}
 		// draw the edges
 		drawEdges();
 	}
@@ -617,5 +633,44 @@ public class DrawController extends AnimationControl {
 	@Override
 	public void setAutOption(int i) {
 		option = i;
+	}
+
+	@Override
+	public void redraw() {
+		if (lastFile != null)
+			processImport(lastFile);
+	}
+	
+	@Override
+	public void processImport(File file){
+		lastFile = file;
+		try {
+			FileInputStream fis = new FileInputStream(file);
+			//
+			StringBuilder builder = new StringBuilder();
+			int ch;
+			try {
+				while ((ch = fis.read()) != -1) {
+					builder.append((char) ch);
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			try {
+				fis.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			ArrayList<String> wordList = new ArrayList<String>();
+			String[] entries = builder.toString().replace("\r", "")
+					.split("\n");
+			for (String entry : entries) {
+				wordList.add(entry);
+			}
+			setList(wordList);
+			insertMultiple();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 }
