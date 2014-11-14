@@ -70,7 +70,7 @@ public class DrawController extends AnimationControl {
 		t.start();
 		bgLayer = c.createLayer();
 		bgLayer.mouseEnabled = false;
-		Rectangle r = c.createRect(0, 0, 773, 459, 64);
+		Rectangle r = c.createRect(0, 0, 773, 459);
 		r.backgroundIdle = new Color(160, 160, 200);
 		bgLayer.addChild(r);
 		lineLayer = c.createLayer();

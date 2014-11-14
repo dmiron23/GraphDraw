@@ -6,12 +6,12 @@ import java.awt.Point;
 
 public class Rectangle extends GraphicsObject {
 
-	public Rectangle(int _x, int _y, int _width, int _height, int _alpha) {
+	public Rectangle(int _x, int _y, int _width, int _height) {
 		x = _x;
 		y = _y;
 		width = _width;
 		height = _height;
-		alpha = _alpha;
+		alpha = 255;
 		outlineAlpha = 50;
 	}
 

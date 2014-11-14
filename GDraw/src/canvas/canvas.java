@@ -83,8 +83,8 @@ public class canvas extends JPanel implements MouseMotionListener,
 		return l;
 	}
 
-	public Rectangle createRect(int _x, int _y, int _width, int _height, int _alpha) {
-		Rectangle r = new Rectangle(_x, _y, _width, _height, _alpha);
+	public Rectangle createRect(int _x, int _y, int _width, int _height) {
+		Rectangle r = new Rectangle(_x, _y, _width, _height);
 		r.parent = this;
 		objects.add(r);
 		return r;

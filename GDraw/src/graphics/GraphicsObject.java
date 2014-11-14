@@ -7,7 +7,7 @@ import java.awt.Point;
 import canvas.canvas;
 import graphics.TweenClass.Tween;
 
-public abstract class GraphicsObject {
+public abstract class GraphicsObject{
 	// Some basic properties that will apply to all graphics objects.
 	public int x;
 	public int y;
