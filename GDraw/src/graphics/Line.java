@@ -11,6 +11,14 @@ public class Line extends GraphicsObject {
 	protected int x2;
 	protected int y2;
 
+	public int getX2() {
+		return x2;
+	}
+
+	public int getY2() {
+		return y2;
+	}
+
 	Stroke s;
 
 	public Line(int _x1, int _y1, int _x2, int _y2, float thickness) {

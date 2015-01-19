@@ -131,6 +131,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 		g.setFont(f);
 		for (GraphicsObject go : canvas.objects)
 			drawGraphicsObject(g2d, go);
+		
 	}
 
 	public static void drawGraphicsObject(Graphics2D g, GraphicsObject go) {

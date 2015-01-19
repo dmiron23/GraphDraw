@@ -1,65 +1,50 @@
 package Main;
 
 import graphics.TweenClass.Tween;
+
 import java.awt.EventQueue;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.canvas;
+
 import java.awt.Font;
+
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+
 import javax.swing.JRadioButton;
+
 import controller.DrawController;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class Window {
 
+	public JRadioButton[][] buttons;
 	private JFrame frmGraphDraw;
 	private AnimationControl ac;
 	private canvas canvasPanel;
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_3;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_9;
-	private JTextField textField_8;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_14;
-	private JTextField textField_13;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_19;
-	private JTextField textField_18;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_24;
-	private JTextField textField_23;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JTextField textField_27;
-	private JTextField textField_29;
-	private JTextField textField_28;
 	private JLabel label_2;
 	private JLabel label_3;
 	private JLabel label_4;
-	private JLabel label;
 	private JLabel label_5;
 	private JLabel label_6;
 	private JLabel label_7;
@@ -81,319 +66,13 @@ public class Window {
 	private JLabel label_23;
 	private JLabel label_24;
 	private JLabel label_25;
-	private JLabel label_26;
-	private JLabel label_27;
-	private JLabel label_28;
-	private JLabel label_29;
-	private JLabel label_30;
-	private JTextField textField_30;
 	private JLabel label_31;
-	private JTextField textField_31;
-	private JTextField textField_32;
-	private JTextField textField_33;
-	private JTextField textField_34;
-	private JTextField textField_35;
-	private JTextField textField_36;
-	private JTextField textField_37;
-	private JTextField textField_38;
-	private JTextField textField_39;
-	private JTextField textField_40;
-	private JTextField textField_41;
-	private JTextField textField_42;
-	private JTextField textField_43;
-	private JTextField textField_44;
-	private JTextField textField_45;
-	private JTextField textField_46;
-	private JTextField textField_47;
-	private JTextField textField_48;
-	private JTextField textField_49;
-	private JTextField textField_50;
-	private JTextField textField_51;
-	private JTextField textField_52;
-	private JTextField textField_53;
-	private JTextField textField_54;
-	private JTextField textField_55;
-	private JTextField textField_56;
-	private JTextField textField_57;
-	private JTextField textField_58;
-	private JTextField textField_59;
-	private JTextField textField_60;
 	private JLabel label_32;
 	private JLabel label_33;
-	private JTextField textField_61;
-	private JTextField textField_62;
-	private JTextField textField_64;
-	private JTextField textField_63;
-	private JTextField textField_65;
-	private JTextField textField_66;
-	private JTextField textField_67;
-	private JTextField textField_69;
-	private JTextField textField_68;
-	private JTextField textField_70;
-	private JTextField textField_71;
-	private JTextField textField_72;
-	private JTextField textField_73;
-	private JTextField textField_74;
-	private JTextField textField_75;
-	private JTextField textField_76;
-	private JTextField textField_77;
-	private JTextField textField_78;
-	private JTextField textField_79;
-	private JTextField textField_80;
-	private JTextField textField_81;
-	private JTextField textField_82;
-	private JTextField textField_83;
-	private JTextField textField_84;
-	private JTextField textField_85;
-	private JTextField textField_86;
-	private JTextField textField_87;
-	private JTextField textField_88;
-	private JTextField textField_89;
-	private JTextField textField_90;
-	private JTextField textField_91;
-	private JTextField textField_92;
-	private JTextField textField_93;
-	private JTextField textField_94;
-	private JTextField textField_95;
-	private JTextField textField_96;
-	private JTextField textField_97;
-	private JTextField textField_98;
-	private JTextField textField_99;
-	private JTextField textField_100;
-	private JTextField textField_101;
-	private JTextField textField_102;
-	private JTextField textField_103;
-	private JTextField textField_104;
-	private JTextField textField_105;
-	private JTextField textField_106;
-	private JTextField textField_107;
-	private JTextField textField_108;
-	private JTextField textField_109;
-	private JTextField textField_110;
-	private JTextField textField_111;
-	private JTextField textField_112;
-	private JTextField textField_113;
-	private JTextField textField_114;
-	private JTextField textField_115;
-	private JTextField textField_116;
-	private JTextField textField_117;
-	private JTextField textField_118;
-	private JTextField textField_119;
-	private JTextField textField_120;
-	private JTextField textField_121;
-	private JTextField textField_122;
-	private JTextField textField_123;
-	private JTextField textField_124;
-	private JTextField textField_125;
-	private JTextField textField_126;
-	private JTextField textField_127;
-	private JTextField textField_128;
-	private JTextField textField_129;
-	private JTextField textField_130;
-	private JTextField textField_131;
-	private JTextField textField_132;
-	private JTextField textField_133;
-	private JTextField textField_134;
-	private JTextField textField_135;
-	private JTextField textField_136;
-	private JTextField textField_137;
-	private JTextField textField_138;
-	private JTextField textField_139;
-	private JTextField textField_140;
-	private JTextField textField_141;
-	private JTextField textField_142;
-	private JTextField textField_143;
-	private JTextField textField_144;
-	private JTextField textField_145;
-	private JTextField textField_146;
-	private JTextField textField_147;
-	private JTextField textField_148;
-	private JTextField textField_149;
-	private JTextField textField_150;
-	private JTextField textField_151;
-	private JTextField textField_152;
-	private JTextField textField_153;
-	private JTextField textField_154;
-	private JTextField textField_155;
-	private JTextField textField_156;
-	private JTextField textField_157;
-	private JTextField textField_158;
-	private JTextField textField_159;
-	private JTextField textField_160;
-	private JTextField textField_161;
-	private JTextField textField_162;
-	private JTextField textField_163;
-	private JTextField textField_164;
-	private JTextField textField_165;
-	private JTextField textField_166;
-	private JTextField textField_167;
-	private JTextField textField_168;
-	private JTextField textField_169;
-	private JTextField textField_170;
-	private JTextField textField_171;
-	private JTextField textField_172;
-	private JTextField textField_173;
-	private JTextField textField_174;
-	private JTextField textField_175;
-	private JTextField textField_176;
-	private JTextField textField_177;
-	private JTextField textField_178;
-	private JTextField textField_179;
-	private JTextField textField_180;
-	private JTextField textField_181;
-	private JTextField textField_182;
-	private JTextField textField_183;
-	private JTextField textField_184;
-	private JTextField textField_185;
-	private JTextField textField_186;
-	private JTextField textField_187;
-	private JTextField textField_188;
-	private JTextField textField_189;
-	private JTextField textField_190;
-	private JTextField textField_191;
-	private JTextField textField_192;
-	private JTextField textField_193;
-	private JTextField textField_194;
-	private JTextField textField_195;
-	private JTextField textField_196;
-	private JTextField textField_197;
-	private JTextField textField_198;
-	private JTextField textField_199;
-	private JTextField textField_200;
-	private JTextField textField_201;
-	private JTextField textField_202;
-	private JTextField textField_203;
-	private JTextField textField_204;
-	private JTextField textField_205;
-	private JTextField textField_206;
-	private JTextField textField_207;
-	private JTextField textField_208;
-	private JTextField textField_209;
-	private JTextField textField_210;
 	private JLabel label_34;
 	private JLabel label_35;
 	private JLabel label_36;
 	private JLabel label_37;
-	private JTextField textField_211;
-	private JTextField textField_212;
-	private JTextField textField_213;
-	private JTextField textField_214;
-	private JTextField textField_215;
-	private JTextField textField_216;
-	private JTextField textField_217;
-	private JTextField textField_218;
-	private JTextField textField_219;
-	private JTextField textField_220;
-	private JTextField textField_221;
-	private JTextField textField_222;
-	private JTextField textField_223;
-	private JTextField textField_224;
-	private JTextField textField_225;
-	private JTextField textField_226;
-	private JTextField textField_227;
-	private JTextField textField_228;
-	private JTextField textField_229;
-	private JTextField textField_230;
-	private JTextField textField_231;
-	private JTextField textField_232;
-	private JTextField textField_233;
-	private JTextField textField_234;
-	private JTextField textField_235;
-	private JTextField textField_236;
-	private JTextField textField_237;
-	private JTextField textField_238;
-	private JTextField textField_239;
-	private JTextField textField_240;
-	private JTextField textField_241;
-	private JTextField textField_242;
-	private JTextField textField_243;
-	private JTextField textField_244;
-	private JTextField textField_245;
-	private JTextField textField_246;
-	private JTextField textField_247;
-	private JTextField textField_248;
-	private JTextField textField_249;
-	private JTextField textField_250;
-	private JTextField textField_251;
-	private JTextField textField_252;
-	private JTextField textField_253;
-	private JTextField textField_254;
-	private JTextField textField_255;
-	private JTextField textField_256;
-	private JTextField textField_257;
-	private JTextField textField_258;
-	private JTextField textField_259;
-	private JTextField textField_260;
-	private JTextField textField_261;
-	private JTextField textField_262;
-	private JTextField textField_263;
-	private JTextField textField_264;
-	private JTextField textField_265;
-	private JTextField textField_266;
-	private JTextField textField_267;
-	private JTextField textField_268;
-	private JTextField textField_269;
-	private JTextField textField_270;
-	private JTextField textField_271;
-	private JTextField textField_272;
-	private JTextField textField_273;
-	private JTextField textField_274;
-	private JTextField textField_275;
-	private JTextField textField_276;
-	private JTextField textField_277;
-	private JTextField textField_278;
-	private JTextField textField_279;
-	private JTextField textField_280;
-	private JTextField textField_281;
-	private JTextField textField_282;
-	private JTextField textField_283;
-	private JTextField textField_284;
-	private JTextField textField_285;
-	private JTextField textField_286;
-	private JTextField textField_287;
-	private JTextField textField_288;
-	private JTextField textField_289;
-	private JTextField textField_290;
-	private JTextField textField_291;
-	private JTextField textField_292;
-	private JTextField textField_293;
-	private JTextField textField_294;
-	private JTextField textField_295;
-	private JTextField textField_296;
-	private JTextField textField_297;
-	private JTextField textField_298;
-	private JTextField textField_299;
-	private JTextField textField_300;
-	private JTextField textField_301;
-	private JTextField textField_302;
-	private JTextField textField_303;
-	private JTextField textField_304;
-	private JTextField textField_305;
-	private JTextField textField_306;
-	private JTextField textField_307;
-	private JTextField textField_308;
-	private JTextField textField_309;
-	private JTextField textField_310;
-	private JTextField textField_311;
-	private JTextField textField_312;
-	private JTextField textField_313;
-	private JTextField textField_314;
-	private JTextField textField_315;
-	private JTextField textField_316;
-	private JTextField textField_317;
-	private JTextField textField_318;
-	private JTextField textField_319;
-	private JTextField textField_320;
-	private JTextField textField_321;
-	private JTextField textField_322;
-	private JTextField textField_323;
-	private JTextField textField_324;
-	private JTextField textField_325;
-	private JTextField textField_326;
-	private JTextField textField_327;
-	private JTextField textField_328;
-	private JTextField textField_329;
-	private JTextField textField_330;
 	private JLabel label_38;
 	private JLabel label_39;
 	private JLabel label_40;
@@ -402,126 +81,18 @@ public class Window {
 	private JLabel label_43;
 	private JLabel label_44;
 	private JLabel label_45;
-	private JTextField textField_331;
-	private JTextField textField_332;
-	private JTextField textField_333;
-	private JTextField textField_334;
-	private JTextField textField_335;
-	private JTextField textField_336;
-	private JTextField textField_337;
-	private JTextField textField_338;
-	private JTextField textField_339;
-	private JTextField textField_340;
-	private JTextField textField_341;
-	private JTextField textField_342;
-	private JTextField textField_343;
-	private JTextField textField_344;
-	private JTextField textField_345;
-	private JTextField textField_346;
-	private JTextField textField_347;
-	private JTextField textField_348;
-	private JTextField textField_349;
-	private JTextField textField_350;
-	private JTextField textField_351;
-	private JTextField textField_352;
-	private JTextField textField_353;
-	private JTextField textField_354;
-	private JTextField textField_355;
-	private JTextField textField_356;
-	private JTextField textField_357;
-	private JTextField textField_358;
-	private JTextField textField_359;
-	private JTextField textField_360;
-	private JTextField textField_361;
-	private JTextField textField_362;
-	private JTextField textField_363;
-	private JTextField textField_364;
-	private JTextField textField_365;
-	private JTextField textField_366;
-	private JTextField textField_367;
-	private JTextField textField_368;
-	private JTextField textField_369;
-	private JTextField textField_370;
-	private JTextField textField_371;
-	private JTextField textField_372;
-	private JTextField textField_373;
-	private JTextField textField_374;
-	private JTextField textField_375;
-	private JTextField textField_376;
-	private JTextField textField_377;
-	private JTextField textField_378;
-	private JTextField textField_379;
-	private JTextField textField_380;
-	private JTextField textField_381;
-	private JTextField textField_382;
-	private JTextField textField_383;
-	private JTextField textField_384;
-	private JTextField textField_385;
-	private JTextField textField_386;
-	private JTextField textField_387;
-	private JTextField textField_388;
-	private JTextField textField_389;
-	private JTextField textField_390;
-	private JTextField textField_391;
-	private JTextField textField_392;
-	private JTextField textField_393;
-	private JTextField textField_394;
-	private JTextField textField_395;
-	private JTextField textField_396;
-	private JTextField textField_397;
-	private JTextField textField_398;
-	private JTextField textField_399;
-	private JTextField textField_400;
-	private JTextField textField_401;
-	private JTextField textField_402;
-	private JTextField textField_403;
-	private JTextField textField_404;
-	private JTextField textField_405;
-	private JTextField textField_406;
-	private JTextField textField_407;
-	private JTextField textField_408;
-	private JTextField textField_409;
-	private JTextField textField_410;
-	private JTextField textField_411;
-	private JTextField textField_412;
-	private JTextField textField_413;
-	private JTextField textField_414;
-	private JTextField textField_415;
-	private JTextField textField_416;
-	private JTextField textField_417;
-	private JTextField textField_418;
-	private JTextField textField_419;
-	private JTextField textField_420;
-	private JTextField textField_421;
-	private JTextField textField_422;
-	private JTextField textField_423;
-	private JTextField textField_424;
-	private JTextField textField_425;
-	private JTextField textField_426;
-	private JTextField textField_427;
-	private JTextField textField_428;
-	private JTextField textField_429;
-	private JTextField textField_430;
-	private JTextField textField_431;
-	private JTextField textField_432;
-	private JTextField textField_433;
-	private JTextField textField_434;
-	private JTextField textField_435;
-	private JTextField textField_436;
-	private JTextField textField_437;
-	private JTextField textField_438;
-	private JTextField textField_439;
-	private JTextField textField_440;
-	private JTextField textField_441;
-	private JTextField textField_442;
-	private JTextField textField_443;
-	private JTextField textField_444;
-	private JTextField textField_445;
-	private JTextField textField_446;
-	private JTextField textField_447;
-	private JTextField textField_448;
-	private JTextField textField_449;
-	private JTextField textField_450;
+	private JLabel label_46;
+	private JLabel label_47;
+	private JLabel label_48;
+	private JLabel label_49;
+	private JLabel label_50;
+	private JLabel label_51;
+	private JLabel label_52;
+	private JLabel label_53;
+	private JLabel label_54;
+	private JLabel label_55;
+	private JLabel[] horizontalLabels;
+	private JLabel[] verticalLabels;
 
 	/**
 	 * Launch the application.
@@ -563,2558 +134,3227 @@ public class Window {
 				new Font("Comic Sans MS", Font.PLAIN, 11));
 		frmGraphDraw.setAutoRequestFocus(false);
 		frmGraphDraw.setResizable(false);
-		frmGraphDraw.setBounds(100, 100, 800, 600);
+		frmGraphDraw.setBounds(10, 10, 800, 640);
 		frmGraphDraw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmGraphDraw.getContentPane().setLayout(null);
-		frmGraphDraw.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(5, 105, 774, 460);
+		frmGraphDraw.setCursor(new java.awt.Cursor(
+				java.awt.Cursor.DEFAULT_CURSOR));
+		final JPanel panel_4 = new JPanel();
+		panel_4.setBounds(5, 104, 779, 508);
 		frmGraphDraw.getContentPane().add(panel_4);
 		panel_4.setLayout(null);
-		
+
 		JLabel lblNumberOfNodes = new JLabel("Number of nodes:");
 		lblNumberOfNodes.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		lblNumberOfNodes.setBounds(10, 16, 112, 15);
+		lblNumberOfNodes.setBounds(652, 15, 112, 15);
 		panel_4.add(lblNumberOfNodes);
-		
+
 		textField = new JTextField();
-		textField.setBounds(116, 12, 41, 25);
+		textField.setBounds(681, 37, 41, 25);
 		panel_4.add(textField);
 		textField.setColumns(10);
-		
+
 		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setBounds(167, 12, 86, 25);
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {String text = textField.getText();
+					int i = Integer.parseInt(text);
+					update(i);
+				
+				}catch (Exception e){}
+			}
+
+			
+		});
+		btnUpdate.setBounds(655, 77, 86, 25);
 		panel_4.add(btnUpdate);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(20, 73, 20, 20);
-		panel_4.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(45, 73, 20, 20);
-		panel_4.add(textField_2);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(95, 73, 20, 20);
-		panel_4.add(textField_4);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(70, 73, 20, 20);
-		panel_4.add(textField_3);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(120, 73, 20, 20);
-		panel_4.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(145, 73, 20, 20);
-		panel_4.add(textField_6);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(170, 73, 20, 20);
-		panel_4.add(textField_7);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(220, 73, 20, 20);
-		panel_4.add(textField_9);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(195, 73, 20, 20);
-		panel_4.add(textField_8);
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(245, 73, 20, 20);
-		panel_4.add(textField_10);
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(270, 73, 20, 20);
-		panel_4.add(textField_11);
-		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(295, 73, 20, 20);
-		panel_4.add(textField_12);
-		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		textField_14.setBounds(345, 73, 20, 20);
-		panel_4.add(textField_14);
-		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(320, 73, 20, 20);
-		panel_4.add(textField_13);
-		
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		textField_15.setBounds(370, 73, 20, 20);
-		panel_4.add(textField_15);
-		
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		textField_16.setBounds(395, 73, 20, 20);
-		panel_4.add(textField_16);
-		
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		textField_17.setBounds(420, 73, 20, 20);
-		panel_4.add(textField_17);
-		
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
-		textField_19.setBounds(470, 73, 20, 20);
-		panel_4.add(textField_19);
-		
-		textField_18 = new JTextField();
-		textField_18.setColumns(10);
-		textField_18.setBounds(445, 73, 20, 20);
-		panel_4.add(textField_18);
-		
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
-		textField_20.setBounds(495, 73, 20, 20);
-		panel_4.add(textField_20);
-		
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		textField_21.setBounds(520, 73, 20, 20);
-		panel_4.add(textField_21);
-		
-		textField_22 = new JTextField();
-		textField_22.setColumns(10);
-		textField_22.setBounds(545, 73, 20, 20);
-		panel_4.add(textField_22);
-		
-		textField_24 = new JTextField();
-		textField_24.setColumns(10);
-		textField_24.setBounds(595, 73, 20, 20);
-		panel_4.add(textField_24);
-		
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		textField_23.setBounds(570, 73, 20, 20);
-		panel_4.add(textField_23);
-		
-		textField_25 = new JTextField();
-		textField_25.setColumns(10);
-		textField_25.setBounds(620, 73, 20, 20);
-		panel_4.add(textField_25);
-		
-		textField_26 = new JTextField();
-		textField_26.setColumns(10);
-		textField_26.setBounds(645, 73, 20, 20);
-		panel_4.add(textField_26);
-		
-		textField_27 = new JTextField();
-		textField_27.setColumns(10);
-		textField_27.setBounds(670, 73, 20, 20);
-		panel_4.add(textField_27);
-		
-		textField_29 = new JTextField();
-		textField_29.setColumns(10);
-		textField_29.setBounds(720, 73, 20, 20);
-		panel_4.add(textField_29);
-		
-		textField_28 = new JTextField();
-		textField_28.setColumns(10);
-		textField_28.setBounds(695, 73, 20, 20);
-		panel_4.add(textField_28);
-		
+
 		JLabel label_1 = new JLabel("1");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_1.setBounds(20, 47, 20, 20);
+		label_1.setBounds(20, -3, 20, 20);
 		panel_4.add(label_1);
-		
+
 		label_2 = new JLabel("2");
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
 		label_2.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_2.setBounds(45, 47, 20, 20);
+		label_2.setBounds(40, -3, 20, 20);
 		panel_4.add(label_2);
-		
+
 		label_3 = new JLabel("3");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_3.setBounds(70, 47, 20, 20);
+		label_3.setBounds(60, -3, 20, 20);
 		panel_4.add(label_3);
-		
+
 		label_4 = new JLabel("4");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_4.setBounds(95, 47, 20, 20);
+		label_4.setBounds(80, -3, 20, 20);
 		panel_4.add(label_4);
-		
-		label = new JLabel("1");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label.setBounds(470, 12, 20, 20);
-		panel_4.add(label);
-		
+
 		label_5 = new JLabel("5");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_5.setBounds(120, 47, 20, 20);
+		label_5.setBounds(100, -3, 20, 20);
 		panel_4.add(label_5);
-		
+
 		label_6 = new JLabel("6");
 		label_6.setHorizontalAlignment(SwingConstants.CENTER);
 		label_6.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_6.setBounds(145, 47, 20, 20);
+		label_6.setBounds(120, -3, 20, 20);
 		panel_4.add(label_6);
-		
+
 		label_7 = new JLabel("7");
 		label_7.setHorizontalAlignment(SwingConstants.CENTER);
 		label_7.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_7.setBounds(170, 47, 20, 20);
+		label_7.setBounds(140, -3, 20, 20);
 		panel_4.add(label_7);
-		
+
 		label_8 = new JLabel("8");
 		label_8.setHorizontalAlignment(SwingConstants.CENTER);
 		label_8.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_8.setBounds(195, 47, 20, 20);
+		label_8.setBounds(160, -3, 20, 20);
 		panel_4.add(label_8);
-		
+
 		label_9 = new JLabel("9");
 		label_9.setHorizontalAlignment(SwingConstants.CENTER);
 		label_9.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_9.setBounds(220, 47, 20, 20);
+		label_9.setBounds(180, -3, 20, 20);
 		panel_4.add(label_9);
-		
+
 		label_10 = new JLabel("10");
 		label_10.setHorizontalAlignment(SwingConstants.CENTER);
 		label_10.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_10.setBounds(245, 47, 20, 20);
+		label_10.setBounds(200, -3, 20, 20);
 		panel_4.add(label_10);
-		
+
 		label_11 = new JLabel("11");
 		label_11.setHorizontalAlignment(SwingConstants.CENTER);
 		label_11.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_11.setBounds(270, 47, 20, 20);
+		label_11.setBounds(220, -3, 20, 20);
 		panel_4.add(label_11);
-		
+
 		label_12 = new JLabel("12");
 		label_12.setHorizontalAlignment(SwingConstants.CENTER);
 		label_12.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_12.setBounds(295, 47, 20, 20);
+		label_12.setBounds(240, -3, 20, 20);
 		panel_4.add(label_12);
-		
+
 		label_13 = new JLabel("13");
 		label_13.setHorizontalAlignment(SwingConstants.CENTER);
 		label_13.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_13.setBounds(320, 47, 20, 20);
+		label_13.setBounds(260, -3, 20, 20);
 		panel_4.add(label_13);
-		
+
 		label_14 = new JLabel("14");
 		label_14.setHorizontalAlignment(SwingConstants.CENTER);
 		label_14.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_14.setBounds(345, 47, 20, 20);
+		label_14.setBounds(280, -3, 20, 20);
 		panel_4.add(label_14);
-		
+
 		label_15 = new JLabel("15");
 		label_15.setHorizontalAlignment(SwingConstants.CENTER);
 		label_15.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_15.setBounds(370, 47, 20, 20);
+		label_15.setBounds(300, -3, 20, 20);
 		panel_4.add(label_15);
-		
+
 		label_16 = new JLabel("16");
 		label_16.setHorizontalAlignment(SwingConstants.CENTER);
 		label_16.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_16.setBounds(395, 47, 20, 20);
+		label_16.setBounds(320, -3, 20, 20);
 		panel_4.add(label_16);
-		
+
 		label_17 = new JLabel("17");
 		label_17.setHorizontalAlignment(SwingConstants.CENTER);
 		label_17.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_17.setBounds(420, 47, 20, 20);
+		label_17.setBounds(340, -3, 20, 20);
 		panel_4.add(label_17);
-		
+
 		label_18 = new JLabel("18");
 		label_18.setHorizontalAlignment(SwingConstants.CENTER);
 		label_18.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_18.setBounds(445, 47, 20, 20);
+		label_18.setBounds(360, -3, 20, 20);
 		panel_4.add(label_18);
-		
+
 		label_19 = new JLabel("19");
 		label_19.setHorizontalAlignment(SwingConstants.CENTER);
 		label_19.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_19.setBounds(470, 47, 20, 20);
+		label_19.setBounds(380, -3, 20, 20);
 		panel_4.add(label_19);
-		
+
 		label_20 = new JLabel("20");
 		label_20.setHorizontalAlignment(SwingConstants.CENTER);
 		label_20.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_20.setBounds(495, 47, 20, 20);
+		label_20.setBounds(400, -3, 20, 20);
 		panel_4.add(label_20);
-		
+
 		label_21 = new JLabel("21");
 		label_21.setHorizontalAlignment(SwingConstants.CENTER);
 		label_21.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_21.setBounds(520, 47, 20, 20);
+		label_21.setBounds(420, -3, 20, 20);
 		panel_4.add(label_21);
-		
+
 		label_22 = new JLabel("22");
 		label_22.setHorizontalAlignment(SwingConstants.CENTER);
 		label_22.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_22.setBounds(545, 47, 20, 20);
+		label_22.setBounds(440, -3, 20, 20);
 		panel_4.add(label_22);
-		
+
 		label_23 = new JLabel("23");
 		label_23.setHorizontalAlignment(SwingConstants.CENTER);
 		label_23.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_23.setBounds(570, 47, 20, 20);
+		label_23.setBounds(460, -3, 20, 20);
 		panel_4.add(label_23);
-		
+
 		label_24 = new JLabel("24");
 		label_24.setHorizontalAlignment(SwingConstants.CENTER);
 		label_24.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_24.setBounds(595, 47, 20, 20);
+		label_24.setBounds(480, -3, 20, 20);
 		panel_4.add(label_24);
-		
+
 		label_25 = new JLabel("25");
 		label_25.setHorizontalAlignment(SwingConstants.CENTER);
 		label_25.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_25.setBounds(620, 47, 20, 20);
+		label_25.setBounds(500, -3, 20, 20);
 		panel_4.add(label_25);
-		
-		label_26 = new JLabel("26");
-		label_26.setHorizontalAlignment(SwingConstants.CENTER);
-		label_26.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_26.setBounds(645, 47, 20, 20);
-		panel_4.add(label_26);
-		
-		label_27 = new JLabel("27");
-		label_27.setHorizontalAlignment(SwingConstants.CENTER);
-		label_27.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_27.setBounds(670, 47, 20, 20);
-		panel_4.add(label_27);
-		
-		label_28 = new JLabel("28");
-		label_28.setHorizontalAlignment(SwingConstants.CENTER);
-		label_28.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_28.setBounds(695, 47, 20, 20);
-		panel_4.add(label_28);
-		
-		label_29 = new JLabel("29");
-		label_29.setHorizontalAlignment(SwingConstants.CENTER);
-		label_29.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_29.setBounds(720, 47, 20, 20);
-		panel_4.add(label_29);
-		
-		label_30 = new JLabel("30");
-		label_30.setHorizontalAlignment(SwingConstants.CENTER);
-		label_30.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_30.setBounds(745, 47, 20, 20);
-		panel_4.add(label_30);
-		
-		textField_30 = new JTextField();
-		textField_30.setColumns(10);
-		textField_30.setBounds(745, 73, 20, 20);
-		panel_4.add(textField_30);
-		
+
 		label_31 = new JLabel("1");
 		label_31.setHorizontalAlignment(SwingConstants.CENTER);
 		label_31.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_31.setBounds(0, 73, 20, 20);
+		label_31.setBounds(0, 15, 20, 20);
 		panel_4.add(label_31);
-		
-		textField_31 = new JTextField();
-		textField_31.setColumns(10);
-		textField_31.setBounds(20, 98, 20, 20);
-		panel_4.add(textField_31);
-		
-		textField_32 = new JTextField();
-		textField_32.setColumns(10);
-		textField_32.setBounds(45, 98, 20, 20);
-		panel_4.add(textField_32);
-		
-		textField_33 = new JTextField();
-		textField_33.setColumns(10);
-		textField_33.setBounds(70, 98, 20, 20);
-		panel_4.add(textField_33);
-		
-		textField_34 = new JTextField();
-		textField_34.setColumns(10);
-		textField_34.setBounds(95, 98, 20, 20);
-		panel_4.add(textField_34);
-		
-		textField_35 = new JTextField();
-		textField_35.setColumns(10);
-		textField_35.setBounds(120, 98, 20, 20);
-		panel_4.add(textField_35);
-		
-		textField_36 = new JTextField();
-		textField_36.setColumns(10);
-		textField_36.setBounds(145, 98, 20, 20);
-		panel_4.add(textField_36);
-		
-		textField_37 = new JTextField();
-		textField_37.setColumns(10);
-		textField_37.setBounds(170, 98, 20, 20);
-		panel_4.add(textField_37);
-		
-		textField_38 = new JTextField();
-		textField_38.setColumns(10);
-		textField_38.setBounds(195, 98, 20, 20);
-		panel_4.add(textField_38);
-		
-		textField_39 = new JTextField();
-		textField_39.setColumns(10);
-		textField_39.setBounds(220, 98, 20, 20);
-		panel_4.add(textField_39);
-		
-		textField_40 = new JTextField();
-		textField_40.setColumns(10);
-		textField_40.setBounds(245, 98, 20, 20);
-		panel_4.add(textField_40);
-		
-		textField_41 = new JTextField();
-		textField_41.setColumns(10);
-		textField_41.setBounds(270, 98, 20, 20);
-		panel_4.add(textField_41);
-		
-		textField_42 = new JTextField();
-		textField_42.setColumns(10);
-		textField_42.setBounds(295, 98, 20, 20);
-		panel_4.add(textField_42);
-		
-		textField_43 = new JTextField();
-		textField_43.setColumns(10);
-		textField_43.setBounds(320, 98, 20, 20);
-		panel_4.add(textField_43);
-		
-		textField_44 = new JTextField();
-		textField_44.setColumns(10);
-		textField_44.setBounds(345, 98, 20, 20);
-		panel_4.add(textField_44);
-		
-		textField_45 = new JTextField();
-		textField_45.setColumns(10);
-		textField_45.setBounds(370, 98, 20, 20);
-		panel_4.add(textField_45);
-		
-		textField_46 = new JTextField();
-		textField_46.setColumns(10);
-		textField_46.setBounds(395, 98, 20, 20);
-		panel_4.add(textField_46);
-		
-		textField_47 = new JTextField();
-		textField_47.setColumns(10);
-		textField_47.setBounds(420, 98, 20, 20);
-		panel_4.add(textField_47);
-		
-		textField_48 = new JTextField();
-		textField_48.setColumns(10);
-		textField_48.setBounds(445, 98, 20, 20);
-		panel_4.add(textField_48);
-		
-		textField_49 = new JTextField();
-		textField_49.setColumns(10);
-		textField_49.setBounds(470, 98, 20, 20);
-		panel_4.add(textField_49);
-		
-		textField_50 = new JTextField();
-		textField_50.setColumns(10);
-		textField_50.setBounds(495, 98, 20, 20);
-		panel_4.add(textField_50);
-		
-		textField_51 = new JTextField();
-		textField_51.setColumns(10);
-		textField_51.setBounds(520, 98, 20, 20);
-		panel_4.add(textField_51);
-		
-		textField_52 = new JTextField();
-		textField_52.setColumns(10);
-		textField_52.setBounds(545, 98, 20, 20);
-		panel_4.add(textField_52);
-		
-		textField_53 = new JTextField();
-		textField_53.setColumns(10);
-		textField_53.setBounds(570, 98, 20, 20);
-		panel_4.add(textField_53);
-		
-		textField_54 = new JTextField();
-		textField_54.setColumns(10);
-		textField_54.setBounds(595, 98, 20, 20);
-		panel_4.add(textField_54);
-		
-		textField_55 = new JTextField();
-		textField_55.setColumns(10);
-		textField_55.setBounds(620, 98, 20, 20);
-		panel_4.add(textField_55);
-		
-		textField_56 = new JTextField();
-		textField_56.setColumns(10);
-		textField_56.setBounds(645, 98, 20, 20);
-		panel_4.add(textField_56);
-		
-		textField_57 = new JTextField();
-		textField_57.setColumns(10);
-		textField_57.setBounds(670, 98, 20, 20);
-		panel_4.add(textField_57);
-		
-		textField_58 = new JTextField();
-		textField_58.setColumns(10);
-		textField_58.setBounds(695, 98, 20, 20);
-		panel_4.add(textField_58);
-		
-		textField_59 = new JTextField();
-		textField_59.setColumns(10);
-		textField_59.setBounds(720, 98, 20, 20);
-		panel_4.add(textField_59);
-		
-		textField_60 = new JTextField();
-		textField_60.setColumns(10);
-		textField_60.setBounds(745, 98, 20, 20);
-		panel_4.add(textField_60);
-		
+
 		label_32 = new JLabel("2");
 		label_32.setHorizontalAlignment(SwingConstants.CENTER);
 		label_32.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_32.setBounds(0, 98, 20, 20);
+		label_32.setBounds(0, 33, 20, 20);
 		panel_4.add(label_32);
-		
+
 		label_33 = new JLabel("3");
 		label_33.setHorizontalAlignment(SwingConstants.CENTER);
 		label_33.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_33.setBounds(0, 123, 20, 20);
+		label_33.setBounds(0, 51, 20, 20);
 		panel_4.add(label_33);
-		
-		textField_61 = new JTextField();
-		textField_61.setColumns(10);
-		textField_61.setBounds(20, 123, 20, 20);
-		panel_4.add(textField_61);
-		
-		textField_62 = new JTextField();
-		textField_62.setColumns(10);
-		textField_62.setBounds(45, 123, 20, 20);
-		panel_4.add(textField_62);
-		
-		textField_64 = new JTextField();
-		textField_64.setColumns(10);
-		textField_64.setBounds(95, 123, 20, 20);
-		panel_4.add(textField_64);
-		
-		textField_63 = new JTextField();
-		textField_63.setColumns(10);
-		textField_63.setBounds(70, 123, 20, 20);
-		panel_4.add(textField_63);
-		
-		textField_65 = new JTextField();
-		textField_65.setColumns(10);
-		textField_65.setBounds(120, 123, 20, 20);
-		panel_4.add(textField_65);
-		
-		textField_66 = new JTextField();
-		textField_66.setColumns(10);
-		textField_66.setBounds(145, 123, 20, 20);
-		panel_4.add(textField_66);
-		
-		textField_67 = new JTextField();
-		textField_67.setColumns(10);
-		textField_67.setBounds(170, 123, 20, 20);
-		panel_4.add(textField_67);
-		
-		textField_69 = new JTextField();
-		textField_69.setColumns(10);
-		textField_69.setBounds(220, 123, 20, 20);
-		panel_4.add(textField_69);
-		
-		textField_68 = new JTextField();
-		textField_68.setColumns(10);
-		textField_68.setBounds(195, 123, 20, 20);
-		panel_4.add(textField_68);
-		
-		textField_70 = new JTextField();
-		textField_70.setColumns(10);
-		textField_70.setBounds(245, 123, 20, 20);
-		panel_4.add(textField_70);
-		
-		textField_71 = new JTextField();
-		textField_71.setColumns(10);
-		textField_71.setBounds(270, 123, 20, 20);
-		panel_4.add(textField_71);
-		
-		textField_72 = new JTextField();
-		textField_72.setColumns(10);
-		textField_72.setBounds(295, 123, 20, 20);
-		panel_4.add(textField_72);
-		
-		textField_73 = new JTextField();
-		textField_73.setColumns(10);
-		textField_73.setBounds(320, 123, 20, 20);
-		panel_4.add(textField_73);
-		
-		textField_74 = new JTextField();
-		textField_74.setColumns(10);
-		textField_74.setBounds(345, 123, 20, 20);
-		panel_4.add(textField_74);
-		
-		textField_75 = new JTextField();
-		textField_75.setColumns(10);
-		textField_75.setBounds(370, 123, 20, 20);
-		panel_4.add(textField_75);
-		
-		textField_76 = new JTextField();
-		textField_76.setColumns(10);
-		textField_76.setBounds(395, 123, 20, 20);
-		panel_4.add(textField_76);
-		
-		textField_77 = new JTextField();
-		textField_77.setColumns(10);
-		textField_77.setBounds(420, 123, 20, 20);
-		panel_4.add(textField_77);
-		
-		textField_78 = new JTextField();
-		textField_78.setColumns(10);
-		textField_78.setBounds(445, 123, 20, 20);
-		panel_4.add(textField_78);
-		
-		textField_79 = new JTextField();
-		textField_79.setColumns(10);
-		textField_79.setBounds(470, 123, 20, 20);
-		panel_4.add(textField_79);
-		
-		textField_80 = new JTextField();
-		textField_80.setColumns(10);
-		textField_80.setBounds(495, 123, 20, 20);
-		panel_4.add(textField_80);
-		
-		textField_81 = new JTextField();
-		textField_81.setColumns(10);
-		textField_81.setBounds(520, 123, 20, 20);
-		panel_4.add(textField_81);
-		
-		textField_82 = new JTextField();
-		textField_82.setColumns(10);
-		textField_82.setBounds(545, 123, 20, 20);
-		panel_4.add(textField_82);
-		
-		textField_83 = new JTextField();
-		textField_83.setColumns(10);
-		textField_83.setBounds(570, 123, 20, 20);
-		panel_4.add(textField_83);
-		
-		textField_84 = new JTextField();
-		textField_84.setColumns(10);
-		textField_84.setBounds(595, 123, 20, 20);
-		panel_4.add(textField_84);
-		
-		textField_85 = new JTextField();
-		textField_85.setColumns(10);
-		textField_85.setBounds(620, 123, 20, 20);
-		panel_4.add(textField_85);
-		
-		textField_86 = new JTextField();
-		textField_86.setColumns(10);
-		textField_86.setBounds(645, 123, 20, 20);
-		panel_4.add(textField_86);
-		
-		textField_87 = new JTextField();
-		textField_87.setColumns(10);
-		textField_87.setBounds(670, 123, 20, 20);
-		panel_4.add(textField_87);
-		
-		textField_88 = new JTextField();
-		textField_88.setColumns(10);
-		textField_88.setBounds(695, 123, 20, 20);
-		panel_4.add(textField_88);
-		
-		textField_89 = new JTextField();
-		textField_89.setColumns(10);
-		textField_89.setBounds(720, 123, 20, 20);
-		panel_4.add(textField_89);
-		
-		textField_90 = new JTextField();
-		textField_90.setColumns(10);
-		textField_90.setBounds(745, 123, 20, 20);
-		panel_4.add(textField_90);
-		
-		textField_91 = new JTextField();
-		textField_91.setColumns(10);
-		textField_91.setBounds(20, 148, 20, 20);
-		panel_4.add(textField_91);
-		
-		textField_92 = new JTextField();
-		textField_92.setColumns(10);
-		textField_92.setBounds(45, 148, 20, 20);
-		panel_4.add(textField_92);
-		
-		textField_93 = new JTextField();
-		textField_93.setColumns(10);
-		textField_93.setBounds(70, 148, 20, 20);
-		panel_4.add(textField_93);
-		
-		textField_94 = new JTextField();
-		textField_94.setColumns(10);
-		textField_94.setBounds(95, 148, 20, 20);
-		panel_4.add(textField_94);
-		
-		textField_95 = new JTextField();
-		textField_95.setColumns(10);
-		textField_95.setBounds(120, 148, 20, 20);
-		panel_4.add(textField_95);
-		
-		textField_96 = new JTextField();
-		textField_96.setColumns(10);
-		textField_96.setBounds(145, 148, 20, 20);
-		panel_4.add(textField_96);
-		
-		textField_97 = new JTextField();
-		textField_97.setColumns(10);
-		textField_97.setBounds(170, 148, 20, 20);
-		panel_4.add(textField_97);
-		
-		textField_98 = new JTextField();
-		textField_98.setColumns(10);
-		textField_98.setBounds(195, 148, 20, 20);
-		panel_4.add(textField_98);
-		
-		textField_99 = new JTextField();
-		textField_99.setColumns(10);
-		textField_99.setBounds(220, 148, 20, 20);
-		panel_4.add(textField_99);
-		
-		textField_100 = new JTextField();
-		textField_100.setColumns(10);
-		textField_100.setBounds(245, 148, 20, 20);
-		panel_4.add(textField_100);
-		
-		textField_101 = new JTextField();
-		textField_101.setColumns(10);
-		textField_101.setBounds(270, 148, 20, 20);
-		panel_4.add(textField_101);
-		
-		textField_102 = new JTextField();
-		textField_102.setColumns(10);
-		textField_102.setBounds(295, 148, 20, 20);
-		panel_4.add(textField_102);
-		
-		textField_103 = new JTextField();
-		textField_103.setColumns(10);
-		textField_103.setBounds(320, 148, 20, 20);
-		panel_4.add(textField_103);
-		
-		textField_104 = new JTextField();
-		textField_104.setColumns(10);
-		textField_104.setBounds(345, 148, 20, 20);
-		panel_4.add(textField_104);
-		
-		textField_105 = new JTextField();
-		textField_105.setColumns(10);
-		textField_105.setBounds(370, 148, 20, 20);
-		panel_4.add(textField_105);
-		
-		textField_106 = new JTextField();
-		textField_106.setColumns(10);
-		textField_106.setBounds(395, 148, 20, 20);
-		panel_4.add(textField_106);
-		
-		textField_107 = new JTextField();
-		textField_107.setColumns(10);
-		textField_107.setBounds(420, 148, 20, 20);
-		panel_4.add(textField_107);
-		
-		textField_108 = new JTextField();
-		textField_108.setColumns(10);
-		textField_108.setBounds(445, 148, 20, 20);
-		panel_4.add(textField_108);
-		
-		textField_109 = new JTextField();
-		textField_109.setColumns(10);
-		textField_109.setBounds(470, 148, 20, 20);
-		panel_4.add(textField_109);
-		
-		textField_110 = new JTextField();
-		textField_110.setColumns(10);
-		textField_110.setBounds(495, 148, 20, 20);
-		panel_4.add(textField_110);
-		
-		textField_111 = new JTextField();
-		textField_111.setColumns(10);
-		textField_111.setBounds(520, 148, 20, 20);
-		panel_4.add(textField_111);
-		
-		textField_112 = new JTextField();
-		textField_112.setColumns(10);
-		textField_112.setBounds(545, 148, 20, 20);
-		panel_4.add(textField_112);
-		
-		textField_113 = new JTextField();
-		textField_113.setColumns(10);
-		textField_113.setBounds(570, 148, 20, 20);
-		panel_4.add(textField_113);
-		
-		textField_114 = new JTextField();
-		textField_114.setColumns(10);
-		textField_114.setBounds(595, 148, 20, 20);
-		panel_4.add(textField_114);
-		
-		textField_115 = new JTextField();
-		textField_115.setColumns(10);
-		textField_115.setBounds(620, 148, 20, 20);
-		panel_4.add(textField_115);
-		
-		textField_116 = new JTextField();
-		textField_116.setColumns(10);
-		textField_116.setBounds(645, 148, 20, 20);
-		panel_4.add(textField_116);
-		
-		textField_117 = new JTextField();
-		textField_117.setColumns(10);
-		textField_117.setBounds(670, 148, 20, 20);
-		panel_4.add(textField_117);
-		
-		textField_118 = new JTextField();
-		textField_118.setColumns(10);
-		textField_118.setBounds(695, 148, 20, 20);
-		panel_4.add(textField_118);
-		
-		textField_119 = new JTextField();
-		textField_119.setColumns(10);
-		textField_119.setBounds(720, 148, 20, 20);
-		panel_4.add(textField_119);
-		
-		textField_120 = new JTextField();
-		textField_120.setColumns(10);
-		textField_120.setBounds(745, 148, 20, 20);
-		panel_4.add(textField_120);
-		
-		textField_121 = new JTextField();
-		textField_121.setColumns(10);
-		textField_121.setBounds(20, 173, 20, 20);
-		panel_4.add(textField_121);
-		
-		textField_122 = new JTextField();
-		textField_122.setColumns(10);
-		textField_122.setBounds(45, 173, 20, 20);
-		panel_4.add(textField_122);
-		
-		textField_123 = new JTextField();
-		textField_123.setColumns(10);
-		textField_123.setBounds(70, 173, 20, 20);
-		panel_4.add(textField_123);
-		
-		textField_124 = new JTextField();
-		textField_124.setColumns(10);
-		textField_124.setBounds(95, 173, 20, 20);
-		panel_4.add(textField_124);
-		
-		textField_125 = new JTextField();
-		textField_125.setColumns(10);
-		textField_125.setBounds(120, 173, 20, 20);
-		panel_4.add(textField_125);
-		
-		textField_126 = new JTextField();
-		textField_126.setColumns(10);
-		textField_126.setBounds(145, 173, 20, 20);
-		panel_4.add(textField_126);
-		
-		textField_127 = new JTextField();
-		textField_127.setColumns(10);
-		textField_127.setBounds(170, 173, 20, 20);
-		panel_4.add(textField_127);
-		
-		textField_128 = new JTextField();
-		textField_128.setColumns(10);
-		textField_128.setBounds(195, 173, 20, 20);
-		panel_4.add(textField_128);
-		
-		textField_129 = new JTextField();
-		textField_129.setColumns(10);
-		textField_129.setBounds(220, 173, 20, 20);
-		panel_4.add(textField_129);
-		
-		textField_130 = new JTextField();
-		textField_130.setColumns(10);
-		textField_130.setBounds(245, 173, 20, 20);
-		panel_4.add(textField_130);
-		
-		textField_131 = new JTextField();
-		textField_131.setColumns(10);
-		textField_131.setBounds(270, 173, 20, 20);
-		panel_4.add(textField_131);
-		
-		textField_132 = new JTextField();
-		textField_132.setColumns(10);
-		textField_132.setBounds(295, 173, 20, 20);
-		panel_4.add(textField_132);
-		
-		textField_133 = new JTextField();
-		textField_133.setColumns(10);
-		textField_133.setBounds(320, 173, 20, 20);
-		panel_4.add(textField_133);
-		
-		textField_134 = new JTextField();
-		textField_134.setColumns(10);
-		textField_134.setBounds(345, 173, 20, 20);
-		panel_4.add(textField_134);
-		
-		textField_135 = new JTextField();
-		textField_135.setColumns(10);
-		textField_135.setBounds(370, 173, 20, 20);
-		panel_4.add(textField_135);
-		
-		textField_136 = new JTextField();
-		textField_136.setColumns(10);
-		textField_136.setBounds(395, 173, 20, 20);
-		panel_4.add(textField_136);
-		
-		textField_137 = new JTextField();
-		textField_137.setColumns(10);
-		textField_137.setBounds(420, 173, 20, 20);
-		panel_4.add(textField_137);
-		
-		textField_138 = new JTextField();
-		textField_138.setColumns(10);
-		textField_138.setBounds(445, 173, 20, 20);
-		panel_4.add(textField_138);
-		
-		textField_139 = new JTextField();
-		textField_139.setColumns(10);
-		textField_139.setBounds(470, 173, 20, 20);
-		panel_4.add(textField_139);
-		
-		textField_140 = new JTextField();
-		textField_140.setColumns(10);
-		textField_140.setBounds(495, 173, 20, 20);
-		panel_4.add(textField_140);
-		
-		textField_141 = new JTextField();
-		textField_141.setColumns(10);
-		textField_141.setBounds(520, 173, 20, 20);
-		panel_4.add(textField_141);
-		
-		textField_142 = new JTextField();
-		textField_142.setColumns(10);
-		textField_142.setBounds(545, 173, 20, 20);
-		panel_4.add(textField_142);
-		
-		textField_143 = new JTextField();
-		textField_143.setColumns(10);
-		textField_143.setBounds(570, 173, 20, 20);
-		panel_4.add(textField_143);
-		
-		textField_144 = new JTextField();
-		textField_144.setColumns(10);
-		textField_144.setBounds(595, 173, 20, 20);
-		panel_4.add(textField_144);
-		
-		textField_145 = new JTextField();
-		textField_145.setColumns(10);
-		textField_145.setBounds(620, 173, 20, 20);
-		panel_4.add(textField_145);
-		
-		textField_146 = new JTextField();
-		textField_146.setColumns(10);
-		textField_146.setBounds(645, 173, 20, 20);
-		panel_4.add(textField_146);
-		
-		textField_147 = new JTextField();
-		textField_147.setColumns(10);
-		textField_147.setBounds(670, 173, 20, 20);
-		panel_4.add(textField_147);
-		
-		textField_148 = new JTextField();
-		textField_148.setColumns(10);
-		textField_148.setBounds(695, 173, 20, 20);
-		panel_4.add(textField_148);
-		
-		textField_149 = new JTextField();
-		textField_149.setColumns(10);
-		textField_149.setBounds(720, 173, 20, 20);
-		panel_4.add(textField_149);
-		
-		textField_150 = new JTextField();
-		textField_150.setColumns(10);
-		textField_150.setBounds(745, 173, 20, 20);
-		panel_4.add(textField_150);
-		
-		textField_151 = new JTextField();
-		textField_151.setColumns(10);
-		textField_151.setBounds(20, 198, 20, 20);
-		panel_4.add(textField_151);
-		
-		textField_152 = new JTextField();
-		textField_152.setColumns(10);
-		textField_152.setBounds(45, 198, 20, 20);
-		panel_4.add(textField_152);
-		
-		textField_153 = new JTextField();
-		textField_153.setColumns(10);
-		textField_153.setBounds(70, 198, 20, 20);
-		panel_4.add(textField_153);
-		
-		textField_154 = new JTextField();
-		textField_154.setColumns(10);
-		textField_154.setBounds(95, 198, 20, 20);
-		panel_4.add(textField_154);
-		
-		textField_155 = new JTextField();
-		textField_155.setColumns(10);
-		textField_155.setBounds(120, 198, 20, 20);
-		panel_4.add(textField_155);
-		
-		textField_156 = new JTextField();
-		textField_156.setColumns(10);
-		textField_156.setBounds(145, 198, 20, 20);
-		panel_4.add(textField_156);
-		
-		textField_157 = new JTextField();
-		textField_157.setColumns(10);
-		textField_157.setBounds(170, 198, 20, 20);
-		panel_4.add(textField_157);
-		
-		textField_158 = new JTextField();
-		textField_158.setColumns(10);
-		textField_158.setBounds(195, 198, 20, 20);
-		panel_4.add(textField_158);
-		
-		textField_159 = new JTextField();
-		textField_159.setColumns(10);
-		textField_159.setBounds(220, 198, 20, 20);
-		panel_4.add(textField_159);
-		
-		textField_160 = new JTextField();
-		textField_160.setColumns(10);
-		textField_160.setBounds(245, 198, 20, 20);
-		panel_4.add(textField_160);
-		
-		textField_161 = new JTextField();
-		textField_161.setColumns(10);
-		textField_161.setBounds(270, 198, 20, 20);
-		panel_4.add(textField_161);
-		
-		textField_162 = new JTextField();
-		textField_162.setColumns(10);
-		textField_162.setBounds(295, 198, 20, 20);
-		panel_4.add(textField_162);
-		
-		textField_163 = new JTextField();
-		textField_163.setColumns(10);
-		textField_163.setBounds(320, 198, 20, 20);
-		panel_4.add(textField_163);
-		
-		textField_164 = new JTextField();
-		textField_164.setColumns(10);
-		textField_164.setBounds(345, 198, 20, 20);
-		panel_4.add(textField_164);
-		
-		textField_165 = new JTextField();
-		textField_165.setColumns(10);
-		textField_165.setBounds(370, 198, 20, 20);
-		panel_4.add(textField_165);
-		
-		textField_166 = new JTextField();
-		textField_166.setColumns(10);
-		textField_166.setBounds(395, 198, 20, 20);
-		panel_4.add(textField_166);
-		
-		textField_167 = new JTextField();
-		textField_167.setColumns(10);
-		textField_167.setBounds(420, 198, 20, 20);
-		panel_4.add(textField_167);
-		
-		textField_168 = new JTextField();
-		textField_168.setColumns(10);
-		textField_168.setBounds(445, 198, 20, 20);
-		panel_4.add(textField_168);
-		
-		textField_169 = new JTextField();
-		textField_169.setColumns(10);
-		textField_169.setBounds(470, 198, 20, 20);
-		panel_4.add(textField_169);
-		
-		textField_170 = new JTextField();
-		textField_170.setColumns(10);
-		textField_170.setBounds(495, 198, 20, 20);
-		panel_4.add(textField_170);
-		
-		textField_171 = new JTextField();
-		textField_171.setColumns(10);
-		textField_171.setBounds(520, 198, 20, 20);
-		panel_4.add(textField_171);
-		
-		textField_172 = new JTextField();
-		textField_172.setColumns(10);
-		textField_172.setBounds(545, 198, 20, 20);
-		panel_4.add(textField_172);
-		
-		textField_173 = new JTextField();
-		textField_173.setColumns(10);
-		textField_173.setBounds(570, 198, 20, 20);
-		panel_4.add(textField_173);
-		
-		textField_174 = new JTextField();
-		textField_174.setColumns(10);
-		textField_174.setBounds(595, 198, 20, 20);
-		panel_4.add(textField_174);
-		
-		textField_175 = new JTextField();
-		textField_175.setColumns(10);
-		textField_175.setBounds(620, 198, 20, 20);
-		panel_4.add(textField_175);
-		
-		textField_176 = new JTextField();
-		textField_176.setColumns(10);
-		textField_176.setBounds(645, 198, 20, 20);
-		panel_4.add(textField_176);
-		
-		textField_177 = new JTextField();
-		textField_177.setColumns(10);
-		textField_177.setBounds(670, 198, 20, 20);
-		panel_4.add(textField_177);
-		
-		textField_178 = new JTextField();
-		textField_178.setColumns(10);
-		textField_178.setBounds(695, 198, 20, 20);
-		panel_4.add(textField_178);
-		
-		textField_179 = new JTextField();
-		textField_179.setColumns(10);
-		textField_179.setBounds(720, 198, 20, 20);
-		panel_4.add(textField_179);
-		
-		textField_180 = new JTextField();
-		textField_180.setColumns(10);
-		textField_180.setBounds(745, 198, 20, 20);
-		panel_4.add(textField_180);
-		
-		textField_181 = new JTextField();
-		textField_181.setColumns(10);
-		textField_181.setBounds(20, 223, 20, 20);
-		panel_4.add(textField_181);
-		
-		textField_182 = new JTextField();
-		textField_182.setColumns(10);
-		textField_182.setBounds(45, 223, 20, 20);
-		panel_4.add(textField_182);
-		
-		textField_183 = new JTextField();
-		textField_183.setColumns(10);
-		textField_183.setBounds(70, 223, 20, 20);
-		panel_4.add(textField_183);
-		
-		textField_184 = new JTextField();
-		textField_184.setColumns(10);
-		textField_184.setBounds(95, 223, 20, 20);
-		panel_4.add(textField_184);
-		
-		textField_185 = new JTextField();
-		textField_185.setColumns(10);
-		textField_185.setBounds(120, 223, 20, 20);
-		panel_4.add(textField_185);
-		
-		textField_186 = new JTextField();
-		textField_186.setColumns(10);
-		textField_186.setBounds(145, 223, 20, 20);
-		panel_4.add(textField_186);
-		
-		textField_187 = new JTextField();
-		textField_187.setColumns(10);
-		textField_187.setBounds(170, 223, 20, 20);
-		panel_4.add(textField_187);
-		
-		textField_188 = new JTextField();
-		textField_188.setColumns(10);
-		textField_188.setBounds(195, 223, 20, 20);
-		panel_4.add(textField_188);
-		
-		textField_189 = new JTextField();
-		textField_189.setColumns(10);
-		textField_189.setBounds(220, 223, 20, 20);
-		panel_4.add(textField_189);
-		
-		textField_190 = new JTextField();
-		textField_190.setColumns(10);
-		textField_190.setBounds(245, 223, 20, 20);
-		panel_4.add(textField_190);
-		
-		textField_191 = new JTextField();
-		textField_191.setColumns(10);
-		textField_191.setBounds(270, 223, 20, 20);
-		panel_4.add(textField_191);
-		
-		textField_192 = new JTextField();
-		textField_192.setColumns(10);
-		textField_192.setBounds(295, 223, 20, 20);
-		panel_4.add(textField_192);
-		
-		textField_193 = new JTextField();
-		textField_193.setColumns(10);
-		textField_193.setBounds(320, 223, 20, 20);
-		panel_4.add(textField_193);
-		
-		textField_194 = new JTextField();
-		textField_194.setColumns(10);
-		textField_194.setBounds(345, 223, 20, 20);
-		panel_4.add(textField_194);
-		
-		textField_195 = new JTextField();
-		textField_195.setColumns(10);
-		textField_195.setBounds(370, 223, 20, 20);
-		panel_4.add(textField_195);
-		
-		textField_196 = new JTextField();
-		textField_196.setColumns(10);
-		textField_196.setBounds(395, 223, 20, 20);
-		panel_4.add(textField_196);
-		
-		textField_197 = new JTextField();
-		textField_197.setColumns(10);
-		textField_197.setBounds(420, 223, 20, 20);
-		panel_4.add(textField_197);
-		
-		textField_198 = new JTextField();
-		textField_198.setColumns(10);
-		textField_198.setBounds(445, 223, 20, 20);
-		panel_4.add(textField_198);
-		
-		textField_199 = new JTextField();
-		textField_199.setColumns(10);
-		textField_199.setBounds(470, 223, 20, 20);
-		panel_4.add(textField_199);
-		
-		textField_200 = new JTextField();
-		textField_200.setColumns(10);
-		textField_200.setBounds(495, 223, 20, 20);
-		panel_4.add(textField_200);
-		
-		textField_201 = new JTextField();
-		textField_201.setColumns(10);
-		textField_201.setBounds(520, 223, 20, 20);
-		panel_4.add(textField_201);
-		
-		textField_202 = new JTextField();
-		textField_202.setColumns(10);
-		textField_202.setBounds(545, 223, 20, 20);
-		panel_4.add(textField_202);
-		
-		textField_203 = new JTextField();
-		textField_203.setColumns(10);
-		textField_203.setBounds(570, 223, 20, 20);
-		panel_4.add(textField_203);
-		
-		textField_204 = new JTextField();
-		textField_204.setColumns(10);
-		textField_204.setBounds(595, 223, 20, 20);
-		panel_4.add(textField_204);
-		
-		textField_205 = new JTextField();
-		textField_205.setColumns(10);
-		textField_205.setBounds(620, 223, 20, 20);
-		panel_4.add(textField_205);
-		
-		textField_206 = new JTextField();
-		textField_206.setColumns(10);
-		textField_206.setBounds(645, 223, 20, 20);
-		panel_4.add(textField_206);
-		
-		textField_207 = new JTextField();
-		textField_207.setColumns(10);
-		textField_207.setBounds(670, 223, 20, 20);
-		panel_4.add(textField_207);
-		
-		textField_208 = new JTextField();
-		textField_208.setColumns(10);
-		textField_208.setBounds(695, 223, 20, 20);
-		panel_4.add(textField_208);
-		
-		textField_209 = new JTextField();
-		textField_209.setColumns(10);
-		textField_209.setBounds(720, 223, 20, 20);
-		panel_4.add(textField_209);
-		
-		textField_210 = new JTextField();
-		textField_210.setColumns(10);
-		textField_210.setBounds(745, 223, 20, 20);
-		panel_4.add(textField_210);
-		
+
 		label_34 = new JLabel("4");
 		label_34.setHorizontalAlignment(SwingConstants.CENTER);
 		label_34.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_34.setBounds(0, 148, 20, 20);
+		label_34.setBounds(0, 69, 20, 20);
 		panel_4.add(label_34);
-		
+
 		label_35 = new JLabel("5");
 		label_35.setHorizontalAlignment(SwingConstants.CENTER);
 		label_35.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_35.setBounds(0, 173, 20, 20);
+		label_35.setBounds(0, 87, 20, 20);
 		panel_4.add(label_35);
-		
+
 		label_36 = new JLabel("6");
 		label_36.setHorizontalAlignment(SwingConstants.CENTER);
 		label_36.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_36.setBounds(0, 198, 20, 20);
+		label_36.setBounds(0, 105, 20, 20);
 		panel_4.add(label_36);
-		
+
 		label_37 = new JLabel("7");
 		label_37.setHorizontalAlignment(SwingConstants.CENTER);
 		label_37.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_37.setBounds(0, 223, 20, 20);
+		label_37.setBounds(0, 123, 20, 20);
 		panel_4.add(label_37);
-		
-		textField_211 = new JTextField();
-		textField_211.setColumns(10);
-		textField_211.setBounds(20, 248, 20, 20);
-		panel_4.add(textField_211);
-		
-		textField_212 = new JTextField();
-		textField_212.setColumns(10);
-		textField_212.setBounds(45, 248, 20, 20);
-		panel_4.add(textField_212);
-		
-		textField_213 = new JTextField();
-		textField_213.setColumns(10);
-		textField_213.setBounds(70, 248, 20, 20);
-		panel_4.add(textField_213);
-		
-		textField_214 = new JTextField();
-		textField_214.setColumns(10);
-		textField_214.setBounds(95, 248, 20, 20);
-		panel_4.add(textField_214);
-		
-		textField_215 = new JTextField();
-		textField_215.setColumns(10);
-		textField_215.setBounds(120, 248, 20, 20);
-		panel_4.add(textField_215);
-		
-		textField_216 = new JTextField();
-		textField_216.setColumns(10);
-		textField_216.setBounds(145, 248, 20, 20);
-		panel_4.add(textField_216);
-		
-		textField_217 = new JTextField();
-		textField_217.setColumns(10);
-		textField_217.setBounds(170, 248, 20, 20);
-		panel_4.add(textField_217);
-		
-		textField_218 = new JTextField();
-		textField_218.setColumns(10);
-		textField_218.setBounds(195, 248, 20, 20);
-		panel_4.add(textField_218);
-		
-		textField_219 = new JTextField();
-		textField_219.setColumns(10);
-		textField_219.setBounds(220, 248, 20, 20);
-		panel_4.add(textField_219);
-		
-		textField_220 = new JTextField();
-		textField_220.setColumns(10);
-		textField_220.setBounds(245, 248, 20, 20);
-		panel_4.add(textField_220);
-		
-		textField_221 = new JTextField();
-		textField_221.setColumns(10);
-		textField_221.setBounds(270, 248, 20, 20);
-		panel_4.add(textField_221);
-		
-		textField_222 = new JTextField();
-		textField_222.setColumns(10);
-		textField_222.setBounds(295, 248, 20, 20);
-		panel_4.add(textField_222);
-		
-		textField_223 = new JTextField();
-		textField_223.setColumns(10);
-		textField_223.setBounds(320, 248, 20, 20);
-		panel_4.add(textField_223);
-		
-		textField_224 = new JTextField();
-		textField_224.setColumns(10);
-		textField_224.setBounds(345, 248, 20, 20);
-		panel_4.add(textField_224);
-		
-		textField_225 = new JTextField();
-		textField_225.setColumns(10);
-		textField_225.setBounds(370, 248, 20, 20);
-		panel_4.add(textField_225);
-		
-		textField_226 = new JTextField();
-		textField_226.setColumns(10);
-		textField_226.setBounds(395, 248, 20, 20);
-		panel_4.add(textField_226);
-		
-		textField_227 = new JTextField();
-		textField_227.setColumns(10);
-		textField_227.setBounds(420, 248, 20, 20);
-		panel_4.add(textField_227);
-		
-		textField_228 = new JTextField();
-		textField_228.setColumns(10);
-		textField_228.setBounds(445, 248, 20, 20);
-		panel_4.add(textField_228);
-		
-		textField_229 = new JTextField();
-		textField_229.setColumns(10);
-		textField_229.setBounds(470, 248, 20, 20);
-		panel_4.add(textField_229);
-		
-		textField_230 = new JTextField();
-		textField_230.setColumns(10);
-		textField_230.setBounds(495, 248, 20, 20);
-		panel_4.add(textField_230);
-		
-		textField_231 = new JTextField();
-		textField_231.setColumns(10);
-		textField_231.setBounds(520, 248, 20, 20);
-		panel_4.add(textField_231);
-		
-		textField_232 = new JTextField();
-		textField_232.setColumns(10);
-		textField_232.setBounds(545, 248, 20, 20);
-		panel_4.add(textField_232);
-		
-		textField_233 = new JTextField();
-		textField_233.setColumns(10);
-		textField_233.setBounds(570, 248, 20, 20);
-		panel_4.add(textField_233);
-		
-		textField_234 = new JTextField();
-		textField_234.setColumns(10);
-		textField_234.setBounds(595, 248, 20, 20);
-		panel_4.add(textField_234);
-		
-		textField_235 = new JTextField();
-		textField_235.setColumns(10);
-		textField_235.setBounds(620, 248, 20, 20);
-		panel_4.add(textField_235);
-		
-		textField_236 = new JTextField();
-		textField_236.setColumns(10);
-		textField_236.setBounds(645, 248, 20, 20);
-		panel_4.add(textField_236);
-		
-		textField_237 = new JTextField();
-		textField_237.setColumns(10);
-		textField_237.setBounds(670, 248, 20, 20);
-		panel_4.add(textField_237);
-		
-		textField_238 = new JTextField();
-		textField_238.setColumns(10);
-		textField_238.setBounds(695, 248, 20, 20);
-		panel_4.add(textField_238);
-		
-		textField_239 = new JTextField();
-		textField_239.setColumns(10);
-		textField_239.setBounds(720, 248, 20, 20);
-		panel_4.add(textField_239);
-		
-		textField_240 = new JTextField();
-		textField_240.setColumns(10);
-		textField_240.setBounds(745, 248, 20, 20);
-		panel_4.add(textField_240);
-		
-		textField_241 = new JTextField();
-		textField_241.setColumns(10);
-		textField_241.setBounds(20, 273, 20, 20);
-		panel_4.add(textField_241);
-		
-		textField_242 = new JTextField();
-		textField_242.setColumns(10);
-		textField_242.setBounds(45, 273, 20, 20);
-		panel_4.add(textField_242);
-		
-		textField_243 = new JTextField();
-		textField_243.setColumns(10);
-		textField_243.setBounds(70, 273, 20, 20);
-		panel_4.add(textField_243);
-		
-		textField_244 = new JTextField();
-		textField_244.setColumns(10);
-		textField_244.setBounds(95, 273, 20, 20);
-		panel_4.add(textField_244);
-		
-		textField_245 = new JTextField();
-		textField_245.setColumns(10);
-		textField_245.setBounds(120, 273, 20, 20);
-		panel_4.add(textField_245);
-		
-		textField_246 = new JTextField();
-		textField_246.setColumns(10);
-		textField_246.setBounds(145, 273, 20, 20);
-		panel_4.add(textField_246);
-		
-		textField_247 = new JTextField();
-		textField_247.setColumns(10);
-		textField_247.setBounds(170, 273, 20, 20);
-		panel_4.add(textField_247);
-		
-		textField_248 = new JTextField();
-		textField_248.setColumns(10);
-		textField_248.setBounds(195, 273, 20, 20);
-		panel_4.add(textField_248);
-		
-		textField_249 = new JTextField();
-		textField_249.setColumns(10);
-		textField_249.setBounds(220, 273, 20, 20);
-		panel_4.add(textField_249);
-		
-		textField_250 = new JTextField();
-		textField_250.setColumns(10);
-		textField_250.setBounds(245, 273, 20, 20);
-		panel_4.add(textField_250);
-		
-		textField_251 = new JTextField();
-		textField_251.setColumns(10);
-		textField_251.setBounds(270, 273, 20, 20);
-		panel_4.add(textField_251);
-		
-		textField_252 = new JTextField();
-		textField_252.setColumns(10);
-		textField_252.setBounds(295, 273, 20, 20);
-		panel_4.add(textField_252);
-		
-		textField_253 = new JTextField();
-		textField_253.setColumns(10);
-		textField_253.setBounds(320, 273, 20, 20);
-		panel_4.add(textField_253);
-		
-		textField_254 = new JTextField();
-		textField_254.setColumns(10);
-		textField_254.setBounds(345, 273, 20, 20);
-		panel_4.add(textField_254);
-		
-		textField_255 = new JTextField();
-		textField_255.setColumns(10);
-		textField_255.setBounds(370, 273, 20, 20);
-		panel_4.add(textField_255);
-		
-		textField_256 = new JTextField();
-		textField_256.setColumns(10);
-		textField_256.setBounds(395, 273, 20, 20);
-		panel_4.add(textField_256);
-		
-		textField_257 = new JTextField();
-		textField_257.setColumns(10);
-		textField_257.setBounds(420, 273, 20, 20);
-		panel_4.add(textField_257);
-		
-		textField_258 = new JTextField();
-		textField_258.setColumns(10);
-		textField_258.setBounds(445, 273, 20, 20);
-		panel_4.add(textField_258);
-		
-		textField_259 = new JTextField();
-		textField_259.setColumns(10);
-		textField_259.setBounds(470, 273, 20, 20);
-		panel_4.add(textField_259);
-		
-		textField_260 = new JTextField();
-		textField_260.setColumns(10);
-		textField_260.setBounds(495, 273, 20, 20);
-		panel_4.add(textField_260);
-		
-		textField_261 = new JTextField();
-		textField_261.setColumns(10);
-		textField_261.setBounds(520, 273, 20, 20);
-		panel_4.add(textField_261);
-		
-		textField_262 = new JTextField();
-		textField_262.setColumns(10);
-		textField_262.setBounds(545, 273, 20, 20);
-		panel_4.add(textField_262);
-		
-		textField_263 = new JTextField();
-		textField_263.setColumns(10);
-		textField_263.setBounds(570, 273, 20, 20);
-		panel_4.add(textField_263);
-		
-		textField_264 = new JTextField();
-		textField_264.setColumns(10);
-		textField_264.setBounds(595, 273, 20, 20);
-		panel_4.add(textField_264);
-		
-		textField_265 = new JTextField();
-		textField_265.setColumns(10);
-		textField_265.setBounds(620, 273, 20, 20);
-		panel_4.add(textField_265);
-		
-		textField_266 = new JTextField();
-		textField_266.setColumns(10);
-		textField_266.setBounds(645, 273, 20, 20);
-		panel_4.add(textField_266);
-		
-		textField_267 = new JTextField();
-		textField_267.setColumns(10);
-		textField_267.setBounds(670, 273, 20, 20);
-		panel_4.add(textField_267);
-		
-		textField_268 = new JTextField();
-		textField_268.setColumns(10);
-		textField_268.setBounds(695, 273, 20, 20);
-		panel_4.add(textField_268);
-		
-		textField_269 = new JTextField();
-		textField_269.setColumns(10);
-		textField_269.setBounds(720, 273, 20, 20);
-		panel_4.add(textField_269);
-		
-		textField_270 = new JTextField();
-		textField_270.setColumns(10);
-		textField_270.setBounds(745, 273, 20, 20);
-		panel_4.add(textField_270);
-		
-		textField_271 = new JTextField();
-		textField_271.setColumns(10);
-		textField_271.setBounds(20, 298, 20, 20);
-		panel_4.add(textField_271);
-		
-		textField_272 = new JTextField();
-		textField_272.setColumns(10);
-		textField_272.setBounds(45, 298, 20, 20);
-		panel_4.add(textField_272);
-		
-		textField_273 = new JTextField();
-		textField_273.setColumns(10);
-		textField_273.setBounds(70, 298, 20, 20);
-		panel_4.add(textField_273);
-		
-		textField_274 = new JTextField();
-		textField_274.setColumns(10);
-		textField_274.setBounds(95, 298, 20, 20);
-		panel_4.add(textField_274);
-		
-		textField_275 = new JTextField();
-		textField_275.setColumns(10);
-		textField_275.setBounds(120, 298, 20, 20);
-		panel_4.add(textField_275);
-		
-		textField_276 = new JTextField();
-		textField_276.setColumns(10);
-		textField_276.setBounds(145, 298, 20, 20);
-		panel_4.add(textField_276);
-		
-		textField_277 = new JTextField();
-		textField_277.setColumns(10);
-		textField_277.setBounds(170, 298, 20, 20);
-		panel_4.add(textField_277);
-		
-		textField_278 = new JTextField();
-		textField_278.setColumns(10);
-		textField_278.setBounds(195, 298, 20, 20);
-		panel_4.add(textField_278);
-		
-		textField_279 = new JTextField();
-		textField_279.setColumns(10);
-		textField_279.setBounds(220, 298, 20, 20);
-		panel_4.add(textField_279);
-		
-		textField_280 = new JTextField();
-		textField_280.setColumns(10);
-		textField_280.setBounds(245, 298, 20, 20);
-		panel_4.add(textField_280);
-		
-		textField_281 = new JTextField();
-		textField_281.setColumns(10);
-		textField_281.setBounds(270, 298, 20, 20);
-		panel_4.add(textField_281);
-		
-		textField_282 = new JTextField();
-		textField_282.setColumns(10);
-		textField_282.setBounds(295, 298, 20, 20);
-		panel_4.add(textField_282);
-		
-		textField_283 = new JTextField();
-		textField_283.setColumns(10);
-		textField_283.setBounds(320, 298, 20, 20);
-		panel_4.add(textField_283);
-		
-		textField_284 = new JTextField();
-		textField_284.setColumns(10);
-		textField_284.setBounds(345, 298, 20, 20);
-		panel_4.add(textField_284);
-		
-		textField_285 = new JTextField();
-		textField_285.setColumns(10);
-		textField_285.setBounds(370, 298, 20, 20);
-		panel_4.add(textField_285);
-		
-		textField_286 = new JTextField();
-		textField_286.setColumns(10);
-		textField_286.setBounds(395, 298, 20, 20);
-		panel_4.add(textField_286);
-		
-		textField_287 = new JTextField();
-		textField_287.setColumns(10);
-		textField_287.setBounds(420, 298, 20, 20);
-		panel_4.add(textField_287);
-		
-		textField_288 = new JTextField();
-		textField_288.setColumns(10);
-		textField_288.setBounds(445, 298, 20, 20);
-		panel_4.add(textField_288);
-		
-		textField_289 = new JTextField();
-		textField_289.setColumns(10);
-		textField_289.setBounds(470, 298, 20, 20);
-		panel_4.add(textField_289);
-		
-		textField_290 = new JTextField();
-		textField_290.setColumns(10);
-		textField_290.setBounds(495, 298, 20, 20);
-		panel_4.add(textField_290);
-		
-		textField_291 = new JTextField();
-		textField_291.setColumns(10);
-		textField_291.setBounds(520, 298, 20, 20);
-		panel_4.add(textField_291);
-		
-		textField_292 = new JTextField();
-		textField_292.setColumns(10);
-		textField_292.setBounds(545, 298, 20, 20);
-		panel_4.add(textField_292);
-		
-		textField_293 = new JTextField();
-		textField_293.setColumns(10);
-		textField_293.setBounds(570, 298, 20, 20);
-		panel_4.add(textField_293);
-		
-		textField_294 = new JTextField();
-		textField_294.setColumns(10);
-		textField_294.setBounds(595, 298, 20, 20);
-		panel_4.add(textField_294);
-		
-		textField_295 = new JTextField();
-		textField_295.setColumns(10);
-		textField_295.setBounds(620, 298, 20, 20);
-		panel_4.add(textField_295);
-		
-		textField_296 = new JTextField();
-		textField_296.setColumns(10);
-		textField_296.setBounds(645, 298, 20, 20);
-		panel_4.add(textField_296);
-		
-		textField_297 = new JTextField();
-		textField_297.setColumns(10);
-		textField_297.setBounds(670, 298, 20, 20);
-		panel_4.add(textField_297);
-		
-		textField_298 = new JTextField();
-		textField_298.setColumns(10);
-		textField_298.setBounds(695, 298, 20, 20);
-		panel_4.add(textField_298);
-		
-		textField_299 = new JTextField();
-		textField_299.setColumns(10);
-		textField_299.setBounds(720, 298, 20, 20);
-		panel_4.add(textField_299);
-		
-		textField_300 = new JTextField();
-		textField_300.setColumns(10);
-		textField_300.setBounds(745, 298, 20, 20);
-		panel_4.add(textField_300);
-		
-		textField_301 = new JTextField();
-		textField_301.setColumns(10);
-		textField_301.setBounds(20, 323, 20, 20);
-		panel_4.add(textField_301);
-		
-		textField_302 = new JTextField();
-		textField_302.setColumns(10);
-		textField_302.setBounds(45, 323, 20, 20);
-		panel_4.add(textField_302);
-		
-		textField_303 = new JTextField();
-		textField_303.setColumns(10);
-		textField_303.setBounds(70, 323, 20, 20);
-		panel_4.add(textField_303);
-		
-		textField_304 = new JTextField();
-		textField_304.setColumns(10);
-		textField_304.setBounds(95, 323, 20, 20);
-		panel_4.add(textField_304);
-		
-		textField_305 = new JTextField();
-		textField_305.setColumns(10);
-		textField_305.setBounds(120, 323, 20, 20);
-		panel_4.add(textField_305);
-		
-		textField_306 = new JTextField();
-		textField_306.setColumns(10);
-		textField_306.setBounds(145, 323, 20, 20);
-		panel_4.add(textField_306);
-		
-		textField_307 = new JTextField();
-		textField_307.setColumns(10);
-		textField_307.setBounds(170, 323, 20, 20);
-		panel_4.add(textField_307);
-		
-		textField_308 = new JTextField();
-		textField_308.setColumns(10);
-		textField_308.setBounds(195, 323, 20, 20);
-		panel_4.add(textField_308);
-		
-		textField_309 = new JTextField();
-		textField_309.setColumns(10);
-		textField_309.setBounds(220, 323, 20, 20);
-		panel_4.add(textField_309);
-		
-		textField_310 = new JTextField();
-		textField_310.setColumns(10);
-		textField_310.setBounds(245, 323, 20, 20);
-		panel_4.add(textField_310);
-		
-		textField_311 = new JTextField();
-		textField_311.setColumns(10);
-		textField_311.setBounds(270, 323, 20, 20);
-		panel_4.add(textField_311);
-		
-		textField_312 = new JTextField();
-		textField_312.setColumns(10);
-		textField_312.setBounds(295, 323, 20, 20);
-		panel_4.add(textField_312);
-		
-		textField_313 = new JTextField();
-		textField_313.setColumns(10);
-		textField_313.setBounds(320, 323, 20, 20);
-		panel_4.add(textField_313);
-		
-		textField_314 = new JTextField();
-		textField_314.setColumns(10);
-		textField_314.setBounds(345, 323, 20, 20);
-		panel_4.add(textField_314);
-		
-		textField_315 = new JTextField();
-		textField_315.setColumns(10);
-		textField_315.setBounds(370, 323, 20, 20);
-		panel_4.add(textField_315);
-		
-		textField_316 = new JTextField();
-		textField_316.setColumns(10);
-		textField_316.setBounds(395, 323, 20, 20);
-		panel_4.add(textField_316);
-		
-		textField_317 = new JTextField();
-		textField_317.setColumns(10);
-		textField_317.setBounds(420, 323, 20, 20);
-		panel_4.add(textField_317);
-		
-		textField_318 = new JTextField();
-		textField_318.setColumns(10);
-		textField_318.setBounds(445, 323, 20, 20);
-		panel_4.add(textField_318);
-		
-		textField_319 = new JTextField();
-		textField_319.setColumns(10);
-		textField_319.setBounds(470, 323, 20, 20);
-		panel_4.add(textField_319);
-		
-		textField_320 = new JTextField();
-		textField_320.setColumns(10);
-		textField_320.setBounds(495, 323, 20, 20);
-		panel_4.add(textField_320);
-		
-		textField_321 = new JTextField();
-		textField_321.setColumns(10);
-		textField_321.setBounds(520, 323, 20, 20);
-		panel_4.add(textField_321);
-		
-		textField_322 = new JTextField();
-		textField_322.setColumns(10);
-		textField_322.setBounds(545, 323, 20, 20);
-		panel_4.add(textField_322);
-		
-		textField_323 = new JTextField();
-		textField_323.setColumns(10);
-		textField_323.setBounds(570, 323, 20, 20);
-		panel_4.add(textField_323);
-		
-		textField_324 = new JTextField();
-		textField_324.setColumns(10);
-		textField_324.setBounds(595, 323, 20, 20);
-		panel_4.add(textField_324);
-		
-		textField_325 = new JTextField();
-		textField_325.setColumns(10);
-		textField_325.setBounds(620, 323, 20, 20);
-		panel_4.add(textField_325);
-		
-		textField_326 = new JTextField();
-		textField_326.setColumns(10);
-		textField_326.setBounds(645, 323, 20, 20);
-		panel_4.add(textField_326);
-		
-		textField_327 = new JTextField();
-		textField_327.setColumns(10);
-		textField_327.setBounds(670, 323, 20, 20);
-		panel_4.add(textField_327);
-		
-		textField_328 = new JTextField();
-		textField_328.setColumns(10);
-		textField_328.setBounds(695, 323, 20, 20);
-		panel_4.add(textField_328);
-		
-		textField_329 = new JTextField();
-		textField_329.setColumns(10);
-		textField_329.setBounds(720, 323, 20, 20);
-		panel_4.add(textField_329);
-		
-		textField_330 = new JTextField();
-		textField_330.setColumns(10);
-		textField_330.setBounds(745, 323, 20, 20);
-		panel_4.add(textField_330);
-		
+
 		label_38 = new JLabel("8");
 		label_38.setHorizontalAlignment(SwingConstants.CENTER);
 		label_38.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_38.setBounds(0, 248, 20, 20);
+		label_38.setBounds(0, 141, 20, 20);
 		panel_4.add(label_38);
-		
+
 		label_39 = new JLabel("9");
 		label_39.setHorizontalAlignment(SwingConstants.CENTER);
 		label_39.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_39.setBounds(0, 273, 20, 20);
+		label_39.setBounds(0, 159, 20, 20);
 		panel_4.add(label_39);
-		
+
 		label_40 = new JLabel("10");
 		label_40.setHorizontalAlignment(SwingConstants.CENTER);
 		label_40.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_40.setBounds(0, 298, 20, 20);
+		label_40.setBounds(0, 177, 20, 20);
 		panel_4.add(label_40);
-		
+
 		label_41 = new JLabel("11");
 		label_41.setHorizontalAlignment(SwingConstants.CENTER);
 		label_41.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_41.setBounds(0, 323, 20, 20);
+		label_41.setBounds(0, 195, 20, 20);
 		panel_4.add(label_41);
-		
+
 		label_42 = new JLabel("12");
 		label_42.setHorizontalAlignment(SwingConstants.CENTER);
 		label_42.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_42.setBounds(0, 348, 20, 20);
+		label_42.setBounds(0, 213, 20, 20);
 		panel_4.add(label_42);
-		
+
 		label_43 = new JLabel("13");
 		label_43.setHorizontalAlignment(SwingConstants.CENTER);
 		label_43.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_43.setBounds(0, 373, 20, 20);
+		label_43.setBounds(0, 231, 20, 20);
 		panel_4.add(label_43);
-		
+
 		label_44 = new JLabel("14");
 		label_44.setHorizontalAlignment(SwingConstants.CENTER);
 		label_44.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_44.setBounds(0, 398, 20, 20);
+		label_44.setBounds(0, 249, 20, 20);
 		panel_4.add(label_44);
-		
+
 		label_45 = new JLabel("15");
 		label_45.setHorizontalAlignment(SwingConstants.CENTER);
 		label_45.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		label_45.setBounds(0, 423, 20, 20);
+		label_45.setBounds(0, 267, 20, 20);
 		panel_4.add(label_45);
-		
-		textField_331 = new JTextField();
-		textField_331.setColumns(10);
-		textField_331.setBounds(20, 348, 20, 20);
-		panel_4.add(textField_331);
-		
-		textField_332 = new JTextField();
-		textField_332.setColumns(10);
-		textField_332.setBounds(45, 348, 20, 20);
-		panel_4.add(textField_332);
-		
-		textField_333 = new JTextField();
-		textField_333.setColumns(10);
-		textField_333.setBounds(70, 348, 20, 20);
-		panel_4.add(textField_333);
-		
-		textField_334 = new JTextField();
-		textField_334.setColumns(10);
-		textField_334.setBounds(95, 348, 20, 20);
-		panel_4.add(textField_334);
-		
-		textField_335 = new JTextField();
-		textField_335.setColumns(10);
-		textField_335.setBounds(120, 348, 20, 20);
-		panel_4.add(textField_335);
-		
-		textField_336 = new JTextField();
-		textField_336.setColumns(10);
-		textField_336.setBounds(145, 348, 20, 20);
-		panel_4.add(textField_336);
-		
-		textField_337 = new JTextField();
-		textField_337.setColumns(10);
-		textField_337.setBounds(170, 348, 20, 20);
-		panel_4.add(textField_337);
-		
-		textField_338 = new JTextField();
-		textField_338.setColumns(10);
-		textField_338.setBounds(195, 348, 20, 20);
-		panel_4.add(textField_338);
-		
-		textField_339 = new JTextField();
-		textField_339.setColumns(10);
-		textField_339.setBounds(220, 348, 20, 20);
-		panel_4.add(textField_339);
-		
-		textField_340 = new JTextField();
-		textField_340.setColumns(10);
-		textField_340.setBounds(245, 348, 20, 20);
-		panel_4.add(textField_340);
-		
-		textField_341 = new JTextField();
-		textField_341.setColumns(10);
-		textField_341.setBounds(270, 348, 20, 20);
-		panel_4.add(textField_341);
-		
-		textField_342 = new JTextField();
-		textField_342.setColumns(10);
-		textField_342.setBounds(295, 348, 20, 20);
-		panel_4.add(textField_342);
-		
-		textField_343 = new JTextField();
-		textField_343.setColumns(10);
-		textField_343.setBounds(320, 348, 20, 20);
-		panel_4.add(textField_343);
-		
-		textField_344 = new JTextField();
-		textField_344.setColumns(10);
-		textField_344.setBounds(345, 348, 20, 20);
-		panel_4.add(textField_344);
-		
-		textField_345 = new JTextField();
-		textField_345.setColumns(10);
-		textField_345.setBounds(370, 348, 20, 20);
-		panel_4.add(textField_345);
-		
-		textField_346 = new JTextField();
-		textField_346.setColumns(10);
-		textField_346.setBounds(395, 348, 20, 20);
-		panel_4.add(textField_346);
-		
-		textField_347 = new JTextField();
-		textField_347.setColumns(10);
-		textField_347.setBounds(420, 348, 20, 20);
-		panel_4.add(textField_347);
-		
-		textField_348 = new JTextField();
-		textField_348.setColumns(10);
-		textField_348.setBounds(445, 348, 20, 20);
-		panel_4.add(textField_348);
-		
-		textField_349 = new JTextField();
-		textField_349.setColumns(10);
-		textField_349.setBounds(470, 348, 20, 20);
-		panel_4.add(textField_349);
-		
-		textField_350 = new JTextField();
-		textField_350.setColumns(10);
-		textField_350.setBounds(495, 348, 20, 20);
-		panel_4.add(textField_350);
-		
-		textField_351 = new JTextField();
-		textField_351.setColumns(10);
-		textField_351.setBounds(520, 348, 20, 20);
-		panel_4.add(textField_351);
-		
-		textField_352 = new JTextField();
-		textField_352.setColumns(10);
-		textField_352.setBounds(545, 348, 20, 20);
-		panel_4.add(textField_352);
-		
-		textField_353 = new JTextField();
-		textField_353.setColumns(10);
-		textField_353.setBounds(570, 348, 20, 20);
-		panel_4.add(textField_353);
-		
-		textField_354 = new JTextField();
-		textField_354.setColumns(10);
-		textField_354.setBounds(595, 348, 20, 20);
-		panel_4.add(textField_354);
-		
-		textField_355 = new JTextField();
-		textField_355.setColumns(10);
-		textField_355.setBounds(620, 348, 20, 20);
-		panel_4.add(textField_355);
-		
-		textField_356 = new JTextField();
-		textField_356.setColumns(10);
-		textField_356.setBounds(645, 348, 20, 20);
-		panel_4.add(textField_356);
-		
-		textField_357 = new JTextField();
-		textField_357.setColumns(10);
-		textField_357.setBounds(670, 348, 20, 20);
-		panel_4.add(textField_357);
-		
-		textField_358 = new JTextField();
-		textField_358.setColumns(10);
-		textField_358.setBounds(695, 348, 20, 20);
-		panel_4.add(textField_358);
-		
-		textField_359 = new JTextField();
-		textField_359.setColumns(10);
-		textField_359.setBounds(720, 348, 20, 20);
-		panel_4.add(textField_359);
-		
-		textField_360 = new JTextField();
-		textField_360.setColumns(10);
-		textField_360.setBounds(745, 348, 20, 20);
-		panel_4.add(textField_360);
-		
-		textField_361 = new JTextField();
-		textField_361.setColumns(10);
-		textField_361.setBounds(20, 373, 20, 20);
-		panel_4.add(textField_361);
-		
-		textField_362 = new JTextField();
-		textField_362.setColumns(10);
-		textField_362.setBounds(45, 373, 20, 20);
-		panel_4.add(textField_362);
-		
-		textField_363 = new JTextField();
-		textField_363.setColumns(10);
-		textField_363.setBounds(70, 373, 20, 20);
-		panel_4.add(textField_363);
-		
-		textField_364 = new JTextField();
-		textField_364.setColumns(10);
-		textField_364.setBounds(95, 373, 20, 20);
-		panel_4.add(textField_364);
-		
-		textField_365 = new JTextField();
-		textField_365.setColumns(10);
-		textField_365.setBounds(120, 373, 20, 20);
-		panel_4.add(textField_365);
-		
-		textField_366 = new JTextField();
-		textField_366.setColumns(10);
-		textField_366.setBounds(145, 373, 20, 20);
-		panel_4.add(textField_366);
-		
-		textField_367 = new JTextField();
-		textField_367.setColumns(10);
-		textField_367.setBounds(170, 373, 20, 20);
-		panel_4.add(textField_367);
-		
-		textField_368 = new JTextField();
-		textField_368.setColumns(10);
-		textField_368.setBounds(195, 373, 20, 20);
-		panel_4.add(textField_368);
-		
-		textField_369 = new JTextField();
-		textField_369.setColumns(10);
-		textField_369.setBounds(220, 373, 20, 20);
-		panel_4.add(textField_369);
-		
-		textField_370 = new JTextField();
-		textField_370.setColumns(10);
-		textField_370.setBounds(245, 373, 20, 20);
-		panel_4.add(textField_370);
-		
-		textField_371 = new JTextField();
-		textField_371.setColumns(10);
-		textField_371.setBounds(270, 373, 20, 20);
-		panel_4.add(textField_371);
-		
-		textField_372 = new JTextField();
-		textField_372.setColumns(10);
-		textField_372.setBounds(295, 373, 20, 20);
-		panel_4.add(textField_372);
-		
-		textField_373 = new JTextField();
-		textField_373.setColumns(10);
-		textField_373.setBounds(320, 373, 20, 20);
-		panel_4.add(textField_373);
-		
-		textField_374 = new JTextField();
-		textField_374.setColumns(10);
-		textField_374.setBounds(345, 373, 20, 20);
-		panel_4.add(textField_374);
-		
-		textField_375 = new JTextField();
-		textField_375.setColumns(10);
-		textField_375.setBounds(370, 373, 20, 20);
-		panel_4.add(textField_375);
-		
-		textField_376 = new JTextField();
-		textField_376.setColumns(10);
-		textField_376.setBounds(395, 373, 20, 20);
-		panel_4.add(textField_376);
-		
-		textField_377 = new JTextField();
-		textField_377.setColumns(10);
-		textField_377.setBounds(420, 373, 20, 20);
-		panel_4.add(textField_377);
-		
-		textField_378 = new JTextField();
-		textField_378.setColumns(10);
-		textField_378.setBounds(445, 373, 20, 20);
-		panel_4.add(textField_378);
-		
-		textField_379 = new JTextField();
-		textField_379.setColumns(10);
-		textField_379.setBounds(470, 373, 20, 20);
-		panel_4.add(textField_379);
-		
-		textField_380 = new JTextField();
-		textField_380.setColumns(10);
-		textField_380.setBounds(495, 373, 20, 20);
-		panel_4.add(textField_380);
-		
-		textField_381 = new JTextField();
-		textField_381.setColumns(10);
-		textField_381.setBounds(520, 373, 20, 20);
-		panel_4.add(textField_381);
-		
-		textField_382 = new JTextField();
-		textField_382.setColumns(10);
-		textField_382.setBounds(545, 373, 20, 20);
-		panel_4.add(textField_382);
-		
-		textField_383 = new JTextField();
-		textField_383.setColumns(10);
-		textField_383.setBounds(570, 373, 20, 20);
-		panel_4.add(textField_383);
-		
-		textField_384 = new JTextField();
-		textField_384.setColumns(10);
-		textField_384.setBounds(595, 373, 20, 20);
-		panel_4.add(textField_384);
-		
-		textField_385 = new JTextField();
-		textField_385.setColumns(10);
-		textField_385.setBounds(620, 373, 20, 20);
-		panel_4.add(textField_385);
-		
-		textField_386 = new JTextField();
-		textField_386.setColumns(10);
-		textField_386.setBounds(645, 373, 20, 20);
-		panel_4.add(textField_386);
-		
-		textField_387 = new JTextField();
-		textField_387.setColumns(10);
-		textField_387.setBounds(670, 373, 20, 20);
-		panel_4.add(textField_387);
-		
-		textField_388 = new JTextField();
-		textField_388.setColumns(10);
-		textField_388.setBounds(695, 373, 20, 20);
-		panel_4.add(textField_388);
-		
-		textField_389 = new JTextField();
-		textField_389.setColumns(10);
-		textField_389.setBounds(720, 373, 20, 20);
-		panel_4.add(textField_389);
-		
-		textField_390 = new JTextField();
-		textField_390.setColumns(10);
-		textField_390.setBounds(745, 373, 20, 20);
-		panel_4.add(textField_390);
-		
-		textField_391 = new JTextField();
-		textField_391.setColumns(10);
-		textField_391.setBounds(20, 398, 20, 20);
-		panel_4.add(textField_391);
-		
-		textField_392 = new JTextField();
-		textField_392.setColumns(10);
-		textField_392.setBounds(45, 398, 20, 20);
-		panel_4.add(textField_392);
-		
-		textField_393 = new JTextField();
-		textField_393.setColumns(10);
-		textField_393.setBounds(70, 398, 20, 20);
-		panel_4.add(textField_393);
-		
-		textField_394 = new JTextField();
-		textField_394.setColumns(10);
-		textField_394.setBounds(95, 398, 20, 20);
-		panel_4.add(textField_394);
-		
-		textField_395 = new JTextField();
-		textField_395.setColumns(10);
-		textField_395.setBounds(120, 398, 20, 20);
-		panel_4.add(textField_395);
-		
-		textField_396 = new JTextField();
-		textField_396.setColumns(10);
-		textField_396.setBounds(145, 398, 20, 20);
-		panel_4.add(textField_396);
-		
-		textField_397 = new JTextField();
-		textField_397.setColumns(10);
-		textField_397.setBounds(170, 398, 20, 20);
-		panel_4.add(textField_397);
-		
-		textField_398 = new JTextField();
-		textField_398.setColumns(10);
-		textField_398.setBounds(195, 398, 20, 20);
-		panel_4.add(textField_398);
-		
-		textField_399 = new JTextField();
-		textField_399.setColumns(10);
-		textField_399.setBounds(220, 398, 20, 20);
-		panel_4.add(textField_399);
-		
-		textField_400 = new JTextField();
-		textField_400.setColumns(10);
-		textField_400.setBounds(245, 398, 20, 20);
-		panel_4.add(textField_400);
-		
-		textField_401 = new JTextField();
-		textField_401.setColumns(10);
-		textField_401.setBounds(270, 398, 20, 20);
-		panel_4.add(textField_401);
-		
-		textField_402 = new JTextField();
-		textField_402.setColumns(10);
-		textField_402.setBounds(295, 398, 20, 20);
-		panel_4.add(textField_402);
-		
-		textField_403 = new JTextField();
-		textField_403.setColumns(10);
-		textField_403.setBounds(320, 398, 20, 20);
-		panel_4.add(textField_403);
-		
-		textField_404 = new JTextField();
-		textField_404.setColumns(10);
-		textField_404.setBounds(345, 398, 20, 20);
-		panel_4.add(textField_404);
-		
-		textField_405 = new JTextField();
-		textField_405.setColumns(10);
-		textField_405.setBounds(370, 398, 20, 20);
-		panel_4.add(textField_405);
-		
-		textField_406 = new JTextField();
-		textField_406.setColumns(10);
-		textField_406.setBounds(395, 398, 20, 20);
-		panel_4.add(textField_406);
-		
-		textField_407 = new JTextField();
-		textField_407.setColumns(10);
-		textField_407.setBounds(420, 398, 20, 20);
-		panel_4.add(textField_407);
-		
-		textField_408 = new JTextField();
-		textField_408.setColumns(10);
-		textField_408.setBounds(445, 398, 20, 20);
-		panel_4.add(textField_408);
-		
-		textField_409 = new JTextField();
-		textField_409.setColumns(10);
-		textField_409.setBounds(470, 398, 20, 20);
-		panel_4.add(textField_409);
-		
-		textField_410 = new JTextField();
-		textField_410.setColumns(10);
-		textField_410.setBounds(495, 398, 20, 20);
-		panel_4.add(textField_410);
-		
-		textField_411 = new JTextField();
-		textField_411.setColumns(10);
-		textField_411.setBounds(520, 398, 20, 20);
-		panel_4.add(textField_411);
-		
-		textField_412 = new JTextField();
-		textField_412.setColumns(10);
-		textField_412.setBounds(545, 398, 20, 20);
-		panel_4.add(textField_412);
-		
-		textField_413 = new JTextField();
-		textField_413.setColumns(10);
-		textField_413.setBounds(570, 398, 20, 20);
-		panel_4.add(textField_413);
-		
-		textField_414 = new JTextField();
-		textField_414.setColumns(10);
-		textField_414.setBounds(595, 398, 20, 20);
-		panel_4.add(textField_414);
-		
-		textField_415 = new JTextField();
-		textField_415.setColumns(10);
-		textField_415.setBounds(620, 398, 20, 20);
-		panel_4.add(textField_415);
-		
-		textField_416 = new JTextField();
-		textField_416.setColumns(10);
-		textField_416.setBounds(645, 398, 20, 20);
-		panel_4.add(textField_416);
-		
-		textField_417 = new JTextField();
-		textField_417.setColumns(10);
-		textField_417.setBounds(670, 398, 20, 20);
-		panel_4.add(textField_417);
-		
-		textField_418 = new JTextField();
-		textField_418.setColumns(10);
-		textField_418.setBounds(695, 398, 20, 20);
-		panel_4.add(textField_418);
-		
-		textField_419 = new JTextField();
-		textField_419.setColumns(10);
-		textField_419.setBounds(720, 398, 20, 20);
-		panel_4.add(textField_419);
-		
-		textField_420 = new JTextField();
-		textField_420.setColumns(10);
-		textField_420.setBounds(745, 398, 20, 20);
-		panel_4.add(textField_420);
-		
-		textField_421 = new JTextField();
-		textField_421.setColumns(10);
-		textField_421.setBounds(20, 423, 20, 20);
-		panel_4.add(textField_421);
-		
-		textField_422 = new JTextField();
-		textField_422.setColumns(10);
-		textField_422.setBounds(45, 423, 20, 20);
-		panel_4.add(textField_422);
-		
-		textField_423 = new JTextField();
-		textField_423.setColumns(10);
-		textField_423.setBounds(70, 423, 20, 20);
-		panel_4.add(textField_423);
-		
-		textField_424 = new JTextField();
-		textField_424.setColumns(10);
-		textField_424.setBounds(95, 423, 20, 20);
-		panel_4.add(textField_424);
-		
-		textField_425 = new JTextField();
-		textField_425.setColumns(10);
-		textField_425.setBounds(120, 423, 20, 20);
-		panel_4.add(textField_425);
-		
-		textField_426 = new JTextField();
-		textField_426.setColumns(10);
-		textField_426.setBounds(145, 423, 20, 20);
-		panel_4.add(textField_426);
-		
-		textField_427 = new JTextField();
-		textField_427.setColumns(10);
-		textField_427.setBounds(170, 423, 20, 20);
-		panel_4.add(textField_427);
-		
-		textField_428 = new JTextField();
-		textField_428.setColumns(10);
-		textField_428.setBounds(195, 423, 20, 20);
-		panel_4.add(textField_428);
-		
-		textField_429 = new JTextField();
-		textField_429.setColumns(10);
-		textField_429.setBounds(220, 423, 20, 20);
-		panel_4.add(textField_429);
-		
-		textField_430 = new JTextField();
-		textField_430.setColumns(10);
-		textField_430.setBounds(245, 423, 20, 20);
-		panel_4.add(textField_430);
-		
-		textField_431 = new JTextField();
-		textField_431.setColumns(10);
-		textField_431.setBounds(270, 423, 20, 20);
-		panel_4.add(textField_431);
-		
-		textField_432 = new JTextField();
-		textField_432.setColumns(10);
-		textField_432.setBounds(295, 423, 20, 20);
-		panel_4.add(textField_432);
-		
-		textField_433 = new JTextField();
-		textField_433.setColumns(10);
-		textField_433.setBounds(320, 423, 20, 20);
-		panel_4.add(textField_433);
-		
-		textField_434 = new JTextField();
-		textField_434.setColumns(10);
-		textField_434.setBounds(345, 423, 20, 20);
-		panel_4.add(textField_434);
-		
-		textField_435 = new JTextField();
-		textField_435.setColumns(10);
-		textField_435.setBounds(370, 423, 20, 20);
-		panel_4.add(textField_435);
-		
-		textField_436 = new JTextField();
-		textField_436.setColumns(10);
-		textField_436.setBounds(395, 423, 20, 20);
-		panel_4.add(textField_436);
-		
-		textField_437 = new JTextField();
-		textField_437.setColumns(10);
-		textField_437.setBounds(420, 423, 20, 20);
-		panel_4.add(textField_437);
-		
-		textField_438 = new JTextField();
-		textField_438.setColumns(10);
-		textField_438.setBounds(445, 423, 20, 20);
-		panel_4.add(textField_438);
-		
-		textField_439 = new JTextField();
-		textField_439.setColumns(10);
-		textField_439.setBounds(470, 423, 20, 20);
-		panel_4.add(textField_439);
-		
-		textField_440 = new JTextField();
-		textField_440.setColumns(10);
-		textField_440.setBounds(495, 423, 20, 20);
-		panel_4.add(textField_440);
-		
-		textField_441 = new JTextField();
-		textField_441.setColumns(10);
-		textField_441.setBounds(520, 423, 20, 20);
-		panel_4.add(textField_441);
-		
-		textField_442 = new JTextField();
-		textField_442.setColumns(10);
-		textField_442.setBounds(545, 423, 20, 20);
-		panel_4.add(textField_442);
-		
-		textField_443 = new JTextField();
-		textField_443.setColumns(10);
-		textField_443.setBounds(570, 423, 20, 20);
-		panel_4.add(textField_443);
-		
-		textField_444 = new JTextField();
-		textField_444.setColumns(10);
-		textField_444.setBounds(595, 423, 20, 20);
-		panel_4.add(textField_444);
-		
-		textField_445 = new JTextField();
-		textField_445.setColumns(10);
-		textField_445.setBounds(620, 423, 20, 20);
-		panel_4.add(textField_445);
-		
-		textField_446 = new JTextField();
-		textField_446.setColumns(10);
-		textField_446.setBounds(645, 423, 20, 20);
-		panel_4.add(textField_446);
-		
-		textField_447 = new JTextField();
-		textField_447.setColumns(10);
-		textField_447.setBounds(670, 423, 20, 20);
-		panel_4.add(textField_447);
-		
-		textField_448 = new JTextField();
-		textField_448.setColumns(10);
-		textField_448.setBounds(695, 423, 20, 20);
-		panel_4.add(textField_448);
-		
-		textField_449 = new JTextField();
-		textField_449.setColumns(10);
-		textField_449.setBounds(720, 423, 20, 20);
-		panel_4.add(textField_449);
-		
-		textField_450 = new JTextField();
-		textField_450.setColumns(10);
-		textField_450.setBounds(745, 423, 20, 20);
-		panel_4.add(textField_450);
-		
+
+		label_46 = new JLabel("16");
+		label_46.setHorizontalAlignment(SwingConstants.CENTER);
+		label_46.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_46.setBounds(0, 285, 20, 20);
+		panel_4.add(label_46);
+
+		label_47 = new JLabel("17");
+		label_47.setHorizontalAlignment(SwingConstants.CENTER);
+		label_47.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_47.setBounds(0, 303, 20, 20);
+		panel_4.add(label_47);
+
+		label_48 = new JLabel("18");
+		label_48.setHorizontalAlignment(SwingConstants.CENTER);
+		label_48.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_48.setBounds(0, 321, 20, 20);
+		panel_4.add(label_48);
+
+		label_49 = new JLabel("19");
+		label_49.setHorizontalAlignment(SwingConstants.CENTER);
+		label_49.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_49.setBounds(0, 339, 20, 20);
+		panel_4.add(label_49);
+
+		label_50 = new JLabel("20");
+		label_50.setHorizontalAlignment(SwingConstants.CENTER);
+		label_50.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_50.setBounds(0, 357, 20, 20);
+		panel_4.add(label_50);
+
+		label_51 = new JLabel("21");
+		label_51.setHorizontalAlignment(SwingConstants.CENTER);
+		label_51.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_51.setBounds(0, 375, 20, 20);
+		panel_4.add(label_51);
+
+		label_52 = new JLabel("22");
+		label_52.setHorizontalAlignment(SwingConstants.CENTER);
+		label_52.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_52.setBounds(0, 393, 20, 20);
+		panel_4.add(label_52);
+
+		label_53 = new JLabel("23");
+		label_53.setHorizontalAlignment(SwingConstants.CENTER);
+		label_53.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_53.setBounds(0, 411, 20, 20);
+		panel_4.add(label_53);
+
+		label_54 = new JLabel("24");
+		label_54.setHorizontalAlignment(SwingConstants.CENTER);
+		label_54.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_54.setBounds(0, 429, 20, 20);
+		panel_4.add(label_54);
+
+		label_55 = new JLabel("25");
+		label_55.setHorizontalAlignment(SwingConstants.CENTER);
+		label_55.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_55.setBounds(0, 447, 20, 20);
+		panel_4.add(label_55);
+		
+		verticalLabels = new JLabel[26];
+		horizontalLabels = new JLabel[26];
+		
+		verticalLabels[1]=label_1;verticalLabels[2]=label_2;verticalLabels[3]=label_3;verticalLabels[4]=label_4;verticalLabels[5]=label_5;verticalLabels[6]=label_6;verticalLabels[7]=label_7;verticalLabels[8]=label_8;verticalLabels[9]=label_9;verticalLabels[10]=label_10;verticalLabels[11]=label_11;verticalLabels[12]=label_12;verticalLabels[13]=label_13;verticalLabels[14]=label_14;verticalLabels[15]=label_15;verticalLabels[16]=label_16;verticalLabels[17]=label_17;verticalLabels[18]=label_18;verticalLabels[19]=label_19;verticalLabels[20]=label_20;verticalLabels[21]=label_21;verticalLabels[22]=label_22;verticalLabels[23]=label_23;verticalLabels[24]=label_24;verticalLabels[25]=label_25;
+		horizontalLabels[1]=label_31;horizontalLabels[2]=label_32;horizontalLabels[3]=label_33;horizontalLabels[4]=label_34;horizontalLabels[5]=label_35;horizontalLabels[6]=label_36;horizontalLabels[7]=label_37;horizontalLabels[8]=label_38;horizontalLabels[9]=label_39;horizontalLabels[10]=label_40;horizontalLabels[11]=label_41;horizontalLabels[12]=label_42;horizontalLabels[13]=label_43;horizontalLabels[14]=label_44;horizontalLabels[15]=label_45;horizontalLabels[16]=label_46;horizontalLabels[17]=label_47;horizontalLabels[18]=label_48;horizontalLabels[19]=label_49;horizontalLabels[20]=label_50;horizontalLabels[21]=label_51;horizontalLabels[22]=label_52;horizontalLabels[23]=label_53;horizontalLabels[24]=label_54;horizontalLabels[25]=label_55;
+			JRadioButton button1_1 = new JRadioButton("");
+			button1_1.setBounds(20, 15, 20, 23);
+			panel_4.add(button1_1);
+
+			JRadioButton button1_2 = new JRadioButton("");
+			button1_2.setBounds(40, 15, 20, 23);
+			panel_4.add(button1_2);
+
+			JRadioButton button1_3 = new JRadioButton("");
+			button1_3.setBounds(60, 15, 20, 23);
+			panel_4.add(button1_3);
+
+			JRadioButton button1_4 = new JRadioButton("");
+			button1_4.setBounds(80, 15, 20, 23);
+			panel_4.add(button1_4);
+
+			JRadioButton button1_5 = new JRadioButton("");
+			button1_5.setBounds(100, 15, 20, 23);
+			panel_4.add(button1_5);
+
+			JRadioButton button1_6 = new JRadioButton("");
+			button1_6.setBounds(120, 15, 20, 23);
+			panel_4.add(button1_6);
+
+			JRadioButton button1_7 = new JRadioButton("");
+			button1_7.setBounds(140, 15, 20, 23);
+			panel_4.add(button1_7);
+
+			JRadioButton button1_8 = new JRadioButton("");
+			button1_8.setBounds(160, 15, 20, 23);
+			panel_4.add(button1_8);
+
+			JRadioButton button1_9 = new JRadioButton("");
+			button1_9.setBounds(180, 15, 20, 23);
+			panel_4.add(button1_9);
+
+			JRadioButton button1_10 = new JRadioButton("");
+			button1_10.setBounds(200, 15, 20, 23);
+			panel_4.add(button1_10);
+
+			JRadioButton button1_11 = new JRadioButton("");
+			button1_11.setBounds(220, 15, 20, 23);
+			panel_4.add(button1_11);
+
+			JRadioButton button1_12 = new JRadioButton("");
+			button1_12.setBounds(240, 15, 20, 23);
+			panel_4.add(button1_12);
+
+			JRadioButton button1_13 = new JRadioButton("");
+			button1_13.setBounds(260, 15, 20, 23);
+			panel_4.add(button1_13);
+
+			JRadioButton button1_14 = new JRadioButton("");
+			button1_14.setBounds(280, 15, 20, 23);
+			panel_4.add(button1_14);
+
+			JRadioButton button1_15 = new JRadioButton("");
+			button1_15.setBounds(300, 15, 20, 23);
+			panel_4.add(button1_15);
+
+			JRadioButton button1_16 = new JRadioButton("");
+			button1_16.setBounds(320, 15, 20, 23);
+			panel_4.add(button1_16);
+
+			JRadioButton button1_17 = new JRadioButton("");
+			button1_17.setBounds(340, 15, 20, 23);
+			panel_4.add(button1_17);
+
+			JRadioButton button1_18 = new JRadioButton("");
+			button1_18.setBounds(360, 15, 20, 23);
+			panel_4.add(button1_18);
+
+			JRadioButton button1_19 = new JRadioButton("");
+			button1_19.setBounds(380, 15, 20, 23);
+			panel_4.add(button1_19);
+
+			JRadioButton button1_20 = new JRadioButton("");
+			button1_20.setBounds(400, 15, 20, 23);
+			panel_4.add(button1_20);
+
+			JRadioButton button1_21 = new JRadioButton("");
+			button1_21.setBounds(420, 15, 20, 23);
+			panel_4.add(button1_21);
+
+			JRadioButton button1_22 = new JRadioButton("");
+			button1_22.setBounds(440, 15, 20, 23);
+			panel_4.add(button1_22);
+
+			JRadioButton button1_23 = new JRadioButton("");
+			button1_23.setBounds(460, 15, 20, 23);
+			panel_4.add(button1_23);
+
+			JRadioButton button1_24 = new JRadioButton("");
+			button1_24.setBounds(480, 15, 20, 23);
+			panel_4.add(button1_24);
+
+			JRadioButton button1_25 = new JRadioButton("");
+			button1_25.setBounds(500, 15, 20, 23);
+			panel_4.add(button1_25);
+		
+
+		
+			JRadioButton button2_1 = new JRadioButton("");
+			button2_1.setBounds(20, 33, 20, 23);
+			panel_4.add(button2_1);
+
+			JRadioButton button2_2 = new JRadioButton("");
+			button2_2.setBounds(40, 33, 20, 23);
+			panel_4.add(button2_2);
+
+			JRadioButton button2_3 = new JRadioButton("");
+			button2_3.setBounds(60, 33, 20, 23);
+			panel_4.add(button2_3);
+
+			JRadioButton button2_4 = new JRadioButton("");
+			button2_4.setBounds(80, 33, 20, 23);
+			panel_4.add(button2_4);
+
+			JRadioButton button2_5 = new JRadioButton("");
+			button2_5.setBounds(100, 33, 20, 23);
+			panel_4.add(button2_5);
+
+			JRadioButton button2_6 = new JRadioButton("");
+			button2_6.setBounds(120, 33, 20, 23);
+			panel_4.add(button2_6);
+
+			JRadioButton button2_7 = new JRadioButton("");
+			button2_7.setBounds(140, 33, 20, 23);
+			panel_4.add(button2_7);
+
+			JRadioButton button2_8 = new JRadioButton("");
+			button2_8.setBounds(160, 33, 20, 23);
+			panel_4.add(button2_8);
+
+			JRadioButton button2_9 = new JRadioButton("");
+			button2_9.setBounds(180, 33, 20, 23);
+			panel_4.add(button2_9);
+
+			JRadioButton button2_10 = new JRadioButton("");
+			button2_10.setBounds(200, 33, 20, 23);
+			panel_4.add(button2_10);
+
+			JRadioButton button2_11 = new JRadioButton("");
+			button2_11.setBounds(220, 33, 20, 23);
+			panel_4.add(button2_11);
+
+			JRadioButton button2_12 = new JRadioButton("");
+			button2_12.setBounds(240, 33, 20, 23);
+			panel_4.add(button2_12);
+
+			JRadioButton button2_13 = new JRadioButton("");
+			button2_13.setBounds(260, 33, 20, 23);
+			panel_4.add(button2_13);
+
+			JRadioButton button2_14 = new JRadioButton("");
+			button2_14.setBounds(280, 33, 20, 23);
+			panel_4.add(button2_14);
+
+			JRadioButton button2_15 = new JRadioButton("");
+			button2_15.setBounds(300, 33, 20, 23);
+			panel_4.add(button2_15);
+
+			JRadioButton button2_16 = new JRadioButton("");
+			button2_16.setBounds(320, 33, 20, 23);
+			panel_4.add(button2_16);
+
+			JRadioButton button2_17 = new JRadioButton("");
+			button2_17.setBounds(340, 33, 20, 23);
+			panel_4.add(button2_17);
+
+			JRadioButton button2_18 = new JRadioButton("");
+			button2_18.setBounds(360, 33, 20, 23);
+			panel_4.add(button2_18);
+
+			JRadioButton button2_19 = new JRadioButton("");
+			button2_19.setBounds(380, 33, 20, 23);
+			panel_4.add(button2_19);
+
+			JRadioButton button2_20 = new JRadioButton("");
+			button2_20.setBounds(400, 33, 20, 23);
+			panel_4.add(button2_20);
+
+			JRadioButton button2_21 = new JRadioButton("");
+			button2_21.setBounds(420, 33, 20, 23);
+			panel_4.add(button2_21);
+
+			JRadioButton button2_22 = new JRadioButton("");
+			button2_22.setBounds(440, 33, 20, 23);
+			panel_4.add(button2_22);
+
+			JRadioButton button2_23 = new JRadioButton("");
+			button2_23.setBounds(460, 33, 20, 23);
+			panel_4.add(button2_23);
+
+			JRadioButton button2_24 = new JRadioButton("");
+			button2_24.setBounds(480, 33, 20, 23);
+			panel_4.add(button2_24);
+
+			JRadioButton button2_25 = new JRadioButton("");
+			button2_25.setBounds(500, 33, 20, 23);
+			panel_4.add(button2_25);
+		
+
+		
+			JRadioButton button3_1 = new JRadioButton("");
+			button3_1.setBounds(20, 51, 20, 23);
+			panel_4.add(button3_1);
+
+			JRadioButton button3_2 = new JRadioButton("");
+			button3_2.setBounds(40, 51, 20, 23);
+			panel_4.add(button3_2);
+
+			JRadioButton button3_3 = new JRadioButton("");
+			button3_3.setBounds(60, 51, 20, 23);
+			panel_4.add(button3_3);
+
+			JRadioButton button3_4 = new JRadioButton("");
+			button3_4.setBounds(80, 51, 20, 23);
+			panel_4.add(button3_4);
+
+			JRadioButton button3_5 = new JRadioButton("");
+			button3_5.setBounds(100, 51, 20, 23);
+			panel_4.add(button3_5);
+
+			JRadioButton button3_6 = new JRadioButton("");
+			button3_6.setBounds(120, 51, 20, 23);
+			panel_4.add(button3_6);
+
+			JRadioButton button3_7 = new JRadioButton("");
+			button3_7.setBounds(140, 51, 20, 23);
+			panel_4.add(button3_7);
+
+			JRadioButton button3_8 = new JRadioButton("");
+			button3_8.setBounds(160, 51, 20, 23);
+			panel_4.add(button3_8);
+
+			JRadioButton button3_9 = new JRadioButton("");
+			button3_9.setBounds(180, 51, 20, 23);
+			panel_4.add(button3_9);
+
+			JRadioButton button3_10 = new JRadioButton("");
+			button3_10.setBounds(200, 51, 20, 23);
+			panel_4.add(button3_10);
+
+			JRadioButton button3_11 = new JRadioButton("");
+			button3_11.setBounds(220, 51, 20, 23);
+			panel_4.add(button3_11);
+
+			JRadioButton button3_12 = new JRadioButton("");
+			button3_12.setBounds(240, 51, 20, 23);
+			panel_4.add(button3_12);
+
+			JRadioButton button3_13 = new JRadioButton("");
+			button3_13.setBounds(260, 51, 20, 23);
+			panel_4.add(button3_13);
+
+			JRadioButton button3_14 = new JRadioButton("");
+			button3_14.setBounds(280, 51, 20, 23);
+			panel_4.add(button3_14);
+
+			JRadioButton button3_15 = new JRadioButton("");
+			button3_15.setBounds(300, 51, 20, 23);
+			panel_4.add(button3_15);
+
+			JRadioButton button3_16 = new JRadioButton("");
+			button3_16.setBounds(320, 51, 20, 23);
+			panel_4.add(button3_16);
+
+			JRadioButton button3_17 = new JRadioButton("");
+			button3_17.setBounds(340, 51, 20, 23);
+			panel_4.add(button3_17);
+
+			JRadioButton button3_18 = new JRadioButton("");
+			button3_18.setBounds(360, 51, 20, 23);
+			panel_4.add(button3_18);
+
+			JRadioButton button3_19 = new JRadioButton("");
+			button3_19.setBounds(380, 51, 20, 23);
+			panel_4.add(button3_19);
+
+			JRadioButton button3_20 = new JRadioButton("");
+			button3_20.setBounds(400, 51, 20, 23);
+			panel_4.add(button3_20);
+
+			JRadioButton button3_21 = new JRadioButton("");
+			button3_21.setBounds(420, 51, 20, 23);
+			panel_4.add(button3_21);
+
+			JRadioButton button3_22 = new JRadioButton("");
+			button3_22.setBounds(440, 51, 20, 23);
+			panel_4.add(button3_22);
+
+			JRadioButton button3_23 = new JRadioButton("");
+			button3_23.setBounds(460, 51, 20, 23);
+			panel_4.add(button3_23);
+
+			JRadioButton button3_24 = new JRadioButton("");
+			button3_24.setBounds(480, 51, 20, 23);
+			panel_4.add(button3_24);
+
+			JRadioButton button3_25 = new JRadioButton("");
+			button3_25.setBounds(500, 51, 20, 23);
+			panel_4.add(button3_25);
+		
+
+		
+			JRadioButton button4_1 = new JRadioButton("");
+			button4_1.setBounds(20, 69, 20, 23);
+			panel_4.add(button4_1);
+
+			JRadioButton button4_2 = new JRadioButton("");
+			button4_2.setBounds(40, 69, 20, 23);
+			panel_4.add(button4_2);
+
+			JRadioButton button4_3 = new JRadioButton("");
+			button4_3.setBounds(60, 69, 20, 23);
+			panel_4.add(button4_3);
+
+			JRadioButton button4_4 = new JRadioButton("");
+			button4_4.setBounds(80, 69, 20, 23);
+			panel_4.add(button4_4);
+
+			JRadioButton button4_5 = new JRadioButton("");
+			button4_5.setBounds(100, 69, 20, 23);
+			panel_4.add(button4_5);
+
+			JRadioButton button4_6 = new JRadioButton("");
+			button4_6.setBounds(120, 69, 20, 23);
+			panel_4.add(button4_6);
+
+			JRadioButton button4_7 = new JRadioButton("");
+			button4_7.setBounds(140, 69, 20, 23);
+			panel_4.add(button4_7);
+
+			JRadioButton button4_8 = new JRadioButton("");
+			button4_8.setBounds(160, 69, 20, 23);
+			panel_4.add(button4_8);
+
+			JRadioButton button4_9 = new JRadioButton("");
+			button4_9.setBounds(180, 69, 20, 23);
+			panel_4.add(button4_9);
+
+			JRadioButton button4_10 = new JRadioButton("");
+			button4_10.setBounds(200, 69, 20, 23);
+			panel_4.add(button4_10);
+
+			JRadioButton button4_11 = new JRadioButton("");
+			button4_11.setBounds(220, 69, 20, 23);
+			panel_4.add(button4_11);
+
+			JRadioButton button4_12 = new JRadioButton("");
+			button4_12.setBounds(240, 69, 20, 23);
+			panel_4.add(button4_12);
+
+			JRadioButton button4_13 = new JRadioButton("");
+			button4_13.setBounds(260, 69, 20, 23);
+			panel_4.add(button4_13);
+
+			JRadioButton button4_14 = new JRadioButton("");
+			button4_14.setBounds(280, 69, 20, 23);
+			panel_4.add(button4_14);
+
+			JRadioButton button4_15 = new JRadioButton("");
+			button4_15.setBounds(300, 69, 20, 23);
+			panel_4.add(button4_15);
+
+			JRadioButton button4_16 = new JRadioButton("");
+			button4_16.setBounds(320, 69, 20, 23);
+			panel_4.add(button4_16);
+
+			JRadioButton button4_17 = new JRadioButton("");
+			button4_17.setBounds(340, 69, 20, 23);
+			panel_4.add(button4_17);
+
+			JRadioButton button4_18 = new JRadioButton("");
+			button4_18.setBounds(360, 69, 20, 23);
+			panel_4.add(button4_18);
+
+			JRadioButton button4_19 = new JRadioButton("");
+			button4_19.setBounds(380, 69, 20, 23);
+			panel_4.add(button4_19);
+
+			JRadioButton button4_20 = new JRadioButton("");
+			button4_20.setBounds(400, 69, 20, 23);
+			panel_4.add(button4_20);
+
+			JRadioButton button4_21 = new JRadioButton("");
+			button4_21.setBounds(420, 69, 20, 23);
+			panel_4.add(button4_21);
+
+			JRadioButton button4_22 = new JRadioButton("");
+			button4_22.setBounds(440, 69, 20, 23);
+			panel_4.add(button4_22);
+
+			JRadioButton button4_23 = new JRadioButton("");
+			button4_23.setBounds(460, 69, 20, 23);
+			panel_4.add(button4_23);
+
+			JRadioButton button4_24 = new JRadioButton("");
+			button4_24.setBounds(480, 69, 20, 23);
+			panel_4.add(button4_24);
+
+			JRadioButton button4_25 = new JRadioButton("");
+			button4_25.setBounds(500, 69, 20, 23);
+			panel_4.add(button4_25);
+		
+
+		
+			JRadioButton button5_1 = new JRadioButton("");
+			button5_1.setBounds(20, 87, 20, 23);
+			panel_4.add(button5_1);
+
+			JRadioButton button5_2 = new JRadioButton("");
+			button5_2.setBounds(40, 87, 20, 23);
+			panel_4.add(button5_2);
+
+			JRadioButton button5_3 = new JRadioButton("");
+			button5_3.setBounds(60, 87, 20, 23);
+			panel_4.add(button5_3);
+
+			JRadioButton button5_4 = new JRadioButton("");
+			button5_4.setBounds(80, 87, 20, 23);
+			panel_4.add(button5_4);
+
+			JRadioButton button5_5 = new JRadioButton("");
+			button5_5.setBounds(100, 87, 20, 23);
+			panel_4.add(button5_5);
+
+			JRadioButton button5_6 = new JRadioButton("");
+			button5_6.setBounds(120, 87, 20, 23);
+			panel_4.add(button5_6);
+
+			JRadioButton button5_7 = new JRadioButton("");
+			button5_7.setBounds(140, 87, 20, 23);
+			panel_4.add(button5_7);
+
+			JRadioButton button5_8 = new JRadioButton("");
+			button5_8.setBounds(160, 87, 20, 23);
+			panel_4.add(button5_8);
+
+			JRadioButton button5_9 = new JRadioButton("");
+			button5_9.setBounds(180, 87, 20, 23);
+			panel_4.add(button5_9);
+
+			JRadioButton button5_10 = new JRadioButton("");
+			button5_10.setBounds(200, 87, 20, 23);
+			panel_4.add(button5_10);
+
+			JRadioButton button5_11 = new JRadioButton("");
+			button5_11.setBounds(220, 87, 20, 23);
+			panel_4.add(button5_11);
+
+			JRadioButton button5_12 = new JRadioButton("");
+			button5_12.setBounds(240, 87, 20, 23);
+			panel_4.add(button5_12);
+
+			JRadioButton button5_13 = new JRadioButton("");
+			button5_13.setBounds(260, 87, 20, 23);
+			panel_4.add(button5_13);
+
+			JRadioButton button5_14 = new JRadioButton("");
+			button5_14.setBounds(280, 87, 20, 23);
+			panel_4.add(button5_14);
+
+			JRadioButton button5_15 = new JRadioButton("");
+			button5_15.setBounds(300, 87, 20, 23);
+			panel_4.add(button5_15);
+
+			JRadioButton button5_16 = new JRadioButton("");
+			button5_16.setBounds(320, 87, 20, 23);
+			panel_4.add(button5_16);
+
+			JRadioButton button5_17 = new JRadioButton("");
+			button5_17.setBounds(340, 87, 20, 23);
+			panel_4.add(button5_17);
+
+			JRadioButton button5_18 = new JRadioButton("");
+			button5_18.setBounds(360, 87, 20, 23);
+			panel_4.add(button5_18);
+
+			JRadioButton button5_19 = new JRadioButton("");
+			button5_19.setBounds(380, 87, 20, 23);
+			panel_4.add(button5_19);
+
+			JRadioButton button5_20 = new JRadioButton("");
+			button5_20.setBounds(400, 87, 20, 23);
+			panel_4.add(button5_20);
+
+			JRadioButton button5_21 = new JRadioButton("");
+			button5_21.setBounds(420, 87, 20, 23);
+			panel_4.add(button5_21);
+
+			JRadioButton button5_22 = new JRadioButton("");
+			button5_22.setBounds(440, 87, 20, 23);
+			panel_4.add(button5_22);
+
+			JRadioButton button5_23 = new JRadioButton("");
+			button5_23.setBounds(460, 87, 20, 23);
+			panel_4.add(button5_23);
+
+			JRadioButton button5_24 = new JRadioButton("");
+			button5_24.setBounds(480, 87, 20, 23);
+			panel_4.add(button5_24);
+
+			JRadioButton button5_25 = new JRadioButton("");
+			button5_25.setBounds(500, 87, 20, 23);
+			panel_4.add(button5_25);
+		
+
+		
+			JRadioButton button6_1 = new JRadioButton("");
+			button6_1.setBounds(20, 105, 20, 23);
+			panel_4.add(button6_1);
+
+			JRadioButton button6_2 = new JRadioButton("");
+			button6_2.setBounds(40, 105, 20, 23);
+			panel_4.add(button6_2);
+
+			JRadioButton button6_3 = new JRadioButton("");
+			button6_3.setBounds(60, 105, 20, 23);
+			panel_4.add(button6_3);
+
+			JRadioButton button6_4 = new JRadioButton("");
+			button6_4.setBounds(80, 105, 20, 23);
+			panel_4.add(button6_4);
+
+			JRadioButton button6_5 = new JRadioButton("");
+			button6_5.setBounds(100, 105, 20, 23);
+			panel_4.add(button6_5);
+
+			JRadioButton button6_6 = new JRadioButton("");
+			button6_6.setBounds(120, 105, 20, 23);
+			panel_4.add(button6_6);
+
+			JRadioButton button6_7 = new JRadioButton("");
+			button6_7.setBounds(140, 105, 20, 23);
+			panel_4.add(button6_7);
+
+			JRadioButton button6_8 = new JRadioButton("");
+			button6_8.setBounds(160, 105, 20, 23);
+			panel_4.add(button6_8);
+
+			JRadioButton button6_9 = new JRadioButton("");
+			button6_9.setBounds(180, 105, 20, 23);
+			panel_4.add(button6_9);
+
+			JRadioButton button6_10 = new JRadioButton("");
+			button6_10.setBounds(200, 105, 20, 23);
+			panel_4.add(button6_10);
+
+			JRadioButton button6_11 = new JRadioButton("");
+			button6_11.setBounds(220, 105, 20, 23);
+			panel_4.add(button6_11);
+
+			JRadioButton button6_12 = new JRadioButton("");
+			button6_12.setBounds(240, 105, 20, 23);
+			panel_4.add(button6_12);
+
+			JRadioButton button6_13 = new JRadioButton("");
+			button6_13.setBounds(260, 105, 20, 23);
+			panel_4.add(button6_13);
+
+			JRadioButton button6_14 = new JRadioButton("");
+			button6_14.setBounds(280, 105, 20, 23);
+			panel_4.add(button6_14);
+
+			JRadioButton button6_15 = new JRadioButton("");
+			button6_15.setBounds(300, 105, 20, 23);
+			panel_4.add(button6_15);
+
+			JRadioButton button6_16 = new JRadioButton("");
+			button6_16.setBounds(320, 105, 20, 23);
+			panel_4.add(button6_16);
+
+			JRadioButton button6_17 = new JRadioButton("");
+			button6_17.setBounds(340, 105, 20, 23);
+			panel_4.add(button6_17);
+
+			JRadioButton button6_18 = new JRadioButton("");
+			button6_18.setBounds(360, 105, 20, 23);
+			panel_4.add(button6_18);
+
+			JRadioButton button6_19 = new JRadioButton("");
+			button6_19.setBounds(380, 105, 20, 23);
+			panel_4.add(button6_19);
+
+			JRadioButton button6_20 = new JRadioButton("");
+			button6_20.setBounds(400, 105, 20, 23);
+			panel_4.add(button6_20);
+
+			JRadioButton button6_21 = new JRadioButton("");
+			button6_21.setBounds(420, 105, 20, 23);
+			panel_4.add(button6_21);
+
+			JRadioButton button6_22 = new JRadioButton("");
+			button6_22.setBounds(440, 105, 20, 23);
+			panel_4.add(button6_22);
+
+			JRadioButton button6_23 = new JRadioButton("");
+			button6_23.setBounds(460, 105, 20, 23);
+			panel_4.add(button6_23);
+
+			JRadioButton button6_24 = new JRadioButton("");
+			button6_24.setBounds(480, 105, 20, 23);
+			panel_4.add(button6_24);
+
+			JRadioButton button6_25 = new JRadioButton("");
+			button6_25.setBounds(500, 105, 20, 23);
+			panel_4.add(button6_25);
+		
+			
+		
+			JRadioButton button7_1 = new JRadioButton("");
+			button7_1.setBounds(20, 123, 20, 23);
+			panel_4.add(button7_1);
+
+			JRadioButton button7_2 = new JRadioButton("");
+			button7_2.setBounds(40, 123, 20, 23);
+			panel_4.add(button7_2);
+
+			JRadioButton button7_3 = new JRadioButton("");
+			button7_3.setBounds(60, 123, 20, 23);
+			panel_4.add(button7_3);
+
+			JRadioButton button7_4 = new JRadioButton("");
+			button7_4.setBounds(80, 123, 20, 23);
+			panel_4.add(button7_4);
+
+			JRadioButton button7_5 = new JRadioButton("");
+			button7_5.setBounds(100, 123, 20, 23);
+			panel_4.add(button7_5);
+
+			JRadioButton button7_6 = new JRadioButton("");
+			button7_6.setBounds(120, 123, 20, 23);
+			panel_4.add(button7_6);
+
+			JRadioButton button7_7 = new JRadioButton("");
+			button7_7.setBounds(140, 123, 20, 23);
+			panel_4.add(button7_7);
+
+			JRadioButton button7_8 = new JRadioButton("");
+			button7_8.setBounds(160, 123, 20, 23);
+			panel_4.add(button7_8);
+
+			JRadioButton button7_9 = new JRadioButton("");
+			button7_9.setBounds(180, 123, 20, 23);
+			panel_4.add(button7_9);
+
+			JRadioButton button7_10 = new JRadioButton("");
+			button7_10.setBounds(200, 123, 20, 23);
+			panel_4.add(button7_10);
+
+			JRadioButton button7_11 = new JRadioButton("");
+			button7_11.setBounds(220, 123, 20, 23);
+			panel_4.add(button7_11);
+
+			JRadioButton button7_12 = new JRadioButton("");
+			button7_12.setBounds(240, 123, 20, 23);
+			panel_4.add(button7_12);
+
+			JRadioButton button7_13 = new JRadioButton("");
+			button7_13.setBounds(260, 123, 20, 23);
+			panel_4.add(button7_13);
+
+			JRadioButton button7_14 = new JRadioButton("");
+			button7_14.setBounds(280, 123, 20, 23);
+			panel_4.add(button7_14);
+
+			JRadioButton button7_15 = new JRadioButton("");
+			button7_15.setBounds(300, 123, 20, 23);
+			panel_4.add(button7_15);
+
+			JRadioButton button7_16 = new JRadioButton("");
+			button7_16.setBounds(320, 123, 20, 23);
+			panel_4.add(button7_16);
+
+			JRadioButton button7_17 = new JRadioButton("");
+			button7_17.setBounds(340, 123, 20, 23);
+			panel_4.add(button7_17);
+
+			JRadioButton button7_18 = new JRadioButton("");
+			button7_18.setBounds(360, 123, 20, 23);
+			panel_4.add(button7_18);
+
+			JRadioButton button7_19 = new JRadioButton("");
+			button7_19.setBounds(380, 123, 20, 23);
+			panel_4.add(button7_19);
+
+			JRadioButton button7_20 = new JRadioButton("");
+			button7_20.setBounds(400, 123, 20, 23);
+			panel_4.add(button7_20);
+
+			JRadioButton button7_21 = new JRadioButton("");
+			button7_21.setBounds(420, 123, 20, 23);
+			panel_4.add(button7_21);
+
+			JRadioButton button7_22 = new JRadioButton("");
+			button7_22.setBounds(440, 123, 20, 23);
+			panel_4.add(button7_22);
+
+			JRadioButton button7_23 = new JRadioButton("");
+			button7_23.setBounds(460, 123, 20, 23);
+			panel_4.add(button7_23);
+
+			JRadioButton button7_24 = new JRadioButton("");
+			button7_24.setBounds(480, 123, 20, 23);
+			panel_4.add(button7_24);
+
+			JRadioButton button7_25 = new JRadioButton("");
+			button7_25.setBounds(500, 123, 20, 23);
+			panel_4.add(button7_25);
+		
+
+		
+			JRadioButton button8_1 = new JRadioButton("");
+			button8_1.setBounds(20, 141, 20, 23);
+			panel_4.add(button8_1);
+
+			JRadioButton button8_2 = new JRadioButton("");
+			button8_2.setBounds(40, 141, 20, 23);
+			panel_4.add(button8_2);
+
+			JRadioButton button8_3 = new JRadioButton("");
+			button8_3.setBounds(60, 141, 20, 23);
+			panel_4.add(button8_3);
+
+			JRadioButton button8_4 = new JRadioButton("");
+			button8_4.setBounds(80, 141, 20, 23);
+			panel_4.add(button8_4);
+
+			JRadioButton button8_5 = new JRadioButton("");
+			button8_5.setBounds(100, 141, 20, 23);
+			panel_4.add(button8_5);
+
+			JRadioButton button8_6 = new JRadioButton("");
+			button8_6.setBounds(120, 141, 20, 23);
+			panel_4.add(button8_6);
+
+			JRadioButton button8_7 = new JRadioButton("");
+			button8_7.setBounds(140, 141, 20, 23);
+			panel_4.add(button8_7);
+
+			JRadioButton button8_8 = new JRadioButton("");
+			button8_8.setBounds(160, 141, 20, 23);
+			panel_4.add(button8_8);
+
+			JRadioButton button8_9 = new JRadioButton("");
+			button8_9.setBounds(180, 141, 20, 23);
+			panel_4.add(button8_9);
+
+			JRadioButton button8_10 = new JRadioButton("");
+			button8_10.setBounds(200, 141, 20, 23);
+			panel_4.add(button8_10);
+
+			JRadioButton button8_11 = new JRadioButton("");
+			button8_11.setBounds(220, 141, 20, 23);
+			panel_4.add(button8_11);
+
+			JRadioButton button8_12 = new JRadioButton("");
+			button8_12.setBounds(240, 141, 20, 23);
+			panel_4.add(button8_12);
+
+			JRadioButton button8_13 = new JRadioButton("");
+			button8_13.setBounds(260, 141, 20, 23);
+			panel_4.add(button8_13);
+
+			JRadioButton button8_14 = new JRadioButton("");
+			button8_14.setBounds(280, 141, 20, 23);
+			panel_4.add(button8_14);
+
+			JRadioButton button8_15 = new JRadioButton("");
+			button8_15.setBounds(300, 141, 20, 23);
+			panel_4.add(button8_15);
+
+			JRadioButton button8_16 = new JRadioButton("");
+			button8_16.setBounds(320, 141, 20, 23);
+			panel_4.add(button8_16);
+
+			JRadioButton button8_17 = new JRadioButton("");
+			button8_17.setBounds(340, 141, 20, 23);
+			panel_4.add(button8_17);
+
+			JRadioButton button8_18 = new JRadioButton("");
+			button8_18.setBounds(360, 141, 20, 23);
+			panel_4.add(button8_18);
+
+			JRadioButton button8_19 = new JRadioButton("");
+			button8_19.setBounds(380, 141, 20, 23);
+			panel_4.add(button8_19);
+
+			JRadioButton button8_20 = new JRadioButton("");
+			button8_20.setBounds(400, 141, 20, 23);
+			panel_4.add(button8_20);
+
+			JRadioButton button8_21 = new JRadioButton("");
+			button8_21.setBounds(420, 141, 20, 23);
+			panel_4.add(button8_21);
+
+			JRadioButton button8_22 = new JRadioButton("");
+			button8_22.setBounds(440, 141, 20, 23);
+			panel_4.add(button8_22);
+
+			JRadioButton button8_23 = new JRadioButton("");
+			button8_23.setBounds(460, 141, 20, 23);
+			panel_4.add(button8_23);
+
+			JRadioButton button8_24 = new JRadioButton("");
+			button8_24.setBounds(480, 141, 20, 23);
+			panel_4.add(button8_24);
+
+			JRadioButton button8_25 = new JRadioButton("");
+			button8_25.setBounds(500, 141, 20, 23);
+			panel_4.add(button8_25);
+		
+
+		
+			JRadioButton button9_1 = new JRadioButton("");
+			button9_1.setBounds(20, 159, 20, 23);
+			panel_4.add(button9_1);
+
+			JRadioButton button9_2 = new JRadioButton("");
+			button9_2.setBounds(40, 159, 20, 23);
+			panel_4.add(button9_2);
+
+			JRadioButton button9_3 = new JRadioButton("");
+			button9_3.setBounds(60, 159, 20, 23);
+			panel_4.add(button9_3);
+
+			JRadioButton button9_4 = new JRadioButton("");
+			button9_4.setBounds(80, 159, 20, 23);
+			panel_4.add(button9_4);
+
+			JRadioButton button9_5 = new JRadioButton("");
+			button9_5.setBounds(100, 159, 20, 23);
+			panel_4.add(button9_5);
+
+			JRadioButton button9_6 = new JRadioButton("");
+			button9_6.setBounds(120, 159, 20, 23);
+			panel_4.add(button9_6);
+
+			JRadioButton button9_7 = new JRadioButton("");
+			button9_7.setBounds(140, 159, 20, 23);
+			panel_4.add(button9_7);
+
+			JRadioButton button9_8 = new JRadioButton("");
+			button9_8.setBounds(160, 159, 20, 23);
+			panel_4.add(button9_8);
+
+			JRadioButton button9_9 = new JRadioButton("");
+			button9_9.setBounds(180, 159, 20, 23);
+			panel_4.add(button9_9);
+
+			JRadioButton button9_10 = new JRadioButton("");
+			button9_10.setBounds(200, 159, 20, 23);
+			panel_4.add(button9_10);
+
+			JRadioButton button9_11 = new JRadioButton("");
+			button9_11.setBounds(220, 159, 20, 23);
+			panel_4.add(button9_11);
+
+			JRadioButton button9_12 = new JRadioButton("");
+			button9_12.setBounds(240, 159, 20, 23);
+			panel_4.add(button9_12);
+
+			JRadioButton button9_13 = new JRadioButton("");
+			button9_13.setBounds(260, 159, 20, 23);
+			panel_4.add(button9_13);
+
+			JRadioButton button9_14 = new JRadioButton("");
+			button9_14.setBounds(280, 159, 20, 23);
+			panel_4.add(button9_14);
+
+			JRadioButton button9_15 = new JRadioButton("");
+			button9_15.setBounds(300, 159, 20, 23);
+			panel_4.add(button9_15);
+
+			JRadioButton button9_16 = new JRadioButton("");
+			button9_16.setBounds(320, 159, 20, 23);
+			panel_4.add(button9_16);
+
+			JRadioButton button9_17 = new JRadioButton("");
+			button9_17.setBounds(340, 159, 20, 23);
+			panel_4.add(button9_17);
+
+			JRadioButton button9_18 = new JRadioButton("");
+			button9_18.setBounds(360, 159, 20, 23);
+			panel_4.add(button9_18);
+
+			JRadioButton button9_19 = new JRadioButton("");
+			button9_19.setBounds(380, 159, 20, 23);
+			panel_4.add(button9_19);
+
+			JRadioButton button9_20 = new JRadioButton("");
+			button9_20.setBounds(400, 159, 20, 23);
+			panel_4.add(button9_20);
+
+			JRadioButton button9_21 = new JRadioButton("");
+			button9_21.setBounds(420, 159, 20, 23);
+			panel_4.add(button9_21);
+
+			JRadioButton button9_22 = new JRadioButton("");
+			button9_22.setBounds(440, 159, 20, 23);
+			panel_4.add(button9_22);
+
+			JRadioButton button9_23 = new JRadioButton("");
+			button9_23.setBounds(460, 159, 20, 23);
+			panel_4.add(button9_23);
+
+			JRadioButton button9_24 = new JRadioButton("");
+			button9_24.setBounds(480, 159, 20, 23);
+			panel_4.add(button9_24);
+
+			JRadioButton button9_25 = new JRadioButton("");
+			button9_25.setBounds(500, 159, 20, 23);
+			panel_4.add(button9_25);
+		
+
+		
+			JRadioButton button10_1 = new JRadioButton("");
+			button10_1.setBounds(20, 177, 20, 23);
+			panel_4.add(button10_1);
+
+			JRadioButton button10_2 = new JRadioButton("");
+			button10_2.setBounds(40, 177, 20, 23);
+			panel_4.add(button10_2);
+
+			JRadioButton button10_3 = new JRadioButton("");
+			button10_3.setBounds(60, 177, 20, 23);
+			panel_4.add(button10_3);
+
+			JRadioButton button10_4 = new JRadioButton("");
+			button10_4.setBounds(80, 177, 20, 23);
+			panel_4.add(button10_4);
+
+			JRadioButton button10_5 = new JRadioButton("");
+			button10_5.setBounds(100, 177, 20, 23);
+			panel_4.add(button10_5);
+
+			JRadioButton button10_6 = new JRadioButton("");
+			button10_6.setBounds(120, 177, 20, 23);
+			panel_4.add(button10_6);
+
+			JRadioButton button10_7 = new JRadioButton("");
+			button10_7.setBounds(140, 177, 20, 23);
+			panel_4.add(button10_7);
+
+			JRadioButton button10_8 = new JRadioButton("");
+			button10_8.setBounds(160, 177, 20, 23);
+			panel_4.add(button10_8);
+
+			JRadioButton button10_9 = new JRadioButton("");
+			button10_9.setBounds(180, 177, 20, 23);
+			panel_4.add(button10_9);
+
+			JRadioButton button10_10 = new JRadioButton("");
+			button10_10.setBounds(200, 177, 20, 23);
+			panel_4.add(button10_10);
+
+			JRadioButton button10_11 = new JRadioButton("");
+			button10_11.setBounds(220, 177, 20, 23);
+			panel_4.add(button10_11);
+
+			JRadioButton button10_12 = new JRadioButton("");
+			button10_12.setBounds(240, 177, 20, 23);
+			panel_4.add(button10_12);
+
+			JRadioButton button10_13 = new JRadioButton("");
+			button10_13.setBounds(260, 177, 20, 23);
+			panel_4.add(button10_13);
+
+			JRadioButton button10_14 = new JRadioButton("");
+			button10_14.setBounds(280, 177, 20, 23);
+			panel_4.add(button10_14);
+
+			JRadioButton button10_15 = new JRadioButton("");
+			button10_15.setBounds(300, 177, 20, 23);
+			panel_4.add(button10_15);
+
+			JRadioButton button10_16 = new JRadioButton("");
+			button10_16.setBounds(320, 177, 20, 23);
+			panel_4.add(button10_16);
+
+			JRadioButton button10_17 = new JRadioButton("");
+			button10_17.setBounds(340, 177, 20, 23);
+			panel_4.add(button10_17);
+
+			JRadioButton button10_18 = new JRadioButton("");
+			button10_18.setBounds(360, 177, 20, 23);
+			panel_4.add(button10_18);
+
+			JRadioButton button10_19 = new JRadioButton("");
+			button10_19.setBounds(380, 177, 20, 23);
+			panel_4.add(button10_19);
+
+			JRadioButton button10_20 = new JRadioButton("");
+			button10_20.setBounds(400, 177, 20, 23);
+			panel_4.add(button10_20);
+
+			JRadioButton button10_21 = new JRadioButton("");
+			button10_21.setBounds(420, 177, 20, 23);
+			panel_4.add(button10_21);
+
+			JRadioButton button10_22 = new JRadioButton("");
+			button10_22.setBounds(440, 177, 20, 23);
+			panel_4.add(button10_22);
+
+			JRadioButton button10_23 = new JRadioButton("");
+			button10_23.setBounds(460, 177, 20, 23);
+			panel_4.add(button10_23);
+
+			JRadioButton button10_24 = new JRadioButton("");
+			button10_24.setBounds(480, 177, 20, 23);
+			panel_4.add(button10_24);
+
+			JRadioButton button10_25 = new JRadioButton("");
+			button10_25.setBounds(500, 177, 20, 23);
+			panel_4.add(button10_25);
+		
+
+		
+			JRadioButton button11_1 = new JRadioButton("");
+			button11_1.setBounds(20, 195, 20, 23);
+			panel_4.add(button11_1);
+
+			JRadioButton button11_2 = new JRadioButton("");
+			button11_2.setBounds(40, 195, 20, 23);
+			panel_4.add(button11_2);
+
+			JRadioButton button11_3 = new JRadioButton("");
+			button11_3.setBounds(60, 195, 20, 23);
+			panel_4.add(button11_3);
+
+			JRadioButton button11_4 = new JRadioButton("");
+			button11_4.setBounds(80, 195, 20, 23);
+			panel_4.add(button11_4);
+
+			JRadioButton button11_5 = new JRadioButton("");
+			button11_5.setBounds(100, 195, 20, 23);
+			panel_4.add(button11_5);
+
+			JRadioButton button11_6 = new JRadioButton("");
+			button11_6.setBounds(120, 195, 20, 23);
+			panel_4.add(button11_6);
+
+			JRadioButton button11_7 = new JRadioButton("");
+			button11_7.setBounds(140, 195, 20, 23);
+			panel_4.add(button11_7);
+
+			JRadioButton button11_8 = new JRadioButton("");
+			button11_8.setBounds(160, 195, 20, 23);
+			panel_4.add(button11_8);
+
+			JRadioButton button11_9 = new JRadioButton("");
+			button11_9.setBounds(180, 195, 20, 23);
+			panel_4.add(button11_9);
+
+			JRadioButton button11_10 = new JRadioButton("");
+			button11_10.setBounds(200, 195, 20, 23);
+			panel_4.add(button11_10);
+
+			JRadioButton button11_11 = new JRadioButton("");
+			button11_11.setBounds(220, 195, 20, 23);
+			panel_4.add(button11_11);
+
+			JRadioButton button11_12 = new JRadioButton("");
+			button11_12.setBounds(240, 195, 20, 23);
+			panel_4.add(button11_12);
+
+			JRadioButton button11_13 = new JRadioButton("");
+			button11_13.setBounds(260, 195, 20, 23);
+			panel_4.add(button11_13);
+
+			JRadioButton button11_14 = new JRadioButton("");
+			button11_14.setBounds(280, 195, 20, 23);
+			panel_4.add(button11_14);
+
+			JRadioButton button11_15 = new JRadioButton("");
+			button11_15.setBounds(300, 195, 20, 23);
+			panel_4.add(button11_15);
+
+			JRadioButton button11_16 = new JRadioButton("");
+			button11_16.setBounds(320, 195, 20, 23);
+			panel_4.add(button11_16);
+
+			JRadioButton button11_17 = new JRadioButton("");
+			button11_17.setBounds(340, 195, 20, 23);
+			panel_4.add(button11_17);
+
+			JRadioButton button11_18 = new JRadioButton("");
+			button11_18.setBounds(360, 195, 20, 23);
+			panel_4.add(button11_18);
+
+			JRadioButton button11_19 = new JRadioButton("");
+			button11_19.setBounds(380, 195, 20, 23);
+			panel_4.add(button11_19);
+
+			JRadioButton button11_20 = new JRadioButton("");
+			button11_20.setBounds(400, 195, 20, 23);
+			panel_4.add(button11_20);
+
+			JRadioButton button11_21 = new JRadioButton("");
+			button11_21.setBounds(420, 195, 20, 23);
+			panel_4.add(button11_21);
+
+			JRadioButton button11_22 = new JRadioButton("");
+			button11_22.setBounds(440, 195, 20, 23);
+			panel_4.add(button11_22);
+
+			JRadioButton button11_23 = new JRadioButton("");
+			button11_23.setBounds(460, 195, 20, 23);
+			panel_4.add(button11_23);
+
+			JRadioButton button11_24 = new JRadioButton("");
+			button11_24.setBounds(480, 195, 20, 23);
+			panel_4.add(button11_24);
+
+			JRadioButton button11_25 = new JRadioButton("");
+			button11_25.setBounds(500, 195, 20, 23);
+			panel_4.add(button11_25);
+		
+
+		
+			JRadioButton button12_1 = new JRadioButton("");
+			button12_1.setBounds(20, 213, 20, 23);
+			panel_4.add(button12_1);
+
+			JRadioButton button12_2 = new JRadioButton("");
+			button12_2.setBounds(40, 213, 20, 23);
+			panel_4.add(button12_2);
+
+			JRadioButton button12_3 = new JRadioButton("");
+			button12_3.setBounds(60, 213, 20, 23);
+			panel_4.add(button12_3);
+
+			JRadioButton button12_4 = new JRadioButton("");
+			button12_4.setBounds(80, 213, 20, 23);
+			panel_4.add(button12_4);
+
+			JRadioButton button12_5 = new JRadioButton("");
+			button12_5.setBounds(100, 213, 20, 23);
+			panel_4.add(button12_5);
+
+			JRadioButton button12_6 = new JRadioButton("");
+			button12_6.setBounds(120, 213, 20, 23);
+			panel_4.add(button12_6);
+
+			JRadioButton button12_7 = new JRadioButton("");
+			button12_7.setBounds(140, 213, 20, 23);
+			panel_4.add(button12_7);
+
+			JRadioButton button12_8 = new JRadioButton("");
+			button12_8.setBounds(160, 213, 20, 23);
+			panel_4.add(button12_8);
+
+			JRadioButton button12_9 = new JRadioButton("");
+			button12_9.setBounds(180, 213, 20, 23);
+			panel_4.add(button12_9);
+
+			JRadioButton button12_10 = new JRadioButton("");
+			button12_10.setBounds(200, 213, 20, 23);
+			panel_4.add(button12_10);
+
+			JRadioButton button12_11 = new JRadioButton("");
+			button12_11.setBounds(220, 213, 20, 23);
+			panel_4.add(button12_11);
+
+			JRadioButton button12_12 = new JRadioButton("");
+			button12_12.setBounds(240, 213, 20, 23);
+			panel_4.add(button12_12);
+
+			JRadioButton button12_13 = new JRadioButton("");
+			button12_13.setBounds(260, 213, 20, 23);
+			panel_4.add(button12_13);
+
+			JRadioButton button12_14 = new JRadioButton("");
+			button12_14.setBounds(280, 213, 20, 23);
+			panel_4.add(button12_14);
+
+			JRadioButton button12_15 = new JRadioButton("");
+			button12_15.setBounds(300, 213, 20, 23);
+			panel_4.add(button12_15);
+
+			JRadioButton button12_16 = new JRadioButton("");
+			button12_16.setBounds(320, 213, 20, 23);
+			panel_4.add(button12_16);
+
+			JRadioButton button12_17 = new JRadioButton("");
+			button12_17.setBounds(340, 213, 20, 23);
+			panel_4.add(button12_17);
+
+			JRadioButton button12_18 = new JRadioButton("");
+			button12_18.setBounds(360, 213, 20, 23);
+			panel_4.add(button12_18);
+
+			JRadioButton button12_19 = new JRadioButton("");
+			button12_19.setBounds(380, 213, 20, 23);
+			panel_4.add(button12_19);
+
+			JRadioButton button12_20 = new JRadioButton("");
+			button12_20.setBounds(400, 213, 20, 23);
+			panel_4.add(button12_20);
+
+			JRadioButton button12_21 = new JRadioButton("");
+			button12_21.setBounds(420, 213, 20, 23);
+			panel_4.add(button12_21);
+
+			JRadioButton button12_22 = new JRadioButton("");
+			button12_22.setBounds(440, 213, 20, 23);
+			panel_4.add(button12_22);
+
+			JRadioButton button12_23 = new JRadioButton("");
+			button12_23.setBounds(460, 213, 20, 23);
+			panel_4.add(button12_23);
+
+			JRadioButton button12_24 = new JRadioButton("");
+			button12_24.setBounds(480, 213, 20, 23);
+			panel_4.add(button12_24);
+
+			JRadioButton button12_25 = new JRadioButton("");
+			button12_25.setBounds(500, 213, 20, 23);
+			panel_4.add(button12_25);
+		
+
+		
+			JRadioButton button13_1 = new JRadioButton("");
+			button13_1.setBounds(20, 231, 20, 23);
+			panel_4.add(button13_1);
+
+			JRadioButton button13_2 = new JRadioButton("");
+			button13_2.setBounds(40, 231, 20, 23);
+			panel_4.add(button13_2);
+
+			JRadioButton button13_3 = new JRadioButton("");
+			button13_3.setBounds(60, 231, 20, 23);
+			panel_4.add(button13_3);
+
+			JRadioButton button13_4 = new JRadioButton("");
+			button13_4.setBounds(80, 231, 20, 23);
+			panel_4.add(button13_4);
+
+			JRadioButton button13_5 = new JRadioButton("");
+			button13_5.setBounds(100, 231, 20, 23);
+			panel_4.add(button13_5);
+
+			JRadioButton button13_6 = new JRadioButton("");
+			button13_6.setBounds(120, 231, 20, 23);
+			panel_4.add(button13_6);
+
+			JRadioButton button13_7 = new JRadioButton("");
+			button13_7.setBounds(140, 231, 20, 23);
+			panel_4.add(button13_7);
+
+			JRadioButton button13_8 = new JRadioButton("");
+			button13_8.setBounds(160, 231, 20, 23);
+			panel_4.add(button13_8);
+
+			JRadioButton button13_9 = new JRadioButton("");
+			button13_9.setBounds(180, 231, 20, 23);
+			panel_4.add(button13_9);
+
+			JRadioButton button13_10 = new JRadioButton("");
+			button13_10.setBounds(200, 231, 20, 23);
+			panel_4.add(button13_10);
+
+			JRadioButton button13_11 = new JRadioButton("");
+			button13_11.setBounds(220, 231, 20, 23);
+			panel_4.add(button13_11);
+
+			JRadioButton button13_12 = new JRadioButton("");
+			button13_12.setBounds(240, 231, 20, 23);
+			panel_4.add(button13_12);
+
+			JRadioButton button13_13 = new JRadioButton("");
+			button13_13.setBounds(260, 231, 20, 23);
+			panel_4.add(button13_13);
+
+			JRadioButton button13_14 = new JRadioButton("");
+			button13_14.setBounds(280, 231, 20, 23);
+			panel_4.add(button13_14);
+
+			JRadioButton button13_15 = new JRadioButton("");
+			button13_15.setBounds(300, 231, 20, 23);
+			panel_4.add(button13_15);
+
+			JRadioButton button13_16 = new JRadioButton("");
+			button13_16.setBounds(320, 231, 20, 23);
+			panel_4.add(button13_16);
+
+			JRadioButton button13_17 = new JRadioButton("");
+			button13_17.setBounds(340, 231, 20, 23);
+			panel_4.add(button13_17);
+
+			JRadioButton button13_18 = new JRadioButton("");
+			button13_18.setBounds(360, 231, 20, 23);
+			panel_4.add(button13_18);
+
+			JRadioButton button13_19 = new JRadioButton("");
+			button13_19.setBounds(380, 231, 20, 23);
+			panel_4.add(button13_19);
+
+			JRadioButton button13_20 = new JRadioButton("");
+			button13_20.setBounds(400, 231, 20, 23);
+			panel_4.add(button13_20);
+
+			JRadioButton button13_21 = new JRadioButton("");
+			button13_21.setBounds(420, 231, 20, 23);
+			panel_4.add(button13_21);
+
+			JRadioButton button13_22 = new JRadioButton("");
+			button13_22.setBounds(440, 231, 20, 23);
+			panel_4.add(button13_22);
+
+			JRadioButton button13_23 = new JRadioButton("");
+			button13_23.setBounds(460, 231, 20, 23);
+			panel_4.add(button13_23);
+
+			JRadioButton button13_24 = new JRadioButton("");
+			button13_24.setBounds(480, 231, 20, 23);
+			panel_4.add(button13_24);
+
+			JRadioButton button13_25 = new JRadioButton("");
+			button13_25.setBounds(500, 231, 20, 23);
+			panel_4.add(button13_25);
+		
+
+		
+			JRadioButton button14_1 = new JRadioButton("");
+			button14_1.setBounds(20, 249, 20, 23);
+			panel_4.add(button14_1);
+
+			JRadioButton button14_2 = new JRadioButton("");
+			button14_2.setBounds(40, 249, 20, 23);
+			panel_4.add(button14_2);
+
+			JRadioButton button14_3 = new JRadioButton("");
+			button14_3.setBounds(60, 249, 20, 23);
+			panel_4.add(button14_3);
+
+			JRadioButton button14_4 = new JRadioButton("");
+			button14_4.setBounds(80, 249, 20, 23);
+			panel_4.add(button14_4);
+
+			JRadioButton button14_5 = new JRadioButton("");
+			button14_5.setBounds(100, 249, 20, 23);
+			panel_4.add(button14_5);
+
+			JRadioButton button14_6 = new JRadioButton("");
+			button14_6.setBounds(120, 249, 20, 23);
+			panel_4.add(button14_6);
+
+			JRadioButton button14_7 = new JRadioButton("");
+			button14_7.setBounds(140, 249, 20, 23);
+			panel_4.add(button14_7);
+
+			JRadioButton button14_8 = new JRadioButton("");
+			button14_8.setBounds(160, 249, 20, 23);
+			panel_4.add(button14_8);
+
+			JRadioButton button14_9 = new JRadioButton("");
+			button14_9.setBounds(180, 249, 20, 23);
+			panel_4.add(button14_9);
+
+			JRadioButton button14_10 = new JRadioButton("");
+			button14_10.setBounds(200, 249, 20, 23);
+			panel_4.add(button14_10);
+
+			JRadioButton button14_11 = new JRadioButton("");
+			button14_11.setBounds(220, 249, 20, 23);
+			panel_4.add(button14_11);
+
+			JRadioButton button14_12 = new JRadioButton("");
+			button14_12.setBounds(240, 249, 20, 23);
+			panel_4.add(button14_12);
+
+			JRadioButton button14_13 = new JRadioButton("");
+			button14_13.setBounds(260, 249, 20, 23);
+			panel_4.add(button14_13);
+
+			JRadioButton button14_14 = new JRadioButton("");
+			button14_14.setBounds(280, 249, 20, 23);
+			panel_4.add(button14_14);
+
+			JRadioButton button14_15 = new JRadioButton("");
+			button14_15.setBounds(300, 249, 20, 23);
+			panel_4.add(button14_15);
+
+			JRadioButton button14_16 = new JRadioButton("");
+			button14_16.setBounds(320, 249, 20, 23);
+			panel_4.add(button14_16);
+
+			JRadioButton button14_17 = new JRadioButton("");
+			button14_17.setBounds(340, 249, 20, 23);
+			panel_4.add(button14_17);
+
+			JRadioButton button14_18 = new JRadioButton("");
+			button14_18.setBounds(360, 249, 20, 23);
+			panel_4.add(button14_18);
+
+			JRadioButton button14_19 = new JRadioButton("");
+			button14_19.setBounds(380, 249, 20, 23);
+			panel_4.add(button14_19);
+
+			JRadioButton button14_20 = new JRadioButton("");
+			button14_20.setBounds(400, 249, 20, 23);
+			panel_4.add(button14_20);
+
+			JRadioButton button14_21 = new JRadioButton("");
+			button14_21.setBounds(420, 249, 20, 23);
+			panel_4.add(button14_21);
+
+			JRadioButton button14_22 = new JRadioButton("");
+			button14_22.setBounds(440, 249, 20, 23);
+			panel_4.add(button14_22);
+
+			JRadioButton button14_23 = new JRadioButton("");
+			button14_23.setBounds(460, 249, 20, 23);
+			panel_4.add(button14_23);
+
+			JRadioButton button14_24 = new JRadioButton("");
+			button14_24.setBounds(480, 249, 20, 23);
+			panel_4.add(button14_24);
+
+			JRadioButton button14_25 = new JRadioButton("");
+			button14_25.setBounds(500, 249, 20, 23);
+			panel_4.add(button14_25);
+		
+
+		
+			JRadioButton button15_1 = new JRadioButton("");
+			button15_1.setBounds(20, 267, 20, 23);
+			panel_4.add(button15_1);
+
+			JRadioButton button15_2 = new JRadioButton("");
+			button15_2.setBounds(40, 267, 20, 23);
+			panel_4.add(button15_2);
+
+			JRadioButton button15_3 = new JRadioButton("");
+			button15_3.setBounds(60, 267, 20, 23);
+			panel_4.add(button15_3);
+
+			JRadioButton button15_4 = new JRadioButton("");
+			button15_4.setBounds(80, 267, 20, 23);
+			panel_4.add(button15_4);
+
+			JRadioButton button15_5 = new JRadioButton("");
+			button15_5.setBounds(100, 267, 20, 23);
+			panel_4.add(button15_5);
+
+			JRadioButton button15_6 = new JRadioButton("");
+			button15_6.setBounds(120, 267, 20, 23);
+			panel_4.add(button15_6);
+
+			JRadioButton button15_7 = new JRadioButton("");
+			button15_7.setBounds(140, 267, 20, 23);
+			panel_4.add(button15_7);
+
+			JRadioButton button15_8 = new JRadioButton("");
+			button15_8.setBounds(160, 267, 20, 23);
+			panel_4.add(button15_8);
+
+			JRadioButton button15_9 = new JRadioButton("");
+			button15_9.setBounds(180, 267, 20, 23);
+			panel_4.add(button15_9);
+
+			JRadioButton button15_10 = new JRadioButton("");
+			button15_10.setBounds(200, 267, 20, 23);
+			panel_4.add(button15_10);
+
+			JRadioButton button15_11 = new JRadioButton("");
+			button15_11.setBounds(220, 267, 20, 23);
+			panel_4.add(button15_11);
+
+			JRadioButton button15_12 = new JRadioButton("");
+			button15_12.setBounds(240, 267, 20, 23);
+			panel_4.add(button15_12);
+
+			JRadioButton button15_13 = new JRadioButton("");
+			button15_13.setBounds(260, 267, 20, 23);
+			panel_4.add(button15_13);
+
+			JRadioButton button15_14 = new JRadioButton("");
+			button15_14.setBounds(280, 267, 20, 23);
+			panel_4.add(button15_14);
+
+			JRadioButton button15_15 = new JRadioButton("");
+			button15_15.setBounds(300, 267, 20, 23);
+			panel_4.add(button15_15);
+
+			JRadioButton button15_16 = new JRadioButton("");
+			button15_16.setBounds(320, 267, 20, 23);
+			panel_4.add(button15_16);
+
+			JRadioButton button15_17 = new JRadioButton("");
+			button15_17.setBounds(340, 267, 20, 23);
+			panel_4.add(button15_17);
+
+			JRadioButton button15_18 = new JRadioButton("");
+			button15_18.setBounds(360, 267, 20, 23);
+			panel_4.add(button15_18);
+
+			JRadioButton button15_19 = new JRadioButton("");
+			button15_19.setBounds(380, 267, 20, 23);
+			panel_4.add(button15_19);
+
+			JRadioButton button15_20 = new JRadioButton("");
+			button15_20.setBounds(400, 267, 20, 23);
+			panel_4.add(button15_20);
+
+			JRadioButton button15_21 = new JRadioButton("");
+			button15_21.setBounds(420, 267, 20, 23);
+			panel_4.add(button15_21);
+
+			JRadioButton button15_22 = new JRadioButton("");
+			button15_22.setBounds(440, 267, 20, 23);
+			panel_4.add(button15_22);
+
+			JRadioButton button15_23 = new JRadioButton("");
+			button15_23.setBounds(460, 267, 20, 23);
+			panel_4.add(button15_23);
+
+			JRadioButton button15_24 = new JRadioButton("");
+			button15_24.setBounds(480, 267, 20, 23);
+			panel_4.add(button15_24);
+
+			JRadioButton button15_25 = new JRadioButton("");
+			button15_25.setBounds(500, 267, 20, 23);
+			panel_4.add(button15_25);
+		
+
+		
+			JRadioButton button16_1 = new JRadioButton("");
+			button16_1.setBounds(20, 285, 20, 23);
+			panel_4.add(button16_1);
+
+			JRadioButton button16_2 = new JRadioButton("");
+			button16_2.setBounds(40, 285, 20, 23);
+			panel_4.add(button16_2);
+
+			JRadioButton button16_3 = new JRadioButton("");
+			button16_3.setBounds(60, 285, 20, 23);
+			panel_4.add(button16_3);
+
+			JRadioButton button16_4 = new JRadioButton("");
+			button16_4.setBounds(80, 285, 20, 23);
+			panel_4.add(button16_4);
+
+			JRadioButton button16_5 = new JRadioButton("");
+			button16_5.setBounds(100, 285, 20, 23);
+			panel_4.add(button16_5);
+
+			JRadioButton button16_6 = new JRadioButton("");
+			button16_6.setBounds(120, 285, 20, 23);
+			panel_4.add(button16_6);
+
+			JRadioButton button16_7 = new JRadioButton("");
+			button16_7.setBounds(140, 285, 20, 23);
+			panel_4.add(button16_7);
+
+			JRadioButton button16_8 = new JRadioButton("");
+			button16_8.setBounds(160, 285, 20, 23);
+			panel_4.add(button16_8);
+
+			JRadioButton button16_9 = new JRadioButton("");
+			button16_9.setBounds(180, 285, 20, 23);
+			panel_4.add(button16_9);
+
+			JRadioButton button16_10 = new JRadioButton("");
+			button16_10.setBounds(200, 285, 20, 23);
+			panel_4.add(button16_10);
+
+			JRadioButton button16_11 = new JRadioButton("");
+			button16_11.setBounds(220, 285, 20, 23);
+			panel_4.add(button16_11);
+
+			JRadioButton button16_12 = new JRadioButton("");
+			button16_12.setBounds(240, 285, 20, 23);
+			panel_4.add(button16_12);
+
+			JRadioButton button16_13 = new JRadioButton("");
+			button16_13.setBounds(260, 285, 20, 23);
+			panel_4.add(button16_13);
+
+			JRadioButton button16_14 = new JRadioButton("");
+			button16_14.setBounds(280, 285, 20, 23);
+			panel_4.add(button16_14);
+
+			JRadioButton button16_15 = new JRadioButton("");
+			button16_15.setBounds(300, 285, 20, 23);
+			panel_4.add(button16_15);
+
+			JRadioButton button16_16 = new JRadioButton("");
+			button16_16.setBounds(320, 285, 20, 23);
+			panel_4.add(button16_16);
+
+			JRadioButton button16_17 = new JRadioButton("");
+			button16_17.setBounds(340, 285, 20, 23);
+			panel_4.add(button16_17);
+
+			JRadioButton button16_18 = new JRadioButton("");
+			button16_18.setBounds(360, 285, 20, 23);
+			panel_4.add(button16_18);
+
+			JRadioButton button16_19 = new JRadioButton("");
+			button16_19.setBounds(380, 285, 20, 23);
+			panel_4.add(button16_19);
+
+			JRadioButton button16_20 = new JRadioButton("");
+			button16_20.setBounds(400, 285, 20, 23);
+			panel_4.add(button16_20);
+
+			JRadioButton button16_21 = new JRadioButton("");
+			button16_21.setBounds(420, 285, 20, 23);
+			panel_4.add(button16_21);
+
+			JRadioButton button16_22 = new JRadioButton("");
+			button16_22.setBounds(440, 285, 20, 23);
+			panel_4.add(button16_22);
+
+			JRadioButton button16_23 = new JRadioButton("");
+			button16_23.setBounds(460, 285, 20, 23);
+			panel_4.add(button16_23);
+
+			JRadioButton button16_24 = new JRadioButton("");
+			button16_24.setBounds(480, 285, 20, 23);
+			panel_4.add(button16_24);
+
+			JRadioButton button16_25 = new JRadioButton("");
+			button16_25.setBounds(500, 285, 20, 23);
+			panel_4.add(button16_25);
+		
+
+		
+			JRadioButton button17_1 = new JRadioButton("");
+			button17_1.setBounds(20, 303, 20, 23);
+			panel_4.add(button17_1);
+
+			JRadioButton button17_2 = new JRadioButton("");
+			button17_2.setBounds(40, 303, 20, 23);
+			panel_4.add(button17_2);
+
+			JRadioButton button17_3 = new JRadioButton("");
+			button17_3.setBounds(60, 303, 20, 23);
+			panel_4.add(button17_3);
+
+			JRadioButton button17_4 = new JRadioButton("");
+			button17_4.setBounds(80, 303, 20, 23);
+			panel_4.add(button17_4);
+
+			JRadioButton button17_5 = new JRadioButton("");
+			button17_5.setBounds(100, 303, 20, 23);
+			panel_4.add(button17_5);
+
+			JRadioButton button17_6 = new JRadioButton("");
+			button17_6.setBounds(120, 303, 20, 23);
+			panel_4.add(button17_6);
+
+			JRadioButton button17_7 = new JRadioButton("");
+			button17_7.setBounds(140, 303, 20, 23);
+			panel_4.add(button17_7);
+
+			JRadioButton button17_8 = new JRadioButton("");
+			button17_8.setBounds(160, 303, 20, 23);
+			panel_4.add(button17_8);
+
+			JRadioButton button17_9 = new JRadioButton("");
+			button17_9.setBounds(180, 303, 20, 23);
+			panel_4.add(button17_9);
+
+			JRadioButton button17_10 = new JRadioButton("");
+			button17_10.setBounds(200, 303, 20, 23);
+			panel_4.add(button17_10);
+
+			JRadioButton button17_11 = new JRadioButton("");
+			button17_11.setBounds(220, 303, 20, 23);
+			panel_4.add(button17_11);
+
+			JRadioButton button17_12 = new JRadioButton("");
+			button17_12.setBounds(240, 303, 20, 23);
+			panel_4.add(button17_12);
+
+			JRadioButton button17_13 = new JRadioButton("");
+			button17_13.setBounds(260, 303, 20, 23);
+			panel_4.add(button17_13);
+
+			JRadioButton button17_14 = new JRadioButton("");
+			button17_14.setBounds(280, 303, 20, 23);
+			panel_4.add(button17_14);
+
+			JRadioButton button17_15 = new JRadioButton("");
+			button17_15.setBounds(300, 303, 20, 23);
+			panel_4.add(button17_15);
+
+			JRadioButton button17_16 = new JRadioButton("");
+			button17_16.setBounds(320, 303, 20, 23);
+			panel_4.add(button17_16);
+
+			JRadioButton button17_17 = new JRadioButton("");
+			button17_17.setBounds(340, 303, 20, 23);
+			panel_4.add(button17_17);
+
+			JRadioButton button17_18 = new JRadioButton("");
+			button17_18.setBounds(360, 303, 20, 23);
+			panel_4.add(button17_18);
+
+			JRadioButton button17_19 = new JRadioButton("");
+			button17_19.setBounds(380, 303, 20, 23);
+			panel_4.add(button17_19);
+
+			JRadioButton button17_20 = new JRadioButton("");
+			button17_20.setBounds(400, 303, 20, 23);
+			panel_4.add(button17_20);
+
+			JRadioButton button17_21 = new JRadioButton("");
+			button17_21.setBounds(420, 303, 20, 23);
+			panel_4.add(button17_21);
+
+			JRadioButton button17_22 = new JRadioButton("");
+			button17_22.setBounds(440, 303, 20, 23);
+			panel_4.add(button17_22);
+
+			JRadioButton button17_23 = new JRadioButton("");
+			button17_23.setBounds(460, 303, 20, 23);
+			panel_4.add(button17_23);
+
+			JRadioButton button17_24 = new JRadioButton("");
+			button17_24.setBounds(480, 303, 20, 23);
+			panel_4.add(button17_24);
+
+			JRadioButton button17_25 = new JRadioButton("");
+			button17_25.setBounds(500, 303, 20, 23);
+			panel_4.add(button17_25);
+		
+
+		
+			JRadioButton button18_1 = new JRadioButton("");
+			button18_1.setBounds(20, 321, 20, 23);
+			panel_4.add(button18_1);
+
+			JRadioButton button18_2 = new JRadioButton("");
+			button18_2.setBounds(40, 321, 20, 23);
+			panel_4.add(button18_2);
+
+			JRadioButton button18_3 = new JRadioButton("");
+			button18_3.setBounds(60, 321, 20, 23);
+			panel_4.add(button18_3);
+
+			JRadioButton button18_4 = new JRadioButton("");
+			button18_4.setBounds(80, 321, 20, 23);
+			panel_4.add(button18_4);
+
+			JRadioButton button18_5 = new JRadioButton("");
+			button18_5.setBounds(100, 321, 20, 23);
+			panel_4.add(button18_5);
+
+			JRadioButton button18_6 = new JRadioButton("");
+			button18_6.setBounds(120, 321, 20, 23);
+			panel_4.add(button18_6);
+
+			JRadioButton button18_7 = new JRadioButton("");
+			button18_7.setBounds(140, 321, 20, 23);
+			panel_4.add(button18_7);
+
+			JRadioButton button18_8 = new JRadioButton("");
+			button18_8.setBounds(160, 321, 20, 23);
+			panel_4.add(button18_8);
+
+			JRadioButton button18_9 = new JRadioButton("");
+			button18_9.setBounds(180, 321, 20, 23);
+			panel_4.add(button18_9);
+
+			JRadioButton button18_10 = new JRadioButton("");
+			button18_10.setBounds(200, 321, 20, 23);
+			panel_4.add(button18_10);
+
+			JRadioButton button18_11 = new JRadioButton("");
+			button18_11.setBounds(220, 321, 20, 23);
+			panel_4.add(button18_11);
+
+			JRadioButton button18_12 = new JRadioButton("");
+			button18_12.setBounds(240, 321, 20, 23);
+			panel_4.add(button18_12);
+
+			JRadioButton button18_13 = new JRadioButton("");
+			button18_13.setBounds(260, 321, 20, 23);
+			panel_4.add(button18_13);
+
+			JRadioButton button18_14 = new JRadioButton("");
+			button18_14.setBounds(280, 321, 20, 23);
+			panel_4.add(button18_14);
+
+			JRadioButton button18_15 = new JRadioButton("");
+			button18_15.setBounds(300, 321, 20, 23);
+			panel_4.add(button18_15);
+
+			JRadioButton button18_16 = new JRadioButton("");
+			button18_16.setBounds(320, 321, 20, 23);
+			panel_4.add(button18_16);
+
+			JRadioButton button18_17 = new JRadioButton("");
+			button18_17.setBounds(340, 321, 20, 23);
+			panel_4.add(button18_17);
+
+			JRadioButton button18_18 = new JRadioButton("");
+			button18_18.setBounds(360, 321, 20, 23);
+			panel_4.add(button18_18);
+
+			JRadioButton button18_19 = new JRadioButton("");
+			button18_19.setBounds(380, 321, 20, 23);
+			panel_4.add(button18_19);
+
+			JRadioButton button18_20 = new JRadioButton("");
+			button18_20.setBounds(400, 321, 20, 23);
+			panel_4.add(button18_20);
+
+			JRadioButton button18_21 = new JRadioButton("");
+			button18_21.setBounds(420, 321, 20, 23);
+			panel_4.add(button18_21);
+
+			JRadioButton button18_22 = new JRadioButton("");
+			button18_22.setBounds(440, 321, 20, 23);
+			panel_4.add(button18_22);
+
+			JRadioButton button18_23 = new JRadioButton("");
+			button18_23.setBounds(460, 321, 20, 23);
+			panel_4.add(button18_23);
+
+			JRadioButton button18_24 = new JRadioButton("");
+			button18_24.setBounds(480, 321, 20, 23);
+			panel_4.add(button18_24);
+
+			JRadioButton button18_25 = new JRadioButton("");
+			button18_25.setBounds(500, 321, 20, 23);
+			panel_4.add(button18_25);
+		
+
+		
+			JRadioButton button19_1 = new JRadioButton("");
+			button19_1.setBounds(20, 339, 20, 23);
+			panel_4.add(button19_1);
+
+			JRadioButton button19_2 = new JRadioButton("");
+			button19_2.setBounds(40, 339, 20, 23);
+			panel_4.add(button19_2);
+
+			JRadioButton button19_3 = new JRadioButton("");
+			button19_3.setBounds(60, 339, 20, 23);
+			panel_4.add(button19_3);
+
+			JRadioButton button19_4 = new JRadioButton("");
+			button19_4.setBounds(80, 339, 20, 23);
+			panel_4.add(button19_4);
+
+			JRadioButton button19_5 = new JRadioButton("");
+			button19_5.setBounds(100, 339, 20, 23);
+			panel_4.add(button19_5);
+
+			JRadioButton button19_6 = new JRadioButton("");
+			button19_6.setBounds(120, 339, 20, 23);
+			panel_4.add(button19_6);
+
+			JRadioButton button19_7 = new JRadioButton("");
+			button19_7.setBounds(140, 339, 20, 23);
+			panel_4.add(button19_7);
+
+			JRadioButton button19_8 = new JRadioButton("");
+			button19_8.setBounds(160, 339, 20, 23);
+			panel_4.add(button19_8);
+
+			JRadioButton button19_9 = new JRadioButton("");
+			button19_9.setBounds(180, 339, 20, 23);
+			panel_4.add(button19_9);
+
+			JRadioButton button19_10 = new JRadioButton("");
+			button19_10.setBounds(200, 339, 20, 23);
+			panel_4.add(button19_10);
+
+			JRadioButton button19_11 = new JRadioButton("");
+			button19_11.setBounds(220, 339, 20, 23);
+			panel_4.add(button19_11);
+
+			JRadioButton button19_12 = new JRadioButton("");
+			button19_12.setBounds(240, 339, 20, 23);
+			panel_4.add(button19_12);
+
+			JRadioButton button19_13 = new JRadioButton("");
+			button19_13.setBounds(260, 339, 20, 23);
+			panel_4.add(button19_13);
+
+			JRadioButton button19_14 = new JRadioButton("");
+			button19_14.setBounds(280, 339, 20, 23);
+			panel_4.add(button19_14);
+
+			JRadioButton button19_15 = new JRadioButton("");
+			button19_15.setBounds(300, 339, 20, 23);
+			panel_4.add(button19_15);
+
+			JRadioButton button19_16 = new JRadioButton("");
+			button19_16.setBounds(320, 339, 20, 23);
+			panel_4.add(button19_16);
+
+			JRadioButton button19_17 = new JRadioButton("");
+			button19_17.setBounds(340, 339, 20, 23);
+			panel_4.add(button19_17);
+
+			JRadioButton button19_18 = new JRadioButton("");
+			button19_18.setBounds(360, 339, 20, 23);
+			panel_4.add(button19_18);
+
+			JRadioButton button19_19 = new JRadioButton("");
+			button19_19.setBounds(380, 339, 20, 23);
+			panel_4.add(button19_19);
+
+			JRadioButton button19_20 = new JRadioButton("");
+			button19_20.setBounds(400, 339, 20, 23);
+			panel_4.add(button19_20);
+
+			JRadioButton button19_21 = new JRadioButton("");
+			button19_21.setBounds(420, 339, 20, 23);
+			panel_4.add(button19_21);
+
+			JRadioButton button19_22 = new JRadioButton("");
+			button19_22.setBounds(440, 339, 20, 23);
+			panel_4.add(button19_22);
+
+			JRadioButton button19_23 = new JRadioButton("");
+			button19_23.setBounds(460, 339, 20, 23);
+			panel_4.add(button19_23);
+
+			JRadioButton button19_24 = new JRadioButton("");
+			button19_24.setBounds(480, 339, 20, 23);
+			panel_4.add(button19_24);
+
+			JRadioButton button19_25 = new JRadioButton("");
+			button19_25.setBounds(500, 339, 20, 23);
+			panel_4.add(button19_25);
+		
+
+		
+			JRadioButton button20_1 = new JRadioButton("");
+			button20_1.setBounds(20, 357, 20, 23);
+			panel_4.add(button20_1);
+
+			JRadioButton button20_2 = new JRadioButton("");
+			button20_2.setBounds(40, 357, 20, 23);
+			panel_4.add(button20_2);
+
+			JRadioButton button20_3 = new JRadioButton("");
+			button20_3.setBounds(60, 357, 20, 23);
+			panel_4.add(button20_3);
+
+			JRadioButton button20_4 = new JRadioButton("");
+			button20_4.setBounds(80, 357, 20, 23);
+			panel_4.add(button20_4);
+
+			JRadioButton button20_5 = new JRadioButton("");
+			button20_5.setBounds(100, 357, 20, 23);
+			panel_4.add(button20_5);
+
+			JRadioButton button20_6 = new JRadioButton("");
+			button20_6.setBounds(120, 357, 20, 23);
+			panel_4.add(button20_6);
+
+			JRadioButton button20_7 = new JRadioButton("");
+			button20_7.setBounds(140, 357, 20, 23);
+			panel_4.add(button20_7);
+
+			JRadioButton button20_8 = new JRadioButton("");
+			button20_8.setBounds(160, 357, 20, 23);
+			panel_4.add(button20_8);
+
+			JRadioButton button20_9 = new JRadioButton("");
+			button20_9.setBounds(180, 357, 20, 23);
+			panel_4.add(button20_9);
+
+			JRadioButton button20_10 = new JRadioButton("");
+			button20_10.setBounds(200, 357, 20, 23);
+			panel_4.add(button20_10);
+
+			JRadioButton button20_11 = new JRadioButton("");
+			button20_11.setBounds(220, 357, 20, 23);
+			panel_4.add(button20_11);
+
+			JRadioButton button20_12 = new JRadioButton("");
+			button20_12.setBounds(240, 357, 20, 23);
+			panel_4.add(button20_12);
+
+			JRadioButton button20_13 = new JRadioButton("");
+			button20_13.setBounds(260, 357, 20, 23);
+			panel_4.add(button20_13);
+
+			JRadioButton button20_14 = new JRadioButton("");
+			button20_14.setBounds(280, 357, 20, 23);
+			panel_4.add(button20_14);
+
+			JRadioButton button20_15 = new JRadioButton("");
+			button20_15.setBounds(300, 357, 20, 23);
+			panel_4.add(button20_15);
+
+			JRadioButton button20_16 = new JRadioButton("");
+			button20_16.setBounds(320, 357, 20, 23);
+			panel_4.add(button20_16);
+
+			JRadioButton button20_17 = new JRadioButton("");
+			button20_17.setBounds(340, 357, 20, 23);
+			panel_4.add(button20_17);
+
+			JRadioButton button20_18 = new JRadioButton("");
+			button20_18.setBounds(360, 357, 20, 23);
+			panel_4.add(button20_18);
+
+			JRadioButton button20_19 = new JRadioButton("");
+			button20_19.setBounds(380, 357, 20, 23);
+			panel_4.add(button20_19);
+
+			JRadioButton button20_20 = new JRadioButton("");
+			button20_20.setBounds(400, 357, 20, 23);
+			panel_4.add(button20_20);
+
+			JRadioButton button20_21 = new JRadioButton("");
+			button20_21.setBounds(420, 357, 20, 23);
+			panel_4.add(button20_21);
+
+			JRadioButton button20_22 = new JRadioButton("");
+			button20_22.setBounds(440, 357, 20, 23);
+			panel_4.add(button20_22);
+
+			JRadioButton button20_23 = new JRadioButton("");
+			button20_23.setBounds(460, 357, 20, 23);
+			panel_4.add(button20_23);
+
+			JRadioButton button20_24 = new JRadioButton("");
+			button20_24.setBounds(480, 357, 20, 23);
+			panel_4.add(button20_24);
+
+			JRadioButton button20_25 = new JRadioButton("");
+			button20_25.setBounds(500, 357, 20, 23);
+			panel_4.add(button20_25);
+		
+
+		
+			JRadioButton button21_1 = new JRadioButton("");
+			button21_1.setBounds(20, 375, 20, 23);
+			panel_4.add(button21_1);
+
+			JRadioButton button21_2 = new JRadioButton("");
+			button21_2.setBounds(40, 375, 20, 23);
+			panel_4.add(button21_2);
+
+			JRadioButton button21_3 = new JRadioButton("");
+			button21_3.setBounds(60, 375, 20, 23);
+			panel_4.add(button21_3);
+
+			JRadioButton button21_4 = new JRadioButton("");
+			button21_4.setBounds(80, 375, 20, 23);
+			panel_4.add(button21_4);
+
+			JRadioButton button21_5 = new JRadioButton("");
+			button21_5.setBounds(100, 375, 20, 23);
+			panel_4.add(button21_5);
+
+			JRadioButton button21_6 = new JRadioButton("");
+			button21_6.setBounds(120, 375, 20, 23);
+			panel_4.add(button21_6);
+
+			JRadioButton button21_7 = new JRadioButton("");
+			button21_7.setBounds(140, 375, 20, 23);
+			panel_4.add(button21_7);
+
+			JRadioButton button21_8 = new JRadioButton("");
+			button21_8.setBounds(160, 375, 20, 23);
+			panel_4.add(button21_8);
+
+			JRadioButton button21_9 = new JRadioButton("");
+			button21_9.setBounds(180, 375, 20, 23);
+			panel_4.add(button21_9);
+
+			JRadioButton button21_10 = new JRadioButton("");
+			button21_10.setBounds(200, 375, 20, 23);
+			panel_4.add(button21_10);
+
+			JRadioButton button21_11 = new JRadioButton("");
+			button21_11.setBounds(220, 375, 20, 23);
+			panel_4.add(button21_11);
+
+			JRadioButton button21_12 = new JRadioButton("");
+			button21_12.setBounds(240, 375, 20, 23);
+			panel_4.add(button21_12);
+
+			JRadioButton button21_13 = new JRadioButton("");
+			button21_13.setBounds(260, 375, 20, 23);
+			panel_4.add(button21_13);
+
+			JRadioButton button21_14 = new JRadioButton("");
+			button21_14.setBounds(280, 375, 20, 23);
+			panel_4.add(button21_14);
+
+			JRadioButton button21_15 = new JRadioButton("");
+			button21_15.setBounds(300, 375, 20, 23);
+			panel_4.add(button21_15);
+
+			JRadioButton button21_16 = new JRadioButton("");
+			button21_16.setBounds(320, 375, 20, 23);
+			panel_4.add(button21_16);
+
+			JRadioButton button21_17 = new JRadioButton("");
+			button21_17.setBounds(340, 375, 20, 23);
+			panel_4.add(button21_17);
+
+			JRadioButton button21_18 = new JRadioButton("");
+			button21_18.setBounds(360, 375, 20, 23);
+			panel_4.add(button21_18);
+
+			JRadioButton button21_19 = new JRadioButton("");
+			button21_19.setBounds(380, 375, 20, 23);
+			panel_4.add(button21_19);
+
+			JRadioButton button21_20 = new JRadioButton("");
+			button21_20.setBounds(400, 375, 20, 23);
+			panel_4.add(button21_20);
+
+			JRadioButton button21_21 = new JRadioButton("");
+			button21_21.setBounds(420, 375, 20, 23);
+			panel_4.add(button21_21);
+
+			JRadioButton button21_22 = new JRadioButton("");
+			button21_22.setBounds(440, 375, 20, 23);
+			panel_4.add(button21_22);
+
+			JRadioButton button21_23 = new JRadioButton("");
+			button21_23.setBounds(460, 375, 20, 23);
+			panel_4.add(button21_23);
+
+			JRadioButton button21_24 = new JRadioButton("");
+			button21_24.setBounds(480, 375, 20, 23);
+			panel_4.add(button21_24);
+
+			JRadioButton button21_25 = new JRadioButton("");
+			button21_25.setBounds(500, 375, 20, 23);
+			panel_4.add(button21_25);
+		
+
+		
+			JRadioButton button22_1 = new JRadioButton("");
+			button22_1.setBounds(20, 393, 20, 23);
+			panel_4.add(button22_1);
+
+			JRadioButton button22_2 = new JRadioButton("");
+			button22_2.setBounds(40, 393, 20, 23);
+			panel_4.add(button22_2);
+
+			JRadioButton button22_3 = new JRadioButton("");
+			button22_3.setBounds(60, 393, 20, 23);
+			panel_4.add(button22_3);
+
+			JRadioButton button22_4 = new JRadioButton("");
+			button22_4.setBounds(80, 393, 20, 23);
+			panel_4.add(button22_4);
+
+			JRadioButton button22_5 = new JRadioButton("");
+			button22_5.setBounds(100, 393, 20, 23);
+			panel_4.add(button22_5);
+
+			JRadioButton button22_6 = new JRadioButton("");
+			button22_6.setBounds(120, 393, 20, 23);
+			panel_4.add(button22_6);
+
+			JRadioButton button22_7 = new JRadioButton("");
+			button22_7.setBounds(140, 393, 20, 23);
+			panel_4.add(button22_7);
+
+			JRadioButton button22_8 = new JRadioButton("");
+			button22_8.setBounds(160, 393, 20, 23);
+			panel_4.add(button22_8);
+
+			JRadioButton button22_9 = new JRadioButton("");
+			button22_9.setBounds(180, 393, 20, 23);
+			panel_4.add(button22_9);
+
+			JRadioButton button22_10 = new JRadioButton("");
+			button22_10.setBounds(200, 393, 20, 23);
+			panel_4.add(button22_10);
+
+			JRadioButton button22_11 = new JRadioButton("");
+			button22_11.setBounds(220, 393, 20, 23);
+			panel_4.add(button22_11);
+
+			JRadioButton button22_12 = new JRadioButton("");
+			button22_12.setBounds(240, 393, 20, 23);
+			panel_4.add(button22_12);
+
+			JRadioButton button22_13 = new JRadioButton("");
+			button22_13.setBounds(260, 393, 20, 23);
+			panel_4.add(button22_13);
+
+			JRadioButton button22_14 = new JRadioButton("");
+			button22_14.setBounds(280, 393, 20, 23);
+			panel_4.add(button22_14);
+
+			JRadioButton button22_15 = new JRadioButton("");
+			button22_15.setBounds(300, 393, 20, 23);
+			panel_4.add(button22_15);
+
+			JRadioButton button22_16 = new JRadioButton("");
+			button22_16.setBounds(320, 393, 20, 23);
+			panel_4.add(button22_16);
+
+			JRadioButton button22_17 = new JRadioButton("");
+			button22_17.setBounds(340, 393, 20, 23);
+			panel_4.add(button22_17);
+
+			JRadioButton button22_18 = new JRadioButton("");
+			button22_18.setBounds(360, 393, 20, 23);
+			panel_4.add(button22_18);
+
+			JRadioButton button22_19 = new JRadioButton("");
+			button22_19.setBounds(380, 393, 20, 23);
+			panel_4.add(button22_19);
+
+			JRadioButton button22_20 = new JRadioButton("");
+			button22_20.setBounds(400, 393, 20, 23);
+			panel_4.add(button22_20);
+
+			JRadioButton button22_21 = new JRadioButton("");
+			button22_21.setBounds(420, 393, 20, 23);
+			panel_4.add(button22_21);
+
+			JRadioButton button22_22 = new JRadioButton("");
+			button22_22.setBounds(440, 393, 20, 23);
+			panel_4.add(button22_22);
+
+			JRadioButton button22_23 = new JRadioButton("");
+			button22_23.setBounds(460, 393, 20, 23);
+			panel_4.add(button22_23);
+
+			JRadioButton button22_24 = new JRadioButton("");
+			button22_24.setBounds(480, 393, 20, 23);
+			panel_4.add(button22_24);
+
+			JRadioButton button22_25 = new JRadioButton("");
+			button22_25.setBounds(500, 393, 20, 23);
+			panel_4.add(button22_25);
+		
+
+		
+			JRadioButton button23_1 = new JRadioButton("");
+			button23_1.setBounds(20, 411, 20, 23);
+			panel_4.add(button23_1);
+
+			JRadioButton button23_2 = new JRadioButton("");
+			button23_2.setBounds(40, 411, 20, 23);
+			panel_4.add(button23_2);
+
+			JRadioButton button23_3 = new JRadioButton("");
+			button23_3.setBounds(60, 411, 20, 23);
+			panel_4.add(button23_3);
+
+			JRadioButton button23_4 = new JRadioButton("");
+			button23_4.setBounds(80, 411, 20, 23);
+			panel_4.add(button23_4);
+
+			JRadioButton button23_5 = new JRadioButton("");
+			button23_5.setBounds(100, 411, 20, 23);
+			panel_4.add(button23_5);
+
+			JRadioButton button23_6 = new JRadioButton("");
+			button23_6.setBounds(120, 411, 20, 23);
+			panel_4.add(button23_6);
+
+			JRadioButton button23_7 = new JRadioButton("");
+			button23_7.setBounds(140, 411, 20, 23);
+			panel_4.add(button23_7);
+
+			JRadioButton button23_8 = new JRadioButton("");
+			button23_8.setBounds(160, 411, 20, 23);
+			panel_4.add(button23_8);
+
+			JRadioButton button23_9 = new JRadioButton("");
+			button23_9.setBounds(180, 411, 20, 23);
+			panel_4.add(button23_9);
+
+			JRadioButton button23_10 = new JRadioButton("");
+			button23_10.setBounds(200, 411, 20, 23);
+			panel_4.add(button23_10);
+
+			JRadioButton button23_11 = new JRadioButton("");
+			button23_11.setBounds(220, 411, 20, 23);
+			panel_4.add(button23_11);
+
+			JRadioButton button23_12 = new JRadioButton("");
+			button23_12.setBounds(240, 411, 20, 23);
+			panel_4.add(button23_12);
+
+			JRadioButton button23_13 = new JRadioButton("");
+			button23_13.setBounds(260, 411, 20, 23);
+			panel_4.add(button23_13);
+
+			JRadioButton button23_14 = new JRadioButton("");
+			button23_14.setBounds(280, 411, 20, 23);
+			panel_4.add(button23_14);
+
+			JRadioButton button23_15 = new JRadioButton("");
+			button23_15.setBounds(300, 411, 20, 23);
+			panel_4.add(button23_15);
+
+			JRadioButton button23_16 = new JRadioButton("");
+			button23_16.setBounds(320, 411, 20, 23);
+			panel_4.add(button23_16);
+
+			JRadioButton button23_17 = new JRadioButton("");
+			button23_17.setBounds(340, 411, 20, 23);
+			panel_4.add(button23_17);
+
+			JRadioButton button23_18 = new JRadioButton("");
+			button23_18.setBounds(360, 411, 20, 23);
+			panel_4.add(button23_18);
+
+			JRadioButton button23_19 = new JRadioButton("");
+			button23_19.setBounds(380, 411, 20, 23);
+			panel_4.add(button23_19);
+
+			JRadioButton button23_20 = new JRadioButton("");
+			button23_20.setBounds(400, 411, 20, 23);
+			panel_4.add(button23_20);
+
+			JRadioButton button23_21 = new JRadioButton("");
+			button23_21.setBounds(420, 411, 20, 23);
+			panel_4.add(button23_21);
+
+			JRadioButton button23_22 = new JRadioButton("");
+			button23_22.setBounds(440, 411, 20, 23);
+			panel_4.add(button23_22);
+
+			JRadioButton button23_23 = new JRadioButton("");
+			button23_23.setBounds(460, 411, 20, 23);
+			panel_4.add(button23_23);
+
+			JRadioButton button23_24 = new JRadioButton("");
+			button23_24.setBounds(480, 411, 20, 23);
+			panel_4.add(button23_24);
+
+			JRadioButton button23_25 = new JRadioButton("");
+			button23_25.setBounds(500, 411, 20, 23);
+			panel_4.add(button23_25);
+		
+
+		
+			JRadioButton button24_1 = new JRadioButton("");
+			button24_1.setBounds(20, 429, 20, 23);
+			panel_4.add(button24_1);
+
+			JRadioButton button24_2 = new JRadioButton("");
+			button24_2.setBounds(40, 429, 20, 23);
+			panel_4.add(button24_2);
+
+			JRadioButton button24_3 = new JRadioButton("");
+			button24_3.setBounds(60, 429, 20, 23);
+			panel_4.add(button24_3);
+
+			JRadioButton button24_4 = new JRadioButton("");
+			button24_4.setBounds(80, 429, 20, 23);
+			panel_4.add(button24_4);
+
+			JRadioButton button24_5 = new JRadioButton("");
+			button24_5.setBounds(100, 429, 20, 23);
+			panel_4.add(button24_5);
+
+			JRadioButton button24_6 = new JRadioButton("");
+			button24_6.setBounds(120, 429, 20, 23);
+			panel_4.add(button24_6);
+
+			JRadioButton button24_7 = new JRadioButton("");
+			button24_7.setBounds(140, 429, 20, 23);
+			panel_4.add(button24_7);
+
+			JRadioButton button24_8 = new JRadioButton("");
+			button24_8.setBounds(160, 429, 20, 23);
+			panel_4.add(button24_8);
+
+			JRadioButton button24_9 = new JRadioButton("");
+			button24_9.setBounds(180, 429, 20, 23);
+			panel_4.add(button24_9);
+
+			JRadioButton button24_10 = new JRadioButton("");
+			button24_10.setBounds(200, 429, 20, 23);
+			panel_4.add(button24_10);
+
+			JRadioButton button24_11 = new JRadioButton("");
+			button24_11.setBounds(220, 429, 20, 23);
+			panel_4.add(button24_11);
+
+			JRadioButton button24_12 = new JRadioButton("");
+			button24_12.setBounds(240, 429, 20, 23);
+			panel_4.add(button24_12);
+
+			JRadioButton button24_13 = new JRadioButton("");
+			button24_13.setBounds(260, 429, 20, 23);
+			panel_4.add(button24_13);
+
+			JRadioButton button24_14 = new JRadioButton("");
+			button24_14.setBounds(280, 429, 20, 23);
+			panel_4.add(button24_14);
+
+			JRadioButton button24_15 = new JRadioButton("");
+			button24_15.setBounds(300, 429, 20, 23);
+			panel_4.add(button24_15);
+
+			JRadioButton button24_16 = new JRadioButton("");
+			button24_16.setBounds(320, 429, 20, 23);
+			panel_4.add(button24_16);
+
+			JRadioButton button24_17 = new JRadioButton("");
+			button24_17.setBounds(340, 429, 20, 23);
+			panel_4.add(button24_17);
+
+			JRadioButton button24_18 = new JRadioButton("");
+			button24_18.setBounds(360, 429, 20, 23);
+			panel_4.add(button24_18);
+
+			JRadioButton button24_19 = new JRadioButton("");
+			button24_19.setBounds(380, 429, 20, 23);
+			panel_4.add(button24_19);
+
+			JRadioButton button24_20 = new JRadioButton("");
+			button24_20.setBounds(400, 429, 20, 23);
+			panel_4.add(button24_20);
+
+			JRadioButton button24_21 = new JRadioButton("");
+			button24_21.setBounds(420, 429, 20, 23);
+			panel_4.add(button24_21);
+
+			JRadioButton button24_22 = new JRadioButton("");
+			button24_22.setBounds(440, 429, 20, 23);
+			panel_4.add(button24_22);
+
+			JRadioButton button24_23 = new JRadioButton("");
+			button24_23.setBounds(460, 429, 20, 23);
+			panel_4.add(button24_23);
+
+			JRadioButton button24_24 = new JRadioButton("");
+			button24_24.setBounds(480, 429, 20, 23);
+			panel_4.add(button24_24);
+
+			JRadioButton button24_25 = new JRadioButton("");
+			button24_25.setBounds(500, 429, 20, 23);
+			panel_4.add(button24_25);
+		
+
+		
+			JRadioButton button25_1 = new JRadioButton("");
+			button25_1.setBounds(20, 447, 20, 23);
+			panel_4.add(button25_1);
+
+			JRadioButton button25_2 = new JRadioButton("");
+			button25_2.setBounds(40, 447, 20, 23);
+			panel_4.add(button25_2);
+
+			JRadioButton button25_3 = new JRadioButton("");
+			button25_3.setBounds(60, 447, 20, 23);
+			panel_4.add(button25_3);
+
+			JRadioButton button25_4 = new JRadioButton("");
+			button25_4.setBounds(80, 447, 20, 23);
+			panel_4.add(button25_4);
+
+			JRadioButton button25_5 = new JRadioButton("");
+			button25_5.setBounds(100, 447, 20, 23);
+			panel_4.add(button25_5);
+
+			JRadioButton button25_6 = new JRadioButton("");
+			button25_6.setBounds(120, 447, 20, 23);
+			panel_4.add(button25_6);
+
+			JRadioButton button25_7 = new JRadioButton("");
+			button25_7.setBounds(140, 447, 20, 23);
+			panel_4.add(button25_7);
+
+			JRadioButton button25_8 = new JRadioButton("");
+			button25_8.setBounds(160, 447, 20, 23);
+			panel_4.add(button25_8);
+
+			JRadioButton button25_9 = new JRadioButton("");
+			button25_9.setBounds(180, 447, 20, 23);
+			panel_4.add(button25_9);
+
+			JRadioButton button25_10 = new JRadioButton("");
+			button25_10.setBounds(200, 447, 20, 23);
+			panel_4.add(button25_10);
+
+			JRadioButton button25_11 = new JRadioButton("");
+			button25_11.setBounds(220, 447, 20, 23);
+			panel_4.add(button25_11);
+
+			JRadioButton button25_12 = new JRadioButton("");
+			button25_12.setBounds(240, 447, 20, 23);
+			panel_4.add(button25_12);
+
+			JRadioButton button25_13 = new JRadioButton("");
+			button25_13.setBounds(260, 447, 20, 23);
+			panel_4.add(button25_13);
+
+			JRadioButton button25_14 = new JRadioButton("");
+			button25_14.setBounds(280, 447, 20, 23);
+			panel_4.add(button25_14);
+
+			JRadioButton button25_15 = new JRadioButton("");
+			button25_15.setBounds(300, 447, 20, 23);
+			panel_4.add(button25_15);
+
+			JRadioButton button25_16 = new JRadioButton("");
+			button25_16.setBounds(320, 447, 20, 23);
+			panel_4.add(button25_16);
+
+			JRadioButton button25_17 = new JRadioButton("");
+			button25_17.setBounds(340, 447, 20, 23);
+			panel_4.add(button25_17);
+
+			JRadioButton button25_18 = new JRadioButton("");
+			button25_18.setBounds(360, 447, 20, 23);
+			panel_4.add(button25_18);
+
+			JRadioButton button25_19 = new JRadioButton("");
+			button25_19.setBounds(380, 447, 20, 23);
+			panel_4.add(button25_19);
+
+			JRadioButton button25_20 = new JRadioButton("");
+			button25_20.setBounds(400, 447, 20, 23);
+			panel_4.add(button25_20);
+
+			JRadioButton button25_21 = new JRadioButton("");
+			button25_21.setBounds(420, 447, 20, 23);
+			panel_4.add(button25_21);
+
+			JRadioButton button25_22 = new JRadioButton("");
+			button25_22.setBounds(440, 447, 20, 23);
+			panel_4.add(button25_22);
+
+			JRadioButton button25_23 = new JRadioButton("");
+			button25_23.setBounds(460, 447, 20, 23);
+			panel_4.add(button25_23);
+
+			JRadioButton button25_24 = new JRadioButton("");
+			button25_24.setBounds(480, 447, 20, 23);
+			panel_4.add(button25_24);
+
+			JRadioButton button25_25 = new JRadioButton("");
+			button25_25.setBounds(500, 447, 20, 23);
+			panel_4.add(button25_25);
+			
+			
+			
+		
+
+			buttons= new JRadioButton[26][26];
+			buttons[1][1]=button1_1;buttons[1][2]=button1_2;buttons[1][3]=button1_3;buttons[1][4]=button1_4;buttons[1][5]=button1_5;buttons[1][6]=button1_6;buttons[1][7]=button1_7;buttons[1][8]=button1_8;buttons[1][9]=button1_9;buttons[1][10]=button1_10;buttons[1][11]=button1_11;buttons[1][12]=button1_12;buttons[1][13]=button1_13;buttons[1][14]=button1_14;buttons[1][15]=button1_15;buttons[1][16]=button1_16;buttons[1][17]=button1_17;buttons[1][18]=button1_18;buttons[1][19]=button1_19;buttons[1][20]=button1_20;buttons[1][21]=button1_21;buttons[1][22]=button1_22;buttons[1][23]=button1_23;buttons[1][24]=button1_24;buttons[1][25]=button1_25;
+			buttons[2][1]=button2_1;buttons[2][2]=button2_2;buttons[2][3]=button2_3;buttons[2][4]=button2_4;buttons[2][5]=button2_5;buttons[2][6]=button2_6;buttons[2][7]=button2_7;buttons[2][8]=button2_8;buttons[2][9]=button2_9;buttons[2][10]=button2_10;buttons[2][11]=button2_11;buttons[2][12]=button2_12;buttons[2][13]=button2_13;buttons[2][14]=button2_14;buttons[2][15]=button2_15;buttons[2][16]=button2_16;buttons[2][17]=button2_17;buttons[2][18]=button2_18;buttons[2][19]=button2_19;buttons[2][20]=button2_20;buttons[2][21]=button2_21;buttons[2][22]=button2_22;buttons[2][23]=button2_23;buttons[2][24]=button2_24;buttons[2][25]=button2_25;
+			buttons[3][1]=button3_1;buttons[3][2]=button3_2;buttons[3][3]=button3_3;buttons[3][4]=button3_4;buttons[3][5]=button3_5;buttons[3][6]=button3_6;buttons[3][7]=button3_7;buttons[3][8]=button3_8;buttons[3][9]=button3_9;buttons[3][10]=button3_10;buttons[3][11]=button3_11;buttons[3][12]=button3_12;buttons[3][13]=button3_13;buttons[3][14]=button3_14;buttons[3][15]=button3_15;buttons[3][16]=button3_16;buttons[3][17]=button3_17;buttons[3][18]=button3_18;buttons[3][19]=button3_19;buttons[3][20]=button3_20;buttons[3][21]=button3_21;buttons[3][22]=button3_22;buttons[3][23]=button3_23;buttons[3][24]=button3_24;buttons[3][25]=button3_25;
+			buttons[4][1]=button4_1;buttons[4][2]=button4_2;buttons[4][3]=button4_3;buttons[4][4]=button4_4;buttons[4][5]=button4_5;buttons[4][6]=button4_6;buttons[4][7]=button4_7;buttons[4][8]=button4_8;buttons[4][9]=button4_9;buttons[4][10]=button4_10;buttons[4][11]=button4_11;buttons[4][12]=button4_12;buttons[4][13]=button4_13;buttons[4][14]=button4_14;buttons[4][15]=button4_15;buttons[4][16]=button4_16;buttons[4][17]=button4_17;buttons[4][18]=button4_18;buttons[4][19]=button4_19;buttons[4][20]=button4_20;buttons[4][21]=button4_21;buttons[4][22]=button4_22;buttons[4][23]=button4_23;buttons[4][24]=button4_24;buttons[4][25]=button4_25;
+			buttons[5][1]=button5_1;buttons[5][2]=button5_2;buttons[5][3]=button5_3;buttons[5][4]=button5_4;buttons[5][5]=button5_5;buttons[5][6]=button5_6;buttons[5][7]=button5_7;buttons[5][8]=button5_8;buttons[5][9]=button5_9;buttons[5][10]=button5_10;buttons[5][11]=button5_11;buttons[5][12]=button5_12;buttons[5][13]=button5_13;buttons[5][14]=button5_14;buttons[5][15]=button5_15;buttons[5][16]=button5_16;buttons[5][17]=button5_17;buttons[5][18]=button5_18;buttons[5][19]=button5_19;buttons[5][20]=button5_20;buttons[5][21]=button5_21;buttons[5][22]=button5_22;buttons[5][23]=button5_23;buttons[5][24]=button5_24;buttons[5][25]=button5_25;
+			buttons[6][1]=button6_1;buttons[6][2]=button6_2;buttons[6][3]=button6_3;buttons[6][4]=button6_4;buttons[6][5]=button6_5;buttons[6][6]=button6_6;buttons[6][7]=button6_7;buttons[6][8]=button6_8;buttons[6][9]=button6_9;buttons[6][10]=button6_10;buttons[6][11]=button6_11;buttons[6][12]=button6_12;buttons[6][13]=button6_13;buttons[6][14]=button6_14;buttons[6][15]=button6_15;buttons[6][16]=button6_16;buttons[6][17]=button6_17;buttons[6][18]=button6_18;buttons[6][19]=button6_19;buttons[6][20]=button6_20;buttons[6][21]=button6_21;buttons[6][22]=button6_22;buttons[6][23]=button6_23;buttons[6][24]=button6_24;buttons[6][25]=button6_25;
+			buttons[7][1]=button7_1;buttons[7][2]=button7_2;buttons[7][3]=button7_3;buttons[7][4]=button7_4;buttons[7][5]=button7_5;buttons[7][6]=button7_6;buttons[7][7]=button7_7;buttons[7][8]=button7_8;buttons[7][9]=button7_9;buttons[7][10]=button7_10;buttons[7][11]=button7_11;buttons[7][12]=button7_12;buttons[7][13]=button7_13;buttons[7][14]=button7_14;buttons[7][15]=button7_15;buttons[7][16]=button7_16;buttons[7][17]=button7_17;buttons[7][18]=button7_18;buttons[7][19]=button7_19;buttons[7][20]=button7_20;buttons[7][21]=button7_21;buttons[7][22]=button7_22;buttons[7][23]=button7_23;buttons[7][24]=button7_24;buttons[7][25]=button7_25;
+			buttons[8][1]=button8_1;buttons[8][2]=button8_2;buttons[8][3]=button8_3;buttons[8][4]=button8_4;buttons[8][5]=button8_5;buttons[8][6]=button8_6;buttons[8][7]=button8_7;buttons[8][8]=button8_8;buttons[8][9]=button8_9;buttons[8][10]=button8_10;buttons[8][11]=button8_11;buttons[8][12]=button8_12;buttons[8][13]=button8_13;buttons[8][14]=button8_14;buttons[8][15]=button8_15;buttons[8][16]=button8_16;buttons[8][17]=button8_17;buttons[8][18]=button8_18;buttons[8][19]=button8_19;buttons[8][20]=button8_20;buttons[8][21]=button8_21;buttons[8][22]=button8_22;buttons[8][23]=button8_23;buttons[8][24]=button8_24;buttons[8][25]=button8_25;
+			buttons[9][1]=button9_1;buttons[9][2]=button9_2;buttons[9][3]=button9_3;buttons[9][4]=button9_4;buttons[9][5]=button9_5;buttons[9][6]=button9_6;buttons[9][7]=button9_7;buttons[9][8]=button9_8;buttons[9][9]=button9_9;buttons[9][10]=button9_10;buttons[9][11]=button9_11;buttons[9][12]=button9_12;buttons[9][13]=button9_13;buttons[9][14]=button9_14;buttons[9][15]=button9_15;buttons[9][16]=button9_16;buttons[9][17]=button9_17;buttons[9][18]=button9_18;buttons[9][19]=button9_19;buttons[9][20]=button9_20;buttons[9][21]=button9_21;buttons[9][22]=button9_22;buttons[9][23]=button9_23;buttons[9][24]=button9_24;buttons[9][25]=button9_25;
+			buttons[10][1]=button10_1;buttons[10][2]=button10_2;buttons[10][3]=button10_3;buttons[10][4]=button10_4;buttons[10][5]=button10_5;buttons[10][6]=button10_6;buttons[10][7]=button10_7;buttons[10][8]=button10_8;buttons[10][9]=button10_9;buttons[10][10]=button10_10;buttons[10][11]=button10_11;buttons[10][12]=button10_12;buttons[10][13]=button10_13;buttons[10][14]=button10_14;buttons[10][15]=button10_15;buttons[10][16]=button10_16;buttons[10][17]=button10_17;buttons[10][18]=button10_18;buttons[10][19]=button10_19;buttons[10][20]=button10_20;buttons[10][21]=button10_21;buttons[10][22]=button10_22;buttons[10][23]=button10_23;buttons[10][24]=button10_24;buttons[10][25]=button10_25;
+			buttons[11][1]=button11_1;buttons[11][2]=button11_2;buttons[11][3]=button11_3;buttons[11][4]=button11_4;buttons[11][5]=button11_5;buttons[11][6]=button11_6;buttons[11][7]=button11_7;buttons[11][8]=button11_8;buttons[11][9]=button11_9;buttons[11][10]=button11_10;buttons[11][11]=button11_11;buttons[11][12]=button11_12;buttons[11][13]=button11_13;buttons[11][14]=button11_14;buttons[11][15]=button11_15;buttons[11][16]=button11_16;buttons[11][17]=button11_17;buttons[11][18]=button11_18;buttons[11][19]=button11_19;buttons[11][20]=button11_20;buttons[11][21]=button11_21;buttons[11][22]=button11_22;buttons[11][23]=button11_23;buttons[11][24]=button11_24;buttons[11][25]=button11_25;
+			buttons[12][1]=button12_1;buttons[12][2]=button12_2;buttons[12][3]=button12_3;buttons[12][4]=button12_4;buttons[12][5]=button12_5;buttons[12][6]=button12_6;buttons[12][7]=button12_7;buttons[12][8]=button12_8;buttons[12][9]=button12_9;buttons[12][10]=button12_10;buttons[12][11]=button12_11;buttons[12][12]=button12_12;buttons[12][13]=button12_13;buttons[12][14]=button12_14;buttons[12][15]=button12_15;buttons[12][16]=button12_16;buttons[12][17]=button12_17;buttons[12][18]=button12_18;buttons[12][19]=button12_19;buttons[12][20]=button12_20;buttons[12][21]=button12_21;buttons[12][22]=button12_22;buttons[12][23]=button12_23;buttons[12][24]=button12_24;buttons[12][25]=button12_25;
+			buttons[13][1]=button13_1;buttons[13][2]=button13_2;buttons[13][3]=button13_3;buttons[13][4]=button13_4;buttons[13][5]=button13_5;buttons[13][6]=button13_6;buttons[13][7]=button13_7;buttons[13][8]=button13_8;buttons[13][9]=button13_9;buttons[13][10]=button13_10;buttons[13][11]=button13_11;buttons[13][12]=button13_12;buttons[13][13]=button13_13;buttons[13][14]=button13_14;buttons[13][15]=button13_15;buttons[13][16]=button13_16;buttons[13][17]=button13_17;buttons[13][18]=button13_18;buttons[13][19]=button13_19;buttons[13][20]=button13_20;buttons[13][21]=button13_21;buttons[13][22]=button13_22;buttons[13][23]=button13_23;buttons[13][24]=button13_24;buttons[13][25]=button13_25;
+			buttons[14][1]=button14_1;buttons[14][2]=button14_2;buttons[14][3]=button14_3;buttons[14][4]=button14_4;buttons[14][5]=button14_5;buttons[14][6]=button14_6;buttons[14][7]=button14_7;buttons[14][8]=button14_8;buttons[14][9]=button14_9;buttons[14][10]=button14_10;buttons[14][11]=button14_11;buttons[14][12]=button14_12;buttons[14][13]=button14_13;buttons[14][14]=button14_14;buttons[14][15]=button14_15;buttons[14][16]=button14_16;buttons[14][17]=button14_17;buttons[14][18]=button14_18;buttons[14][19]=button14_19;buttons[14][20]=button14_20;buttons[14][21]=button14_21;buttons[14][22]=button14_22;buttons[14][23]=button14_23;buttons[14][24]=button14_24;buttons[14][25]=button14_25;
+			buttons[15][1]=button15_1;buttons[15][2]=button15_2;buttons[15][3]=button15_3;buttons[15][4]=button15_4;buttons[15][5]=button15_5;buttons[15][6]=button15_6;buttons[15][7]=button15_7;buttons[15][8]=button15_8;buttons[15][9]=button15_9;buttons[15][10]=button15_10;buttons[15][11]=button15_11;buttons[15][12]=button15_12;buttons[15][13]=button15_13;buttons[15][14]=button15_14;buttons[15][15]=button15_15;buttons[15][16]=button15_16;buttons[15][17]=button15_17;buttons[15][18]=button15_18;buttons[15][19]=button15_19;buttons[15][20]=button15_20;buttons[15][21]=button15_21;buttons[15][22]=button15_22;buttons[15][23]=button15_23;buttons[15][24]=button15_24;buttons[15][25]=button15_25;
+			buttons[16][1]=button16_1;buttons[16][2]=button16_2;buttons[16][3]=button16_3;buttons[16][4]=button16_4;buttons[16][5]=button16_5;buttons[16][6]=button16_6;buttons[16][7]=button16_7;buttons[16][8]=button16_8;buttons[16][9]=button16_9;buttons[16][10]=button16_10;buttons[16][11]=button16_11;buttons[16][12]=button16_12;buttons[16][13]=button16_13;buttons[16][14]=button16_14;buttons[16][15]=button16_15;buttons[16][16]=button16_16;buttons[16][17]=button16_17;buttons[16][18]=button16_18;buttons[16][19]=button16_19;buttons[16][20]=button16_20;buttons[16][21]=button16_21;buttons[16][22]=button16_22;buttons[16][23]=button16_23;buttons[16][24]=button16_24;buttons[16][25]=button16_25;
+			buttons[17][1]=button17_1;buttons[17][2]=button17_2;buttons[17][3]=button17_3;buttons[17][4]=button17_4;buttons[17][5]=button17_5;buttons[17][6]=button17_6;buttons[17][7]=button17_7;buttons[17][8]=button17_8;buttons[17][9]=button17_9;buttons[17][10]=button17_10;buttons[17][11]=button17_11;buttons[17][12]=button17_12;buttons[17][13]=button17_13;buttons[17][14]=button17_14;buttons[17][15]=button17_15;buttons[17][16]=button17_16;buttons[17][17]=button17_17;buttons[17][18]=button17_18;buttons[17][19]=button17_19;buttons[17][20]=button17_20;buttons[17][21]=button17_21;buttons[17][22]=button17_22;buttons[17][23]=button17_23;buttons[17][24]=button17_24;buttons[17][25]=button17_25;
+			buttons[18][1]=button18_1;buttons[18][2]=button18_2;buttons[18][3]=button18_3;buttons[18][4]=button18_4;buttons[18][5]=button18_5;buttons[18][6]=button18_6;buttons[18][7]=button18_7;buttons[18][8]=button18_8;buttons[18][9]=button18_9;buttons[18][10]=button18_10;buttons[18][11]=button18_11;buttons[18][12]=button18_12;buttons[18][13]=button18_13;buttons[18][14]=button18_14;buttons[18][15]=button18_15;buttons[18][16]=button18_16;buttons[18][17]=button18_17;buttons[18][18]=button18_18;buttons[18][19]=button18_19;buttons[18][20]=button18_20;buttons[18][21]=button18_21;buttons[18][22]=button18_22;buttons[18][23]=button18_23;buttons[18][24]=button18_24;buttons[18][25]=button18_25;
+			buttons[19][1]=button19_1;buttons[19][2]=button19_2;buttons[19][3]=button19_3;buttons[19][4]=button19_4;buttons[19][5]=button19_5;buttons[19][6]=button19_6;buttons[19][7]=button19_7;buttons[19][8]=button19_8;buttons[19][9]=button19_9;buttons[19][10]=button19_10;buttons[19][11]=button19_11;buttons[19][12]=button19_12;buttons[19][13]=button19_13;buttons[19][14]=button19_14;buttons[19][15]=button19_15;buttons[19][16]=button19_16;buttons[19][17]=button19_17;buttons[19][18]=button19_18;buttons[19][19]=button19_19;buttons[19][20]=button19_20;buttons[19][21]=button19_21;buttons[19][22]=button19_22;buttons[19][23]=button19_23;buttons[19][24]=button19_24;buttons[19][25]=button19_25;
+			buttons[20][1]=button20_1;buttons[20][2]=button20_2;buttons[20][3]=button20_3;buttons[20][4]=button20_4;buttons[20][5]=button20_5;buttons[20][6]=button20_6;buttons[20][7]=button20_7;buttons[20][8]=button20_8;buttons[20][9]=button20_9;buttons[20][10]=button20_10;buttons[20][11]=button20_11;buttons[20][12]=button20_12;buttons[20][13]=button20_13;buttons[20][14]=button20_14;buttons[20][15]=button20_15;buttons[20][16]=button20_16;buttons[20][17]=button20_17;buttons[20][18]=button20_18;buttons[20][19]=button20_19;buttons[20][20]=button20_20;buttons[20][21]=button20_21;buttons[20][22]=button20_22;buttons[20][23]=button20_23;buttons[20][24]=button20_24;buttons[20][25]=button20_25;
+			buttons[21][1]=button21_1;buttons[21][2]=button21_2;buttons[21][3]=button21_3;buttons[21][4]=button21_4;buttons[21][5]=button21_5;buttons[21][6]=button21_6;buttons[21][7]=button21_7;buttons[21][8]=button21_8;buttons[21][9]=button21_9;buttons[21][10]=button21_10;buttons[21][11]=button21_11;buttons[21][12]=button21_12;buttons[21][13]=button21_13;buttons[21][14]=button21_14;buttons[21][15]=button21_15;buttons[21][16]=button21_16;buttons[21][17]=button21_17;buttons[21][18]=button21_18;buttons[21][19]=button21_19;buttons[21][20]=button21_20;buttons[21][21]=button21_21;buttons[21][22]=button21_22;buttons[21][23]=button21_23;buttons[21][24]=button21_24;buttons[21][25]=button21_25;
+			buttons[22][1]=button22_1;buttons[22][2]=button22_2;buttons[22][3]=button22_3;buttons[22][4]=button22_4;buttons[22][5]=button22_5;buttons[22][6]=button22_6;buttons[22][7]=button22_7;buttons[22][8]=button22_8;buttons[22][9]=button22_9;buttons[22][10]=button22_10;buttons[22][11]=button22_11;buttons[22][12]=button22_12;buttons[22][13]=button22_13;buttons[22][14]=button22_14;buttons[22][15]=button22_15;buttons[22][16]=button22_16;buttons[22][17]=button22_17;buttons[22][18]=button22_18;buttons[22][19]=button22_19;buttons[22][20]=button22_20;buttons[22][21]=button22_21;buttons[22][22]=button22_22;buttons[22][23]=button22_23;buttons[22][24]=button22_24;buttons[22][25]=button22_25;
+			buttons[23][1]=button23_1;buttons[23][2]=button23_2;buttons[23][3]=button23_3;buttons[23][4]=button23_4;buttons[23][5]=button23_5;buttons[23][6]=button23_6;buttons[23][7]=button23_7;buttons[23][8]=button23_8;buttons[23][9]=button23_9;buttons[23][10]=button23_10;buttons[23][11]=button23_11;buttons[23][12]=button23_12;buttons[23][13]=button23_13;buttons[23][14]=button23_14;buttons[23][15]=button23_15;buttons[23][16]=button23_16;buttons[23][17]=button23_17;buttons[23][18]=button23_18;buttons[23][19]=button23_19;buttons[23][20]=button23_20;buttons[23][21]=button23_21;buttons[23][22]=button23_22;buttons[23][23]=button23_23;buttons[23][24]=button23_24;buttons[23][25]=button23_25;
+			buttons[24][1]=button24_1;buttons[24][2]=button24_2;buttons[24][3]=button24_3;buttons[24][4]=button24_4;buttons[24][5]=button24_5;buttons[24][6]=button24_6;buttons[24][7]=button24_7;buttons[24][8]=button24_8;buttons[24][9]=button24_9;buttons[24][10]=button24_10;buttons[24][11]=button24_11;buttons[24][12]=button24_12;buttons[24][13]=button24_13;buttons[24][14]=button24_14;buttons[24][15]=button24_15;buttons[24][16]=button24_16;buttons[24][17]=button24_17;buttons[24][18]=button24_18;buttons[24][19]=button24_19;buttons[24][20]=button24_20;buttons[24][21]=button24_21;buttons[24][22]=button24_22;buttons[24][23]=button24_23;buttons[24][24]=button24_24;buttons[24][25]=button24_25;
+			buttons[25][1]=button25_1;buttons[25][2]=button25_2;buttons[25][3]=button25_3;buttons[25][4]=button25_4;buttons[25][5]=button25_5;buttons[25][6]=button25_6;buttons[25][7]=button25_7;buttons[25][8]=button25_8;buttons[25][9]=button25_9;buttons[25][10]=button25_10;buttons[25][11]=button25_11;buttons[25][12]=button25_12;buttons[25][13]=button25_13;buttons[25][14]=button25_14;buttons[25][15]=button25_15;buttons[25][16]=button25_16;buttons[25][17]=button25_17;buttons[25][18]=button25_18;buttons[25][19]=button25_19;buttons[25][20]=button25_20;buttons[25][21]=button25_21;buttons[25][22]=button25_22;buttons[25][23]=button25_23;buttons[25][24]=button25_24;buttons[25][25]=button25_25;
+
 		AnimationControl.form = this.frmGraphDraw;
+		
+				final JPanel panel_help = new JPanel();
+				panel_help.setVisible(false);
+				panel_help.setEnabled(false);
+				panel_help.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
+						null, null));
+				panel_help.setBounds(5, 110, 774, 496);
+				frmGraphDraw.getContentPane().add(panel_help);
+				panel_help.setLayout(null);
+				
+						JLabel lblFirstTimeUser = new JLabel("First time user demo");
+						lblFirstTimeUser.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+						lblFirstTimeUser.setBounds(5, 5, 112, 15);
+						panel_help.add(lblFirstTimeUser);
+						
+								JLabel lblToDemonstrateThe = new JLabel(
+										"To demonstrate the usage of this software, please click the import demo button. This will import a 21 nodes graph with the following automorphism");
+								lblToDemonstrateThe.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+								lblToDemonstrateThe.setBounds(12, 25, 749, 15);
+								panel_help.add(lblToDemonstrateThe);
+								
+										JLabel lblGroupGenerator = new JLabel(
+												"group generator: (1,8,7), (3,17,13), (4,11,19), (5,20,10), (6,14,16) and the following adjaciency matrix:");
+										lblGroupGenerator.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+										lblGroupGenerator.setBounds(12, 40, 530, 15);
+										panel_help.add(lblGroupGenerator);
+										
+												JLabel label = new JLabel("011111000000000000000");
+												label.setFont(new Font("Monospaced", Font.PLAIN, 10));
+												label.setBounds(17, 55, 157, 15);
+												panel_help.add(label);
+												
+														JLabel label_26 = new JLabel("100000111000000000000");
+														label_26.setFont(new Font("Monospaced", Font.PLAIN, 10));
+														label_26.setBounds(17, 62, 157, 15);
+														panel_help.add(label_26);
+														
+																JLabel label_27 = new JLabel("100000000111000000000");
+																label_27.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																label_27.setBounds(17, 69, 157, 15);
+																panel_help.add(label_27);
+																
+																		JLabel label_28 = new JLabel("100000000000111000000");
+																		label_28.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																		label_28.setBounds(17, 76, 157, 15);
+																		panel_help.add(label_28);
+																		
+																				JLabel label_29 = new JLabel("100000000000000111000");
+																				label_29.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																				label_29.setBounds(17, 83, 157, 15);
+																				panel_help.add(label_29);
+																				
+																						JLabel label_30 = new JLabel("100000000000000000111");
+																						label_30.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																						label_30.setBounds(17, 90, 157, 15);
+																						panel_help.add(label_30);
+																						
+																								JLabel label_56 = new JLabel("010000000100100100100");
+																								label_56.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																								label_56.setBounds(17, 97, 157, 15);
+																								panel_help.add(label_56);
+																								
+																										JLabel label_57 = new JLabel("010000000010010010010");
+																										label_57.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																										label_57.setBounds(17, 104, 157, 15);
+																										panel_help.add(label_57);
+																										
+																												JLabel label_58 = new JLabel("010000000001001001000");
+																												label_58.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																												label_58.setBounds(17, 111, 157, 15);
+																												panel_help.add(label_58);
+																												
+																														JLabel label_59 = new JLabel("001000100000010001000");
+																														label_59.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																														label_59.setBounds(17, 118, 157, 15);
+																														panel_help.add(label_59);
+																														
+																																JLabel label_60 = new JLabel("001000010000001100000");
+																																label_60.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																label_60.setBounds(17, 125, 157, 15);
+																																panel_help.add(label_60);
+																																
+																																		JLabel label_61 = new JLabel("001000001000100010001");
+																																		label_61.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																		label_61.setBounds(17, 132, 157, 15);
+																																		panel_help.add(label_61);
+																																		
+																																				JLabel label_62 = new JLabel("000100100001000000010");
+																																				label_62.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																				label_62.setBounds(17, 139, 157, 15);
+																																				panel_help.add(label_62);
+																																				
+																																						JLabel label_63 = new JLabel("000100010100000000001");
+																																						label_63.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																						label_63.setBounds(17, 146, 157, 15);
+																																						panel_help.add(label_63);
+																																						
+																																								JLabel label_64 = new JLabel("000100001010000000100");
+																																								label_64.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																								label_64.setBounds(17, 153, 157, 15);
+																																								panel_help.add(label_64);
+																																								
+																																										JLabel label_65 = new JLabel("000010100010000000001");
+																																										label_65.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																										label_65.setBounds(17, 160, 157, 15);
+																																										panel_help.add(label_65);
+																																										
+																																												JLabel label_66 = new JLabel("000010010001000000100");
+																																												label_66.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																												label_66.setBounds(17, 167, 157, 15);
+																																												panel_help.add(label_66);
+																																												
+																																														JLabel label_67 = new JLabel("000010001100000000010");
+																																														label_67.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																														label_67.setBounds(17, 174, 157, 15);
+																																														panel_help.add(label_67);
+																																														
+																																																JLabel label_68 = new JLabel("000001100000001010000");
+																																																label_68.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																																label_68.setBounds(17, 181, 157, 15);
+																																																panel_help.add(label_68);
+																																																
+																																																		JLabel label_69 = new JLabel("000001010000100001000");
+																																																		label_69.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																																		label_69.setBounds(17, 188, 157, 15);
+																																																		panel_help.add(label_69);
+																																																		
+																																																				JLabel label_70 = new JLabel("000001000001010100000");
+																																																				label_70.setFont(new Font("Monospaced", Font.PLAIN, 10));
+																																																				label_70.setBounds(17, 195, 157, 15);
+																																																				panel_help.add(label_70);
+																																																				
+																																																						JLabel lblAfterImportingThe = new JLabel(
+																																																								"After importing the matrix, select one of the 6 options from the \"Draw mode\" panel. Each option will represent the");
+																																																						lblAfterImportingThe.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																						lblAfterImportingThe.setBounds(167, 56, 597, 15);
+																																																						panel_help.add(lblAfterImportingThe);
+																																																						
+																																																								JLabel lblGraphInA = new JLabel("graph in a different way as follows:");
+																																																								lblGraphInA.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																								lblGraphInA.setBounds(167, 71, 582, 15);
+																																																								panel_help.add(lblGraphInA);
+																																																								
+																																																										JLabel lblRandom = new JLabel(
+																																																												"1. Random -- will simply place every node at a random position on the canvas area; this option does not use the");
+																																																										lblRandom.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																										lblRandom.setBounds(167, 86, 597, 15);
+																																																										panel_help.add(lblRandom);
+																																																										
+																																																												JLabel lblAutomorphismGroupGenerators = new JLabel(
+																																																														"                     automorphism group generators. There are 2 optimisations to the random mode: reduction of the sum of");
+																																																												lblAutomorphismGroupGenerators.setFont(new Font("Comic Sans MS",
+																																																														Font.PLAIN, 11));
+																																																												lblAutomorphismGroupGenerators.setBounds(167, 101, 597, 15);
+																																																												panel_help.add(lblAutomorphismGroupGenerators);
+																																																												
+																																																														JLabel lblThereAre = new JLabel(
+																																																																"                     all edge lengths and of the number of edge crossings; these are done by swapping nodes around.");
+																																																														lblThereAre.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																														lblThereAre.setBounds(167, 116, 582, 15);
+																																																														panel_help.add(lblThereAre);
+																																																														
+																																																																JLabel lblRandomOn = new JLabel(
+																																																																		"2. Random on Circle -- will place every node at a random position on an imaginary circle; this option does not use the");
+																																																																lblRandomOn.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																lblRandomOn.setBounds(167, 140, 597, 15);
+																																																																panel_help.add(lblRandomOn);
+																																																																
+																																																																		JLabel lblTheAutomorphismGroup = new JLabel(
+																																																																				"                     automorphism group generators. There are 2optimisations to the random on circle mode: reduction of the");
+																																																																		lblTheAutomorphismGroup.setFont(new Font("Comic Sans MS", Font.PLAIN,
+																																																																				11));
+																																																																		lblTheAutomorphismGroup.setBounds(167, 155, 597, 15);
+																																																																		panel_help.add(lblTheAutomorphismGroup);
+																																																																		
+																																																																				JLabel lblThereAre_1 = new JLabel(
+																																																																						"                     sum of all edge lengths and of the number of crossings; these are done by swapping nodes around.");
+																																																																				lblThereAre_1.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																				lblThereAre_1.setBounds(167, 170, 597, 15);
+																																																																				panel_help.add(lblThereAre_1);
+																																																																				
+																																																																						JLabel lblSymmetrical = new JLabel(
+																																																																								"3. Symmetrical on Circle (1) -- will place the nodes on an imaginary circle, grouping each orbit. For this example, nodes 1,8 and 7 will be paired in ");
+																																																																						lblSymmetrical.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																						lblSymmetrical.setBounds(12, 207, 749, 15);
+																																																																						panel_help.add(lblSymmetrical);
+																																																																						
+																																																																								JLabel lblAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = new JLabel(
+																																																																										"                     one orbit, 3, 17 and 13 in another orbit and so on. The are 3 optimisations to the symmetrical on a circle mode: modification of the ");
+																																																																								lblAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setFont(new Font(
+																																																																										"Comic Sans MS", Font.PLAIN, 11));
+																																																																								lblAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setBounds(12, 222, 749,
+																																																																										15);
+																																																																								panel_help.add(lblAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa);
+																																																																								
+																																																																										JLabel lblDistanceBetweenNodes = new JLabel(
+																																																																												"                     distance between nodes from the same orbit, reduction of the sum of all edge lengths and of the number of crossings, by moving ");
+																																																																										lblDistanceBetweenNodes.setFont(new Font("Comic Sans MS", Font.PLAIN,
+																																																																												11));
+																																																																										lblDistanceBetweenNodes.setBounds(12, 237, 749, 15);
+																																																																										panel_help.add(lblDistanceBetweenNodes);
+																																																																										
+																																																																												JLabel lblAroundTheNodes = new JLabel(
+																																																																														"                     around the nodes that are not in the automorphism group generator. Also, there are 2 preset modes for arranging these nodes.");
+																																																																												lblAroundTheNodes.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																												lblAroundTheNodes.setBounds(12, 252, 749, 15);
+																																																																												panel_help.add(lblAroundTheNodes);
+																																																																												
+																																																																														JLabel lblSymmetricalOn = new JLabel(
+																																																																																"4. Symmetrical on Circle (2) -- will place the nodes in the same way the previous mode does, with the difference that the nodes from the orbits are");
+																																																																														lblSymmetricalOn.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																														lblSymmetricalOn.setBounds(12, 276, 749, 15);
+																																																																														panel_help.add(lblSymmetricalOn);
+																																																																														
+																																																																																JLabel lblNotGroupedBut = new JLabel(
+																																																																																		"                     not grouped, but placed so on opposite sides of the circle. We can now consider that there are no longer 5 orbits of 3 nodes, but 3 ");
+																																																																																lblNotGroupedBut.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																lblNotGroupedBut.setBounds(12, 291, 749, 15);
+																																																																																panel_help.add(lblNotGroupedBut);
+																																																																																
+																																																																																		JLabel lblOrbitsOf = new JLabel(
+																																																																																				"                     orbits of 5 nodes: 1,3,4,5 and 6 forming one. The same optimisations apply.");
+																																																																																		lblOrbitsOf.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																		lblOrbitsOf.setBounds(12, 306, 749, 15);
+																																																																																		panel_help.add(lblOrbitsOf);
+																																																																																		
+																																																																																				JLabel lblSymmetricalOn_1 = new JLabel(
+																																																																																						"5. Symmetrical on Multiple Circles (1) -- will place the nodes on more imaginary circles, having each orbit on a different circle. For this example, ");
+																																																																																				lblSymmetricalOn_1.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																				lblSymmetricalOn_1.setBounds(12, 330, 749, 15);
+																																																																																				panel_help.add(lblSymmetricalOn_1);
+																																																																																				
+																																																																																						JLabel lblNodes = new JLabel(
+																																																																																								"                     nodes 1, 8 and 7 will form an orbit and will occupy one imaginary circle and so on. There are 5 optimisations for this mode: modification ");
+																																																																																						lblNodes.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																						lblNodes.setBounds(12, 345, 749, 15);
+																																																																																						panel_help.add(lblNodes);
+																																																																																						
+																																																																																								JLabel lblOfTheDistance = new JLabel(
+																																																																																										"                     of the distance between the imaginary circles, modification of the size of the circles, reduction of the sum of all edge lengths and of ");
+																																																																																								lblOfTheDistance.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																								lblOfTheDistance.setBounds(12, 360, 749, 15);
+																																																																																								panel_help.add(lblOfTheDistance);
+																																																																																								
+																																																																																										JLabel lblTheNumberOf = new JLabel(
+																																																																																												"                     the number of crossings, by moving around the nodes that are not in the automorphism group generator and flipping some nodes on the ");
+																																																																																										lblTheNumberOf.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																										lblTheNumberOf.setBounds(12, 375, 749, 15);
+																																																																																										panel_help.add(lblTheNumberOf);
+																																																																																										
+																																																																																												JLabel lblForArrangingThese = new JLabel(
+																																																																																														"                      orbits to achieve perfect symmetry. Also, there are 2 preset modes for arranging these nodes.");
+																																																																																												lblForArrangingThese.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																												lblForArrangingThese.setBounds(12, 390, 749, 15);
+																																																																																												panel_help.add(lblForArrangingThese);
+																																																																																												
+																																																																																														JLabel lblSymmetricalOn_2 = new JLabel(
+																																																																																																"6. Symmetrical on Multiple Circles (2) -- will place the nodes in the same way the previous mode does, with the difference that the nodes from the");
+																																																																																														lblSymmetricalOn_2.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																														lblSymmetricalOn_2.setBounds(12, 414, 749, 15);
+																																																																																														panel_help.add(lblSymmetricalOn_2);
+																																																																																														
+																																																																																																JLabel lblOrbitsAreNot = new JLabel(
+																																																																																																		"                     orbits are not grouped but placed on a different circle. We can now consider that there are no longer 5 orbits of 3 nodes, but 3 orbits");
+																																																																																																lblOrbitsAreNot.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																																lblOrbitsAreNot.setBounds(12, 429, 749, 15);
+																																																																																																panel_help.add(lblOrbitsAreNot);
+																																																																																																
+																																																																																																		JLabel lblOfNodes = new JLabel(
+																																																																																																				"                     of 5 nodes: 1,3,4,5 and 6 forming one. The same optimisations apply.");
+																																																																																																		lblOfNodes.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																																		lblOfNodes.setBounds(12, 444, 749, 15);
+																																																																																																		panel_help.add(lblOfNodes);
+																																																																																																		
+																																																																																																				JButton btnImportDemo = new JButton("Import demo");
+																																																																																																				btnImportDemo.addActionListener(new ActionListener() {
+																																																																																																					public void actionPerformed(ActionEvent arg0) {
+																																																																																																						ac.processImportDemo();
+																																																																																																					}
+																																																																																																				});
+																																																																																																				btnImportDemo.setToolTipText("Open the documentation");
+																																																																																																				btnImportDemo.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																																				btnImportDemo.setBounds(482, 455, 102, 25);
+																																																																																																				panel_help.add(btnImportDemo);
+																																																																																																				
+																																																																																																						JButton btnMoreDetails = new JButton("More details");
+																																																																																																						btnMoreDetails.addActionListener(new ActionListener() {
+																																																																																																							public void actionPerformed(ActionEvent arg0) {
+																																																																																																								try {
+																																																																																																									java.awt.Desktop.getDesktop().browse(new URI("http://www.dcs.gla.ac.uk/"));
+																																																																																																								} catch (IOException | URISyntaxException e) {
+																																																																																																									e.printStackTrace();
+																																																																																																								}			
+																																																																																																							}
+																																																																																																						});
+																																																																																																						btnMoreDetails.setToolTipText("Open the documentation");
+																																																																																																						btnMoreDetails.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+																																																																																																						btnMoreDetails.setBounds(605, 455, 102, 25);
+																																																																																																						panel_help.add(btnMoreDetails);
 		canvasPanel = new canvas();
-		canvasPanel.setBounds(5, 105, 774, 460);
+		canvasPanel.setBounds(5, 105, 774, 507);
 		frmGraphDraw.getContentPane().add(canvasPanel);
 		ac = new DrawController(canvasPanel, null);
 		setupAC(ac);
@@ -3132,6 +3372,9 @@ public class Window {
 		panel.add(btnImport);
 		btnImport.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
 		btnImport.setToolTipText("Import a graph from a file");
+
+		panel_4.setEnabled(false);
+		panel_4.setVisible(false);
 
 		JButton btnExport = new JButton("Export");
 		btnExport.setBounds(5, 35, 86, 25);
@@ -3152,7 +3395,9 @@ public class Window {
 
 			}
 		});
-		JPanel panel_1 = new JPanel();
+
+		final ArrayList<JRadioButton> radioButtons = new ArrayList<JRadioButton>();
+		final JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
 		panel_1.setBounds(111, 5, 365, 95);
@@ -3197,8 +3442,6 @@ public class Window {
 				11));
 		rdbtnSymmetricalMultiple2.setBounds(160, 65, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple2);
-
-		final ArrayList<JRadioButton> radioButtons = new ArrayList<JRadioButton>();
 		radioButtons.add(rdbtnRandom);
 		radioButtons.add(rdbtnRandomCircle);
 		radioButtons.add(rdbtnSymmetricalCircle1);
@@ -3212,6 +3455,72 @@ public class Window {
 		lblNewLabel.setBounds(5, 5, 85, 15);
 		panel_1.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+
+		final JButton btnHelp = new JButton("Help");
+		final JPanel panel_1_alternative = new JPanel();
+		panel_1_alternative.setBorder(new BevelBorder(BevelBorder.LOWERED,
+				null, null, null, null));
+		panel_1_alternative.setBounds(111, 5, 365, 95);
+		frmGraphDraw.getContentPane().add(panel_1_alternative);
+		panel_1_alternative.setLayout(null);
+		
+				JLabel lblDrawingSettings = new JLabel("Settings");
+				lblDrawingSettings.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+				lblDrawingSettings.setBounds(5, 5, 60, 15);
+				panel_1_alternative.add(lblDrawingSettings);
+				
+						JButton btnBack = new JButton("Back");
+						btnBack.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								panel_1_alternative.setVisible(false);
+								panel_1_alternative.setEnabled(false);
+								panel_1.setVisible(true);
+								panel_1.setEnabled(true);
+							}
+						});
+						btnBack.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+						btnBack.setBounds(274, 65, 86, 25);
+						panel_1_alternative.add(btnBack);
+						
+								JLabel lblOptionSelected = new JLabel("Option selected:");
+								lblOptionSelected.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+								lblOptionSelected.setBounds(71, 5, 92, 14);
+								panel_1_alternative.add(lblOptionSelected);
+								
+										final JLabel Selected = new JLabel("You should not see this. Bug!!!");
+										Selected.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+										Selected.setBounds(158, 5, 185, 14);
+										panel_1_alternative.add(Selected);
+										
+												final JButton btnFlip = new JButton("Flip");
+												btnFlip.addActionListener(new ActionListener() {
+													public void actionPerformed(ActionEvent arg0) {
+														ac.f();
+													}
+												});
+												btnFlip.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+												btnFlip.setBounds(15, 31, 86, 25);
+												panel_1_alternative.add(btnFlip);
+												
+														final JButton btnReduceCrossings = new JButton("Reduce crossings");
+														btnReduceCrossings.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent arg0) {
+																ac.reduceCrossings();
+															}
+														});
+														btnReduceCrossings.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+														btnReduceCrossings.setBounds(15, 31, 131, 25);
+														panel_1_alternative.add(btnReduceCrossings);
+														
+														final JButton btnReduceSumOf = new JButton("Reduce sum of edge lenghts");
+														btnReduceSumOf.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent arg0) {
+																ac.reduceSumOfEdges();
+															}
+														});
+														btnReduceSumOf.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+														btnReduceSumOf.setBounds(168, 30, 192, 25);
+														panel_1_alternative.add(btnReduceSumOf);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
@@ -3245,13 +3554,7 @@ public class Window {
 		frmGraphDraw.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		JButton btnHelp = new JButton("Help");
-		btnHelp.setToolTipText("Open the documentation");
-		btnHelp.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
-		btnHelp.setBounds(5, 5, 86, 25);
-		panel_3.add(btnHelp);
-
-		JButton btnRedraw = new JButton("Redraw");
+		final JButton btnRedraw = new JButton("Redraw");
 		btnRedraw.setToolTipText("Redraws an imported graph");
 		btnRedraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
 		btnRedraw.setBounds(5, 35, 86, 25);
@@ -3260,9 +3563,18 @@ public class Window {
 		final JButton btnEditMode = new JButton("Edit Mode");
 		btnEditMode.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				boolean resultBoolean = (canvasPanel.isVisible()) ? false : true;
+				boolean resultBoolean = (canvasPanel.isVisible()) ? false
+						: true;
 				canvasPanel.setVisible(resultBoolean);
-				String resultString = (canvasPanel.isVisible()) ? "Edit Mode" : "Back";
+				canvasPanel.setEnabled(resultBoolean);
+				btnHelp.setEnabled(resultBoolean);
+				btnRedraw.setEnabled(resultBoolean);
+				panel_help.setVisible(resultBoolean);
+				panel_help.setEnabled(resultBoolean);
+				panel_4.setVisible(!resultBoolean);
+				panel_4.setEnabled(!resultBoolean);
+				String resultString = (canvasPanel.isVisible()) ? "Edit Mode"
+						: "Back";
 				btnEditMode.setText(resultString);
 			}
 		});
@@ -3270,9 +3582,46 @@ public class Window {
 		btnEditMode.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
 		btnEditMode.setBounds(5, 65, 86, 25);
 		panel_3.add(btnEditMode);
-		
-		
-		
+
+		btnHelp.setToolTipText("Open the documentation");
+		btnHelp.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnHelp.setBounds(5, 5, 86, 25);
+		btnHelp.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				boolean i1 = panel_4.isVisible(), i2 = panel_4.isEnabled(), i3 = canvasPanel
+						.isVisible(), i4 = canvasPanel.isEnabled();// initial
+																	// states of
+																	// panel_4
+																	// and
+																	// canvas_panel
+				if (btnHelp.getText().equals("Help")) {
+					System.out.println(i1 + " " + i2 + " " + i3 + " " + i4);
+					btnHelp.setText("Back");
+					canvasPanel.setVisible(false);
+					canvasPanel.setEnabled(false);
+					panel_4.setVisible(false);
+					panel_4.setEnabled(false);
+					panel_help.setVisible(true);
+					panel_help.setEnabled(true);
+					btnRedraw.setEnabled(false);
+					btnEditMode.setEnabled(false);
+				} else {
+					btnHelp.setText("Help");
+					canvasPanel.setVisible(true);
+					canvasPanel.setEnabled(true);
+					panel_4.setVisible(i1);
+					panel_4.setEnabled(i2);
+					panel_help.setVisible(i3);
+					panel_help.setEnabled(i4);
+					btnRedraw.setEnabled(true);
+					btnEditMode.setEnabled(true);
+				}
+
+			}
+		});
+		panel_3.add(btnHelp);
 
 		btnRedraw.addActionListener(new ActionListener() {
 
@@ -3329,18 +3678,80 @@ public class Window {
 					;
 					a.setSelected(true);
 
-					if (a.equals(rdbtnRandom))
+					if (a.equals(rdbtnRandom)) {
 						ac.setAutOption(0);
-					if (a.equals(rdbtnRandomCircle))
+						Selected.setText("Random");
+						btnFlip.setVisible(false);
+						btnFlip.setEnabled(false);
+						btnReduceCrossings.setBounds(15, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(true);
+						btnReduceSumOf.setEnabled(true);
+						// add here the optimisation buttons for random mode
+
+					}
+					if (a.equals(rdbtnRandomCircle)) {
 						ac.setAutOption(1);
-					if (a.equals(rdbtnSymmetricalCircle1))
+						Selected.setText("Random on a Circle");
+						btnFlip.setVisible(false);
+						btnFlip.setEnabled(false);
+						btnReduceCrossings.setBounds(15, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(true);
+						btnReduceSumOf.setEnabled(true);
+					}
+					if (a.equals(rdbtnSymmetricalCircle1)) {
 						ac.setAutOption(2);
-					if (a.equals(rdbtnSymmetricalCircle2))
+						Selected.setText("Symmetrical on a Circle (1)");
+						btnFlip.setVisible(false);
+						btnFlip.setEnabled(false);
+						btnReduceCrossings.setBounds(15, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(false);
+						btnReduceSumOf.setEnabled(false);
+					}
+					if (a.equals(rdbtnSymmetricalCircle2)) {
 						ac.setAutOption(3);
-					if (a.equals(rdbtnSymmetricalMultiple1))
+						Selected.setText("Symmetrical on a Circle (2)");
+						btnFlip.setVisible(false);
+						btnFlip.setEnabled(false);
+						btnReduceCrossings.setBounds(15, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(false);
+						btnReduceSumOf.setEnabled(false);
+					}
+					if (a.equals(rdbtnSymmetricalMultiple1)) {
 						ac.setAutOption(4);
-					if (a.equals(rdbtnSymmetricalMultiple2))
+						Selected.setText("Symmetrical on Multiple Circles (1)");
+						btnFlip.setVisible(true);
+						btnFlip.setEnabled(true);
+						btnReduceCrossings.setBounds(115, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(false);
+						btnReduceSumOf.setEnabled(false);
+					}
+					if (a.equals(rdbtnSymmetricalMultiple2)) {
 						ac.setAutOption(5);
+						Selected.setText("Symmetrical on Multiple Circles (2)");
+						btnFlip.setVisible(true);
+						btnFlip.setEnabled(true);
+						btnReduceCrossings.setBounds(115, 31, 131, 25);
+						btnReduceCrossings.setVisible(true);
+						btnReduceCrossings.setEnabled(true);
+						btnReduceSumOf.setVisible(false);
+						btnReduceSumOf.setEnabled(false);
+					}
+
+					panel_1.setVisible(false);
+					panel_1.setEnabled(false);
+					panel_1_alternative.setVisible(true);
+					panel_1_alternative.setEnabled(true);
+
 					ac.redraw();
 				}
 			});
@@ -3362,6 +3773,26 @@ public class Window {
 		});
 	}
 
+	private void update(int i) {
+		for (int j = 1; j<=25; j++)
+			{
+			if (j<=i){
+				horizontalLabels[j].setVisible(true);
+				verticalLabels[j].setVisible(true);
+			}
+			else
+			{
+				horizontalLabels[j].setVisible(false);
+				verticalLabels[j].setVisible(false);
+			}
+			
+			for (int k = 1; k<=25; k++)
+				if (j<=i && k<=i)
+					buttons[j][k].setVisible(true);
+				else
+					buttons[j][k].setVisible(false);
+	}}
+	
 	private void setupAC(AnimationControl _ac) {
 		if (ac != null)
 			ac.kill();

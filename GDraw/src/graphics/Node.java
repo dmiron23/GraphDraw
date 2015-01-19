@@ -66,4 +66,9 @@ public class Node extends GraphicsObject {
 	public ArrayList<Node> getNeighbours() {
 		return neighbours;
 	}
+
+	public int getX() {
+		
+		return x;
+	}
 }

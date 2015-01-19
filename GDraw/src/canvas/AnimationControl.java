@@ -79,4 +79,14 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	public abstract void redraw();
 	
 	public abstract void processImport(File file);
+
+	public abstract void f();
+
+	public abstract void reduceCrossings();
+
+	public abstract void processImportDemo();
+
+	public abstract void reduceSumOfEdges();
+
+	
 }
