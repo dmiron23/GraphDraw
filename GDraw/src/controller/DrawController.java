@@ -87,12 +87,17 @@ public class DrawController extends AnimationControl {
 	}
 
 	public static Node addNode(int x, int y, int i) {
+		
 		String nodeName = Integer.toString(nodes.size());
-		Node node = c.createNode(x - 2, y - 2);
-		if (i != -1)
-			node.name = Integer.toString(i);
-		else
-			node.name = nodeName;
+		Node node = null;
+		
+		if (i != -1){
+		
+			node = c.createNode(x - 6, y - 6, Integer.toString(i));
+		}else{
+		
+			node = c.createNode(x - 6, y - 6, nodeName);
+		}
 		node.backgroundIdle = Color.black;
 		nodes.add(node);
 		nodeLayer.addChild(node);
@@ -100,12 +105,14 @@ public class DrawController extends AnimationControl {
 	}
 
 	public static LabeledLine addEdge(Node n, Node n1) {
+		System.out.println(n.name);
+		System.out.println(n1.name);
 		Point p1 = new Point(n.getXCenter(), n.getYCenter());
 		Point p2 = new Point(n1.getXCenter(), n1.getYCenter());
 		int dist = (int) p1.distance(p2);
 		LabeledLine ll = c.createLabeledLine(p1.x, p1.y, p2.x, p2.y, 1,
-				Integer.toString(dist), 10);
-		ll.outlineAlpha = 50;
+				Integer.toString(dist), 40);
+		ll.outlineAlpha = 100;
 		ll.name = n.name + "." + n1.name; // Add edge name, unidirectional.
 		n.addNeighbour(n1);
 		n1.addNeighbour(n);
@@ -176,14 +183,14 @@ public class DrawController extends AnimationControl {
 		} else {
 			for (Node n : nodes) {
 				int dist = distToNode(x, y, n);
-				if (dist < 10) {
+				if (dist < 20) {
 					canCreateNode = false;
 					// Hover.
 					// hoverLayer.getObjectByName(n.name).hover = true;
 				} else {
 					// hoverLayer.getObjectByName(n.name).hover = false;
 				}
-				if (dist < 10) {
+				if (dist < 20) {
 					canCreateNode = false;
 					if (nodes.size() < 2)
 						return;
@@ -487,6 +494,29 @@ public class DrawController extends AnimationControl {
 		// draw the edges
 		drawEdges();
 	}
+	
+	
+	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
+		// draw the nodes
+		usedList = (a) ? autList1 : autList2;
+		nonAutList = new ArrayList<Integer>();
+		for (int i = 0; i < numNodes; i++) {
+			if (usedList.contains(i + 1)) {
+				addNode(getAutCricleX(i + 1, usedList),
+						getAutCricleY(i + 1, usedList), i);
+			} else
+				// this means that the node is not in the automorphism group
+				nonAutList.add(i);
+		}
+		if (nonAutOption == 0)// draw nodes on circle in the middle
+			for (int j = 0; j < numNodes; j++)
+				if (nonAutList.contains(j)) {
+					addNode(getNonAutCricleX(j, nonAutList),
+							getNonAutCricleY(j, nonAutList), j);
+				}
+		// draw the edges
+		drawEdges();
+	}
 
 	private static void flip(boolean a, ArrayList<Integer> usedList) {
 		int numCircles = 0;
@@ -619,27 +649,7 @@ public class DrawController extends AnimationControl {
 				* (2 * Math.PI / numCircles)));
 	}
 
-	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
-		// draw the nodes
-		ArrayList<Integer> usedList = (a) ? autList1 : autList2;
-		ArrayList<Integer> nonAutList = new ArrayList<Integer>();
-		for (int i = 0; i < numNodes; i++) {
-			if (usedList.contains(i + 1)) {
-				addNode(getAutCricleX(i + 1, usedList),
-						getAutCricleY(i + 1, usedList), i);
-			} else
-				// this means that the node is not in the automorphism group
-				nonAutList.add(i);
-		}
-		if (nonAutOption == 0)// draw nodes on circle in the middle
-			for (int j = 0; j < numNodes; j++)
-				if (nonAutList.contains(j)) {
-					addNode(getNonAutCricleX(j, nonAutList),
-							getNonAutCricleY(j, nonAutList), j);
-				}
-		// draw the edges
-		drawEdges();
-	}
+	
 
 	private static int getNonAutCricleY(int j, ArrayList<Integer> bList) {
 		return (int) (224 + 50 * Math.sin(bList.indexOf(j)
@@ -689,15 +699,33 @@ public class DrawController extends AnimationControl {
 	}
 
 	private static void swapNodes(GraphicsObject node1, GraphicsObject node2) {
+		Node n1 = (Node)node1;
+		Node n2 = (Node)node2;
+		
 		int auxX = node1.getX();
 		int auxY = node1.getY();
+		
 		node1.setX(node2.getX());
 		node1.setY(node2.getY());
+		
 		node2.setX(auxX);
 		node2.setY(auxY);
-		drawEdges();
-	}
+		
+		auxX = n1.getLabel().getX();
+		auxY = n1.getLabel().getY();
+		
+		n1.getLabel().setX(n2.getLabel().getX());
+		n1.getLabel().setY(n2.getLabel().getY());
+		
+		n2.getLabel().setX(auxX);
+		n2.getLabel().setY(auxY);
+		
+		
+		
+		
+		drawEdges();}
 
+	
 	private static void drawEdges() {
 		lineLayer.removeAll();
 		for (int j = 0; j < numNodes; j++)
@@ -798,15 +826,24 @@ public class DrawController extends AnimationControl {
 
 	@Override
 	public void reduceCrossings() {
-		if (option == 0 || option == 1)
+		
+		if (option == 0 || option == 1){
+			System.out.println("BAD!!");
 			reduceCrossings(new ArrayList<GraphicsObject>());
+			}
 		else {
+			
 			// create list with nodes not in automorphism group generator
 			ArrayList<GraphicsObject> nonAutNodes = new ArrayList<GraphicsObject>();
 			for (GraphicsObject node : nodeLayer.children)
 				if (nonAutList.contains(Integer.valueOf(node.name)))
 					nonAutNodes.add((Node) node);
 
+			System.out.println("Start printing");
+			System.out.println(nonAutNodes);
+				
+			
+			
 			reduceCrossings(nonAutNodes);
 		}
 
@@ -848,6 +885,7 @@ public class DrawController extends AnimationControl {
 						bestNode2 = (Node) node2;
 
 					}
+					
 					swapNodes(node1, node2);
 				}
 			}

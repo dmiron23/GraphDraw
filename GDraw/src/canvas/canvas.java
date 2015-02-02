@@ -11,7 +11,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+
 import javax.swing.JPanel;
+
 import graphics.ActiveLine;
 import graphics.CenteredLabel;
 import graphics.Circle;
@@ -90,8 +92,10 @@ public class canvas extends JPanel implements MouseMotionListener,
 		return r;
 	}
 
-	public Node createNode(int _x, int _y) {
-		Node n = new Node(_x, _y);
+
+	
+	public Node createNode(int _x, int _y, String _name) {
+		Node n = new Node(_x, _y, _name);
 		n.parent = this;
 		objects.add(n);
 		return n;
@@ -234,4 +238,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 			if(go.mouseEnabled)
 			go.handleLeftMouse(e.getXOnScreen(), e.getYOnScreen(), false);
 	}
+
+	
 }
