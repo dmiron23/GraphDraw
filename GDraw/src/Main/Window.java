@@ -25,6 +25,7 @@ import javax.swing.JRadioButton;
 import controller.DrawController;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
 
 public class Window {
 	public int i, j;
@@ -4785,19 +4786,25 @@ public class Window {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if (ac.getLastFile() != null){
+					if (ac.getLastFile().getAbsolutePath().contains("tmp"))
+						ac.getLastFile().delete();
+						}
+					ac.setLastFile(null);
+				
+				
 				if (ac.getLastFile() == null) {
 					File f = new File("tmp"
 							+ ((Double) (Math.random() * 5000)).intValue()
 							+ ((Double) (Math.random() * 5000)).intValue());
-					System.out.println(f);
 					try {
 						FileCreator.write(f, createPrintables());
 					} catch (IOException e1) {
 					}
 					ac.setLastFile(f);
+					f.deleteOnExit();
 				}
 				ac.processImport(ac.getLastFile());
-
 			}
 		});
 
@@ -5019,27 +5026,34 @@ public class Window {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
-		panel_2.setBounds(483, 5, 195, 95);
+		panel_2.setBounds(482, 5, 195, 49);
 		frmGraphDraw.getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 
-		final JRadioButton rdbtnDrawOnA = new JRadioButton("Draw on a line");
-		rdbtnDrawOnA.setBounds(5, 45, 150, 15);
-		panel_2.add(rdbtnDrawOnA);
-		rdbtnDrawOnA.setEnabled(false);
-		rdbtnDrawOnA.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
-
-		final JRadioButton rdbtnDrawOnAn = new JRadioButton(
-				"Draw on an inner circle");
-		rdbtnDrawOnAn.setBounds(5, 25, 150, 15);
-		panel_2.add(rdbtnDrawOnAn);
-		rdbtnDrawOnAn.setEnabled(false);
-		rdbtnDrawOnAn.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
-
-		JLabel lblNodesNotIn = new JLabel("Nodes not in automorphism group");
-		lblNodesNotIn.setBounds(5, 5, 185, 15);
+		JLabel lblNodesNotIn = new JLabel("View code:");
+		lblNodesNotIn.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNodesNotIn.setBounds(10, 14, 86, 15);
 		panel_2.add(lblNodesNotIn);
 		lblNodesNotIn.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		
+		JButton btnOnGithub = new JButton("On Github");
+		btnOnGithub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					java.awt.Desktop.getDesktop().browse(
+							new URI("https://github.com/dmiron23/GraphDraw"));
+				} catch (IOException | URISyntaxException e) {
+					e.printStackTrace();
+				}
+				
+				
+			}
+		});
+		btnOnGithub.setToolTipText("Opens GitHub repository containing all the files.");
+		btnOnGithub.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnOnGithub.setBounds(99, 9, 86, 25);
+		panel_2.add(btnOnGithub);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
@@ -5048,11 +5062,11 @@ public class Window {
 		frmGraphDraw.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 
-		final JButton btnRedraw = new JButton("Redraw");
-		btnRedraw.setToolTipText("Redraws an imported graph");
-		btnRedraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
-		btnRedraw.setBounds(5, 35, 86, 25);
-		panel_3.add(btnRedraw);
+		final JButton btnSaveImage = new JButton("Save JPG");
+		btnSaveImage.setToolTipText("Saves a JPEG of the Graph");
+		btnSaveImage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnSaveImage.setBounds(5, 35, 86, 25);
+		panel_3.add(btnSaveImage);
 
 		final JButton btnEditMode = new JButton("Edit Mode");
 		btnEditMode.addActionListener(new ActionListener() {
@@ -5062,7 +5076,7 @@ public class Window {
 				canvasPanel.setVisible(resultBoolean);
 				canvasPanel.setEnabled(resultBoolean);
 				btnHelp.setEnabled(resultBoolean);
-				btnRedraw.setEnabled(resultBoolean);
+				btnSaveImage.setEnabled(resultBoolean);
 				panel_help.setVisible(resultBoolean);
 				panel_help.setEnabled(resultBoolean);
 				panel_4.setVisible(!resultBoolean);
@@ -5099,7 +5113,7 @@ public class Window {
 					panel_4.setEnabled(false);
 					panel_help.setVisible(true);
 					panel_help.setEnabled(true);
-					btnRedraw.setEnabled(false);
+					btnSaveImage.setEnabled(false);
 					btnEditMode.setEnabled(false);
 				} else {
 					btnHelp.setText("Help");
@@ -5109,45 +5123,125 @@ public class Window {
 					panel_4.setEnabled(i2);
 					panel_help.setVisible(i3);
 					panel_help.setEnabled(i4);
-					btnRedraw.setEnabled(true);
+					btnSaveImage.setEnabled(true);
 					btnEditMode.setEnabled(true);
 				}
 
 			}
 		});
 		panel_3.add(btnHelp);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_6.setBounds(482, 57, 195, 42);
+		frmGraphDraw.getContentPane().add(panel_6);
+		panel_6.setLayout(null);
+		
+		JLabel lblDiameter = new JLabel("Diameter:");
+		lblDiameter.setBounds(16, 9, 58, 17);
+		lblDiameter.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDiameter.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		panel_6.add(lblDiameter);
+		
+		final JRadioButton radio50 = new JRadioButton("");
+		radio50.setSelected(true);
+		radio50.setBounds(79, 8, 21, 21);
+		panel_6.add(radio50);
+		
+		final JRadioButton radio60 = new JRadioButton("");
+		radio60.setBounds(100, 8, 21, 21);
+		panel_6.add(radio60);
+		
+		final JRadioButton radio70 = new JRadioButton("");
+		radio70.setBounds(121, 8, 21, 21);
+		panel_6.add(radio70);
+		
+		final JRadioButton radio80 = new JRadioButton("");
+		radio80.setBounds(142, 8, 21, 21);
+		panel_6.add(radio80);
+		
+		final JRadioButton radio120 = new JRadioButton("");
+		radio120.setBounds(163, 8, 21, 21);
+		panel_6.add(radio120);
+		
+		radio50.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				radio50.setSelected(true);
+				radio70.setSelected(false);
+				radio80.setSelected(false);
+				radio60.setSelected(false);
+				radio120.setSelected(false);
+				ac.setVSize(50);
+				ac.redraw();
+				
+			}
+		});
+		
+radio60.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				radio120.setSelected(false);
+				radio50.setSelected(false);
+				radio70.setSelected(false);
+				radio80.setSelected(false);
+				radio60.setSelected(true);
+				ac.setVSize(60);
+				ac.redraw();
+				
+			}
+		});
 
-		btnRedraw.addActionListener(new ActionListener() {
+radio70.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		radio120.setSelected(false);
+		radio50.setSelected(false);
+		radio70.setSelected(true);
+		radio80.setSelected(false);
+		radio60.setSelected(false);
+		ac.setVSize(70);
+		ac.redraw();
+		
+	}
+});
+
+radio80.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		radio120.setSelected(false);
+		radio50.setSelected(false);
+		radio70.setSelected(false);
+		radio80.setSelected(true);
+		radio60.setSelected(false);
+		ac.setVSize(80);
+		ac.redraw();
+		
+	}
+});
+radio120.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		radio50.setSelected(false);
+		radio70.setSelected(false);
+		radio80.setSelected(false);
+		radio60.setSelected(false);
+		radio120.setSelected(true);
+		ac.setVSize(120);
+		ac.redraw();
+		
+	}
+});
+		btnSaveImage.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				ac.saveImage();
-				// ac.redraw();
-
-			}
-		});
-
-		rdbtnDrawOnAn.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				rdbtnDrawOnA.setSelected(false);
-				rdbtnDrawOnAn.setSelected(true);
-				ac.setNonAutOption(0);
-				ac.redraw();
-
-			}
-		});
-
-		rdbtnDrawOnA.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				rdbtnDrawOnA.setSelected(true);
-				rdbtnDrawOnAn.setSelected(false);
-				ac.setNonAutOption(1);
-				ac.redraw();
-
 			}
 		});
 
@@ -5158,19 +5252,6 @@ public class Window {
 				public void actionPerformed(ActionEvent arg0) {
 					for (JRadioButton b : radioButtons)
 						b.setSelected(false);
-					if (a.equals(rdbtnRandom) || a.equals(rdbtnRandomCircle)) {
-						rdbtnDrawOnA.setSelected(false);
-						rdbtnDrawOnAn.setSelected(false);
-						rdbtnDrawOnA.setEnabled(false);
-						rdbtnDrawOnAn.setEnabled(false);
-					} else {
-						rdbtnDrawOnA.setSelected(false);
-						rdbtnDrawOnAn.setSelected(true);
-						rdbtnDrawOnA.setEnabled(true);
-						rdbtnDrawOnAn.setEnabled(true);
-					}
-
-					;
 					a.setSelected(true);
 
 					if (a.equals(rdbtnRandom)) {
@@ -5348,5 +5429,4 @@ public class Window {
 
 		return printables;
 	}
-
 }

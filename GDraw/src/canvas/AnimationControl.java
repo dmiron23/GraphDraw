@@ -94,5 +94,8 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 
 	public abstract File getLastFile();
 
+	public abstract void setVSize(int i);
+
+
 	
 }

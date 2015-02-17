@@ -66,6 +66,7 @@ public class DrawController extends AnimationControl {
 	private static ArrayList<ArrayList<Integer>> niceListA = new ArrayList<ArrayList<Integer>>();
 	private static ArrayList<ArrayList<Integer>> niceListB = new ArrayList<ArrayList<Integer>>();
 	private static ArrayList<Integer> nonAutList = new ArrayList<Integer>();
+	private static int vSize = 50;
 
 	public DrawController(canvas _c, JTextArea _pseudo) {
 		super(_c, _pseudo);
@@ -757,7 +758,7 @@ public class DrawController extends AnimationControl {
 			circleCentreX = getCircleCentreX(circleIndex, numCircles);
 		}
 
-		return (int) (circleCentreX + 50 * Math
+		return (int) (circleCentreX + vSize * Math
 				.cos((2 * Math.PI * circleIndex / numCircles) + onCircleIndex
 						* (2 * Math.PI / numPerCircle)));
 	}
@@ -783,7 +784,7 @@ public class DrawController extends AnimationControl {
 			circleCentreY = getCircleCentreY(circleIndex, numCircles);
 
 		}
-		return (int) (circleCentreY + 50 * Math
+		return (int) (circleCentreY + vSize * Math
 				.sin((2 * Math.PI * circleIndex / numCircles) + onCircleIndex
 						* (2 * Math.PI / numPerCircle)));
 	}
@@ -1118,6 +1119,7 @@ public class DrawController extends AnimationControl {
 		int g1 = 255;
 		int b = 255;
 		int col = (r << 16) | (g1 << 8) | b;
+		//background
 		for (int i = 0; i < 800; i++)
 			for (int j = 0; j < 500; j++)
 				image.setRGB(i, j, col);
@@ -1153,10 +1155,21 @@ public class DrawController extends AnimationControl {
 		}
 
 		try {
-			ImageIO.write(image, "jpg", new File(
-					"D://Workspace//GraphDraw//CustomImage.jpg"));
-		} catch (IOException e) {
+			JFileChooser fc = new JFileChooser();
+			int returnVal = fc.showSaveDialog(null);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				File f = fc.getSelectedFile();
+				if (!f.getAbsolutePath().endsWith(".jpg") && !f.getAbsolutePath().endsWith(".jpeg"))
+					f = new File(f.getAbsolutePath() + ".jpeg");
+				ImageIO.write(image, "jpg", f);
+		}} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void setVSize(int i) {
+		vSize = i;
+		
 	}
 }
