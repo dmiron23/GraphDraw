@@ -4141,14 +4141,13 @@ public class Window {
 								// TODO Auto-generated method stub
 								if (ac.getLastFile() == null){
 									File f = new File("tmp" + ((Double)(Math.random()*5000)).intValue() + ((Double)(Math.random()*5000)).intValue());
-									
+									System.out.println(f);
 									try {
 										FileCreator.write(f, createPrintables());
 										} catch (IOException e1) {
 										}
 									ac.setLastFile(f);	
 								}
-									
 									ac.processImport(ac.getLastFile());
 								
 								
