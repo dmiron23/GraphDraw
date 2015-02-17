@@ -1124,25 +1124,28 @@ public class DrawController extends AnimationControl {
 			for (int j = 0; j < 500; j++)
 				image.setRGB(i, j, col);
 
-		g.setColor(new Color(0, 0, 0));
+		g.setColor(Color.BLACK);
 		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
 				RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
 				RenderingHints.VALUE_FRACTIONALMETRICS_ON);
-		for (GraphicsObject go : nodeLayer.children) {
-			g.fillOval(go.x, go.y, 12, 12);
-			;
-			g.drawOval(go.x, go.y, 12, 12);
-		}
+
 		for (GraphicsObject go : lineLayer.children) {
 			LabeledLine ll = (LabeledLine) go;
 
 			g.drawLine(ll.getX(), ll.getY(), ll.getX2(), ll.getY2());
 		}
+		
+		for (GraphicsObject go : nodeLayer.children) {
+			g.setColor(Color.WHITE);
+			g.fillOval(go.x, go.y, 12, 12);
+			g.setColor(Color.BLACK);
+			g.drawOval(go.x, go.y, 12, 12);
+		}
 
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		g.setFont(new Font(Font.MONOSPACED, Font.BOLD, 10));
 
 		for (GraphicsObject go : nodeLayer.children) {
