@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 
 import canvas.AnimationControl;
 import canvas.DelayThread;
+import canvas.FileCreator;
 import canvas.canvas;
 
 import java.awt.Font;
@@ -23,10 +24,12 @@ import java.awt.Font;
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JRadioButton;
 
@@ -37,6 +40,7 @@ import javax.swing.SwingConstants;
 
 public class Window {
 
+	public int i,j;
 	public JRadioButton[][] buttons;
 	private JFrame frmGraphDraw;
 	private AnimationControl ac;
@@ -93,6 +97,114 @@ public class Window {
 	private JLabel label_55;
 	private JLabel[] horizontalLabels;
 	private JLabel[] verticalLabels;
+	private JTextField pairSizeBox;
+	private JTextField numPairsBox;
+	private JTextField aut1_1;
+	private JTextField aut1_2;
+	private JTextField aut1_3;
+	private JTextField aut1_4;
+	private JTextField aut1_5;
+	private JTextField aut1_6;
+	private JTextField aut1_7;
+	private JTextField aut1_8;
+	private JTextField aut1_9;
+	private JTextField aut1_10;
+	private JTextField aut2_1;
+	private JTextField aut2_2;
+	private JTextField aut2_3;
+	private JTextField aut2_4;
+	private JTextField aut2_5;
+	private JTextField aut2_6;
+	private JTextField aut2_7;
+	private JTextField aut2_8;
+	private JTextField aut2_9;
+	private JTextField aut2_10;
+	private JTextField aut3_1;
+	private JTextField aut3_2;
+	private JTextField aut3_3;
+	private JTextField aut3_4;
+	private JTextField aut3_5;
+	private JTextField aut3_6;
+	private JTextField aut3_7;
+	private JTextField aut3_8;
+	private JTextField aut3_9;
+	private JTextField aut3_10;
+	private JTextField aut4_1;
+	private JTextField aut4_2;
+	private JTextField aut4_3;
+	private JTextField aut4_4;
+	private JTextField aut4_5;
+	private JTextField aut4_6;
+	private JTextField aut4_7;
+	private JTextField aut4_8;
+	private JTextField aut4_9;
+	private JTextField aut4_10;
+	private JTextField aut5_1;
+	private JTextField aut5_2;
+	private JTextField aut5_3;
+	private JTextField aut5_4;
+	private JTextField aut5_5;
+	private JTextField aut5_6;
+	private JTextField aut5_7;
+	private JTextField aut5_8;
+	private JTextField aut5_9;
+	private JTextField aut5_10;
+	private JTextField aut6_1;
+	private JTextField aut6_2;
+	private JTextField aut6_3;
+	private JTextField aut6_4;
+	private JTextField aut6_5;
+	private JTextField aut6_6;
+	private JTextField aut6_7;
+	private JTextField aut6_8;
+	private JTextField aut6_9;
+	private JTextField aut6_10;
+	private JTextField aut7_1;
+	private JTextField aut7_2;
+	private JTextField aut7_3;
+	private JTextField aut7_4;
+	private JTextField aut7_5;
+	private JTextField aut7_6;
+	private JTextField aut7_7;
+	private JTextField aut7_8;
+	private JTextField aut7_9;
+	private JTextField aut7_10;
+	private JTextField aut8_1;
+	private JTextField aut8_2;
+	private JTextField aut8_3;
+	private JTextField aut8_4;
+	private JTextField aut8_5;
+	private JTextField aut8_6;
+	private JTextField aut8_7;
+	private JTextField aut8_8;
+	private JTextField aut8_9;
+	private JTextField aut8_10;
+	private JTextField aut9_1;
+	private JTextField aut9_2;
+	private JTextField aut9_3;
+	private JTextField aut9_4;
+	private JTextField aut9_5;
+	private JTextField aut9_6;
+	private JTextField aut9_7;
+	private JTextField aut9_8;
+	private JTextField aut9_9;
+	private JTextField aut9_10;
+	private JTextField aut10_1;
+	private JTextField aut10_2;
+	private JTextField aut10_3;
+	private JTextField aut10_4;
+	private JTextField aut10_5;
+	private JTextField aut10_6;
+	private JTextField aut10_7;
+	private JTextField aut10_8;
+	private JTextField aut10_9;
+	private JTextField aut10_10;
+	protected int pairSize = 10;
+	protected int numPairs = 10;
+	private JTextField[][] auts;
+	protected static int numNodes = 25;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -143,31 +255,6 @@ public class Window {
 		panel_4.setBounds(5, 104, 779, 508);
 		frmGraphDraw.getContentPane().add(panel_4);
 		panel_4.setLayout(null);
-
-		JLabel lblNumberOfNodes = new JLabel("Number of nodes:");
-		lblNumberOfNodes.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
-		lblNumberOfNodes.setBounds(652, 15, 112, 15);
-		panel_4.add(lblNumberOfNodes);
-
-		textField = new JTextField();
-		textField.setBounds(681, 37, 41, 25);
-		panel_4.add(textField);
-		textField.setColumns(10);
-
-		JButton btnUpdate = new JButton("Update");
-		btnUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {String text = textField.getText();
-					int i = Integer.parseInt(text);
-					update(i);
-				
-				}catch (Exception e){}
-			}
-
-			
-		});
-		btnUpdate.setBounds(655, 77, 86, 25);
-		panel_4.add(btnUpdate);
 
 		JLabel label_1 = new JLabel("1");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -3053,6 +3140,26 @@ public class Window {
 			buttons[24][1]=button24_1;buttons[24][2]=button24_2;buttons[24][3]=button24_3;buttons[24][4]=button24_4;buttons[24][5]=button24_5;buttons[24][6]=button24_6;buttons[24][7]=button24_7;buttons[24][8]=button24_8;buttons[24][9]=button24_9;buttons[24][10]=button24_10;buttons[24][11]=button24_11;buttons[24][12]=button24_12;buttons[24][13]=button24_13;buttons[24][14]=button24_14;buttons[24][15]=button24_15;buttons[24][16]=button24_16;buttons[24][17]=button24_17;buttons[24][18]=button24_18;buttons[24][19]=button24_19;buttons[24][20]=button24_20;buttons[24][21]=button24_21;buttons[24][22]=button24_22;buttons[24][23]=button24_23;buttons[24][24]=button24_24;buttons[24][25]=button24_25;
 			buttons[25][1]=button25_1;buttons[25][2]=button25_2;buttons[25][3]=button25_3;buttons[25][4]=button25_4;buttons[25][5]=button25_5;buttons[25][6]=button25_6;buttons[25][7]=button25_7;buttons[25][8]=button25_8;buttons[25][9]=button25_9;buttons[25][10]=button25_10;buttons[25][11]=button25_11;buttons[25][12]=button25_12;buttons[25][13]=button25_13;buttons[25][14]=button25_14;buttons[25][15]=button25_15;buttons[25][16]=button25_16;buttons[25][17]=button25_17;buttons[25][18]=button25_18;buttons[25][19]=button25_19;buttons[25][20]=button25_20;buttons[25][21]=button25_21;buttons[25][22]=button25_22;buttons[25][23]=button25_23;buttons[25][24]=button25_24;buttons[25][25]=button25_25;
 
+			
+			
+			for (i = 1; i < 26; i++)
+				for (j = 1; j < 26; j++){
+					if (i==j)
+						buttons[i][i].setEnabled(false);
+					buttons[i][j].addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							JRadioButton jrb = (JRadioButton) e.getSource();
+							for (i = 1; i < 26; i++)
+								for (j = 1; j < 26; j++)
+									if (jrb.equals(buttons[i][j]))
+										buttons[j][i].setSelected(buttons[i][j].isSelected());
+
+							
+						}
+					});
+				}
 		AnimationControl.form = this.frmGraphDraw;
 		
 				final JPanel panel_help = new JPanel();
@@ -3374,6 +3481,765 @@ public class Window {
 		btnImport.setToolTipText("Import a graph from a file");
 
 		panel_4.setEnabled(false);
+		
+		aut1_1 = new JTextField();
+		aut1_1.setColumns(10);
+		aut1_1.setBounds(526, 159, 25, 25);
+		panel_4.add(aut1_1);
+		
+		aut1_2 = new JTextField();
+		aut1_2.setColumns(10);
+		aut1_2.setBounds(551, 159, 25, 25);
+		panel_4.add(aut1_2);
+		
+		aut1_3 = new JTextField();
+		aut1_3.setColumns(10);
+		aut1_3.setBounds(576, 159, 25, 25);
+		panel_4.add(aut1_3);
+		
+		aut1_4 = new JTextField();
+		aut1_4.setColumns(10);
+		aut1_4.setBounds(601, 159, 25, 25);
+		panel_4.add(aut1_4);
+		
+		aut1_5 = new JTextField();
+		aut1_5.setColumns(10);
+		aut1_5.setBounds(626, 159, 25, 25);
+		panel_4.add(aut1_5);
+		
+		aut1_6 = new JTextField();
+		aut1_6.setColumns(10);
+		aut1_6.setBounds(651, 159, 25, 25);
+		panel_4.add(aut1_6);
+		
+		aut1_7 = new JTextField();
+		aut1_7.setColumns(10);
+		aut1_7.setBounds(676, 159, 25, 25);
+		panel_4.add(aut1_7);
+		
+		aut1_8 = new JTextField();
+		aut1_8.setColumns(10);
+		aut1_8.setBounds(701, 159, 25, 25);
+		panel_4.add(aut1_8);
+		
+		aut1_9 = new JTextField();
+		aut1_9.setColumns(10);
+		aut1_9.setBounds(726, 159, 25, 25);
+		panel_4.add(aut1_9);
+		
+		aut1_10 = new JTextField();
+		aut1_10.setColumns(10);
+		aut1_10.setBounds(751, 159, 25, 25);
+		panel_4.add(aut1_10);
+		
+		///
+		aut2_1 = new JTextField();
+		aut2_1.setColumns(10);
+		aut2_1.setBounds(526, 184, 25, 25);
+		panel_4.add(aut2_1);
+		
+		aut2_2 = new JTextField();
+		aut2_2.setColumns(10);
+		aut2_2.setBounds(551, 184, 25, 25);
+		panel_4.add(aut2_2);
+		
+		aut2_3 = new JTextField();
+		aut2_3.setColumns(10);
+		aut2_3.setBounds(576, 184, 25, 25);
+		panel_4.add(aut2_3);
+		
+		aut2_4 = new JTextField();
+		aut2_4.setColumns(10);
+		aut2_4.setBounds(601, 184, 25, 25);
+		panel_4.add(aut2_4);
+		
+		aut2_5 = new JTextField();
+		aut2_5.setColumns(10);
+		aut2_5.setBounds(626, 184, 25, 25);
+		panel_4.add(aut2_5);
+		
+		aut2_6 = new JTextField();
+		aut2_6.setColumns(10);
+		aut2_6.setBounds(651, 184, 25, 25);
+		panel_4.add(aut2_6);
+		
+		aut2_7 = new JTextField();
+		aut2_7.setColumns(10);
+		aut2_7.setBounds(676, 184, 25, 25);
+		panel_4.add(aut2_7);
+		
+		aut2_8 = new JTextField();
+		aut2_8.setColumns(10);
+		aut2_8.setBounds(701, 184, 25, 25);
+		panel_4.add(aut2_8);
+		
+		aut2_9 = new JTextField();
+		aut2_9.setColumns(10);
+		aut2_9.setBounds(726, 184, 25, 25);
+		panel_4.add(aut2_9);
+		
+		aut2_10 = new JTextField();
+		aut2_10.setColumns(10);
+		aut2_10.setBounds(751, 184, 25, 25);
+		panel_4.add(aut2_10);
+		
+		
+		////
+		
+		
+
+		///
+		aut3_1 = new JTextField();
+		aut3_1.setColumns(10);
+		aut3_1.setBounds(526, 209, 25, 25);
+		panel_4.add(aut3_1);
+		
+		aut3_2 = new JTextField();
+		aut3_2.setColumns(10);
+		aut3_2.setBounds(551, 209, 25, 25);
+		panel_4.add(aut3_2);
+		
+		aut3_3 = new JTextField();
+		aut3_3.setColumns(10);
+		aut3_3.setBounds(576, 209, 25, 25);
+		panel_4.add(aut3_3);
+		
+		aut3_4 = new JTextField();
+		aut3_4.setColumns(10);
+		aut3_4.setBounds(601, 209, 25, 25);
+		panel_4.add(aut3_4);
+		
+		aut3_5 = new JTextField();
+		aut3_5.setColumns(10);
+		aut3_5.setBounds(626, 209, 25, 25);
+		panel_4.add(aut3_5);
+		
+		aut3_6 = new JTextField();
+		aut3_6.setColumns(10);
+		aut3_6.setBounds(651, 209, 25, 25);
+		panel_4.add(aut3_6);
+		
+		aut3_7 = new JTextField();
+		aut3_7.setColumns(10);
+		aut3_7.setBounds(676, 209, 25, 25);
+		panel_4.add(aut3_7);
+		
+		aut3_8 = new JTextField();
+		aut3_8.setColumns(10);
+		aut3_8.setBounds(701, 209, 25, 25);
+		panel_4.add(aut3_8);
+		
+		aut3_9 = new JTextField();
+		aut3_9.setColumns(10);
+		aut3_9.setBounds(726, 209, 25, 25);
+		panel_4.add(aut3_9);
+		
+		aut3_10 = new JTextField();
+		aut3_10.setColumns(10);
+		aut3_10.setBounds(751, 209, 25, 25);
+		panel_4.add(aut3_10);
+		
+		
+		////
+		
+		
+
+		///
+		aut4_1 = new JTextField();
+		aut4_1.setColumns(10);
+		aut4_1.setBounds(526, 234, 25, 25);
+		panel_4.add(aut4_1);
+		
+		aut4_2 = new JTextField();
+		aut4_2.setColumns(10);
+		aut4_2.setBounds(551, 234, 25, 25);
+		panel_4.add(aut4_2);
+		
+		aut4_3 = new JTextField();
+		aut4_3.setColumns(10);
+		aut4_3.setBounds(576, 234, 25, 25);
+		panel_4.add(aut4_3);
+		
+		aut4_4 = new JTextField();
+		aut4_4.setColumns(10);
+		aut4_4.setBounds(601, 234, 25, 25);
+		panel_4.add(aut4_4);
+		
+		aut4_5 = new JTextField();
+		aut4_5.setColumns(10);
+		aut4_5.setBounds(626, 234, 25, 25);
+		panel_4.add(aut4_5);
+		
+		aut4_6 = new JTextField();
+		aut4_6.setColumns(10);
+		aut4_6.setBounds(651, 234, 25, 25);
+		panel_4.add(aut4_6);
+		
+		aut4_7 = new JTextField();
+		aut4_7.setColumns(10);
+		aut4_7.setBounds(676, 234, 25, 25);
+		panel_4.add(aut4_7);
+		
+		aut4_8 = new JTextField();
+		aut4_8.setColumns(10);
+		aut4_8.setBounds(701, 234, 25, 25);
+		panel_4.add(aut4_8);
+		
+		aut4_9 = new JTextField();
+		aut4_9.setColumns(10);
+		aut4_9.setBounds(726, 234, 25, 25);
+		panel_4.add(aut4_9);
+		
+		aut4_10 = new JTextField();
+		aut4_10.setColumns(10);
+		aut4_10.setBounds(751, 234, 25, 25);
+		panel_4.add(aut4_10);
+		
+		
+		////
+
+		///
+		aut5_1 = new JTextField();
+		aut5_1.setColumns(10);
+		aut5_1.setBounds(526, 259, 25, 25);
+		panel_4.add(aut5_1);
+		
+		aut5_2 = new JTextField();
+		aut5_2.setColumns(10);
+		aut5_2.setBounds(551, 259, 25, 25);
+		panel_4.add(aut5_2);
+		
+		aut5_3 = new JTextField();
+		aut5_3.setColumns(10);
+		aut5_3.setBounds(576, 259, 25, 25);
+		panel_4.add(aut5_3);
+		
+		aut5_4 = new JTextField();
+		aut5_4.setColumns(10);
+		aut5_4.setBounds(601, 259, 25, 25);
+		panel_4.add(aut5_4);
+		
+		aut5_5 = new JTextField();
+		aut5_5.setColumns(10);
+		aut5_5.setBounds(626, 259, 25, 25);
+		panel_4.add(aut5_5);
+		
+		aut5_6 = new JTextField();
+		aut5_6.setColumns(10);
+		aut5_6.setBounds(651, 259, 25, 25);
+		panel_4.add(aut5_6);
+		
+		aut5_7 = new JTextField();
+		aut5_7.setColumns(10);
+		aut5_7.setBounds(676, 259, 25, 25);
+		panel_4.add(aut5_7);
+		
+		aut5_8 = new JTextField();
+		aut5_8.setColumns(10);
+		aut5_8.setBounds(701, 259, 25, 25);
+		panel_4.add(aut5_8);
+		
+		aut5_9 = new JTextField();
+		aut5_9.setColumns(10);
+		aut5_9.setBounds(726, 259, 25, 25);
+		panel_4.add(aut5_9);
+		
+		aut5_10 = new JTextField();
+		aut5_10.setColumns(10);
+		aut5_10.setBounds(751, 259, 25, 25);
+		panel_4.add(aut5_10);
+		
+		
+		////
+
+		///
+		aut6_1 = new JTextField();
+		aut6_1.setColumns(10);
+		aut6_1.setBounds(526, 284, 25, 25);
+		panel_4.add(aut6_1);
+		
+		aut6_2 = new JTextField();
+		aut6_2.setColumns(10);
+		aut6_2.setBounds(551, 284, 25, 25);
+		panel_4.add(aut6_2);
+		
+		aut6_3 = new JTextField();
+		aut6_3.setColumns(10);
+		aut6_3.setBounds(576, 284, 25, 25);
+		panel_4.add(aut6_3);
+		
+		aut6_4 = new JTextField();
+		aut6_4.setColumns(10);
+		aut6_4.setBounds(601, 284, 25, 25);
+		panel_4.add(aut6_4);
+		
+		aut6_5 = new JTextField();
+		aut6_5.setColumns(10);
+		aut6_5.setBounds(626, 284, 25, 25);
+		panel_4.add(aut6_5);
+		
+		aut6_6 = new JTextField();
+		aut6_6.setColumns(10);
+		aut6_6.setBounds(651, 284, 25, 25);
+		panel_4.add(aut6_6);
+		
+		aut6_7 = new JTextField();
+		aut6_7.setColumns(10);
+		aut6_7.setBounds(676, 284, 25, 25);
+		panel_4.add(aut6_7);
+		
+		aut6_8 = new JTextField();
+		aut6_8.setColumns(10);
+		aut6_8.setBounds(701, 284, 25, 25);
+		panel_4.add(aut6_8);
+		
+		aut6_9 = new JTextField();
+		aut6_9.setColumns(10);
+		aut6_9.setBounds(726, 284, 25, 25);
+		panel_4.add(aut6_9);
+		
+		aut6_10 = new JTextField();
+		aut6_10.setColumns(10);
+		aut6_10.setBounds(751, 284, 25, 25);
+		panel_4.add(aut6_10);
+		
+		
+		////
+		
+		aut7_1 = new JTextField();
+		aut7_1.setColumns(10);
+		aut7_1.setBounds(526, 309, 25, 25);
+		panel_4.add(aut7_1);
+		
+		aut7_2 = new JTextField();
+		aut7_2.setColumns(10);
+		aut7_2.setBounds(551, 309, 25, 25);
+		panel_4.add(aut7_2);
+		
+		aut7_3 = new JTextField();
+		aut7_3.setColumns(10);
+		aut7_3.setBounds(576, 309, 25, 25);
+		panel_4.add(aut7_3);
+		
+		aut7_4 = new JTextField();
+		aut7_4.setColumns(10);
+		aut7_4.setBounds(601, 309, 25, 25);
+		panel_4.add(aut7_4);
+		
+		aut7_5 = new JTextField();
+		aut7_5.setColumns(10);
+		aut7_5.setBounds(626, 309, 25, 25);
+		panel_4.add(aut7_5);
+		
+		aut7_6 = new JTextField();
+		aut7_6.setColumns(10);
+		aut7_6.setBounds(651, 309, 25, 25);
+		panel_4.add(aut7_6);
+		
+		aut7_7 = new JTextField();
+		aut7_7.setColumns(10);
+		aut7_7.setBounds(676, 309, 25, 25);
+		panel_4.add(aut7_7);
+		
+		aut7_8 = new JTextField();
+		aut7_8.setColumns(10);
+		aut7_8.setBounds(701, 309, 25, 25);
+		panel_4.add(aut7_8);
+		
+		aut7_9 = new JTextField();
+		aut7_9.setColumns(10);
+		aut7_9.setBounds(726, 309, 25, 25);
+		panel_4.add(aut7_9);
+		
+		aut7_10 = new JTextField();
+		aut7_10.setColumns(10);
+		aut7_10.setBounds(751, 309, 25, 25);
+		panel_4.add(aut7_10);
+		
+		
+		
+		aut8_1 = new JTextField();
+		aut8_1.setColumns(10);
+		aut8_1.setBounds(526, 334, 25, 25);
+		panel_4.add(aut8_1);
+		
+		aut8_2 = new JTextField();
+		aut8_2.setColumns(10);
+		aut8_2.setBounds(551, 334, 25, 25);
+		panel_4.add(aut8_2);
+		
+		aut8_3 = new JTextField();
+		aut8_3.setColumns(10);
+		aut8_3.setBounds(576, 334, 25, 25);
+		panel_4.add(aut8_3);
+		
+		aut8_4 = new JTextField();
+		aut8_4.setColumns(10);
+		aut8_4.setBounds(601, 334, 25, 25);
+		panel_4.add(aut8_4);
+		
+		aut8_5 = new JTextField();
+		aut8_5.setColumns(10);
+		aut8_5.setBounds(626, 334, 25, 25);
+		panel_4.add(aut8_5);
+		
+		aut8_6 = new JTextField();
+		aut8_6.setColumns(10);
+		aut8_6.setBounds(651, 334, 25, 25);
+		panel_4.add(aut8_6);
+		
+		aut8_7 = new JTextField();
+		aut8_7.setColumns(10);
+		aut8_7.setBounds(676, 334, 25, 25);
+		panel_4.add(aut8_7);
+		
+		aut8_8 = new JTextField();
+		aut8_8.setColumns(10);
+		aut8_8.setBounds(701, 334, 25, 25);
+		panel_4.add(aut8_8);
+		
+		aut8_9 = new JTextField();
+		aut8_9.setColumns(10);
+		aut8_9.setBounds(726, 334, 25, 25);
+		panel_4.add(aut8_9);
+		
+		aut8_10 = new JTextField();
+		aut8_10.setColumns(10);
+		aut8_10.setBounds(751, 334, 25, 25);
+		panel_4.add(aut8_10);
+		
+		
+		aut9_1 = new JTextField();
+		aut9_1.setColumns(10);
+		aut9_1.setBounds(526, 359, 25, 25);
+		panel_4.add(aut9_1);
+		
+		aut9_2 = new JTextField();
+		aut9_2.setColumns(10);
+		aut9_2.setBounds(551, 359, 25, 25);
+		panel_4.add(aut9_2);
+		
+		aut9_3 = new JTextField();
+		aut9_3.setColumns(10);
+		aut9_3.setBounds(576, 359, 25, 25);
+		panel_4.add(aut9_3);
+		
+		aut9_4 = new JTextField();
+		aut9_4.setColumns(10);
+		aut9_4.setBounds(601, 359, 25, 25);
+		panel_4.add(aut9_4);
+		
+		aut9_5 = new JTextField();
+		aut9_5.setColumns(10);
+		aut9_5.setBounds(626, 359, 25, 25);
+		panel_4.add(aut9_5);
+		
+		aut9_6 = new JTextField();
+		aut9_6.setColumns(10);
+		aut9_6.setBounds(651, 359, 25, 25);
+		panel_4.add(aut9_6);
+		
+		aut9_7 = new JTextField();
+		aut9_7.setColumns(10);
+		aut9_7.setBounds(676, 359, 25, 25);
+		panel_4.add(aut9_7);
+		
+		aut9_8 = new JTextField();
+		aut9_8.setColumns(10);
+		aut9_8.setBounds(701, 359, 25, 25);
+		panel_4.add(aut9_8);
+		
+		aut9_9 = new JTextField();
+		aut9_9.setColumns(10);
+		aut9_9.setBounds(726, 359, 25, 25);
+		panel_4.add(aut9_9);
+		
+		aut9_10 = new JTextField();
+		aut9_10.setColumns(10);
+		aut9_10.setBounds(751, 359, 25, 25);
+		panel_4.add(aut9_10);
+		
+		
+		aut10_1 = new JTextField();
+		aut10_1.setColumns(10);
+		aut10_1.setBounds(526, 384, 25, 25);
+		panel_4.add(aut10_1);
+		
+		aut10_2 = new JTextField();
+		aut10_2.setColumns(10);
+		aut10_2.setBounds(551, 384, 25, 25);
+		panel_4.add(aut10_2);
+		
+		aut10_3 = new JTextField();
+		aut10_3.setColumns(10);
+		aut10_3.setBounds(576, 384, 25, 25);
+		panel_4.add(aut10_3);
+		
+		aut10_4 = new JTextField();
+		aut10_4.setColumns(10);
+		aut10_4.setBounds(601, 384, 25, 25);
+		panel_4.add(aut10_4);
+		
+		aut10_5 = new JTextField();
+		aut10_5.setColumns(10);
+		aut10_5.setBounds(626, 384, 25, 25);
+		panel_4.add(aut10_5);
+		
+		aut10_6 = new JTextField();
+		aut10_6.setColumns(10);
+		aut10_6.setBounds(651, 384, 25, 25);
+		panel_4.add(aut10_6);
+		
+		aut10_7 = new JTextField();
+		aut10_7.setColumns(10);
+		aut10_7.setBounds(676, 384, 25, 25);
+		panel_4.add(aut10_7);
+		
+		aut10_8 = new JTextField();
+		aut10_8.setColumns(10);
+		aut10_8.setBounds(701, 384, 25, 25);
+		panel_4.add(aut10_8);
+		
+		aut10_9 = new JTextField();
+		aut10_9.setColumns(10);
+		aut10_9.setBounds(726, 384, 25, 25);
+		panel_4.add(aut10_9);
+		
+		aut10_10 = new JTextField();
+		aut10_10.setColumns(10);
+		aut10_10.setBounds(751, 384, 25, 25);
+		panel_4.add(aut10_10);
+		
+		auts = new JTextField[11][11];
+		
+		auts[1][1] = aut1_1;auts[1][2] = aut1_2;auts[1][3] = aut1_3;auts[1][4] = aut1_4;auts[1][5] = aut1_5;
+		auts[1][6] = aut1_6;auts[1][7] = aut1_7;auts[1][8] = aut1_8;auts[1][9] = aut1_9;auts[1][10] = aut1_10;
+		
+		auts[2][1] = aut2_1;auts[2][2] = aut2_2;auts[2][3] = aut2_3;auts[2][4] = aut2_4;auts[2][5] = aut2_5;
+		auts[2][6] = aut2_6;auts[2][7] = aut2_7;auts[2][8] = aut2_8;auts[2][9] = aut2_9;auts[2][10] = aut2_10;
+		
+		auts[3][1] = aut3_1;auts[3][2] = aut3_2;auts[3][3] = aut3_3;auts[3][4] = aut3_4;auts[3][5] = aut3_5;
+		auts[3][6] = aut3_6;auts[3][7] = aut3_7;auts[3][8] = aut3_8;auts[3][9] = aut3_9;auts[3][10] = aut3_10;
+		
+		auts[4][1] = aut4_1;auts[4][2] = aut4_2;auts[4][3] = aut4_3;auts[4][4] = aut4_4;auts[4][5] = aut4_5;
+		auts[4][6] = aut4_6;auts[4][7] = aut4_7;auts[4][8] = aut4_8;auts[4][9] = aut4_9;auts[4][10] = aut4_10;
+		
+		auts[5][1] = aut5_1;auts[5][2] = aut5_2;auts[5][3] = aut5_3;auts[5][4] = aut5_4;auts[5][5] = aut5_5;
+		auts[5][6] = aut5_6;auts[5][7] = aut5_7;auts[5][8] = aut5_8;auts[5][9] = aut5_9;auts[5][10] = aut5_10;
+		
+		auts[6][1] = aut6_1;auts[6][2] = aut6_2;auts[6][3] = aut6_3;auts[6][4] = aut6_4;auts[6][5] = aut6_5;
+		auts[6][6] = aut6_6;auts[6][7] = aut6_7;auts[6][8] = aut6_8;auts[6][9] = aut6_9;auts[6][10] = aut6_10;
+		
+		auts[7][1] = aut7_1;auts[7][2] = aut7_2;auts[7][3] = aut7_3;auts[7][4] = aut7_4;auts[7][5] = aut7_5;
+		auts[7][6] = aut7_6;auts[7][7] = aut7_7;auts[7][8] = aut7_8;auts[7][9] = aut7_9;auts[7][10] = aut7_10;
+		
+		auts[8][1] = aut8_1;auts[8][2] = aut8_2;auts[8][3] = aut8_3;auts[8][4] = aut8_4;auts[8][5] = aut8_5;
+		auts[8][6] = aut8_6;auts[8][7] = aut8_7;auts[8][8] = aut8_8;auts[8][9] = aut8_9;auts[8][10] = aut8_10;
+		
+		auts[9][1] = aut9_1;auts[9][2] = aut9_2;auts[9][3] = aut9_3;auts[9][4] = aut9_4;auts[9][5] = aut9_5;
+		auts[9][6] = aut9_6;auts[9][7] = aut9_7;auts[9][8] = aut9_8;auts[9][9] = aut9_9;auts[9][10] = aut9_10;
+		
+		auts[10][1] = aut10_1;auts[10][2] = aut10_2;auts[10][3] = aut10_3;auts[10][4] = aut10_4;auts[10][5] = aut10_5;
+		auts[10][6] = aut10_6;auts[10][7] = aut10_7;auts[10][8] = aut10_8;auts[10][9] = aut10_9;auts[10][10] = aut10_10;
+		
+		for (i = 1; i <=10; i++)
+			for (j = 1; j <=10; j++)
+				auts[i][j].setInputVerifier(new NumInputVerifier());
+		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_5.setBounds(525, 2, 254, 116);
+		panel_4.add(panel_5);
+						panel_5.setLayout(null);
+				
+						textField = new JTextField();
+						textField.setBounds(10, 41, 50, 20);
+						panel_5.add(textField);
+						textField.setColumns(10);
+		
+				JLabel lblNumberOfNodes = new JLabel("Number of nodes:");
+				lblNumberOfNodes.setBounds(10, 21, 98, 15);
+				panel_5.add(lblNumberOfNodes);
+				lblNumberOfNodes.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+				
+						JButton btnUpdate = new JButton("Update");
+						btnUpdate.setBounds(70, 41, 86, 20);
+						panel_5.add(btnUpdate);
+						
+						JLabel lblAutomorphismGroupGenerator = new JLabel("Automorphism group generator size:");
+						lblAutomorphismGroupGenerator.setBounds(10, 66, 201, 15);
+						panel_5.add(lblAutomorphismGroupGenerator);
+						lblAutomorphismGroupGenerator.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+						
+						JLabel lblControlPanel = new JLabel("Control Panel");
+						lblControlPanel.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+						lblControlPanel.setBounds(92, 5, 98, 15);
+						panel_5.add(lblControlPanel);
+						
+						pairSizeBox = new JTextField();
+						pairSizeBox.setInputVerifier(new MaxTenInputVerifier());
+						pairSizeBox.setBounds(10, 86, 35, 20);
+						panel_5.add(pairSizeBox);
+						pairSizeBox.setColumns(10);
+						
+						numPairsBox = new JTextField();
+						numPairsBox.setInputVerifier(new MaxTenInputVerifier());
+						numPairsBox.setBounds(75, 86, 35, 20);
+						panel_5.add(numPairsBox);
+						numPairsBox.setColumns(10);
+						
+						JLabel by = new JLabel("by");
+						by.setBounds(50, 88, 20, 15);
+						panel_5.add(by);
+						by.setHorizontalAlignment(SwingConstants.CENTER);
+						by.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+						
+						
+						
+						
+						
+						JButton buttonUpdate = new JButton("Update");
+						buttonUpdate.setBounds(120, 86, 86, 20);
+						panel_5.add(buttonUpdate);
+						
+						JLabel lblAutomorphismGroupGenerator_1 = new JLabel("Automorphism group generator");
+						lblAutomorphismGroupGenerator_1.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+						lblAutomorphismGroupGenerator_1.setBounds(564, 135, 176, 15);
+						panel_4.add(lblAutomorphismGroupGenerator_1);
+						
+						final JButton btnSaveGraph = new JButton("Save");
+						btnSaveGraph.setEnabled(false);
+						btnSaveGraph.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								File f = null;
+								JFileChooser fc = new JFileChooser();
+								int returnVal = fc.showSaveDialog(null);
+								if (returnVal == JFileChooser.APPROVE_OPTION) {
+									f = fc.getSelectedFile();
+									try {
+										FileCreator.write(f, createPrintables());
+									} catch (IOException e) {
+									}
+								}
+								ac.setLastFile(f);
+							}
+
+							
+						});
+						btnSaveGraph.setToolTipText("Open the documentation");
+						btnSaveGraph.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+						btnSaveGraph.setBounds(611, 427, 80, 25);
+						panel_4.add(btnSaveGraph);
+						
+						final JButton btnDraw = new JButton("Draw");
+						btnDraw.setEnabled(false);
+						btnDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+						btnDraw.setBounds(696, 427, 80, 25);
+						btnDraw.addActionListener(new ActionListener() {
+							
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								// TODO Auto-generated method stub
+								if (ac.getLastFile() == null){
+									File f = new File("tmp" + ((Double)(Math.random()*5000)).intValue() + ((Double)(Math.random()*5000)).intValue());
+									
+									try {
+										FileCreator.write(f, createPrintables());
+										} catch (IOException e1) {
+										}
+									ac.setLastFile(f);	
+								}
+									
+									ac.processImport(ac.getLastFile());
+								
+								
+							}
+						});
+									
+						
+								
+							
+						panel_4.add(btnDraw);
+						
+						JButton btnConfirm = new JButton("Confirm");
+						btnConfirm.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								//here I check if the automorphisms have been mentioned
+								for (i = 1; i <= numPairs; i++)
+									for (j = 1; j <= pairSize; j++)
+										if (auts[i][j].getText().isEmpty()){
+											btnDraw.setEnabled(false);
+											btnSaveGraph.setEnabled(false);
+											return;
+										}
+								btnDraw.setEnabled(true);
+								btnSaveGraph.setEnabled(true);
+								
+								
+								
+							}
+						});
+						btnConfirm.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+						btnConfirm.setBounds(526, 427, 80, 25);
+						panel_4.add(btnConfirm);
+						buttonUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				for (i = 1; i <= 10; i++)
+					for (j = 1; j <= 10; j++)
+						auts[i][j].setText("");
+				
+				try {
+					String text = pairSizeBox.getText();
+					pairSize = Integer.parseInt(text);
+
+					text = numPairsBox.getText();
+					numPairs = Integer.parseInt(text);
+
+					updateAut(pairSize, numPairs);
+
+				} catch (Exception e) {
+				}
+			}
+
+							private void updateAut(int pairSize, int numPairs) {
+								for (int i = 1; i <= 10; i++)
+									for (int j = 1; j <= 10; j++)
+										if (i <= numPairs && j <= pairSize){
+											auts[i][j].setVisible(true);
+											auts[i][j].setEnabled(true);
+										}else{
+											auts[i][j].setVisible(false);
+											auts[i][j].setEnabled(false);
+											}
+								
+							}
+						});
+						btnUpdate.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								try {String text = textField.getText();
+									numNodes = Integer.parseInt(text);
+									update(numNodes);
+								
+								}catch (Exception e){}
+							}
+
+							
+						});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		panel_4.setVisible(false);
 
 		JButton btnExport = new JButton("Export");
@@ -3627,7 +4493,8 @@ public class Window {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				ac.redraw();
+				ac.saveImage();
+				//ac.redraw();
 
 			}
 		});
@@ -3802,4 +4669,60 @@ public class Window {
 		DelayThread.ac = ac;
 		ac.startAnimation();
 	}
+	
+	public static int getNumNodes(){
+		return numNodes;
+	}
+	
+	private ArrayList<String> createPrintables() {
+		ArrayList<String> printables = new ArrayList<String>();
+		
+		//Title
+		printables.add("Graph: " + numNodes + " nodes");
+		String separationLine = "";
+		for(int i=0; i <= 2*numNodes; i++ )
+			separationLine += "-";
+		printables.add(separationLine);
+		
+		//Matrix
+		for (int i = 1; i <= numNodes; i++){
+			String line = "[";
+			for (int j = 1; j <= numNodes; j++){
+				if (j != numNodes){
+					String result = (buttons[i][j].isSelected()) ? "1" : "0";
+					line += result + ",";
+					}
+				else{
+					String result = (buttons[i][j].isSelected()) ? "1" : "0";
+					line += result + "]";
+				}
+			}
+		printables.add(line);
+		}
+		printables.add(separationLine);
+		
+		
+		//auto
+		
+		printables.add("Automorphism: " + pairSize + "x" + numPairs);
+		
+		printables.add(separationLine);
+		
+		for (int i = 1; i <= numPairs; i++){
+			String line = "[";
+			for (int j = 1; j <= pairSize; j++){
+				if (j != pairSize)	
+					line += auts[i][j].getText() + ",";
+				
+				else
+					line += auts[i][j].getText() + "]";
+			}
+		printables.add(line);
+		}
+		
+		printables.add(separationLine);
+		
+		return printables;
+	}
+	
 }

@@ -22,7 +22,7 @@ public class CenteredLabel extends Label {
 		g.setFont(f);
 		GlyphVector gv = g.getFont().createGlyphVector(g.getFontRenderContext(), text);
         java.awt.Rectangle r = gv.getPixelBounds(null, x, y);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
 		g.drawString(text, x - r.width/2, y);
 	}
 }

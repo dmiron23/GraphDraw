@@ -30,9 +30,10 @@ public class Node extends GraphicsObject {
 	public void draw(Graphics2D g) {
 		Color c = setColourTransparency(backgroundIdle, alpha);
 		g.setPaint(c);
+		g.setColor(Color.WHITE);	
 		g.fillOval(x, y, 2*halfNodeSize, 2*halfNodeSize); // Fill
-		g.setColor(setColourTransparency(borderIdle, outlineAlpha)); // Black
-																		// outline
+		//g.setColor(setColourTransparency(borderIdle, outlineAlpha)); // Black
+			g.setColor(Color.BLACK);															// outline
 		g.drawOval(x, y, 2*halfNodeSize, 2*halfNodeSize); // Outline
 		label.draw(g);
 	}

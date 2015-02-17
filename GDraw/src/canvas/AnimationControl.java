@@ -88,5 +88,11 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 
 	public abstract void reduceSumOfEdges();
 
+	public abstract void saveImage();
+
+	public abstract void setLastFile(File f);
+
+	public abstract File getLastFile();
+
 	
 }
