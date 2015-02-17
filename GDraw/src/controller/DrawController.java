@@ -52,8 +52,6 @@ public class DrawController extends AnimationControl {
 	private boolean selectingNode;
 	private Node root;
 	private static Layer lineLayer;
-	private int count = 0;
-	private int aCount = 0;
 	private static int i = 0;
 	private static Layer nodeLayer;
 	private Layer bgLayer;
@@ -98,15 +96,15 @@ public class DrawController extends AnimationControl {
 	}
 
 	public static Node addNode(int x, int y, int i) {
-		
+
 		String nodeName = Integer.toString(nodes.size());
 		Node node = null;
-		
-		if (i != -1){
-		
+
+		if (i != -1) {
+
 			node = c.createNode(x - 6, y - 6, Integer.toString(i));
-		}else{
-		
+		} else {
+
 			node = c.createNode(x - 6, y - 6, nodeName);
 		}
 		node.backgroundIdle = Color.black;
@@ -116,8 +114,6 @@ public class DrawController extends AnimationControl {
 	}
 
 	public static LabeledLine addEdge(Node n, Node n1) {
-		System.out.println(n.name);
-		System.out.println(n1.name);
 		Point p1 = new Point(n.getXCenter(), n.getYCenter());
 		Point p2 = new Point(n1.getXCenter(), n1.getYCenter());
 		int dist = (int) p1.distance(p2);
@@ -288,8 +284,6 @@ public class DrawController extends AnimationControl {
 		lineLayer.removeAll();
 		c.removeAll();
 		numNodes = 0;
-		count = 0;
-		aCount = 0;
 		autList1 = new ArrayList<Integer>();
 		autList2 = new ArrayList<Integer>();
 		niceListA = new ArrayList<ArrayList<Integer>>();
@@ -300,78 +294,78 @@ public class DrawController extends AnimationControl {
 
 	public ArrayList<String> createPrintables() {
 		ArrayList<String> printables = new ArrayList<String>();
-		
+
 		int n = nodeLayer.children.size();
-		
-		//Title
+
+		// Title
 		printables.add("Graph: " + n + " nodes");
 		String separationLine = "";
-		for(int i=0; i <= 2*n; i++ )
+		for (int i = 0; i <= 2 * n; i++)
 			separationLine += "-";
 		printables.add(separationLine);
-		
-		//Matrix
-		for (int i = 0; i < n; i++){
+
+		// Matrix
+		for (int i = 0; i < n; i++) {
 			String line = "[";
-			for (int j = 0; j < n; j++){
-				if (j != n-1)
+			for (int j = 0; j < n; j++) {
+				if (j != n - 1)
 					line += matrix[i][j] + ",";
 				else
 					line += matrix[i][j] + "]";
 			}
-		printables.add(line);
+			printables.add(line);
 		}
-		
+
 		printables.add(separationLine);
-		
-		//Automorphism
-		
+
+		// Automorphism
+
 		printables.add("Automorphism: " + pairSize + "x" + numPairs);
-		
+
 		printables.add(separationLine);
-		
-		for (int i = 0; i < numPairs; i++){
+
+		for (int i = 0; i < numPairs; i++) {
 			String line = "[";
-			for (int j = 0; j < pairSize; j++){
-				if (j != pairSize-1)
+			for (int j = 0; j < pairSize; j++) {
+				if (j != pairSize - 1)
 					line += a[i][j] + ",";
 				else
 					line += a[i][j] + "]";
 			}
-		printables.add(line);
+			printables.add(line);
 		}
-		
+
 		printables.add(separationLine);
-		
-		//Graphical representation
-		//1.Nodes
-		
+
+		// Graphical representation
+		// 1.Nodes
+
 		printables.add("Graphical representation:");
 		printables.add(separationLine);
 		printables.add("Nodes: " + n + " nodes");
 		printables.add(separationLine);
-		
+
 		for (GraphicsObject go : nodeLayer.children)
-			printables.add("[" + Integer.toString(((Node) go).getXCenter()) + ","
-					+ Integer.toString(((Node) go).getYCenter()) + "," + ((Node)go).name + "]");
-		
+			printables.add("[" + Integer.toString(((Node) go).getXCenter())
+					+ "," + Integer.toString(((Node) go).getYCenter()) + ","
+					+ ((Node) go).name + "]");
+
 		printables.add(separationLine);
-		printables.add("Edges: " + lineLayer.children.size()/2+ " edges");
+		printables.add("Edges: " + lineLayer.children.size() / 2 + " edges");
 		printables.add(separationLine);
-		
-		for (GraphicsObject go : lineLayer.children){
-			
-			
+
+		for (GraphicsObject go : lineLayer.children) {
+
 			String name = ((LabeledLine) go).name;
 			String names[] = new String[3];
 			names = name.split("\\.");
-	
-			if (Integer.parseInt(names[0]) < Integer.parseInt(names[1]) )
-				printables.add("[" + ((LabeledLine) go).name.replace(".", ",") + "]");
-	
-		
+
+			if (Integer.parseInt(names[0]) < Integer.parseInt(names[1]))
+				printables.add("[" + ((LabeledLine) go).name.replace(".", ",")
+						+ "]");
+
 		}
-		
+
 		printables.add(separationLine);
 		return printables;
 	}
@@ -404,37 +398,39 @@ public class DrawController extends AnimationControl {
 	@Override
 	public void processImportDemo() {
 		File f = new File("demo.txt");
-		System.out.println("File created");
 		ArrayList<String> demoLines = new ArrayList<String>();
-		demoLines.add("t.21");
-		demoLines.add("ta.3.5");
-		demoLines.add("a.1.8.7");
-		demoLines.add("a.3.17.13");
-		demoLines.add("a.4.11.19");
-		demoLines.add("a.5.20.10");
-		demoLines.add("a.6.14.16");
-		demoLines.add("m.0.1.1.1.1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0");
-		demoLines.add("m.1.0.0.0.0.0.1.1.1.0.0.0.0.0.0.0.0.0.0.0.0");
-		demoLines.add("m.1.0.0.0.0.0.0.0.0.1.1.1.0.0.0.0.0.0.0.0.0");
-		demoLines.add("m.1.0.0.0.0.0.0.0.0.0.0.0.1.1.1.0.0.0.0.0.0");
-		demoLines.add("m.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.0.0.0");
-		demoLines.add("m.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1");
-		demoLines.add("m.0.1.0.0.0.0.0.0.0.1.0.0.1.0.0.1.0.0.1.0.0");
-		demoLines.add("m.0.1.0.0.0.0.0.0.0.0.1.0.0.1.0.0.1.0.0.1.0");
-		demoLines.add("m.0.1.0.0.0.0.0.0.0.0.0.1.0.0.1.0.0.1.0.0.0");
-		demoLines.add("m.0.0.1.0.0.0.1.0.0.0.0.0.0.1.0.0.0.1.0.0.0");
-		demoLines.add("m.0.0.1.0.0.0.0.1.0.0.0.0.0.0.1.1.0.0.0.0.0");
-		demoLines.add("m.0.0.1.0.0.0.0.0.1.0.0.0.1.0.0.0.1.0.0.0.1");
-		demoLines.add("m.0.0.0.1.0.0.1.0.0.0.0.1.0.0.0.0.0.0.0.1.0");
-		demoLines.add("m.0.0.0.1.0.0.0.1.0.1.0.0.0.0.0.0.0.0.0.0.1");
-		demoLines.add("m.0.0.0.1.0.0.0.0.1.0.1.0.0.0.0.0.0.0.1.0.0");
-		demoLines.add("m.0.0.0.0.1.0.1.0.0.0.1.0.0.0.0.0.0.0.0.0.1");
-		demoLines.add("m.0.0.0.0.1.0.0.1.0.0.0.1.0.0.0.0.0.0.1.0.0");
-		demoLines.add("m.0.0.0.0.1.0.0.0.1.1.0.0.0.0.0.0.0.0.0.1.0");
-		demoLines.add("m.0.0.0.0.0.1.1.0.0.0.0.0.0.0.1.0.1.0.0.0.0");
-		demoLines.add("m.0.0.0.0.0.1.0.1.0.0.0.0.1.0.0.0.0.1.0.0.0");
-		demoLines.add("m.0.0.0.0.0.1.0.0.0.0.0.1.0.1.0.1.0.0.0.0.0");
-		demoLines.add(".f.");
+		demoLines.add("Graph: 21 nodes");
+		demoLines.add("-------------------------------------------");
+		demoLines.add("[0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]");
+		demoLines.add("[1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0]");
+		demoLines.add("[1,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0]");
+		demoLines.add("[1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0]");
+		demoLines.add("[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0]");
+		demoLines.add("[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1]");
+		demoLines.add("[0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0]");
+		demoLines.add("[0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0]");
+		demoLines.add("[0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0]");
+		demoLines.add("[0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0]");
+		demoLines.add("[0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0]");
+		demoLines.add("[0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1]");
+		demoLines.add("[0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0]");
+		demoLines.add("[0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1]");
+		demoLines.add("[0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0]");
+		demoLines.add("[0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1]");
+		demoLines.add("[0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0]");
+		demoLines.add("[0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0]");
+		demoLines.add("[0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0]");
+		demoLines.add("[0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0]");
+		demoLines.add("[0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0]");
+		demoLines.add("-------------------------------------------");
+		demoLines.add("Automorphism: 3x5");
+		demoLines.add("-------------------------------------------");
+		demoLines.add("[1,8,7]");
+		demoLines.add("[3,17,13]");
+		demoLines.add("[4,11,19]");
+		demoLines.add("[5,20,10]");
+		demoLines.add("[6,14,16]");
+		demoLines.add("-------------------------------------------");
 
 		try {
 			FileCreator.write(f, demoLines);
@@ -452,32 +448,29 @@ public class DrawController extends AnimationControl {
 
 	@Override
 	public void insertMultiple() {
-		while (!graphData.isEmpty()){
-			System.out.println("In hereeee!!!");
+		while (!graphData.isEmpty())
 			processEntry(graphData.remove(0));
-		}
+
 		if (graphRepAvailable == false)
 			draw(option, nonOption);
 	}
 
 	public void processEntry(String entry) {
-		if (entry.length()==0)
+		if (entry.length() == 0)
 			return;
-		//first line "Graph: x nodes"
-		if (entry.contains("Graph:")){
+		// first line "Graph: x nodes"
+		if (entry.contains("Graph:")) {
 			entry = entry.replace("Graph: ", "");
 			entry = entry.replace(" nodes", "");
 			processClear();
-			count = 0;
-			numNodes = Integer.valueOf(entry);	
+			numNodes = Integer.valueOf(entry);
 			whereImAt = "adding to matrix";
 			i = 0;
-		}else if(entry.contains("-")){
-			//do nothing
-		}else if (entry.contains("Automorphism")){
+		} else if (entry.contains("-")) {
+			// do nothing
+		} else if (entry.contains("Automorphism")) {
 			entry = entry.replace("Automorphism: ", "");
-			
-			
+
 			ArrayList<String> args = new ArrayList<String>();
 			StringTokenizer st = new StringTokenizer(entry);
 			String s = st.nextToken("x");
@@ -489,25 +482,22 @@ public class DrawController extends AnimationControl {
 					s = "";
 				}
 			}
-			aCount = 0;
 			autList1 = new ArrayList<Integer>();
 			autList2 = new ArrayList<Integer>();
 			niceListA = new ArrayList<ArrayList<Integer>>();
 			niceListB = new ArrayList<ArrayList<Integer>>();
 			pairSize = Integer.valueOf(args.get(0));
-			numPairs = Integer.valueOf(args.get(1));	
+			numPairs = Integer.valueOf(args.get(1));
 			whereImAt = "adding to automorphism";
-			i = 0;		
-		}else if (entry.contains("Graphical representation:")){
-			
+			i = 0;
+		} else if (entry.contains("Graphical representation:")) {
+
 			graphRepAvailable = true;
-		}else if (entry.contains("Nodes: ")){
-			System.out.println("IMMMM HEEEEREEEE!!!!!!!!!!! :D :D :D ");
+		} else if (entry.contains("Nodes: ")) {
 			whereImAt = "adding nodes on plane";
-		}else if (entry.contains("Edges:")){
+		} else if (entry.contains("Edges:")) {
 			whereImAt = "adding edges";
-		}else if (whereImAt.equals("adding nodes on plane")){
-			System.out.println("WE MADE IT!!! ");
+		} else if (whereImAt.equals("adding nodes on plane")) {
 			// my entry looks like this: [x,x,x,x,x,x,x,x]
 			entry = entry.replace("[", "");
 			entry = entry.replace("]", "");
@@ -522,12 +512,10 @@ public class DrawController extends AnimationControl {
 					s = "";
 				}
 			}
-			
-			
-			addNode(Integer.valueOf(args.get(0)),
-					Integer.valueOf(args.get(1)),
+
+			addNode(Integer.valueOf(args.get(0)), Integer.valueOf(args.get(1)),
 					Integer.valueOf(args.get(2)));
-			}else if (whereImAt.equals("adding edges")){
+		} else if (whereImAt.equals("adding edges")) {
 			// my entry looks like this: [x,x,x,x,x,x,x,x]
 			entry = entry.replace("[", "");
 			entry = entry.replace("]", "");
@@ -545,7 +533,7 @@ public class DrawController extends AnimationControl {
 			Node n1 = (Node) nodeLayer.getObjectByName(args.get(0));
 			Node n2 = (Node) nodeLayer.getObjectByName(args.get(1));
 			addEdge(n1, n2);
-		}else if (whereImAt.equals("adding to matrix")){
+		} else if (whereImAt.equals("adding to matrix")) {
 			// my entry looks like this: [x,x,x,x,x,x,x,x]
 			entry = entry.replace("[", "");
 			entry = entry.replace("]", "");
@@ -559,15 +547,14 @@ public class DrawController extends AnimationControl {
 				} catch (Exception e) {
 					s = "";
 				}
-			
-		}
-			for (int j = 0; j < args.size(); j++){
+
+			}
+			for (int j = 0; j < args.size(); j++) {
 				matrix[i][j] = Integer.parseInt(args.get(j));
 			}
 			i++;
-			
-			
-		}else if (whereImAt.equals("adding to automorphism")){
+
+		} else if (whereImAt.equals("adding to automorphism")) {
 			// my entry looks like this: [x,x,x,x,x,x,x,x]
 			entry = entry.replace("[", "");
 			entry = entry.replace("]", "");
@@ -581,23 +568,23 @@ public class DrawController extends AnimationControl {
 				} catch (Exception e) {
 					s = "";
 				}
-				
+
 			}
-			for (int j = 0; j < pairSize; j++){
+			for (int j = 0; j < pairSize; j++) {
 				a[i][j] = Integer.valueOf(args.get(j));
 				autList1.add(Integer.valueOf(args.get(j)));
 			}
 			i++;
 		}
-			
-			
+
 		// create niceListA
 		niceListA = new ArrayList<ArrayList<Integer>>();
 		for (int u = 0; u < pairSize; u++)
 			niceListA.add(new ArrayList<Integer>());
 		for (int k = 0; k < pairSize; k++)
-			for (int j = 0; j < numPairs; j++){
-				autList2.add(a[j][k]);}
+			for (int j = 0; j < numPairs; j++) {
+				autList2.add(a[j][k]);
+			}
 		for (int x = 0; x < pairSize; x++)
 			for (int y = 0; y < numPairs; y++)
 				niceListA.get(x).add(a[y][x]);
@@ -608,21 +595,18 @@ public class DrawController extends AnimationControl {
 			for (int j = 0; j < pairSize; j++)
 				niceListB.get(k).add(a[k][j]);
 		}
-		//clean autList2
-		ArrayList <Integer> tempList = new ArrayList<Integer>();
-		for (Integer i : autList2){
-			if (i!=0 && !tempList.contains(i))
+		// clean autList2
+		ArrayList<Integer> tempList = new ArrayList<Integer>();
+		for (Integer i : autList2) {
+			if (i != 0 && !tempList.contains(i))
 				tempList.add(i);
 		}
 		autList2 = new ArrayList<Integer>();
 		autList2.addAll(tempList);
-		
-		
 
 	}
 
 	private static void draw(int option, int nonOption) {
-		System.out.println("option = " + option);
 		if (option == 0)// draw randomly
 			drawRandomly(numNodes);
 		if (option == 1)// draw randomly on circle
@@ -662,18 +646,12 @@ public class DrawController extends AnimationControl {
 		// flip the nodes to obtain true symmetry
 		// Modify circles with i > numOfCircle/2+1
 
-		System.out.println("BEGIN");
-		System.out.println("SIZE:" + usedList.size());
-		for (Integer i : usedList)
-			System.out.println(i);
-		System.out.println("END");
 		flip(ab, usedList);
 
 		// draw the edges
 		drawEdges();
 	}
-	
-	
+
 	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
 		// draw the nodes
 		usedList = (a) ? autList1 : autList2;
@@ -701,11 +679,9 @@ public class DrawController extends AnimationControl {
 		int numPerCircle = 0;
 		int myCircle = 1;
 		if (a) {
-			System.out.println("Num of Circles: " + pairSize);
 			numCircles = pairSize;
 			numPerCircle = numPairs;
 		} else {
-			System.out.println("Num of Circles: " + numPairs);
 			numCircles = numPairs;
 			numPerCircle = pairSize;
 		}
@@ -716,7 +692,6 @@ public class DrawController extends AnimationControl {
 			if ((i + 1) % numPerCircle == 0)// circle is complete
 			{
 				if (myCircle > numCircles / 2 + 1) {
-					System.out.println("Rearange: " + circle);
 					rearangeCircle(circle);
 				}
 				myCircle++;
@@ -730,15 +705,11 @@ public class DrawController extends AnimationControl {
 	public static void rearangeCircle(ArrayList<Integer> circle) {
 		for (int i = 1; i <= circle.size() / 2; i++) {
 
-			System.out.println(circle.get(i) + " "
-					+ circle.get(circle.size() - i));
 			Node n1 = (Node) nodeLayer.getObjectByName(Integer.toString(circle
 					.get(i) - 1));
-			//System.out.println(Integer.valueOf(n1.name) + 1);
 
 			Node n2 = (Node) nodeLayer.getObjectByName(Integer.toString(circle
 					.get(circle.size() - i) - 1));
-			//System.out.println(Integer.valueOf(n2.name) + 1);
 
 			swapNodes(n1, n2);
 		}
@@ -827,8 +798,6 @@ public class DrawController extends AnimationControl {
 				* (2 * Math.PI / numCircles)));
 	}
 
-	
-
 	private static int getNonAutCricleY(int j, ArrayList<Integer> bList) {
 		return (int) (224 + 50 * Math.sin(bList.indexOf(j)
 				* (2 * Math.PI / bList.size())));
@@ -877,33 +846,30 @@ public class DrawController extends AnimationControl {
 	}
 
 	private static void swapNodes(GraphicsObject node1, GraphicsObject node2) {
-		Node n1 = (Node)node1;
-		Node n2 = (Node)node2;
-		
+		Node n1 = (Node) node1;
+		Node n2 = (Node) node2;
+
 		int auxX = node1.getX();
 		int auxY = node1.getY();
-		
+
 		node1.setX(node2.getX());
 		node1.setY(node2.getY());
-		
+
 		node2.setX(auxX);
 		node2.setY(auxY);
-		
+
 		auxX = n1.getLabel().getX();
 		auxY = n1.getLabel().getY();
-		
+
 		n1.getLabel().setX(n2.getLabel().getX());
 		n1.getLabel().setY(n2.getLabel().getY());
-		
+
 		n2.getLabel().setX(auxX);
 		n2.getLabel().setY(auxY);
-		
-		
-		
-		
-		drawEdges();}
 
-	
+		drawEdges();
+	}
+
 	private static void drawEdges() {
 		lineLayer.removeAll();
 		for (int j = 0; j < numNodes; j++)
@@ -962,7 +928,7 @@ public class DrawController extends AnimationControl {
 	public void redraw() {
 		if (lastFile != null)
 			processImport(lastFile);
-			
+
 	}
 
 	@Override
@@ -1003,10 +969,9 @@ public class DrawController extends AnimationControl {
 
 	@Override
 	public void reduceCrossings() {
-		if (option == 0 || option == 1){
+		if (option == 0 || option == 1) {
 			reduceCrossings(new ArrayList<GraphicsObject>());
-			}
-		else {
+		} else {
 			// create list with nodes not in automorphism group generator
 			ArrayList<GraphicsObject> nonAutNodes = new ArrayList<GraphicsObject>();
 			for (GraphicsObject node : nodeLayer.children)
@@ -1048,19 +1013,13 @@ public class DrawController extends AnimationControl {
 						bestDifference = initialCrossings - afterCrossings;
 						bestNode1 = (Node) node1;
 						bestNode2 = (Node) node2;
-					}		
+					}
 					swapNodes(node1, node2);
 				}
 			}
 
 		if (bestDifference > 0) {
-			int nameBest1 = Integer.valueOf(bestNode1.name) + 1;
-			int nameBest2 = Integer.valueOf(bestNode2.name) + 1;
-			System.out.println("Swap between " + nameBest1 + " and "
-					+ nameBest2);
-			System.out.println("Initial Crossings: " + computeCrossings());
 			swapNodes(bestNode1, bestNode2);
-			System.out.println("Final Crossings: " + computeCrossings());
 		}
 
 	}
@@ -1128,16 +1087,10 @@ public class DrawController extends AnimationControl {
 				}
 			}
 		if (bestDifference > 0) {
-			int nameBest1 = Integer.valueOf(bestNode1.name) + 1;
-			int nameBest2 = Integer.valueOf(bestNode2.name) + 1;
-			System.out.println("Swap between " + nameBest1 + " and "
-					+ nameBest2);
-			System.out.println("Initial Sum: " + computeSum());
 			swapNodes(bestNode1, bestNode2);
-			System.out.println("Final Sum: " + computeSum());
 		}
 	}
-	
+
 	private int computeSum() {
 		int sum = 0;
 		for (GraphicsObject line : lineLayer.children) {
@@ -1147,18 +1100,19 @@ public class DrawController extends AnimationControl {
 		}
 		return sum;
 	}
-	
-	public void setLastFile (File f){
+
+	public void setLastFile(File f) {
 		lastFile = f;
 	}
-	
-	public File getLastFile (){
+
+	public File getLastFile() {
 		return lastFile;
 	}
 
 	@Override
 	public void saveImage() {
-		BufferedImage image = new BufferedImage(800, 500, BufferedImage.TYPE_INT_RGB);
+		BufferedImage image = new BufferedImage(800, 500,
+				BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
 		int r = 255;
 		int g1 = 255;
@@ -1167,47 +1121,42 @@ public class DrawController extends AnimationControl {
 		for (int i = 0; i < 800; i++)
 			for (int j = 0; j < 500; j++)
 				image.setRGB(i, j, col);
-		
+
 		g.setColor(new Color(0, 0, 0));
-		 ((Graphics2D) g).setRenderingHint(
-			        RenderingHints.KEY_ANTIALIASING,
-			        RenderingHints.VALUE_ANTIALIAS_ON);
-			    ((Graphics2D) g).setRenderingHint(
-			        RenderingHints.KEY_TEXT_ANTIALIASING,
-			        RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-			    ((Graphics2D) g).setRenderingHint(
-			        RenderingHints.KEY_FRACTIONALMETRICS,
-			        RenderingHints.VALUE_FRACTIONALMETRICS_ON);
-		System.out.println("before the for");
-		for (GraphicsObject go : nodeLayer.children){
-			System.out.println("x="+go.x + "; y=" + go.y);
-			g.fillOval(go.x, go.y, 12, 12);;
+		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
+		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+				RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
+				RenderingHints.VALUE_FRACTIONALMETRICS_ON);
+		for (GraphicsObject go : nodeLayer.children) {
+			g.fillOval(go.x, go.y, 12, 12);
+			;
 			g.drawOval(go.x, go.y, 12, 12);
 		}
-		for (GraphicsObject go : lineLayer.children){
+		for (GraphicsObject go : lineLayer.children) {
 			LabeledLine ll = (LabeledLine) go;
-			
-			g.drawLine(ll.getX(),ll.getY(), ll.getX2(), ll.getY2());
+
+			g.drawLine(ll.getX(), ll.getY(), ll.getX2(), ll.getY2());
 		}
-		
-		
+
 		g.setColor(Color.WHITE);
 		g.setFont(new Font(Font.MONOSPACED, Font.BOLD, 10));
-		
-		for (GraphicsObject go : nodeLayer.children){
-			
-	       
-			
-			CenteredLabel cl = ((Node)go).getLabel();
-			GlyphVector gv = g.getFont().createGlyphVector(((Graphics2D) g).getFontRenderContext(), cl.text);
+
+		for (GraphicsObject go : nodeLayer.children) {
+
+			CenteredLabel cl = ((Node) go).getLabel();
+			GlyphVector gv = g.getFont().createGlyphVector(
+					((Graphics2D) g).getFontRenderContext(), cl.text);
 			java.awt.Rectangle r1 = gv.getPixelBounds(null, cl.x, cl.y);
-			g.drawString(cl.text, cl.x - r1.width/2, cl.y);
+			g.drawString(cl.text, cl.x - r1.width / 2, cl.y);
 		}
-		
+
 		try {
-			ImageIO.write(image, "jpg", new File("D://Workspace//GraphDraw//CustomImage.jpg"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}	
+			ImageIO.write(image, "jpg", new File(
+					"D://Workspace//GraphDraw//CustomImage.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
+}
