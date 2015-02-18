@@ -1,31 +1,42 @@
 package Main;
 
 import graphics.TweenClass.Tween;
+
 import java.awt.EventQueue;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
 import canvas.canvas;
+
 import java.awt.Font;
+
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+
 import javax.swing.JRadioButton;
+
 import controller.DrawController;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
 
 public class Window {
 	public int i, j;
@@ -196,12 +207,7 @@ public class Window {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		try {
-			UIManager
-					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -225,7 +231,13 @@ public class Window {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
 		frmGraphDraw = new JFrame();
+		try {
+		    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
 		frmGraphDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		frmGraphDraw.setTitle("Graph Draw");
 		frmGraphDraw.getContentPane().setFont(
@@ -4759,6 +4771,16 @@ public class Window {
 		btnSaveGraph.setEnabled(false);
 		btnSaveGraph.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+			/*	try {
+				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());;
+				    System.out.println("YEP");
+				} catch (Exception e) {
+				    e.printStackTrace();
+				}
+				*/
+				
+				
 				File f = null;
 				JFileChooser fc = new JFileChooser();
 				int returnVal = fc.showSaveDialog(null);
@@ -4770,7 +4792,20 @@ public class Window {
 					}
 				}
 				ac.setLastFile(f);
+				
+				/*
+				try {
+				    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+				} catch (Exception e) {
+				    e.printStackTrace();
+				}*/
+				
 			}
+			
+
+			
+
+			
 
 		});
 		btnSaveGraph.setToolTipText("Open the documentation");
@@ -4904,6 +4939,7 @@ public class Window {
 		panel_1.setBounds(111, 5, 365, 95);
 		frmGraphDraw.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
+		
 
 		final JRadioButton rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
@@ -4959,6 +4995,8 @@ public class Window {
 
 		final JButton btnHelp = new JButton("Help");
 		final JPanel panel_1_alternative = new JPanel();
+		panel_1_alternative.setEnabled(false);
+		panel_1_alternative.setVisible(false);
 		panel_1_alternative.setBorder(new BevelBorder(BevelBorder.LOWERED,
 				null, null, null, null));
 		panel_1_alternative.setBounds(111, 5, 365, 95);
@@ -5073,12 +5111,12 @@ public class Window {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean resultBoolean = (canvasPanel.isVisible()) ? false
 						: true;
+				
+				
 				canvasPanel.setVisible(resultBoolean);
 				canvasPanel.setEnabled(resultBoolean);
 				btnHelp.setEnabled(resultBoolean);
 				btnSaveImage.setEnabled(resultBoolean);
-				panel_help.setVisible(resultBoolean);
-				panel_help.setEnabled(resultBoolean);
 				panel_4.setVisible(!resultBoolean);
 				panel_4.setEnabled(!resultBoolean);
 				String resultString = (canvasPanel.isVisible()) ? "Edit Mode"
@@ -5105,7 +5143,6 @@ public class Window {
 																	// and
 																	// canvas_panel
 				if (btnHelp.getText().equals("Help")) {
-					System.out.println(i1 + " " + i2 + " " + i3 + " " + i4);
 					btnHelp.setText("Back");
 					canvasPanel.setVisible(false);
 					canvasPanel.setEnabled(false);
@@ -5335,8 +5372,9 @@ radio120.addActionListener(new ActionListener() {
 
 		btnImport.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				
 				JFileChooser fc = new JFileChooser();
-				int returnVal = fc.showOpenDialog(null);
+				int returnVal = fc.showOpenDialog(fc.getParent());
 				if (returnVal == JFileChooser.APPROVE_OPTION)
 					ac.processImport(fc.getSelectedFile());
 			}
