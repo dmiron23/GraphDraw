@@ -3,7 +3,8 @@ package Main;
 import graphics.TweenClass.Tween;
 
 import java.awt.EventQueue;
-import java.awt.FileDialog;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 import java.awt.TextField;
 
 import javax.swing.JFileChooser;
@@ -202,6 +203,7 @@ public class Window {
 	protected int numPairs = 10;
 	private TextField[][] auts;
 	protected static int numNodes = 25;
+	private Font feltTipRoman;
 
 	/**
 	 * Launch the application.
@@ -238,6 +240,22 @@ public class Window {
 		} catch (Exception e) {
 		    e.printStackTrace();
 		}
+		
+		 try {
+             //create the font to use. Specify the size!
+             feltTipRoman= Font.createFont(Font.TRUETYPE_FONT, new File("Fonts\\Felt_Tip_Roman.ttf")).deriveFont(18f);
+             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+             //register the font
+             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Fonts\\Felt_Tip_Roman.ttf")));
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+         catch(FontFormatException e)
+         {
+             e.printStackTrace();
+         }
+		
+		
 		frmGraphDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		frmGraphDraw.setTitle("Graph Draw");
 		frmGraphDraw.getContentPane().setFont(
@@ -4070,7 +4088,7 @@ public class Window {
 		JButton btnImport = new JButton("Import");
 		btnImport.setBounds(5, 5, 86, 25);
 		panel.add(btnImport);
-		btnImport.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnImport.setFont(feltTipRoman);
 		btnImport.setToolTipText("Import a graph from a file");
 
 		panel_4.setEnabled(false);
@@ -4774,8 +4792,7 @@ public class Window {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());;
-				    System.out.println("YEP");
+				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
 				    e.printStackTrace();
 				}
@@ -5386,8 +5403,7 @@ radio120.addActionListener(new ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());;
-				    System.out.println("YEP");
+				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
 				    e.printStackTrace();
 				}
