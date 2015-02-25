@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.JRadioButton;
@@ -242,11 +243,20 @@ public class Window {
 		}
 		
 		 try {
-             //create the font to use. Specify the size!
-             feltTipRoman= Font.createFont(Font.TRUETYPE_FONT, new File("Fonts\\Felt_Tip_Roman.ttf")).deriveFont(18f);
-             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-             //register the font
-             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Fonts\\Felt_Tip_Roman.ttf")));
+            //create the font to use. Specify the size!
+			File fontFile = new File("Temp//Felt_Tip_Roman.ttf");
+            feltTipRoman = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+            feltTipRoman = feltTipRoman.deriveFont(Font.PLAIN,18);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(feltTipRoman);
+             
+             
+             
+             
+             
+             
+             
+             
          } catch (IOException e) {
              e.printStackTrace();
          }
@@ -4052,7 +4062,7 @@ public class Window {
 			}
 		});
 		btnImportDemo.setToolTipText("Open the documentation");
-		btnImportDemo.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnImportDemo.setFont(feltTipRoman);
 		btnImportDemo.setBounds(482, 455, 102, 25);
 		panel_help.add(btnImportDemo);
 
@@ -4068,7 +4078,7 @@ public class Window {
 			}
 		});
 		btnMoreDetails.setToolTipText("Open the documentation");
-		btnMoreDetails.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnMoreDetails.setFont(feltTipRoman);
 		btnMoreDetails.setBounds(605, 455, 102, 25);
 		panel_help.add(btnMoreDetails);
 		canvasPanel = new canvas();
@@ -4738,21 +4748,21 @@ public class Window {
 		JLabel lblNumberOfNodes = new JLabel("Number of nodes:");
 		lblNumberOfNodes.setBounds(10, 21, 98, 15);
 		panel_5.add(lblNumberOfNodes);
-		lblNumberOfNodes.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		lblNumberOfNodes.setFont(feltTipRoman.deriveFont((float)14.0));
 
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setFont(feltTipRoman);
 		btnUpdate.setBounds(70, 41, 86, 20);
 		panel_5.add(btnUpdate);
 
 		JLabel lblAutomorphismGroupGenerator = new JLabel(
 				"Automorphism group generator size:");
-		lblAutomorphismGroupGenerator.setBounds(10, 66, 201, 15);
+		lblAutomorphismGroupGenerator.setBounds(10, 66, 240, 15);
 		panel_5.add(lblAutomorphismGroupGenerator);
-		lblAutomorphismGroupGenerator.setFont(new Font("Comic Sans MS",
-				Font.BOLD, 11));
+		lblAutomorphismGroupGenerator.setFont(feltTipRoman.deriveFont((float) 14.0));
 
 		JLabel lblControlPanel = new JLabel("Control Panel");
-		lblControlPanel.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		lblControlPanel.setFont(feltTipRoman);
 		lblControlPanel.setBounds(92, 5, 98, 15);
 		panel_5.add(lblControlPanel);
 
@@ -4776,6 +4786,7 @@ public class Window {
 		by.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
 
 		JButton buttonUpdate = new JButton("Update");
+		buttonUpdate.setFont(feltTipRoman);
 		buttonUpdate.setBounds(120, 86, 86, 20);
 		panel_5.add(buttonUpdate);
 
@@ -4825,13 +4836,13 @@ public class Window {
 
 		});
 		btnSaveGraph.setToolTipText("Open the documentation");
-		btnSaveGraph.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnSaveGraph.setFont(feltTipRoman);
 		btnSaveGraph.setBounds(611, 427, 80, 25);
 		panel_4.add(btnSaveGraph);
 
 		final JButton btnDraw = new JButton("Draw");
 		btnDraw.setEnabled(false);
-		btnDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnDraw.setFont(feltTipRoman);
 		btnDraw.setBounds(696, 427, 80, 25);
 		btnDraw.addActionListener(new ActionListener() {
 
@@ -4845,9 +4856,10 @@ public class Window {
 				
 				
 				if (ac.getLastFile() == null) {
-					File f = new File("tmp"
+					File f = new File("Temp\\" + "tmp"
 							+ ((Double) (Math.random() * 5000)).intValue()
 							+ ((Double) (Math.random() * 5000)).intValue());
+					System.out.println(f);
 					try {
 						FileCreator.write(f, createPrintables());
 					} catch (IOException e1) {
@@ -4877,7 +4889,7 @@ public class Window {
 
 			}
 		});
-		btnConfirm.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnConfirm.setFont(feltTipRoman);
 		btnConfirm.setBounds(526, 427, 80, 25);
 		panel_4.add(btnConfirm);
 		buttonUpdate.addActionListener(new ActionListener() {
@@ -4931,13 +4943,13 @@ public class Window {
 		JButton btnExport = new JButton("Export");
 		btnExport.setBounds(5, 35, 86, 25);
 		panel.add(btnExport);
-		btnExport.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnExport.setFont(feltTipRoman);
 		btnExport.setToolTipText("Export the graph to a file");
 
 		JButton btnClear = new JButton("Clear");
 		btnClear.setBounds(5, 65, 86, 25);
 		panel.add(btnClear);
-		btnClear.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnClear.setFont(feltTipRoman);
 		btnClear.setToolTipText("Clear the graph");
 		btnClear.addActionListener(new ActionListener() {
 
@@ -4958,41 +4970,37 @@ public class Window {
 		
 
 		final JRadioButton rdbtnRandom = new JRadioButton("Random");
-		rdbtnRandom.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		rdbtnRandom.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnRandom.setBounds(5, 25, 110, 15);
 		panel_1.add(rdbtnRandom);
 
 		final JRadioButton rdbtnRandomCircle = new JRadioButton(
 				"Random - Circle");
-		rdbtnRandomCircle.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		rdbtnRandomCircle.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnRandomCircle.setBounds(5, 45, 110, 15);
 		panel_1.add(rdbtnRandomCircle);
 
 		final JRadioButton rdbtnSymmetricalCircle1 = new JRadioButton(
 				"Symmetrical - Circle (1)");
-		rdbtnSymmetricalCircle1.setFont(new Font("Comic Sans MS", Font.PLAIN,
-				11));
+		rdbtnSymmetricalCircle1.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnSymmetricalCircle1.setBounds(5, 65, 150, 15);
 		panel_1.add(rdbtnSymmetricalCircle1);
 
 		final JRadioButton rdbtnSymmetricalCircle2 = new JRadioButton(
 				"Symmetrical - Circle (2)");
-		rdbtnSymmetricalCircle2.setFont(new Font("Comic Sans MS", Font.PLAIN,
-				11));
-		rdbtnSymmetricalCircle2.setBounds(160, 25, 150, 15);
+		rdbtnSymmetricalCircle2.setFont(feltTipRoman.deriveFont((float) 13.0));
+		rdbtnSymmetricalCircle2.setBounds(160, 25, 160, 15);
 		panel_1.add(rdbtnSymmetricalCircle2);
 
 		final JRadioButton rdbtnSymmetricalMultiple1 = new JRadioButton(
 				"Symmetrical - Multiple Circles (1)");
-		rdbtnSymmetricalMultiple1.setFont(new Font("Comic Sans MS", Font.PLAIN,
-				11));
+		rdbtnSymmetricalMultiple1.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnSymmetricalMultiple1.setBounds(160, 45, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple1);
 
 		final JRadioButton rdbtnSymmetricalMultiple2 = new JRadioButton(
 				"Symmetrical - Multiple Circles (2)");
-		rdbtnSymmetricalMultiple2.setFont(new Font("Comic Sans MS", Font.PLAIN,
-				11));
+		rdbtnSymmetricalMultiple2.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnSymmetricalMultiple2.setBounds(160, 65, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple2);
 		radioButtons.add(rdbtnRandom);
@@ -5005,9 +5013,9 @@ public class Window {
 		rdbtnRandom.setSelected(true);
 
 		JLabel lblNewLabel = new JLabel("Draw mode");
-		lblNewLabel.setBounds(5, 5, 85, 15);
+		lblNewLabel.setBounds(5, 2, 85, 18);
 		panel_1.add(lblNewLabel);
-		lblNewLabel.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		lblNewLabel.setFont(feltTipRoman);
 
 		final JButton btnHelp = new JButton("Help");
 		final JPanel panel_1_alternative = new JPanel();
@@ -5033,7 +5041,7 @@ public class Window {
 				panel_1.setEnabled(true);
 			}
 		});
-		btnBack.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnBack.setFont(feltTipRoman);
 		btnBack.setBounds(274, 65, 86, 25);
 		panel_1_alternative.add(btnBack);
 
@@ -5084,13 +5092,13 @@ public class Window {
 		frmGraphDraw.getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 
-		JLabel lblNodesNotIn = new JLabel("View code:");
-		lblNodesNotIn.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNodesNotIn.setBounds(10, 14, 86, 15);
-		panel_2.add(lblNodesNotIn);
-		lblNodesNotIn.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		JLabel lblViewCode = new JLabel("View code:");
 		
+		lblViewCode.setBounds(10, 14, 86, 15);
+		panel_2.add(lblViewCode);
+		lblViewCode.setFont(feltTipRoman);
 		JButton btnOnGithub = new JButton("On Github");
+		btnOnGithub.setFont(feltTipRoman);
 		btnOnGithub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -5105,7 +5113,6 @@ public class Window {
 			}
 		});
 		btnOnGithub.setToolTipText("Opens GitHub repository containing all the files.");
-		btnOnGithub.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
 		btnOnGithub.setBounds(99, 9, 86, 25);
 		panel_2.add(btnOnGithub);
 
@@ -5118,7 +5125,7 @@ public class Window {
 
 		final JButton btnSaveImage = new JButton("Save JPG");
 		btnSaveImage.setToolTipText("Saves a JPEG of the Graph");
-		btnSaveImage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnSaveImage.setFont(feltTipRoman);
 		btnSaveImage.setBounds(5, 35, 86, 25);
 		panel_3.add(btnSaveImage);
 
@@ -5141,12 +5148,12 @@ public class Window {
 			}
 		});
 		btnEditMode.setToolTipText("Open the documentation");
-		btnEditMode.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnEditMode.setFont(feltTipRoman);
 		btnEditMode.setBounds(5, 65, 86, 25);
 		panel_3.add(btnEditMode);
 
 		btnHelp.setToolTipText("Open the documentation");
-		btnHelp.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnHelp.setFont(feltTipRoman);
 		btnHelp.setBounds(5, 5, 86, 25);
 		btnHelp.addActionListener(new ActionListener() {
 
@@ -5193,7 +5200,7 @@ public class Window {
 		JLabel lblDiameter = new JLabel("Diameter:");
 		lblDiameter.setBounds(16, 9, 58, 17);
 		lblDiameter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDiameter.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		lblDiameter.setFont(feltTipRoman.deriveFont((float)13.0));
 		panel_6.add(lblDiameter);
 		
 		final JRadioButton radio50 = new JRadioButton("");
