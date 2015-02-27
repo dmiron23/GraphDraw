@@ -12,7 +12,6 @@
 	<classpathentry kind="lib" path="D:/Program Files/eclipse/plugins/org.eclipse.jface_3.10.0.v20140604-0740.jar" sourcepath="D:/Program Files/eclipse/plugins/org.eclipse.jface.source_3.10.0.v20140604-0740.jar"/>
 	<classpathentry kind="lib" path="D:/Program Files/eclipse/plugins/org.eclipse.jface.text_3.9.0.v20140521-1657.jar" sourcepath="D:/Program Files/eclipse/plugins/org.eclipse.jface.text.source_3.9.0.v20140521-1657.jar"/>
 	<classpathentry kind="lib" path="D:/Program Files/eclipse/plugins/org.eclipse.ui.workbench_3.106.0.v20140530-0732.jar" sourcepath="D:/Program Files/eclipse/plugins/org.eclipse.ui.workbench.source_3.106.0.v20140530-0732.jar"/>
-	<classpathentry kind="lib" path="D:/Program Files/eclipse/plugins/com.ibm.icu_52.1.0.v201404241930.jar" sourcepath="D:/Program Files/eclipse/plugins/com.ibm.icu.source_52.1.0.v201404241930.jar"/>
 	<classpathentry kind="lib" path="D:/Program Files/eclipse/plugins/org.eclipse.ui.forms_3.6.100.v20140422-1825.jar" sourcepath="D:/Program Files/eclipse/plugins/org.eclipse.ui.forms.source_3.6.100.v20140422-1825.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Dragos/Downloads/napkinlaf-alpha001.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Dragos/git/GraphDraw/GDraw/Fonts"/>

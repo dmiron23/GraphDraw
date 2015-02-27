@@ -31,7 +31,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.JRadioButton;
@@ -244,6 +243,7 @@ public class Window {
 		
 		 try {
             //create the font to use. Specify the size!
+			 
 			File fontFile = new File("Temp//Felt_Tip_Roman.ttf");
             feltTipRoman = Font.createFont(Font.TRUETYPE_FONT, fontFile);
             feltTipRoman = feltTipRoman.deriveFont(Font.PLAIN,18);
@@ -4783,7 +4783,7 @@ public class Window {
 		by.setBounds(50, 88, 20, 15);
 		panel_5.add(by);
 		by.setHorizontalAlignment(SwingConstants.CENTER);
-		by.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		by.setFont(feltTipRoman.deriveFont((float)13.0));
 
 		JButton buttonUpdate = new JButton("Update");
 		buttonUpdate.setFont(feltTipRoman);
@@ -4792,9 +4792,8 @@ public class Window {
 
 		JLabel lblAutomorphismGroupGenerator_1 = new JLabel(
 				"Automorphism group generator");
-		lblAutomorphismGroupGenerator_1.setFont(new Font("Comic Sans MS",
-				Font.BOLD, 11));
-		lblAutomorphismGroupGenerator_1.setBounds(564, 135, 176, 15);
+		lblAutomorphismGroupGenerator_1.setFont(feltTipRoman);
+		lblAutomorphismGroupGenerator_1.setBounds(545, 135, 229, 15);
 		panel_4.add(lblAutomorphismGroupGenerator_1);
 
 		final JButton btnSaveGraph = new JButton("Save");
@@ -5028,7 +5027,7 @@ public class Window {
 		panel_1_alternative.setLayout(null);
 
 		JLabel lblDrawingSettings = new JLabel("Settings");
-		lblDrawingSettings.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		lblDrawingSettings.setFont(feltTipRoman);
 		lblDrawingSettings.setBounds(5, 5, 60, 15);
 		panel_1_alternative.add(lblDrawingSettings);
 
@@ -5046,12 +5045,12 @@ public class Window {
 		panel_1_alternative.add(btnBack);
 
 		JLabel lblOptionSelected = new JLabel("Option selected:");
-		lblOptionSelected.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblOptionSelected.setFont(feltTipRoman.deriveFont((float) 13.0 ));
 		lblOptionSelected.setBounds(71, 5, 92, 14);
 		panel_1_alternative.add(lblOptionSelected);
 
 		final JLabel Selected = new JLabel("You should not see this. Bug!!!");
-		Selected.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		Selected.setFont(feltTipRoman.deriveFont((float) 13.0 ));
 		Selected.setBounds(158, 5, 185, 14);
 		panel_1_alternative.add(Selected);
 
@@ -5061,7 +5060,7 @@ public class Window {
 				ac.f();
 			}
 		});
-		btnFlip.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnFlip.setFont(feltTipRoman);
 		btnFlip.setBounds(15, 31, 86, 25);
 		panel_1_alternative.add(btnFlip);
 
@@ -5071,7 +5070,7 @@ public class Window {
 				ac.reduceCrossings();
 			}
 		});
-		btnReduceCrossings.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnReduceCrossings.setFont(feltTipRoman);
 		btnReduceCrossings.setBounds(15, 31, 131, 25);
 		panel_1_alternative.add(btnReduceCrossings);
 
@@ -5081,7 +5080,7 @@ public class Window {
 				ac.reduceSumOfEdges();
 			}
 		});
-		btnReduceSumOf.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnReduceSumOf.setFont(feltTipRoman);
 		btnReduceSumOf.setBounds(168, 30, 192, 25);
 		panel_1_alternative.add(btnReduceSumOf);
 
