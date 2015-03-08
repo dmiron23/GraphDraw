@@ -38,6 +38,7 @@ import canvas.canvas;
 
 public class DrawController extends AnimationControl {
 	private File lastFile;
+	protected static double clusterDistance = 1.0;
 	private int option = 0;// default
 	private static boolean graphRepAvailable = false;
 	private int nonOption = 0;// default
@@ -656,6 +657,14 @@ public class DrawController extends AnimationControl {
 	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
 		// draw the nodes
 		usedList = (a) ? autList1 : autList2;
+		System.out.println(usedList);
+		System.out.println("NUM PAIRS: " + numPairs);
+		System.out.println("PAIR SIZE: " + pairSize);
+		if (!a){
+			int aux = numPairs;
+			numPairs = pairSize;
+			pairSize = aux;
+		}
 		nonAutList = new ArrayList<Integer>();
 		for (int i = 0; i < numNodes; i++) {
 			if (usedList.contains(i + 1)) {
@@ -672,6 +681,11 @@ public class DrawController extends AnimationControl {
 							getNonAutCricleY(j, nonAutList), j);
 				}
 		// draw the edges
+		if (!a){
+			int aux = numPairs;
+			numPairs = pairSize;
+			pairSize = aux;
+		}
 		drawEdges();
 	}
 
@@ -810,13 +824,13 @@ public class DrawController extends AnimationControl {
 	}
 
 	private static int getAutCricleY(int i, ArrayList<Integer> usedList) {
-		return (int) (224 + 210 * Math.sin(usedList.indexOf(i)
-				* (2 * Math.PI / usedList.size())));
+		int index = usedList.indexOf(i);
+		return (int) (224 + 210 * Math.sin((index - index % pairSize + index% pairSize*clusterDistance) * (2 * Math.PI / usedList.size())));
 	}
 
 	private static int getAutCricleX(int i, ArrayList<Integer> usedList) {
-		return (int) (386 + 210 * Math.cos(usedList.indexOf(i)
-				* (2 * Math.PI / usedList.size())));
+		int index = usedList.indexOf(i);
+		return (int) (386 + 210 * Math.cos((index - index % pairSize + index % pairSize * clusterDistance)* (2 * Math.PI / usedList.size())));
 	}
 
 	private static void drawRandomlyOnCircle(int numNodes) {
@@ -1173,6 +1187,12 @@ public class DrawController extends AnimationControl {
 	@Override
 	public void setVSize(int i) {
 		vSize = i;
+		
+	}
+
+	@Override
+	public void setClusterDistance(double d) {
+		clusterDistance = d;
 		
 	}
 }

@@ -209,7 +209,7 @@ public class Window {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -233,39 +233,30 @@ public class Window {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+
 		frmGraphDraw = new JFrame();
 		try {
-		    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+			UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
 		} catch (Exception e) {
-		    e.printStackTrace();
+			e.printStackTrace();
 		}
-		
-		 try {
-            //create the font to use. Specify the size!
-			 
+
+		try {
+			// create the font to use. Specify the size!
+
 			File fontFile = new File("Temp//Felt_Tip_Roman.ttf");
-            feltTipRoman = Font.createFont(Font.TRUETYPE_FONT, fontFile);
-            feltTipRoman = feltTipRoman.deriveFont(Font.PLAIN,18);
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(feltTipRoman);
-             
-             
-             
-             
-             
-             
-             
-             
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
-         catch(FontFormatException e)
-         {
-             e.printStackTrace();
-         }
-		
-		
+			feltTipRoman = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+			feltTipRoman = feltTipRoman.deriveFont(Font.PLAIN, 18);
+			GraphicsEnvironment ge = GraphicsEnvironment
+					.getLocalGraphicsEnvironment();
+			ge.registerFont(feltTipRoman);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (FontFormatException e) {
+			e.printStackTrace();
+		}
+
 		frmGraphDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		frmGraphDraw.setTitle("Graph Draw");
 		frmGraphDraw.getContentPane().setFont(
@@ -4730,9 +4721,9 @@ public class Window {
 		auts[10][9] = aut10_9;
 		auts[10][10] = aut10_10;
 
-		//for (i = 1; i <= 10; i++)
-			//for (j = 1; j <= 10; j++)
-				//auts[i][j].setInputVerifier(new NumInputVerifier());
+		// for (i = 1; i <= 10; i++)
+		// for (j = 1; j <= 10; j++)
+		// auts[i][j].setInputVerifier(new NumInputVerifier());
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
@@ -4748,7 +4739,7 @@ public class Window {
 		JLabel lblNumberOfNodes = new JLabel("Number of nodes:");
 		lblNumberOfNodes.setBounds(10, 21, 98, 15);
 		panel_5.add(lblNumberOfNodes);
-		lblNumberOfNodes.setFont(feltTipRoman.deriveFont((float)14.0));
+		lblNumberOfNodes.setFont(feltTipRoman.deriveFont((float) 14.0));
 
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setFont(feltTipRoman);
@@ -4759,7 +4750,8 @@ public class Window {
 				"Automorphism group generator size:");
 		lblAutomorphismGroupGenerator.setBounds(10, 66, 240, 15);
 		panel_5.add(lblAutomorphismGroupGenerator);
-		lblAutomorphismGroupGenerator.setFont(feltTipRoman.deriveFont((float) 14.0));
+		lblAutomorphismGroupGenerator.setFont(feltTipRoman
+				.deriveFont((float) 14.0));
 
 		JLabel lblControlPanel = new JLabel("Control Panel");
 		lblControlPanel.setFont(feltTipRoman);
@@ -4767,14 +4759,14 @@ public class Window {
 		panel_5.add(lblControlPanel);
 
 		pairSizeBox = new TextField();
-		
-		//pairSizeBox.setInputVerifier(new MaxTenInputVerifier());
+
+		// pairSizeBox.setInputVerifier(new MaxTenInputVerifier());
 		pairSizeBox.setBounds(10, 86, 35, 20);
 		panel_5.add(pairSizeBox);
 		pairSizeBox.setColumns(1);
 
 		numPairsBox = new TextField();
-		//numPairsBox.setInputVerifier(new MaxTenInputVerifier());
+		// numPairsBox.setInputVerifier(new MaxTenInputVerifier());
 		numPairsBox.setBounds(75, 86, 35, 20);
 		panel_5.add(numPairsBox);
 		numPairsBox.setColumns(1);
@@ -4783,7 +4775,7 @@ public class Window {
 		by.setBounds(50, 88, 20, 15);
 		panel_5.add(by);
 		by.setHorizontalAlignment(SwingConstants.CENTER);
-		by.setFont(feltTipRoman.deriveFont((float)13.0));
+		by.setFont(feltTipRoman.deriveFont((float) 13.0));
 
 		JButton buttonUpdate = new JButton("Update");
 		buttonUpdate.setFont(feltTipRoman);
@@ -4800,14 +4792,14 @@ public class Window {
 		btnSaveGraph.setEnabled(false);
 		btnSaveGraph.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+					UIManager.setLookAndFeel(UIManager
+							.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
-				
+
 				File f = null;
 				JFileChooser fc = new JFileChooser();
 				int returnVal = fc.showSaveDialog(null);
@@ -4819,19 +4811,14 @@ public class Window {
 					}
 				}
 				ac.setLastFile(f);
-			
+
 				try {
-				    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+					UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
+
 			}
-			
-
-			
-
-			
 
 		});
 		btnSaveGraph.setToolTipText("Open the documentation");
@@ -4847,13 +4834,12 @@ public class Window {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (ac.getLastFile() != null){
+				if (ac.getLastFile() != null) {
 					if (ac.getLastFile().getAbsolutePath().contains("tmp"))
 						ac.getLastFile().delete();
-						}
-					ac.setLastFile(null);
-				
-				
+				}
+				ac.setLastFile(null);
+
 				if (ac.getLastFile() == null) {
 					File f = new File("Temp\\" + "tmp"
 							+ ((Double) (Math.random() * 5000)).intValue()
@@ -4960,13 +4946,13 @@ public class Window {
 		});
 
 		final ArrayList<JRadioButton> radioButtons = new ArrayList<JRadioButton>();
+
 		final JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
 		panel_1.setBounds(111, 5, 365, 95);
 		frmGraphDraw.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
 
 		final JRadioButton rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.setFont(feltTipRoman.deriveFont((float) 13.0));
@@ -4993,13 +4979,15 @@ public class Window {
 
 		final JRadioButton rdbtnSymmetricalMultiple1 = new JRadioButton(
 				"Symmetrical - Multiple Circles (1)");
-		rdbtnSymmetricalMultiple1.setFont(feltTipRoman.deriveFont((float) 13.0));
+		rdbtnSymmetricalMultiple1
+				.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnSymmetricalMultiple1.setBounds(160, 45, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple1);
 
 		final JRadioButton rdbtnSymmetricalMultiple2 = new JRadioButton(
 				"Symmetrical - Multiple Circles (2)");
-		rdbtnSymmetricalMultiple2.setFont(feltTipRoman.deriveFont((float) 13.0));
+		rdbtnSymmetricalMultiple2
+				.setFont(feltTipRoman.deriveFont((float) 13.0));
 		rdbtnSymmetricalMultiple2.setBounds(160, 65, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple2);
 		radioButtons.add(rdbtnRandom);
@@ -5045,12 +5033,12 @@ public class Window {
 		panel_1_alternative.add(btnBack);
 
 		JLabel lblOptionSelected = new JLabel("Option selected:");
-		lblOptionSelected.setFont(feltTipRoman.deriveFont((float) 13.0 ));
+		lblOptionSelected.setFont(feltTipRoman.deriveFont((float) 13.0));
 		lblOptionSelected.setBounds(71, 5, 92, 14);
 		panel_1_alternative.add(lblOptionSelected);
 
 		final JLabel Selected = new JLabel("You should not see this. Bug!!!");
-		Selected.setFont(feltTipRoman.deriveFont((float) 13.0 ));
+		Selected.setFont(feltTipRoman.deriveFont((float) 13.0));
 		Selected.setBounds(158, 5, 185, 14);
 		panel_1_alternative.add(Selected);
 
@@ -5084,6 +5072,80 @@ public class Window {
 		btnReduceSumOf.setBounds(168, 30, 192, 25);
 		panel_1_alternative.add(btnReduceSumOf);
 
+		final JRadioButton clusterDistance2 = new JRadioButton("");
+		clusterDistance2.setBounds(178, 65, 21, 21);
+		panel_1_alternative.add(clusterDistance2);
+
+		final JRadioButton clusterDistance3 = new JRadioButton("");
+		clusterDistance3.setBounds(199, 65, 21, 21);
+		panel_1_alternative.add(clusterDistance3);
+
+		final JRadioButton clusterDistance4 = new JRadioButton("");
+		clusterDistance4.setBounds(220, 65, 21, 21);
+		panel_1_alternative.add(clusterDistance4);
+
+		final JRadioButton clusterDistance1 = new JRadioButton("");
+		clusterDistance1.setBounds(157, 65, 21, 21);
+		clusterDistance1.setSelected(true);
+		panel_1_alternative.add(clusterDistance1);
+
+		final JLabel lblClusterDistance = new JLabel("Cluster distance:");
+		lblClusterDistance.setFont(feltTipRoman);
+		lblClusterDistance.setBounds(25, 66, 150, 14);
+		panel_1_alternative.add(lblClusterDistance);
+
+		clusterDistance1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clusterDistance1.setSelected(true);
+				clusterDistance2.setSelected(false);
+				clusterDistance3.setSelected(false);
+				clusterDistance4.setSelected(false);
+				ac.setClusterDistance(1.0);
+				ac.redraw();
+			}
+		});
+
+		clusterDistance2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clusterDistance1.setSelected(false);
+				clusterDistance2.setSelected(true);
+				clusterDistance3.setSelected(false);
+				clusterDistance4.setSelected(false);
+				ac.setClusterDistance(0.8);
+				ac.redraw();
+			}
+		});
+
+		clusterDistance3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clusterDistance1.setSelected(false);
+				clusterDistance2.setSelected(false);
+				clusterDistance3.setSelected(true);
+				clusterDistance4.setSelected(false);
+				ac.setClusterDistance(0.6);
+				ac.redraw();
+			}
+		});
+
+		clusterDistance4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clusterDistance1.setSelected(false);
+				clusterDistance2.setSelected(false);
+				clusterDistance3.setSelected(false);
+				clusterDistance4.setSelected(true);
+				ac.setClusterDistance(0.4);
+				ac.redraw();
+			}
+		});
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
@@ -5092,7 +5154,7 @@ public class Window {
 		panel_2.setLayout(null);
 
 		JLabel lblViewCode = new JLabel("View code:");
-		
+
 		lblViewCode.setBounds(10, 14, 86, 15);
 		panel_2.add(lblViewCode);
 		lblViewCode.setFont(feltTipRoman);
@@ -5100,18 +5162,18 @@ public class Window {
 		btnOnGithub.setFont(feltTipRoman);
 		btnOnGithub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				try {
 					java.awt.Desktop.getDesktop().browse(
 							new URI("https://github.com/dmiron23/GraphDraw"));
 				} catch (IOException | URISyntaxException e) {
 					e.printStackTrace();
 				}
-				
-				
+
 			}
 		});
-		btnOnGithub.setToolTipText("Opens GitHub repository containing all the files.");
+		btnOnGithub
+				.setToolTipText("Opens GitHub repository containing all the files.");
 		btnOnGithub.setBounds(99, 9, 86, 25);
 		panel_2.add(btnOnGithub);
 
@@ -5133,8 +5195,7 @@ public class Window {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean resultBoolean = (canvasPanel.isVisible()) ? false
 						: true;
-				
-				
+
 				canvasPanel.setVisible(resultBoolean);
 				canvasPanel.setEnabled(resultBoolean);
 				btnHelp.setEnabled(resultBoolean);
@@ -5189,42 +5250,43 @@ public class Window {
 			}
 		});
 		panel_3.add(btnHelp);
-		
+
 		JPanel panel_6 = new JPanel();
-		panel_6.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_6.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
+				null, null));
 		panel_6.setBounds(482, 57, 195, 42);
 		frmGraphDraw.getContentPane().add(panel_6);
 		panel_6.setLayout(null);
-		
+
 		JLabel lblDiameter = new JLabel("Diameter:");
 		lblDiameter.setBounds(16, 9, 58, 17);
 		lblDiameter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDiameter.setFont(feltTipRoman.deriveFont((float)13.0));
+		lblDiameter.setFont(feltTipRoman.deriveFont((float) 13.0));
 		panel_6.add(lblDiameter);
-		
+
 		final JRadioButton radio50 = new JRadioButton("");
 		radio50.setSelected(true);
 		radio50.setBounds(79, 8, 21, 21);
 		panel_6.add(radio50);
-		
+
 		final JRadioButton radio60 = new JRadioButton("");
 		radio60.setBounds(100, 8, 21, 21);
 		panel_6.add(radio60);
-		
+
 		final JRadioButton radio70 = new JRadioButton("");
 		radio70.setBounds(121, 8, 21, 21);
 		panel_6.add(radio70);
-		
+
 		final JRadioButton radio80 = new JRadioButton("");
 		radio80.setBounds(142, 8, 21, 21);
 		panel_6.add(radio80);
-		
+
 		final JRadioButton radio120 = new JRadioButton("");
 		radio120.setBounds(163, 8, 21, 21);
 		panel_6.add(radio120);
-		
+
 		radio50.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				radio50.setSelected(true);
@@ -5234,12 +5296,12 @@ public class Window {
 				radio120.setSelected(false);
 				ac.setVSize(50);
 				ac.redraw();
-				
+
 			}
 		});
-		
-radio60.addActionListener(new ActionListener() {
-			
+
+		radio60.addActionListener(new ActionListener() {
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				radio120.setSelected(false);
@@ -5249,70 +5311,71 @@ radio60.addActionListener(new ActionListener() {
 				radio60.setSelected(true);
 				ac.setVSize(60);
 				ac.redraw();
-				
+
 			}
 		});
 
-radio70.addActionListener(new ActionListener() {
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		radio120.setSelected(false);
-		radio50.setSelected(false);
-		radio70.setSelected(true);
-		radio80.setSelected(false);
-		radio60.setSelected(false);
-		ac.setVSize(70);
-		ac.redraw();
-		
-	}
-});
+		radio70.addActionListener(new ActionListener() {
 
-radio80.addActionListener(new ActionListener() {
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		radio120.setSelected(false);
-		radio50.setSelected(false);
-		radio70.setSelected(false);
-		radio80.setSelected(true);
-		radio60.setSelected(false);
-		ac.setVSize(80);
-		ac.redraw();
-		
-	}
-});
-radio120.addActionListener(new ActionListener() {
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		radio50.setSelected(false);
-		radio70.setSelected(false);
-		radio80.setSelected(false);
-		radio60.setSelected(false);
-		radio120.setSelected(true);
-		ac.setVSize(120);
-		ac.redraw();
-		
-	}
-});
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				radio120.setSelected(false);
+				radio50.setSelected(false);
+				radio70.setSelected(true);
+				radio80.setSelected(false);
+				radio60.setSelected(false);
+				ac.setVSize(70);
+				ac.redraw();
+
+			}
+		});
+
+		radio80.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				radio120.setSelected(false);
+				radio50.setSelected(false);
+				radio70.setSelected(false);
+				radio80.setSelected(true);
+				radio60.setSelected(false);
+				ac.setVSize(80);
+				ac.redraw();
+
+			}
+		});
+		radio120.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				radio50.setSelected(false);
+				radio70.setSelected(false);
+				radio80.setSelected(false);
+				radio60.setSelected(false);
+				radio120.setSelected(true);
+				ac.setVSize(120);
+				ac.redraw();
+
+			}
+		});
 		btnSaveImage.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+					UIManager.setLookAndFeel(UIManager
+							.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
+
 				ac.saveImage();
-				
+
 				try {
-				    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+					UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
 			}
 		});
@@ -5395,6 +5458,28 @@ radio120.addActionListener(new ActionListener() {
 						btnReduceSumOf.setEnabled(false);
 					}
 
+					if (a.equals(rdbtnSymmetricalCircle1) || a.equals(rdbtnSymmetricalCircle2)) {
+						lblClusterDistance.setVisible(true);
+						clusterDistance1.setVisible(true);
+						clusterDistance2.setVisible(true);
+						clusterDistance3.setVisible(true);
+						clusterDistance4.setVisible(true);
+						clusterDistance1.setEnabled(true);
+						clusterDistance2.setEnabled(true);
+						clusterDistance3.setEnabled(true);
+						clusterDistance4.setEnabled(true);
+					} else {
+						lblClusterDistance.setVisible(false);
+						clusterDistance1.setVisible(false);
+						clusterDistance2.setVisible(false);
+						clusterDistance3.setVisible(false);
+						clusterDistance4.setVisible(false);
+						clusterDistance1.setEnabled(false);
+						clusterDistance2.setEnabled(false);
+						clusterDistance3.setEnabled(false);
+						clusterDistance4.setEnabled(false);
+
+					}
 					panel_1.setVisible(false);
 					panel_1.setEnabled(false);
 					panel_1_alternative.setVisible(true);
@@ -5407,23 +5492,24 @@ radio120.addActionListener(new ActionListener() {
 
 		btnImport.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				
+
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+					UIManager.setLookAndFeel(UIManager
+							.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
+
 				JFileChooser fc = new JFileChooser();
 				int returnVal = fc.showOpenDialog(fc.getParent());
-				
+
 				try {
-				    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+					UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
-				if (returnVal == JFileChooser.APPROVE_OPTION){
+
+				if (returnVal == JFileChooser.APPROVE_OPTION) {
 					ac.processImport(fc.getSelectedFile());
 				}
 			}
@@ -5432,20 +5518,21 @@ radio120.addActionListener(new ActionListener() {
 		btnExport.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				try {
-				    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());;
+					UIManager.setLookAndFeel(UIManager
+							.getCrossPlatformLookAndFeelClassName());
+					;
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
+
 				ac.processExport();
-				
+
 				try {
-				    UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
+					UIManager.setLookAndFeel("napkin.NapkinLookAndFeel");
 				} catch (Exception e) {
-				    e.printStackTrace();
+					e.printStackTrace();
 				}
-				
-				
+
 			}
 		});
 	}

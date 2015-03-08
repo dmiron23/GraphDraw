@@ -96,6 +96,8 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 
 	public abstract void setVSize(int i);
 
+	public abstract void setClusterDistance(double d);
+
 
 	
 }
