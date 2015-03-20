@@ -15,10 +15,10 @@ public class Node extends GraphicsObject {
 	public Node(int _x, int _y, String _name) {
 		x = _x;
 		y = _y;
-		halfNodeSize = 6;
+		halfNodeSize = 8;
 		this.name = _name;
 
-		label = new CenteredLabel(_x + halfNodeSize - 1, _y + halfNodeSize + 3,
+		label = new CenteredLabel(_x + halfNodeSize, _y + halfNodeSize + 3,
 				Integer.toString((Integer.parseInt(_name) + 1)), 10);
 		alpha = 255;
 

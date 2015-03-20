@@ -207,7 +207,7 @@ public class Window {
 	protected int numPairs = 10;
 	private TextField[][] auts;
 	protected static int numNodes = 25;
-	private Font feltTipRoman;
+	private static Font feltTipRoman;
 
 	/**
 	 * Launch the application.
@@ -260,6 +260,17 @@ public class Window {
 		} catch (FontFormatException e) {
 			e.printStackTrace();
 		}
+		
+		String filename = "Temp\\logo.png";
+		BufferedImage img;
+		try {
+			img = ImageIO.read(new File(filename));
+			frmGraphDraw.setIconImage(img);
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 
 		frmGraphDraw.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		frmGraphDraw.setTitle("Graph Draw");
@@ -333,301 +344,301 @@ public class Window {
 
 		JLabel label_1 = new JLabel("1");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_1.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_1.setBounds(20, -3, 20, 20);
 		panel_edit_mode.add(label_1);
 
 		label_2 = new JLabel("2");
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_2.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_2.setBounds(40, -3, 20, 20);
 		panel_edit_mode.add(label_2);
 
 		label_3 = new JLabel("3");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_3.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_3.setBounds(60, -3, 20, 20);
 		panel_edit_mode.add(label_3);
 
 		label_4 = new JLabel("4");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_4.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_4.setBounds(80, -3, 20, 20);
 		panel_edit_mode.add(label_4);
 
 		label_5 = new JLabel("5");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_5.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_5.setBounds(100, -3, 20, 20);
 		panel_edit_mode.add(label_5);
 
 		label_6 = new JLabel("6");
 		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_6.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_6.setBounds(120, -3, 20, 20);
 		panel_edit_mode.add(label_6);
 
 		label_7 = new JLabel("7");
 		label_7.setHorizontalAlignment(SwingConstants.CENTER);
-		label_7.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_7.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_7.setBounds(140, -3, 20, 20);
 		panel_edit_mode.add(label_7);
 
 		label_8 = new JLabel("8");
 		label_8.setHorizontalAlignment(SwingConstants.CENTER);
-		label_8.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_8.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_8.setBounds(160, -3, 20, 20);
 		panel_edit_mode.add(label_8);
 
 		label_9 = new JLabel("9");
 		label_9.setHorizontalAlignment(SwingConstants.CENTER);
-		label_9.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_9.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_9.setBounds(180, -3, 20, 20);
 		panel_edit_mode.add(label_9);
 
 		label_10 = new JLabel("10");
 		label_10.setHorizontalAlignment(SwingConstants.CENTER);
-		label_10.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_10.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_10.setBounds(200, -3, 20, 20);
 		panel_edit_mode.add(label_10);
 
 		label_11 = new JLabel("11");
 		label_11.setHorizontalAlignment(SwingConstants.CENTER);
-		label_11.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_11.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_11.setBounds(220, -3, 20, 20);
 		panel_edit_mode.add(label_11);
 
 		label_12 = new JLabel("12");
 		label_12.setHorizontalAlignment(SwingConstants.CENTER);
-		label_12.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_12.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_12.setBounds(240, -3, 20, 20);
 		panel_edit_mode.add(label_12);
 
 		label_13 = new JLabel("13");
 		label_13.setHorizontalAlignment(SwingConstants.CENTER);
-		label_13.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_13.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_13.setBounds(260, -3, 20, 20);
 		panel_edit_mode.add(label_13);
 
 		label_14 = new JLabel("14");
 		label_14.setHorizontalAlignment(SwingConstants.CENTER);
-		label_14.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_14.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_14.setBounds(280, -3, 20, 20);
 		panel_edit_mode.add(label_14);
 
 		label_15 = new JLabel("15");
 		label_15.setHorizontalAlignment(SwingConstants.CENTER);
-		label_15.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_15.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_15.setBounds(300, -3, 20, 20);
 		panel_edit_mode.add(label_15);
 
 		label_16 = new JLabel("16");
 		label_16.setHorizontalAlignment(SwingConstants.CENTER);
-		label_16.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_16.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_16.setBounds(320, -3, 20, 20);
 		panel_edit_mode.add(label_16);
 
 		label_17 = new JLabel("17");
 		label_17.setHorizontalAlignment(SwingConstants.CENTER);
-		label_17.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_17.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_17.setBounds(340, -3, 20, 20);
 		panel_edit_mode.add(label_17);
 
 		label_18 = new JLabel("18");
 		label_18.setHorizontalAlignment(SwingConstants.CENTER);
-		label_18.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_18.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_18.setBounds(360, -3, 20, 20);
 		panel_edit_mode.add(label_18);
 
 		label_19 = new JLabel("19");
 		label_19.setHorizontalAlignment(SwingConstants.CENTER);
-		label_19.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_19.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_19.setBounds(380, -3, 20, 20);
 		panel_edit_mode.add(label_19);
 
 		label_20 = new JLabel("20");
 		label_20.setHorizontalAlignment(SwingConstants.CENTER);
-		label_20.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_20.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_20.setBounds(400, -3, 20, 20);
 		panel_edit_mode.add(label_20);
 
 		label_21 = new JLabel("21");
 		label_21.setHorizontalAlignment(SwingConstants.CENTER);
-		label_21.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_21.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_21.setBounds(420, -3, 20, 20);
 		panel_edit_mode.add(label_21);
 
 		label_22 = new JLabel("22");
 		label_22.setHorizontalAlignment(SwingConstants.CENTER);
-		label_22.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_22.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_22.setBounds(440, -3, 20, 20);
 		panel_edit_mode.add(label_22);
 
 		label_23 = new JLabel("23");
 		label_23.setHorizontalAlignment(SwingConstants.CENTER);
-		label_23.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_23.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_23.setBounds(460, -3, 20, 20);
 		panel_edit_mode.add(label_23);
 
 		label_24 = new JLabel("24");
 		label_24.setHorizontalAlignment(SwingConstants.CENTER);
-		label_24.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_24.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_24.setBounds(480, -3, 20, 20);
 		panel_edit_mode.add(label_24);
 
 		label_25 = new JLabel("25");
 		label_25.setHorizontalAlignment(SwingConstants.CENTER);
-		label_25.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_25.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_25.setBounds(500, -3, 20, 20);
 		panel_edit_mode.add(label_25);
 
 		label_31 = new JLabel("1");
 		label_31.setHorizontalAlignment(SwingConstants.CENTER);
-		label_31.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_31.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_31.setBounds(0, 15, 20, 20);
 		panel_edit_mode.add(label_31);
 
 		label_32 = new JLabel("2");
 		label_32.setHorizontalAlignment(SwingConstants.CENTER);
-		label_32.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_32.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_32.setBounds(0, 33, 20, 20);
 		panel_edit_mode.add(label_32);
 
 		label_33 = new JLabel("3");
 		label_33.setHorizontalAlignment(SwingConstants.CENTER);
-		label_33.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_33.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_33.setBounds(0, 51, 20, 20);
 		panel_edit_mode.add(label_33);
 
 		label_34 = new JLabel("4");
 		label_34.setHorizontalAlignment(SwingConstants.CENTER);
-		label_34.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_34.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_34.setBounds(0, 69, 20, 20);
 		panel_edit_mode.add(label_34);
 
 		label_35 = new JLabel("5");
 		label_35.setHorizontalAlignment(SwingConstants.CENTER);
-		label_35.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_35.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_35.setBounds(0, 87, 20, 20);
 		panel_edit_mode.add(label_35);
 
 		label_36 = new JLabel("6");
 		label_36.setHorizontalAlignment(SwingConstants.CENTER);
-		label_36.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_36.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_36.setBounds(0, 105, 20, 20);
 		panel_edit_mode.add(label_36);
 
 		label_37 = new JLabel("7");
 		label_37.setHorizontalAlignment(SwingConstants.CENTER);
-		label_37.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_37.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_37.setBounds(0, 123, 20, 20);
 		panel_edit_mode.add(label_37);
 
 		label_38 = new JLabel("8");
 		label_38.setHorizontalAlignment(SwingConstants.CENTER);
-		label_38.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_38.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_38.setBounds(0, 141, 20, 20);
 		panel_edit_mode.add(label_38);
 
 		label_39 = new JLabel("9");
 		label_39.setHorizontalAlignment(SwingConstants.CENTER);
-		label_39.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_39.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_39.setBounds(0, 159, 20, 20);
 		panel_edit_mode.add(label_39);
 
 		label_40 = new JLabel("10");
 		label_40.setHorizontalAlignment(SwingConstants.CENTER);
-		label_40.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_40.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_40.setBounds(0, 177, 20, 20);
 		panel_edit_mode.add(label_40);
 
 		label_41 = new JLabel("11");
 		label_41.setHorizontalAlignment(SwingConstants.CENTER);
-		label_41.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_41.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_41.setBounds(0, 195, 20, 20);
 		panel_edit_mode.add(label_41);
 
 		label_42 = new JLabel("12");
 		label_42.setHorizontalAlignment(SwingConstants.CENTER);
-		label_42.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_42.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_42.setBounds(0, 213, 20, 20);
 		panel_edit_mode.add(label_42);
 
 		label_43 = new JLabel("13");
 		label_43.setHorizontalAlignment(SwingConstants.CENTER);
-		label_43.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_43.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_43.setBounds(0, 231, 20, 20);
 		panel_edit_mode.add(label_43);
 
 		label_44 = new JLabel("14");
 		label_44.setHorizontalAlignment(SwingConstants.CENTER);
-		label_44.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_44.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_44.setBounds(0, 249, 20, 20);
 		panel_edit_mode.add(label_44);
 
 		label_45 = new JLabel("15");
 		label_45.setHorizontalAlignment(SwingConstants.CENTER);
-		label_45.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_45.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_45.setBounds(0, 267, 20, 20);
 		panel_edit_mode.add(label_45);
 
 		label_46 = new JLabel("16");
 		label_46.setHorizontalAlignment(SwingConstants.CENTER);
-		label_46.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_46.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_46.setBounds(0, 285, 20, 20);
 		panel_edit_mode.add(label_46);
 
 		label_47 = new JLabel("17");
 		label_47.setHorizontalAlignment(SwingConstants.CENTER);
-		label_47.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_47.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_47.setBounds(0, 303, 20, 20);
 		panel_edit_mode.add(label_47);
 
 		label_48 = new JLabel("18");
 		label_48.setHorizontalAlignment(SwingConstants.CENTER);
-		label_48.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_48.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_48.setBounds(0, 321, 20, 20);
 		panel_edit_mode.add(label_48);
 
 		label_49 = new JLabel("19");
 		label_49.setHorizontalAlignment(SwingConstants.CENTER);
-		label_49.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_49.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_49.setBounds(0, 339, 20, 20);
 		panel_edit_mode.add(label_49);
 
 		label_50 = new JLabel("20");
 		label_50.setHorizontalAlignment(SwingConstants.CENTER);
-		label_50.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_50.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_50.setBounds(0, 357, 20, 20);
 		panel_edit_mode.add(label_50);
 
 		label_51 = new JLabel("21");
 		label_51.setHorizontalAlignment(SwingConstants.CENTER);
-		label_51.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_51.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_51.setBounds(0, 375, 20, 20);
 		panel_edit_mode.add(label_51);
 
 		label_52 = new JLabel("22");
 		label_52.setHorizontalAlignment(SwingConstants.CENTER);
-		label_52.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_52.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_52.setBounds(0, 393, 20, 20);
 		panel_edit_mode.add(label_52);
 
 		label_53 = new JLabel("23");
 		label_53.setHorizontalAlignment(SwingConstants.CENTER);
-		label_53.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_53.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_53.setBounds(0, 411, 20, 20);
 		panel_edit_mode.add(label_53);
 
 		label_54 = new JLabel("24");
 		label_54.setHorizontalAlignment(SwingConstants.CENTER);
-		label_54.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_54.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_54.setBounds(0, 429, 20, 20);
 		panel_edit_mode.add(label_54);
 
 		label_55 = new JLabel("25");
 		label_55.setHorizontalAlignment(SwingConstants.CENTER);
-		label_55.setFont(new Font("Comic Sans MS", Font.BOLD, 11));
+		label_55.setFont(feltTipRoman.deriveFont((float)12.0).deriveFont(Font.BOLD));
 		label_55.setBounds(0, 447, 20, 20);
 		panel_edit_mode.add(label_55);
 
@@ -4592,17 +4603,12 @@ public class Window {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (ac.getLastFile() != null) {
-					if (ac.getLastFile().getAbsolutePath().contains("tmp"))
-						ac.getLastFile().delete();
-				}
 				ac.setLastFile(null);
 
 				if (ac.getLastFile() == null) {
 					File f = new File("Temp\\" + "tmp"
 							+ ((Double) (Math.random() * 5000)).intValue()
 							+ ((Double) (Math.random() * 5000)).intValue());
-					System.out.println(f);
 					try {
 						FileCreator.write(f, createPrintables());
 					} catch (IOException e1) {
@@ -4771,138 +4777,239 @@ public class Window {
 		panel_1_alternative.setBounds(111, 5, 365, 95);
 		frmGraphDraw.getContentPane().add(panel_1_alternative);
 		panel_1_alternative.setLayout(null);
+		
+				JLabel lblDrawingSettings = new JLabel("Settings");
+				lblDrawingSettings.setFont(feltTipRoman);
+				lblDrawingSettings.setBounds(5, 5, 60, 15);
+				panel_1_alternative.add(lblDrawingSettings);
+				
+						JButton btnBack = new JButton("Back");
+						btnBack.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								panel_1_alternative.setVisible(false);
+								panel_1_alternative.setEnabled(false);
+								panel_1.setVisible(true);
+								panel_1.setEnabled(true);
+							}
+						});
+						btnBack.setFont(feltTipRoman);
+						btnBack.setBounds(274, 65, 86, 25);
+						panel_1_alternative.add(btnBack);
+						
+								JLabel lblOptionSelected = new JLabel("Option selected:");
+								lblOptionSelected.setFont(feltTipRoman.deriveFont((float) 13.0));
+								lblOptionSelected.setBounds(71, 5, 92, 14);
+								panel_1_alternative.add(lblOptionSelected);
+								
+										final JLabel Selected = new JLabel("You should not see this. Bug!!!");
+										Selected.setFont(feltTipRoman.deriveFont((float) 13.0));
+										Selected.setBounds(158, 5, 185, 14);
+										panel_1_alternative.add(Selected);
+										
+												final JButton btnFlip = new JButton("Flip");
+												btnFlip.addActionListener(new ActionListener() {
+													public void actionPerformed(ActionEvent arg0) {
+														ac.f();
+													}
+												});
+												btnFlip.setFont(feltTipRoman);
+												btnFlip.setBounds(15, 31, 86, 25);
+												panel_1_alternative.add(btnFlip);
+												
+														final JButton btnReduceCrossings = new JButton("Reduce crossings");
+														btnReduceCrossings.addActionListener(new ActionListener() {
+															public void actionPerformed(ActionEvent arg0) {
+																ac.reduceCrossings();
+															}
+														});
+														btnReduceCrossings.setFont(feltTipRoman);
+														btnReduceCrossings.setBounds(15, 31, 131, 25);
+														panel_1_alternative.add(btnReduceCrossings);
+														
+																final JButton btnReduceSumOf = new JButton("Reduce edge lenghts sum");
+																btnReduceSumOf.addActionListener(new ActionListener() {
+																	public void actionPerformed(ActionEvent arg0) {
+																		ac.reduceSumOfEdges();
+																	}
+																});
+																btnReduceSumOf.setFont(feltTipRoman);
+																btnReduceSumOf.setBounds(158, 30, 202, 25);
+																panel_1_alternative.add(btnReduceSumOf);
+																
+																		final JRadioButton clusterDistance2 = new JRadioButton("");
+																		clusterDistance2.setBounds(178, 65, 21, 21);
+																		panel_1_alternative.add(clusterDistance2);
+																		
+																				final JRadioButton clusterDistance3 = new JRadioButton("");
+																				clusterDistance3.setBounds(199, 65, 21, 21);
+																				panel_1_alternative.add(clusterDistance3);
+																				
+																						final JRadioButton clusterDistance4 = new JRadioButton("");
+																						clusterDistance4.setBounds(220, 65, 21, 21);
+																						panel_1_alternative.add(clusterDistance4);
+																						
+																								final JRadioButton clusterDistance1 = new JRadioButton("");
+																								clusterDistance1.setBounds(157, 65, 21, 21);
+																								clusterDistance1.setSelected(true);
+																								panel_1_alternative.add(clusterDistance1);
+																								
+																										final JLabel lblClusterDistance = new JLabel("Cluster distance:");
+																										lblClusterDistance.setFont(feltTipRoman);
+																										lblClusterDistance.setBounds(25, 66, 150, 14);
+																										panel_1_alternative.add(lblClusterDistance);
+																										
+																												final JLabel lblDiameter = new JLabel("Diameter:");
+																												lblDiameter.setBounds(22, 66, 78, 17);
+																												panel_1_alternative.add(lblDiameter);
+																												lblDiameter.setHorizontalAlignment(SwingConstants.CENTER);
+																												lblDiameter.setFont(feltTipRoman);
+																												
+																														final JRadioButton radio60 = new JRadioButton("");
+																														radio60.setBounds(157, 65, 21, 21);
+																														panel_1_alternative.add(radio60);
+																														
+																																final JRadioButton radio50 = new JRadioButton("");
+																																radio50.setBounds(136, 65, 21, 21);
+																																panel_1_alternative.add(radio50);
+																																radio50.setSelected(true);
+																																
+																																		final JRadioButton radio70 = new JRadioButton("");
+																																		radio70.setBounds(178, 65, 21, 21);
+																																		panel_1_alternative.add(radio70);
+																																		
+																																				final JRadioButton radio80 = new JRadioButton("");
+																																				radio80.setBounds(199, 65, 21, 21);
+																																				panel_1_alternative.add(radio80);
+																																				
+																																						final JRadioButton radio120 = new JRadioButton("");
+																																						radio120.setBounds(220, 65, 21, 21);
+																																						panel_1_alternative.add(radio120);
+																																						radio120.addActionListener(new ActionListener() {
 
-		JLabel lblDrawingSettings = new JLabel("Settings");
-		lblDrawingSettings.setFont(feltTipRoman);
-		lblDrawingSettings.setBounds(5, 5, 60, 15);
-		panel_1_alternative.add(lblDrawingSettings);
+																																							@Override
+																																							public void actionPerformed(ActionEvent e) {
+																																								radio50.setSelected(false);
+																																								radio70.setSelected(false);
+																																								radio80.setSelected(false);
+																																								radio60.setSelected(false);
+																																								radio120.setSelected(true);
+																																								ac.setVSize(120);
+																																								ac.redraw();
 
-		JButton btnBack = new JButton("Back");
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				panel_1_alternative.setVisible(false);
-				panel_1_alternative.setEnabled(false);
-				panel_1.setVisible(true);
-				panel_1.setEnabled(true);
-			}
-		});
-		btnBack.setFont(feltTipRoman);
-		btnBack.setBounds(274, 65, 86, 25);
-		panel_1_alternative.add(btnBack);
-
-		JLabel lblOptionSelected = new JLabel("Option selected:");
-		lblOptionSelected.setFont(feltTipRoman.deriveFont((float) 13.0));
-		lblOptionSelected.setBounds(71, 5, 92, 14);
-		panel_1_alternative.add(lblOptionSelected);
-
-		final JLabel Selected = new JLabel("You should not see this. Bug!!!");
-		Selected.setFont(feltTipRoman.deriveFont((float) 13.0));
-		Selected.setBounds(158, 5, 185, 14);
-		panel_1_alternative.add(Selected);
-
-		final JButton btnFlip = new JButton("Flip");
-		btnFlip.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ac.f();
-			}
-		});
-		btnFlip.setFont(feltTipRoman);
-		btnFlip.setBounds(15, 31, 86, 25);
-		panel_1_alternative.add(btnFlip);
-
-		final JButton btnReduceCrossings = new JButton("Reduce crossings");
-		btnReduceCrossings.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ac.reduceCrossings();
-			}
-		});
-		btnReduceCrossings.setFont(feltTipRoman);
-		btnReduceCrossings.setBounds(15, 31, 131, 25);
-		panel_1_alternative.add(btnReduceCrossings);
-
-		final JButton btnReduceSumOf = new JButton("Reduce sum of edge lenghts");
-		btnReduceSumOf.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ac.reduceSumOfEdges();
-			}
-		});
-		btnReduceSumOf.setFont(feltTipRoman);
-		btnReduceSumOf.setBounds(168, 30, 192, 25);
-		panel_1_alternative.add(btnReduceSumOf);
-
-		final JRadioButton clusterDistance2 = new JRadioButton("");
-		clusterDistance2.setBounds(178, 65, 21, 21);
-		panel_1_alternative.add(clusterDistance2);
-
-		final JRadioButton clusterDistance3 = new JRadioButton("");
-		clusterDistance3.setBounds(199, 65, 21, 21);
-		panel_1_alternative.add(clusterDistance3);
-
-		final JRadioButton clusterDistance4 = new JRadioButton("");
-		clusterDistance4.setBounds(220, 65, 21, 21);
-		panel_1_alternative.add(clusterDistance4);
-
-		final JRadioButton clusterDistance1 = new JRadioButton("");
-		clusterDistance1.setBounds(157, 65, 21, 21);
-		clusterDistance1.setSelected(true);
-		panel_1_alternative.add(clusterDistance1);
-
-		final JLabel lblClusterDistance = new JLabel("Cluster distance:");
-		lblClusterDistance.setFont(feltTipRoman);
-		lblClusterDistance.setBounds(25, 66, 150, 14);
-		panel_1_alternative.add(lblClusterDistance);
-
-		clusterDistance1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clusterDistance1.setSelected(true);
-				clusterDistance2.setSelected(false);
-				clusterDistance3.setSelected(false);
-				clusterDistance4.setSelected(false);
-				ac.setClusterDistance(1.0);
-				ac.redraw();
-			}
-		});
-
-		clusterDistance2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clusterDistance1.setSelected(false);
-				clusterDistance2.setSelected(true);
-				clusterDistance3.setSelected(false);
-				clusterDistance4.setSelected(false);
-				ac.setClusterDistance(0.8);
-				ac.redraw();
-			}
-		});
-
-		clusterDistance3.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clusterDistance1.setSelected(false);
-				clusterDistance2.setSelected(false);
-				clusterDistance3.setSelected(true);
-				clusterDistance4.setSelected(false);
-				ac.setClusterDistance(0.6);
-				ac.redraw();
-			}
-		});
-
-		clusterDistance4.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clusterDistance1.setSelected(false);
-				clusterDistance2.setSelected(false);
-				clusterDistance3.setSelected(false);
-				clusterDistance4.setSelected(true);
-				ac.setClusterDistance(0.4);
-				ac.redraw();
-			}
-		});
+																																							}
+																																						});
+																																						
+																																								radio80.addActionListener(new ActionListener() {
+																																						
+																																									@Override
+																																									public void actionPerformed(ActionEvent e) {
+																																										radio120.setSelected(false);
+																																										radio50.setSelected(false);
+																																										radio70.setSelected(false);
+																																										radio80.setSelected(true);
+																																										radio60.setSelected(false);
+																																										ac.setVSize(80);
+																																										ac.redraw();
+																																						
+																																									}
+																																								});
+																																								
+																																										radio70.addActionListener(new ActionListener() {
+																																								
+																																											@Override
+																																											public void actionPerformed(ActionEvent e) {
+																																												radio120.setSelected(false);
+																																												radio50.setSelected(false);
+																																												radio70.setSelected(true);
+																																												radio80.setSelected(false);
+																																												radio60.setSelected(false);
+																																												ac.setVSize(70);
+																																												ac.redraw();
+																																								
+																																											}
+																																										});
+																																										
+																																												radio50.addActionListener(new ActionListener() {
+																																										
+																																													@Override
+																																													public void actionPerformed(ActionEvent e) {
+																																														radio50.setSelected(true);
+																																														radio70.setSelected(false);
+																																														radio80.setSelected(false);
+																																														radio60.setSelected(false);
+																																														radio120.setSelected(false);
+																																														ac.setVSize(50);
+																																														ac.redraw();
+																																										
+																																													}
+																																												});
+																																												
+																																														radio60.addActionListener(new ActionListener() {
+																																												
+																																															@Override
+																																															public void actionPerformed(ActionEvent e) {
+																																																radio120.setSelected(false);
+																																																radio50.setSelected(false);
+																																																radio70.setSelected(false);
+																																																radio80.setSelected(false);
+																																																radio60.setSelected(true);
+																																																ac.setVSize(60);
+																																																ac.redraw();
+																																												
+																																															}
+																																														});
+																																														
+																																																clusterDistance1.addActionListener(new ActionListener() {
+																																														
+																																																	@Override
+																																																	public void actionPerformed(ActionEvent e) {
+																																																		clusterDistance1.setSelected(true);
+																																																		clusterDistance2.setSelected(false);
+																																																		clusterDistance3.setSelected(false);
+																																																		clusterDistance4.setSelected(false);
+																																																		ac.setClusterDistance(1.0);
+																																																		ac.redraw();
+																																																	}
+																																																});
+																																																
+																																																		clusterDistance2.addActionListener(new ActionListener() {
+																																																
+																																																			@Override
+																																																			public void actionPerformed(ActionEvent e) {
+																																																				clusterDistance1.setSelected(false);
+																																																				clusterDistance2.setSelected(true);
+																																																				clusterDistance3.setSelected(false);
+																																																				clusterDistance4.setSelected(false);
+																																																				ac.setClusterDistance(0.8);
+																																																				ac.redraw();
+																																																			}
+																																																		});
+																																																		
+																																																				clusterDistance3.addActionListener(new ActionListener() {
+																																																		
+																																																					@Override
+																																																					public void actionPerformed(ActionEvent e) {
+																																																						clusterDistance1.setSelected(false);
+																																																						clusterDistance2.setSelected(false);
+																																																						clusterDistance3.setSelected(true);
+																																																						clusterDistance4.setSelected(false);
+																																																						ac.setClusterDistance(0.6);
+																																																						ac.redraw();
+																																																					}
+																																																				});
+																																																				
+																																																						clusterDistance4.addActionListener(new ActionListener() {
+																																																				
+																																																							@Override
+																																																							public void actionPerformed(ActionEvent e) {
+																																																								clusterDistance1.setSelected(false);
+																																																								clusterDistance2.setSelected(false);
+																																																								clusterDistance3.setSelected(false);
+																																																								clusterDistance4.setSelected(true);
+																																																								ac.setClusterDistance(0.4);
+																																																								ac.redraw();
+																																																							}
+																																																						});
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
@@ -4965,7 +5072,7 @@ public class Window {
 				btnEditMode.setText(resultString);
 			}
 		});
-		btnEditMode.setToolTipText("Open the documentation");
+		btnEditMode.setToolTipText("Create your own graph");
 		btnEditMode.setFont(feltTipRoman);
 		btnEditMode.setBounds(5, 65, 86, 25);
 		panel_3.add(btnEditMode);
@@ -5016,107 +5123,6 @@ public class Window {
 		panel_6.setBounds(482, 57, 195, 42);
 		frmGraphDraw.getContentPane().add(panel_6);
 		panel_6.setLayout(null);
-
-		JLabel lblDiameter = new JLabel("Diameter:");
-		lblDiameter.setBounds(16, 9, 58, 17);
-		lblDiameter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDiameter.setFont(feltTipRoman.deriveFont((float) 13.0));
-		panel_6.add(lblDiameter);
-
-		final JRadioButton radio50 = new JRadioButton("");
-		radio50.setSelected(true);
-		radio50.setBounds(79, 8, 21, 21);
-		panel_6.add(radio50);
-
-		final JRadioButton radio60 = new JRadioButton("");
-		radio60.setBounds(100, 8, 21, 21);
-		panel_6.add(radio60);
-
-		final JRadioButton radio70 = new JRadioButton("");
-		radio70.setBounds(121, 8, 21, 21);
-		panel_6.add(radio70);
-
-		final JRadioButton radio80 = new JRadioButton("");
-		radio80.setBounds(142, 8, 21, 21);
-		panel_6.add(radio80);
-
-		final JRadioButton radio120 = new JRadioButton("");
-		radio120.setBounds(163, 8, 21, 21);
-		panel_6.add(radio120);
-
-		radio50.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio50.setSelected(true);
-				radio70.setSelected(false);
-				radio80.setSelected(false);
-				radio60.setSelected(false);
-				radio120.setSelected(false);
-				ac.setVSize(50);
-				ac.redraw();
-
-			}
-		});
-
-		radio60.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio120.setSelected(false);
-				radio50.setSelected(false);
-				radio70.setSelected(false);
-				radio80.setSelected(false);
-				radio60.setSelected(true);
-				ac.setVSize(60);
-				ac.redraw();
-
-			}
-		});
-
-		radio70.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio120.setSelected(false);
-				radio50.setSelected(false);
-				radio70.setSelected(true);
-				radio80.setSelected(false);
-				radio60.setSelected(false);
-				ac.setVSize(70);
-				ac.redraw();
-
-			}
-		});
-
-		radio80.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio120.setSelected(false);
-				radio50.setSelected(false);
-				radio70.setSelected(false);
-				radio80.setSelected(true);
-				radio60.setSelected(false);
-				ac.setVSize(80);
-				ac.redraw();
-
-			}
-		});
-		radio120.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				radio50.setSelected(false);
-				radio70.setSelected(false);
-				radio80.setSelected(false);
-				radio60.setSelected(false);
-				radio120.setSelected(true);
-				ac.setVSize(120);
-				ac.redraw();
-
-			}
-		});
 		btnSaveImage.addActionListener(new ActionListener() {
 
 			@Override
@@ -5158,7 +5164,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(true);
 						btnReduceSumOf.setEnabled(true);
-						// add here the optimisation buttons for random mode
+						lblDiameter.setVisible(false);
+						radio50.setVisible(false);
+						radio50.setEnabled(false);
+						radio60.setVisible(false);
+						radio60.setEnabled(false);
+						radio70.setVisible(false);
+						radio70.setEnabled(false);
+						radio80.setVisible(false);
+						radio80.setEnabled(false);
+						radio120.setVisible(false);
+						radio120.setEnabled(false);
 
 					}
 					if (a.equals(rdbtnRandomCircle)) {
@@ -5171,6 +5187,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(true);
 						btnReduceSumOf.setEnabled(true);
+						lblDiameter.setVisible(false);
+						radio50.setVisible(false);
+						radio50.setEnabled(false);
+						radio60.setVisible(false);
+						radio60.setEnabled(false);
+						radio70.setVisible(false);
+						radio70.setEnabled(false);
+						radio80.setVisible(false);
+						radio80.setEnabled(false);
+						radio120.setVisible(false);
+						radio120.setEnabled(false);	
 					}
 					if (a.equals(rdbtnSymmetricalCircle1)) {
 						ac.setAutOption(2);
@@ -5182,6 +5209,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(false);
 						btnReduceSumOf.setEnabled(false);
+						lblDiameter.setVisible(false);
+						radio50.setVisible(false);
+						radio50.setEnabled(false);
+						radio60.setVisible(false);
+						radio60.setEnabled(false);
+						radio70.setVisible(false);
+						radio70.setEnabled(false);
+						radio80.setVisible(false);
+						radio80.setEnabled(false);
+						radio120.setVisible(false);
+						radio120.setEnabled(false);
 					}
 					if (a.equals(rdbtnSymmetricalCircle2)) {
 						ac.setAutOption(3);
@@ -5193,6 +5231,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(false);
 						btnReduceSumOf.setEnabled(false);
+						lblDiameter.setVisible(false);
+						radio50.setVisible(false);
+						radio50.setEnabled(false);
+						radio60.setVisible(false);
+						radio60.setEnabled(false);
+						radio70.setVisible(false);
+						radio70.setEnabled(false);
+						radio80.setVisible(false);
+						radio80.setEnabled(false);
+						radio120.setVisible(false);
+						radio120.setEnabled(false);
 					}
 					if (a.equals(rdbtnSymmetricalMultiple1)) {
 						ac.setAutOption(4);
@@ -5204,6 +5253,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(false);
 						btnReduceSumOf.setEnabled(false);
+						lblDiameter.setVisible(true);
+						radio50.setVisible(true);
+						radio50.setEnabled(true);
+						radio60.setVisible(true);
+						radio60.setEnabled(true);
+						radio70.setVisible(true);
+						radio70.setEnabled(true);
+						radio80.setVisible(true);
+						radio80.setEnabled(true);
+						radio120.setVisible(true);
+						radio120.setEnabled(true);
 					}
 					if (a.equals(rdbtnSymmetricalMultiple2)) {
 						ac.setAutOption(5);
@@ -5215,6 +5275,17 @@ public class Window {
 						btnReduceCrossings.setEnabled(true);
 						btnReduceSumOf.setVisible(false);
 						btnReduceSumOf.setEnabled(false);
+						lblDiameter.setVisible(true);
+						radio50.setVisible(true);
+						radio50.setEnabled(true);
+						radio60.setVisible(true);
+						radio60.setEnabled(true);
+						radio70.setVisible(true);
+						radio70.setEnabled(true);
+						radio80.setVisible(true);
+						radio80.setEnabled(true);
+						radio120.setVisible(true);
+						radio120.setEnabled(true);
 					}
 
 					if (a.equals(rdbtnSymmetricalCircle1)
@@ -5377,4 +5448,9 @@ public class Window {
 
 		return printables;
 	}
+	
+	public static Font getFeltTip(){
+		return feltTipRoman;
+	}
+	
 }
