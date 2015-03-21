@@ -31,6 +31,9 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+import org.apache.felix.resolver.FelixResolveContext;
+
+import Main.Window;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
@@ -1160,7 +1163,7 @@ public class DrawController extends AnimationControl {
 		}
 
 		g.setColor(Color.BLACK);
-		g.setFont(new Font(Font.MONOSPACED, Font.BOLD, 10));
+		g.setFont(Window.getFeltTip().deriveFont((float)11.0).deriveFont(Font.BOLD));
 
 		for (GraphicsObject go : nodeLayer.children) {
 
