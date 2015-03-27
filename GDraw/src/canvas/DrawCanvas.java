@@ -16,9 +16,7 @@ import javax.swing.JPanel;
 
 import graphics.ActiveLine;
 import graphics.CenteredLabel;
-import graphics.Circle;
 import graphics.GraphicsObject;
-import graphics.HoverCircle;
 import graphics.Label;
 import graphics.LabeledLine;
 import graphics.Layer;
@@ -27,7 +25,7 @@ import graphics.Node;
 import graphics.Rectangle;
 
 @SuppressWarnings("serial")
-public class canvas extends JPanel implements MouseMotionListener,
+public class DrawCanvas extends JPanel implements MouseMotionListener,
 		MouseListener {
 	public static Font f = new Font(Font.MONOSPACED, 0, 14);
 	// Draw list, objects at the end appear in front of preceding objects.
@@ -41,7 +39,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	// Set the "parent" property to this.
 	// Return them for assignment purposes.
 
-	public canvas() {
+	public DrawCanvas() {
 		addMouseListener(this);
 		addMouseMotionListener(this);
 	}
@@ -101,19 +99,6 @@ public class canvas extends JPanel implements MouseMotionListener,
 		return n;
 	}
 
-	public Circle createCircle(int _x, int _y, int _diameter) {
-		Circle c = new Circle(_x, _y, _diameter);
-		c.parent = this;
-		objects.add(c);
-		return c;
-	}
-
-	public HoverCircle createHoverCircle(int _x, int _y, int _diameter) {
-		HoverCircle c = new HoverCircle(_x, _y, _diameter);
-		c.parent = this;
-		objects.add(c);
-		return c;
-	}
 
 	public Layer createLayer() {
 		Layer l = new Layer();
@@ -133,7 +118,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 		g2d.setColor(new Color(238, 238, 238));
 		g2d.fillRect(0,0, this.getWidth(), this.getHeight());
 		g.setFont(f);
-		for (GraphicsObject go : canvas.objects)
+		for (GraphicsObject go : DrawCanvas.objects)
 			drawGraphicsObject(g2d, go);
 		
 	}
@@ -155,7 +140,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	}
 
 	public GraphicsObject getObjectByName(String name) {
-		for (GraphicsObject go : canvas.objects)
+		for (GraphicsObject go : DrawCanvas.objects)
 			if (go.name != null)
 				if (go.name.equals(name))
 					return go;
@@ -168,7 +153,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	}
 
 	public void tick() {
-		for (GraphicsObject go : canvas.objects)
+		for (GraphicsObject go : DrawCanvas.objects)
 			tickObject(go);
 	}
 
@@ -199,7 +184,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 	public void mouseMoved(MouseEvent e) { // Whenever the mouse is moved...
 		mousePosition.x = e.getLocationOnScreen().x - getLocationOnScreen().x;
 		mousePosition.y = e.getLocationOnScreen().y - getLocationOnScreen().y;
-		for (GraphicsObject go : canvas.objects) { // For each GraphicsObject...
+		for (GraphicsObject go : DrawCanvas.objects) { // For each GraphicsObject...
 			if(go.mouseEnabled)
 			go.handleMouse(e.getXOnScreen(), e.getYOnScreen()); 
 		}
@@ -222,7 +207,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		for (GraphicsObject go : canvas.objects)
+		for (GraphicsObject go : DrawCanvas.objects)
 			if(go.mouseEnabled)
 			go.handleLeftMouse(e.getXOnScreen(), e.getYOnScreen(), true);
 		if (e.getButton() == 1) // Left click
@@ -234,7 +219,7 @@ public class canvas extends JPanel implements MouseMotionListener,
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		for (GraphicsObject go : canvas.objects)
+		for (GraphicsObject go : DrawCanvas.objects)
 			if(go.mouseEnabled)
 			go.handleLeftMouse(e.getXOnScreen(), e.getYOnScreen(), false);
 	}

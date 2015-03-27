@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 public abstract class AnimationControl implements ActionListener, TweenListener {
-	protected static canvas c;
+	protected static DrawCanvas c;
 	protected Object returnObj;
 	protected DelayThread dT;
 	protected Timer t = new Timer(1000 / 60, this);
@@ -24,7 +24,7 @@ public abstract class AnimationControl implements ActionListener, TweenListener 
 	public Point mousePosition = new Point();
 	public static JFrame form;
 
-	public AnimationControl(canvas _c, JTextArea _pseudo) {
+	public AnimationControl(DrawCanvas _c, JTextArea _pseudo) {
 		c = _c;
 		pseudo = _pseudo;
 	}

@@ -3,20 +3,20 @@ package graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-import canvas.canvas;
+import canvas.DrawCanvas;
 
 public class Layer extends GraphicsObject {
 	public ArrayList<GraphicsObject> children = new ArrayList<GraphicsObject>();
 
 	public void addChild(GraphicsObject go) {
-		canvas.objects.remove(go);
+		DrawCanvas.objects.remove(go);
 		children.add(go);
 	}
 
 	@Override
 	public void draw(Graphics2D g) {
 		for (GraphicsObject go : children)
-			canvas.drawGraphicsObject(g, go);
+			DrawCanvas.drawGraphicsObject(g, go);
 	}
 
 	public void removeChild(GraphicsObject go) {
@@ -46,7 +46,7 @@ public class Layer extends GraphicsObject {
 	@Override
 	public void tick() {
 		for (GraphicsObject go : children)
-			canvas.tickObject(go);
+			DrawCanvas.tickObject(go);
 	}
 
 	public GraphicsObject getObjectByName(String name) {

@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.font.GlyphVector;
 
 import Main.Window;
-import canvas.canvas;
 
 public class CenteredLabel extends Label {
 

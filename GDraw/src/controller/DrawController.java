@@ -31,13 +31,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import org.apache.felix.resolver.FelixResolveContext;
-
 import Main.Window;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
-import canvas.canvas;
+import canvas.DrawCanvas;
 
 public class DrawController extends AnimationControl {
 	private File lastFile;
@@ -72,7 +70,7 @@ public class DrawController extends AnimationControl {
 	private static ArrayList<Integer> nonAutList = new ArrayList<Integer>();
 	private static int vSize = 50;
 
-	public DrawController(canvas _c, JTextArea _pseudo) {
+	public DrawController(DrawCanvas _c, JTextArea _pseudo) {
 		super(_c, _pseudo);
 	}
 
@@ -297,11 +295,10 @@ public class DrawController extends AnimationControl {
 		startAnimation();
 	}
 
-	public ArrayList<String> createPrintables() {
+	public ArrayList<String> createPrintables(boolean withGraphRep) {
 		ArrayList<String> printables = new ArrayList<String>();
 
-		int n = nodeLayer.children.size();
-
+		int n = numNodes;
 		// Title
 		printables.add("Graph: " + n + " nodes");
 		String separationLine = "";
@@ -342,6 +339,7 @@ public class DrawController extends AnimationControl {
 
 		printables.add(separationLine);
 
+		if (withGraphRep){
 		// Graphical representation
 		// 1.Nodes
 
@@ -372,6 +370,7 @@ public class DrawController extends AnimationControl {
 		}
 
 		printables.add(separationLine);
+		}
 		return printables;
 	}
 
@@ -394,7 +393,7 @@ public class DrawController extends AnimationControl {
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File f = fc.getSelectedFile();
 			try {
-				FileCreator.write(f, createPrintables());
+				FileCreator.write(f, createPrintables(true));
 			} catch (IOException e) {
 			}
 		}
@@ -461,6 +460,7 @@ public class DrawController extends AnimationControl {
 	}
 
 	public void processEntry(String entry) {
+		File temp = null;
 		if (entry.length() == 0)
 			return;
 		// first line "Graph: x nodes"
@@ -496,7 +496,7 @@ public class DrawController extends AnimationControl {
 			whereImAt = "adding to automorphism";
 			i = 0;
 		} else if (entry.contains("Graphical representation:")) {
-
+			
 			graphRepAvailable = true;
 		} else if (entry.contains("Nodes: ")) {
 			whereImAt = "adding nodes on plane";
@@ -608,6 +608,9 @@ public class DrawController extends AnimationControl {
 		}
 		autList2 = new ArrayList<Integer>();
 		autList2.addAll(tempList);
+		
+		
+		
 
 	}
 
@@ -660,9 +663,6 @@ public class DrawController extends AnimationControl {
 	private static void drawOnCircleByAutomorphism(int nonAutOption, boolean a) {
 		// draw the nodes
 		usedList = (a) ? autList1 : autList2;
-		System.out.println(usedList);
-		System.out.println("NUM PAIRS: " + numPairs);
-		System.out.println("PAIR SIZE: " + pairSize);
 		if (!a){
 			int aux = numPairs;
 			numPairs = pairSize;

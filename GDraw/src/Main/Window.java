@@ -23,7 +23,7 @@ import javax.swing.JLabel;
 import canvas.AnimationControl;
 import canvas.DelayThread;
 import canvas.FileCreator;
-import canvas.canvas;
+import canvas.DrawCanvas;
 
 import java.awt.Font;
 
@@ -48,7 +48,7 @@ public class Window {
 	public JRadioButton[][] buttons;
 	private JFrame frmGraphDraw;
 	private AnimationControl ac;
-	private canvas canvasPanel;
+	private DrawCanvas canvasPanel;
 	private TextField textField;
 	private JLabel label_2;
 	private JLabel label_3;
@@ -267,8 +267,6 @@ public class Window {
 			img = ImageIO.read(new File(filename));
 			frmGraphDraw.setIconImage(img);
 		} catch (IOException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
 		}
 		
 
@@ -3841,7 +3839,7 @@ public class Window {
 				});
 			}
 		AnimationControl.form = this.frmGraphDraw;
-		canvasPanel = new canvas();
+		canvasPanel = new DrawCanvas();
 		canvasPanel.setBounds(5, 105, 774, 507);
 		frmGraphDraw.getContentPane().add(canvasPanel);
 		ac = new DrawController(canvasPanel, null);
@@ -3913,7 +3911,6 @@ public class Window {
 		aut1_10.setBounds(751, 159, 25, 25);
 		panel_edit_mode.add(aut1_10);
 
-		// /
 		aut2_1 = new TextField();
 		aut2_1.setColumns(10);
 		aut2_1.setBounds(526, 184, 25, 25);
@@ -3964,9 +3961,6 @@ public class Window {
 		aut2_10.setBounds(751, 184, 25, 25);
 		panel_edit_mode.add(aut2_10);
 
-		// //
-
-		// /
 		aut3_1 = new TextField();
 		aut3_1.setColumns(10);
 		aut3_1.setBounds(526, 209, 25, 25);
@@ -4017,9 +4011,6 @@ public class Window {
 		aut3_10.setBounds(751, 209, 25, 25);
 		panel_edit_mode.add(aut3_10);
 
-		// //
-
-		// /
 		aut4_1 = new TextField();
 		aut4_1.setColumns(10);
 		aut4_1.setBounds(526, 234, 25, 25);
@@ -4070,9 +4061,6 @@ public class Window {
 		aut4_10.setBounds(751, 234, 25, 25);
 		panel_edit_mode.add(aut4_10);
 
-		// //
-
-		// /
 		aut5_1 = new TextField();
 		aut5_1.setColumns(10);
 		aut5_1.setBounds(526, 259, 25, 25);
@@ -4123,9 +4111,9 @@ public class Window {
 		aut5_10.setBounds(751, 259, 25, 25);
 		panel_edit_mode.add(aut5_10);
 
-		// //
+		
 
-		// /
+		
 		aut6_1 = new TextField();
 		aut6_1.setColumns(10);
 		aut6_1.setBounds(526, 284, 25, 25);
@@ -4176,7 +4164,7 @@ public class Window {
 		aut6_10.setBounds(751, 284, 25, 25);
 		panel_edit_mode.add(aut6_10);
 
-		// //
+		
 
 		aut7_1 = new TextField();
 		aut7_1.setColumns(10);
@@ -4490,9 +4478,6 @@ public class Window {
 		auts[10][9] = aut10_9;
 		auts[10][10] = aut10_10;
 
-		// for (i = 1; i <= 10; i++)
-		// for (j = 1; j <= 10; j++)
-		// auts[i][j].setInputVerifier(new NumInputVerifier());
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null,
 				null, null));
@@ -4528,14 +4513,11 @@ public class Window {
 		panel_5.add(lblControlPanel);
 
 		pairSizeBox = new TextField();
-
-		// pairSizeBox.setInputVerifier(new MaxTenInputVerifier());
 		pairSizeBox.setBounds(10, 86, 35, 20);
 		panel_5.add(pairSizeBox);
 		pairSizeBox.setColumns(1);
 
 		numPairsBox = new TextField();
-		// numPairsBox.setInputVerifier(new MaxTenInputVerifier());
 		numPairsBox.setBounds(75, 86, 35, 20);
 		panel_5.add(numPairsBox);
 		numPairsBox.setColumns(1);
@@ -4742,17 +4724,17 @@ public class Window {
 		panel_1.add(rdbtnSymmetricalCircle2);
 
 		final JRadioButton rdbtnSymmetricalMultiple1 = new JRadioButton(
-				"Symmetrical - Multiple Circles (1)");
+				"Symmetrical - Multiple Circles (2)");
 		rdbtnSymmetricalMultiple1
 				.setFont(feltTipRoman.deriveFont((float) 13.0));
-		rdbtnSymmetricalMultiple1.setBounds(160, 45, 200, 15);
+		rdbtnSymmetricalMultiple1.setBounds(160, 65, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple1);
 
 		final JRadioButton rdbtnSymmetricalMultiple2 = new JRadioButton(
-				"Symmetrical - Multiple Circles (2)");
+				"Symmetrical - Multiple Circles (1)");
 		rdbtnSymmetricalMultiple2
 				.setFont(feltTipRoman.deriveFont((float) 13.0));
-		rdbtnSymmetricalMultiple2.setBounds(160, 65, 200, 15);
+		rdbtnSymmetricalMultiple2.setBounds(160, 45, 200, 15);
 		panel_1.add(rdbtnSymmetricalMultiple2);
 		radioButtons.add(rdbtnRandom);
 		radioButtons.add(rdbtnRandomCircle);

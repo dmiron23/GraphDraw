@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
-import canvas.canvas;
+import canvas.DrawCanvas;
 import graphics.TweenClass.Tween;
 
 public abstract class GraphicsObject{
@@ -17,7 +17,7 @@ public abstract class GraphicsObject{
 	public int outlineAlpha; // Opacity, 0-255
 	public int lineThickness = 1;
 	public boolean hover;
-	public canvas parent;
+	public DrawCanvas parent;
 	public Tween tween;
 	public String name;
 	public Object data;
@@ -39,20 +39,20 @@ public abstract class GraphicsObject{
 	}
 
 	public void swapDepth(GraphicsObject other) {
-		int i = canvas.objects.indexOf(this);
-		int oi = canvas.objects.indexOf(other);
-		canvas.objects.set(oi, this);
-		canvas.objects.set(i, other);
+		int i = DrawCanvas.objects.indexOf(this);
+		int oi = DrawCanvas.objects.indexOf(other);
+		DrawCanvas.objects.set(oi, this);
+		DrawCanvas.objects.set(i, other);
 	}
 
 	public void bringToFront() {
-		canvas.objects.remove(this);
-		canvas.objects.add(this);
+		DrawCanvas.objects.remove(this);
+		DrawCanvas.objects.add(this);
 	}
 
 	public void sendToBack() {
-		canvas.objects.remove(this);
-		canvas.objects.add(0, this);
+		DrawCanvas.objects.remove(this);
+		DrawCanvas.objects.add(0, this);
 	}
 
 	public Color setColourTransparency(Color _c, int alpha) {
