@@ -460,7 +460,6 @@ public class DrawController extends AnimationControl {
 	}
 
 	public void processEntry(String entry) {
-		File temp = null;
 		if (entry.length() == 0)
 			return;
 		// first line "Graph: x nodes"
